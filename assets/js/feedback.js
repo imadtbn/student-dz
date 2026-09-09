@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject HTML
     container.innerHTML = `
         <button class="feedback-fab" id="feedbackFab">
-            <span>🛠</span> دعم Student DZ
+            <i class="fa-solid fa-wrench"></i> دعم Student DZ
         </button>
 
         <div class="feedback-modal" id="feedbackModal">

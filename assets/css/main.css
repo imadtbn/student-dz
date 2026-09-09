@@ -312,3 +312,98 @@ a:hover {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+/* --- Advanced Animations & Shadows Update --- */
+:root {
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --shadow-hover: 0 12px 30px rgba(0, 122, 94, 0.15); /* Primary color shadow */
+}
+
+/* Enhancing Card Hover Effects */
+.card {
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-light);
+}
+
+.card-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.15);
+    color: var(--primary-dark);
+}
+
+/* Enhance Buttons */
+.btn {
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1, .hero p, .search-box {
+    animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.hero p {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+.search-box {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.card {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Add stagger delay for grid items */
+.grid .card:nth-child(1) { animation-delay: 0.1s; }
+.grid .card:nth-child(2) { animation-delay: 0.2s; }
+.grid .card:nth-child(3) { animation-delay: 0.3s; }
+.grid .card:nth-child(4) { animation-delay: 0.4s; }
+.grid .card:nth-child(5) { animation-delay: 0.5s; }
+.grid .card:nth-child(6) { animation-delay: 0.6s; }
+
+/* FontAwesome specific adjustments */
+i.fa, i.fas, i.far, i.fal, i.fad, i.fab {
+    display: inline-block;
+    line-height: inherit;
+}
