@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النقل الجامعي - Student DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .search-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group select {
+            width: 100%; padding: 10px; border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm); font-family: inherit;
+            background: var(--bg-main); color: var(--text-main);
+        }
+        .route-result {
+            background: var(--bg-main);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+            display: none;
+        }
+        .route-line {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title" style="margin-top:2rem;">النقل الجامعي</h1>
+
+        <div class="search-card">
+            <h3 style="margin-bottom: 15px; text-align: center;">البحث عن مسار (نسخة تجريبية)</h3>
+            <div class="form-group">
+                <label>من: (الجامعة)</label>
+                <select id="fromSelect">
+                    <option value="">-- اختر الجامعة --</option>
+                </select>
+            </div>
+            <div style="text-align: center; color: var(--text-muted); margin: 10px 0;"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="form-group">
+                <label>إلى: (الإقامة / المحطة)</label>
+                <select id="toSelect">
+                    <option value="">-- اختر الإقامة --</option>
+                </select>
+            </div>
+            <button class="btn" id="searchBtn" style="width: 100%; margin-top: 10px;"><i class="fa-solid fa-magnifying-glass"></i> بحث</button>
+
+            <div class="route-result" id="routeResult">
+                <div class="route-line">
+                    <i class="fa-solid fa-bus"></i> <span id="resFrom"></span> <i class="fa-solid fa-arrow-left-long"></i> <span id="resTo"></span>
+                </div>
+                <p style="text-align: center; color: var(--text-muted);">هذا المسار متاح عبر حافلات النقل الجامعي.</p>
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="../tools/maps.html" class="btn btn-outline"><i class="fa-solid fa-map"></i> فتح في الخريطة</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const fromSelect = document.getElementById('fromSelect');
+            const toSelect = document.getElementById('toSelect');
+
+            // Load POC data from JSON
+            const univData = await fetchAppJSON(CONFIG.API.UNIVERSITIES);
+            if(univData && univData.universities) {
+                univData.universities.forEach(u => {
+                    fromSelect.innerHTML += `<option value="${u.name}">${u.name}</option>`;
+                });
+            }
+
+            const resData = await fetchAppJSON(CONFIG.API.RESIDENCES);
+            if(resData && resData.residences) {
+                resData.residences.forEach(r => {
+                    toSelect.innerHTML += `<option value="${r.name}">${r.name}</option>`;
+                });
+            }
+
+            document.getElementById('searchBtn').addEventListener('click', () => {
+                if(!fromSelect.value || !toSelect.value) {
+                    alert("الرجاء اختيار نقطة الانطلاق ونقطة الوصول.");
+                    return;
+                }
+                document.getElementById('resFrom').textContent = fromSelect.value;
+                document.getElementById('resTo').textContent = toSelect.value;
+                document.getElementById('routeResult').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

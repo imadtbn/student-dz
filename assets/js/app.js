@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             recent.slice(0, 3).forEach(item => {
                 html += `
                     <a href="${CONFIG.getUrl(item.url)}" class="card">
-                        <div class="card-icon">${item.icon || '📌'}</div>
+                        <div class="card-icon">${item.icon && item.icon.includes('fa-') ? `<i class="${item.icon}"></i>` : (item.icon || '<i class="fa-solid fa-thumbtack"></i>')}</div>
                         <h3 class="card-title">${item.title}</h3>
                         <p class="card-desc">آخر استخدام</p>
                     </a>

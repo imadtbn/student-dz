@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة ميزانية الطالب - Student DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        .budget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .budget-grid { grid-template-columns: 1fr; }
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+        .input-group .icon-input {
+            position: relative;
+        }
+        .input-group .icon-input i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px 10px 10px 40px; /* Padding for the DA text */
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: var(--font-family);
+            padding-right: 40px;
+            background: var(--bg-main);
+            color: var(--text-main);
+        }
+        .currency-label {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        .results-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--border-color);
+            display: none;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        @media (max-width: 768px) {
+            .results-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .result-card {
+            background: var(--bg-main);
+            padding: 15px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-card h4 {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .result-card .amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <h1 class="section-title">حاسبة ميزانية الطالب</h1>
+            <p style="text-align:center; margin-bottom: 2rem; color: var(--text-muted);">أدخل مصاريفك الشهرية التقريبية لمعرفة تكاليفك الإجمالية.</p>
+
+            <div class="budget-grid">
+                <div class="input-group">
+                    <label>السكن / الإيجار</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-house"></i>
+                        <input type="number" id="expRent" placeholder="0" min="0" value="0">
+                        <span class="currency-label">د.ج</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>النقل</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-bus"></i>
+                        <input type="number" id="expTransport" placeholder="0" min="0" value="0">
+                        <span class="currency-label">د.ج</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>الإطعام / الأكل</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-utensils"></i>
+                        <input type="number" id="expFood" placeholder="0" min="0" value="0">
+                        <span class="currency-label">د.ج</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>الإنترنت والاتصالات</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-wifi"></i>
+                        <input type="number" id="expInternet" placeholder="0" min="0" value="0">
+                        <span class="currency-label">د.ج</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>الدراسة والمطبوعات</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-book"></i>
+                        <input type="number" id="expStudy" placeholder="0" min="0" value="0">
+                        <span class="currency-label">د.ج</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>مصاريف شخصية أخرى</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-wallet"></i>
+                        <input type="number" id="expOther" placeholder="0" min="0" value="0">
+                        <span class="currency-label">د.ج</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn" id="calculateBtn" style="width: 100%;"><i class="fa-solid fa-calculator"></i> احسب الميزانية</button>
+
+            <div class="results-section" id="resultsSection">
+                <h3 style="text-align:center; margin-bottom: 20px;">ملخص المصاريف</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h4>يومياً</h4>
+                        <div class="amount" id="resDaily">0</div>
+                        <div style="font-size:0.8em; color:var(--text-muted)">د.ج</div>
+                    </div>
+                    <div class="result-card">
+                        <h4>أسبوعياً</h4>
+                        <div class="amount" id="resWeekly">0</div>
+                        <div style="font-size:0.8em; color:var(--text-muted)">د.ج</div>
+                    </div>
+                    <div class="result-card" style="border-color: var(--primary-color); background: rgba(0, 122, 94, 0.05);">
+                        <h4 style="color: var(--primary-color);">شهرياً</h4>
+                        <div class="amount" id="resMonthly">0</div>
+                        <div style="font-size:0.8em; color:var(--text-muted)">د.ج</div>
+                    </div>
+                    <div class="result-card">
+                        <h4>سنوياً (9 أشهر دراسة)</h4>
+                        <div class="amount" id="resYearly">0</div>
+                        <div style="font-size:0.8em; color:var(--text-muted)">د.ج</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script>
+        StorageApp.addRecent({ id: 'budget-calc', title: 'حاسبة الميزانية', url: 'tools/budget-calculator.html', icon: 'fa-solid fa-wallet' });
+
+        document.getElementById('calculateBtn').addEventListener('click', () => {
+            const getVal = (id) => parseFloat(document.getElementById(id).value) || 0;
+
+            const monthlyTotal = getVal('expRent') + getVal('expTransport') +
+                                 getVal('expFood') + getVal('expInternet') +
+                                 getVal('expStudy') + getVal('expOther');
+
+            const daily = (monthlyTotal / 30).toFixed(0);
+            const weekly = (monthlyTotal / 4).toFixed(0);
+            const yearly = (monthlyTotal * 9).toFixed(0); // Academic year is usually ~9 months
+
+            document.getElementById('resDaily').textContent = parseInt(daily).toLocaleString();
+            document.getElementById('resWeekly').textContent = parseInt(weekly).toLocaleString();
+            document.getElementById('resMonthly').textContent = parseInt(monthlyTotal).toLocaleString();
+            document.getElementById('resYearly').textContent = parseInt(yearly).toLocaleString();
+
+            document.getElementById('resultsSection').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

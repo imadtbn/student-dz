@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات النصوص - Student DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: var(--font-family);
+            background: var(--bg-main);
+            color: var(--text-main);
+            resize: vertical;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .stat-box {
+            background: var(--bg-main);
+            padding: 15px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <h1 class="section-title">أدوات النصوص والبحوث</h1>
+
+            <textarea id="textInput" rows="8" placeholder="اكتب أو انسخ النص هنا..."></textarea>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div style="color:var(--text-muted); font-size:0.9em;">الكلمات</div>
+                    <div class="stat-value" id="wordCount">0</div>
+                </div>
+                <div class="stat-box">
+                    <div style="color:var(--text-muted); font-size:0.9em;">الأحرف (مع المسافات)</div>
+                    <div class="stat-value" id="charCount">0</div>
+                </div>
+                <div class="stat-box">
+                    <div style="color:var(--text-muted); font-size:0.9em;">الأحرف (بدون مسافات)</div>
+                    <div class="stat-value" id="charNoSpaceCount">0</div>
+                </div>
+            </div>
+
+            <div class="actions-grid">
+                <button class="btn btn-outline" id="btnRemoveSpaces"><i class="fa-solid fa-compress"></i> إزالة المسافات الزائدة</button>
+                <button class="btn btn-outline" id="btnCopy"><i class="fa-solid fa-copy"></i> نسخ النص</button>
+                <button class="btn btn-outline" id="btnClear" style="grid-column: 1/-1; border-color: var(--secondary-color); color: var(--secondary-color);"><i class="fa-solid fa-trash"></i> مسح الكل</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script>
+        StorageApp.addRecent({ id: 'text-tools', title: 'أدوات النصوص', url: 'tools/text-tools.html', icon: 'fa-solid fa-font' });
+
+        const textInput = document.getElementById('textInput');
+        const wordCount = document.getElementById('wordCount');
+        const charCount = document.getElementById('charCount');
+        const charNoSpaceCount = document.getElementById('charNoSpaceCount');
+
+        function updateStats() {
+            const text = textInput.value;
+            charCount.textContent = text.length;
+            charNoSpaceCount.textContent = text.replace(/\s/g, '').length;
+
+            const words = text.trim().split(/\s+/);
+            wordCount.textContent = text.trim() === '' ? 0 : words.length;
+        }
+
+        textInput.addEventListener('input', updateStats);
+
+        document.getElementById('btnRemoveSpaces').addEventListener('click', () => {
+            textInput.value = textInput.value.replace(/\s+/g, ' ').trim();
+            updateStats();
+        });
+
+        document.getElementById('btnClear').addEventListener('click', () => {
+            textInput.value = '';
+            updateStats();
+        });
+
+        document.getElementById('btnCopy').addEventListener('click', () => {
+            textInput.select();
+            document.execCommand('copy');
+            alert('تم نسخ النص بنجاح!');
+        });
+    </script>
+</body>
+</html>
