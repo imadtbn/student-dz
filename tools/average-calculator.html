@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة المعدل الجامعي - Student DZ</title>
+    <meta name="description" content="احسب معدلك الجامعي بسهولة وسرعة.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/feedback.css">
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .module-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 40px;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        .module-row input {
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: var(--font-family);
+        }
+        .remove-btn {
+            background: #ff4d4f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .actions {
+            margin-top: 1rem;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        .result-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--primary-light);
+            color: white;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">🎓 Student DZ</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <h1 class="section-title">حاسبة معدل السداسي</h1>
+            <p style="text-align:center; margin-bottom: 2rem; color: var(--text-muted);">أدخل المقاييس، المعاملات، والعلامات لحساب معدلك بدقة.</p>
+
+            <div class="module-header" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 40px; gap: 10px; font-weight: bold; margin-bottom: 10px;">
+                <div>المقياس (اختياري)</div>
+                <div>المعامل</div>
+                <div>TD/TP</div>
+                <div>الامتحان</div>
+                <div></div>
+            </div>
+
+            <div id="modulesContainer">
+                <!-- Rows will be injected here -->
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-outline" id="addModuleBtn">+ إضافة مقياس</button>
+                <button class="btn" id="calculateBtn">احسب المعدل</button>
+            </div>
+
+            <div id="resultBox" class="result-box">
+                معدلك هو: <span id="finalAverage">0.00</span>
+            </div>
+        </div>
+    </main>
+
+    <div id="feedbackContainer"></div>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/feedback.js"></script>
+    <script>
+        // Track recent tool usage
+        StorageApp.addRecent({ id: 'average-calc', title: 'حاسبة المعدل', url: 'tools/average-calculator.html', icon: '🧮' });
+
+        const container = document.getElementById('modulesContainer');
+
+        function createRow() {
+            const row = document.createElement('div');
+            row.className = 'module-row';
+            row.innerHTML = `
+                <input type="text" placeholder="اسم المقياس">
+                <input type="number" class="coef" placeholder="المعامل" min="1" value="1">
+                <input type="number" class="td" placeholder="TD/TP (اختياري)" min="0" max="20" step="0.01">
+                <input type="number" class="exam" placeholder="الامتحان /20" min="0" max="20" step="0.01">
+                <button class="remove-btn">×</button>
+            `;
+
+            row.querySelector('.remove-btn').addEventListener('click', () => {
+                if(container.children.length > 1) {
+                    row.remove();
+                } else {
+                    alert("يجب أن يكون هناك مقياس واحد على الأقل.");
+                }
+            });
+            return row;
+        }
+
+        // Add 3 default rows
+        for(let i=0; i<3; i++) {
+            container.appendChild(createRow());
+        }
+
+        document.getElementById('addModuleBtn').addEventListener('click', () => {
+            container.appendChild(createRow());
+        });
+
+        document.getElementById('calculateBtn').addEventListener('click', () => {
+            let totalScore = 0;
+            let totalCoef = 0;
+            let isValid = true;
+
+            const rows = container.querySelectorAll('.module-row');
+            rows.forEach(row => {
+                const coef = parseFloat(row.querySelector('.coef').value) || 0;
+                const td = parseFloat(row.querySelector('.td').value);
+                const exam = parseFloat(row.querySelector('.exam').value);
+
+                if(coef <= 0) return; // Skip invalid coefs
+
+                let moduleAvg = 0;
+
+                // Simplified calculation logic for general use:
+                // If TD is provided, average = (Exam*0.6) + (TD*0.4) -- Common in DZ
+                // Else average = Exam
+                if (!isNaN(exam)) {
+                    if(!isNaN(td)) {
+                        moduleAvg = (exam * 0.6) + (td * 0.4);
+                    } else {
+                        moduleAvg = exam;
+                    }
+                    totalScore += (moduleAvg * coef);
+                    totalCoef += coef;
+                }
+            });
+
+            if(totalCoef > 0) {
+                const final = (totalScore / totalCoef).toFixed(2);
+                document.getElementById('finalAverage').textContent = final;
+
+                const resultBox = document.getElementById('resultBox');
+                resultBox.style.display = 'block';
+                if(final >= 10) {
+                    resultBox.style.backgroundColor = 'var(--primary-color)';
+                } else {
+                    resultBox.style.backgroundColor = 'var(--secondary-color)';
+                }
+            } else {
+                alert("يرجى إدخال علامات صالحة ومعاملات.");
+            }
+        });
+    </script>
+</body>
+</html>

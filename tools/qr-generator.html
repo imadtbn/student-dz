@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء QR Code - Student DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .tool-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: var(--font-family);
+            background: var(--bg-main);
+            color: var(--text-main);
+        }
+        #qrcode {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">🎓 Student DZ</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <h1 class="section-title">إنشاء رمز استجابة سريعة (QR Code)</h1>
+            <p>قم بتحويل أي نص أو رابط إلى QR Code لطباعته أو مشاركته.</p>
+
+            <textarea id="qrText" rows="4" placeholder="أدخل الرابط أو النص هنا..."></textarea>
+
+            <button class="btn" id="generateBtn">إنشاء الرمز</button>
+
+            <div id="qrcode"></div>
+
+            <button class="btn btn-outline" id="downloadBtn" style="display: none; margin-top: 10px;">تحميل الصورة</button>
+        </div>
+    </main>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/storage.js"></script>
+
+    <!-- Lazy load qrcode.js -->
+    <script>
+        StorageApp.addRecent({ id: 'qr-gen', title: 'إنشاء QR Code', url: 'tools/qr-generator.html', icon: '📱' });
+
+        const generateBtn = document.getElementById('generateBtn');
+        let qrcodeInstance = null;
+
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        generateBtn.addEventListener('click', async () => {
+            const text = document.getElementById('qrText').value.trim();
+            if(!text) return alert("الرجاء إدخال نص أو رابط.");
+
+            if (typeof QRCode === 'undefined') {
+                generateBtn.textContent = 'جاري التحميل...';
+                generateBtn.disabled = true;
+                try {
+                    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js');
+                } catch(e) {
+                    alert('فشل في تحميل مكتبة QR');
+                    return;
+                } finally {
+                    generateBtn.textContent = 'إنشاء الرمز';
+                    generateBtn.disabled = false;
+                }
+            }
+
+            const qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = '';
+
+            qrcodeInstance = new QRCode(qrContainer, {
+                text: text,
+                width: 256,
+                height: 256,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            document.getElementById('downloadBtn').style.display = 'inline-block';
+        });
+
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            const canvas = document.querySelector('#qrcode canvas');
+            if (canvas) {
+                const url = canvas.toDataURL("image/png");
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'StudentDZ_QRCode.png';
+                a.click();
+            }
+        });
+    </script>
+</body>
+</html>

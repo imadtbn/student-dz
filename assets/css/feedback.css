@@ -1,0 +1,108 @@
+/* Feedback Floating Button and Modal */
+.feedback-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.feedback-fab:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-dark);
+}
+
+.feedback-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-modal.active {
+    display: flex;
+}
+
+.feedback-content {
+    background: var(--bg-card);
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.feedback-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.feedback-content h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-dark);
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.feedback-form select,
+.feedback-form textarea,
+.feedback-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+.feedback-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background-color: var(--primary-dark);
+}
+
+.feedback-success {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+}

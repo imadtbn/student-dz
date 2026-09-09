@@ -1,0 +1,17 @@
+{
+    "lastUpdated": "2023-10-01",
+    "source": "official",
+    "residences": [
+        {
+            "id": "res-talebabderrahmane",
+            "name": "الإقامة الجامعية طالب عبد الرحمان 1",
+            "wilaya": "الجزائر",
+            "universityId": "univ-algiers-1",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7690,
+                "lng": 3.0510
+            }
+        }
+    ]
+}

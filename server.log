@@ -1,0 +1,40 @@
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/css/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/config.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/css/feedback.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/navigation.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/storage.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/search.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/feedback.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/pwa.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:36] "GET /assets/js/ads-loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:25:37] code 404, message File not found
+127.0.0.1 - - [09/Sep/2026 21:25:37] "GET /student-dz/data/settings.json HTTP/1.1" 404 -
+127.0.0.1 - - [09/Sep/2026 21:25:37] code 404, message File not found
+127.0.0.1 - - [09/Sep/2026 21:25:37] "GET /student-dz/sw.js HTTP/1.1" 404 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/css/feedback.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/css/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/navigation.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/config.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/ads-loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/feedback.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/storage.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/search.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /assets/js/pwa.js HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:26] code 404, message File not found
+127.0.0.1 - - [09/Sep/2026 21:26:26] "GET /student-dz/data/settings.json HTTP/1.1" 404 -
+127.0.0.1 - - [09/Sep/2026 21:26:27] code 404, message File not found
+127.0.0.1 - - [09/Sep/2026 21:26:27] "GET /student-dz/sw.js HTTP/1.1" 404 -
+127.0.0.1 - - [09/Sep/2026 21:26:28] "GET /categories/tools.html HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:29] "GET /tools/average-calculator.html HTTP/1.1" 200 -
+127.0.0.1 - - [09/Sep/2026 21:26:32] code 404, message File not found
+127.0.0.1 - - [09/Sep/2026 21:26:32] "GET /student-dz/data/settings.json HTTP/1.1" 404 -
+127.0.0.1 - - [09/Sep/2026 21:26:32] code 404, message File not found
+127.0.0.1 - - [09/Sep/2026 21:26:32] "GET /student-dz/sw.js HTTP/1.1" 404 -
