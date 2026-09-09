@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات PDF - Student DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .tool-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        .file-drop {
+            border: 2px dashed var(--primary-color);
+            padding: 40px;
+            border-radius: var(--radius-md);
+            margin: 20px 0;
+            background: var(--bg-main);
+            cursor: pointer;
+        }
+        .file-list {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">🎓 Student DZ</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <h1 class="section-title">دمج ملفات PDF (محلياً)</h1>
+            <p>يتم معالجة الملفات على متصفحك فقط، للحفاظ على خصوصيتك.</p>
+
+            <div class="file-drop" id="dropZone">
+                <p>اضغط هنا أو اسحب ملفات PDF لاختيارها</p>
+                <input type="file" id="fileInput" multiple accept=".pdf" style="display:none;">
+            </div>
+
+            <div class="file-list" id="fileList"></div>
+
+            <button class="btn" id="mergeBtn" disabled>دمج وتحميل</button>
+        </div>
+    </main>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script>
+        StorageApp.addRecent({ id: 'pdf-tools', title: 'أدوات PDF', url: 'tools/pdf-tools.html', icon: '📄' });
+
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        const mergeBtn = document.getElementById('mergeBtn');
+        let selectedFiles = [];
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', (e) => {
+            addFiles(Array.from(e.target.files));
+        });
+
+        function addFiles(files) {
+            files.forEach(f => {
+                if(f.type === 'application/pdf') {
+                    selectedFiles.push(f);
+                }
+            });
+            renderList();
+        }
+
+        function renderList() {
+            fileList.innerHTML = '';
+            selectedFiles.forEach((file, index) => {
+                const div = document.createElement('div');
+                div.textContent = `${index + 1}. ${file.name}`;
+                fileList.appendChild(div);
+            });
+            mergeBtn.disabled = selectedFiles.length < 2;
+        }
+
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        mergeBtn.addEventListener('click', async () => {
+            if(selectedFiles.length < 2) return;
+
+            mergeBtn.textContent = 'جاري التحميل والمعالجة...';
+            mergeBtn.disabled = true;
+
+            try {
+                if (typeof PDFLib === 'undefined') {
+                    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js');
+                }
+
+                const pdfDoc = await PDFLib.PDFDocument.create();
+
+                for (const file of selectedFiles) {
+                    const arrayBuffer = await file.arrayBuffer();
+                    const srcDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+                    const copiedPages = await pdfDoc.copyPages(srcDoc, srcDoc.getPageIndices());
+                    copiedPages.forEach(page => pdfDoc.addPage(page));
+                }
+
+                const pdfBytes = await pdfDoc.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'merged_student_dz.pdf';
+                a.click();
+                URL.revokeObjectURL(url);
+
+            } catch(e) {
+                console.error(e);
+                alert('حدث خطأ أثناء الدمج.');
+            } finally {
+                mergeBtn.textContent = 'دمج وتحميل';
+                mergeBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

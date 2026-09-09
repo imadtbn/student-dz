@@ -1,0 +1,11 @@
+{
+    "ads": {
+        "enabled": false,
+        "publisherId": "",
+        "slots": {
+            "homepage": "",
+            "tool": "",
+            "article": ""
+        }
+    }
+}

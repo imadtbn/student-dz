@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخريطة الجامعية - Student DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .map-container {
+            width: 100%;
+            height: 60vh;
+            border-radius: var(--radius-lg);
+            margin: 20px 0;
+            z-index: 1; /* Keep map below header */
+        }
+        .map-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container"><a href="../index.html" class="logo">🎓 Student DZ</a></div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title" style="margin-top:2rem;">الخريطة الجامعية (مرحلة تجريبية)</h1>
+
+        <div class="map-controls">
+            <button class="btn" id="loadMapBtn">تحميل الخريطة</button>
+            <button class="btn btn-outline" id="loadUnivBtn" disabled>عرض الجامعات</button>
+            <button class="btn btn-outline" id="loadResBtn" disabled>عرض الإقامات</button>
+        </div>
+
+        <div id="map" class="map-container" style="display:none; background:#eee;"></div>
+    </main>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/maps.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script>
+        StorageApp.addRecent({ id: 'maps', title: 'الخرائط', url: 'tools/maps.html', icon: '🗺️' });
+
+        const loadMapBtn = document.getElementById('loadMapBtn');
+        const loadUnivBtn = document.getElementById('loadUnivBtn');
+        const loadResBtn = document.getElementById('loadResBtn');
+        const mapDiv = document.getElementById('map');
+
+        loadMapBtn.addEventListener('click', async () => {
+            loadMapBtn.textContent = 'جاري التحميل...';
+            loadMapBtn.disabled = true;
+            mapDiv.style.display = 'block';
+
+            await initMap('map', 36.7538, 3.0588, 12); // Centered on Algiers
+
+            loadMapBtn.style.display = 'none';
+            loadUnivBtn.disabled = false;
+            loadResBtn.disabled = false;
+        });
+
+        loadUnivBtn.addEventListener('click', async () => {
+            const data = await fetchAppJSON(CONFIG.API.UNIVERSITIES);
+            if(data && data.universities) {
+                data.universities.forEach(u => {
+                    if(u.coordinates) {
+                        addMarker(u.coordinates.lat, u.coordinates.lng, "🎓 " + u.name, `<a href="${u.officialUrl}" target="_blank">الموقع الرسمي</a>`);
+                    }
+                });
+            }
+        });
+
+        loadResBtn.addEventListener('click', async () => {
+            const data = await fetchAppJSON(CONFIG.API.RESIDENCES);
+            if(data && data.residences) {
+                data.residences.forEach(r => {
+                    if(r.coordinates) {
+                        addMarker(r.coordinates.lat, r.coordinates.lng, "🏢 " + r.name, `الولاية: ${r.wilaya}`);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

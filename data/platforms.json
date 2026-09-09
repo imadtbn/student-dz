@@ -1,0 +1,20 @@
+{
+    "lastUpdated": "2023-10-01",
+    "source": "official",
+    "platforms": [
+        {
+            "id": "progres",
+            "name": "نظام PROGRES",
+            "category": "study",
+            "description": "المنصة المركزية للتعليم العالي في الجزائر لمتابعة المسار الدراسي والتسجيلات.",
+            "officialUrl": "https://progres.mesrs.dz/webetu/"
+        },
+        {
+            "id": "onou",
+            "name": "منصة منحتي",
+            "category": "services",
+            "description": "منصة الديوان الوطني للخدمات الجامعية الخاصة بطلبات المنحة والإيواء.",
+            "officialUrl": "https://progres.mesrs.dz/webonou/"
+        }
+    ]
+}

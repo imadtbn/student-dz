@@ -1,0 +1,18 @@
+{
+    "lastUpdated": "2023-10-01",
+    "source": "official",
+    "universities": [
+        {
+            "id": "univ-algiers-1",
+            "name": "جامعة الجزائر 1 - بن يوسف بن خدة",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.univ-alger.dz/",
+            "coordinates": {
+                "lat": 36.7725,
+                "lng": 3.0544
+            },
+            "description": "من أقدم وأعرق الجامعات في الجزائر، متخصصة في الحقوق، العلوم الإسلامية، والطب."
+        }
+    ]
+}

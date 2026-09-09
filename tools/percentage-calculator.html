@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حساب النسبة المئوية - Student DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .tool-container { max-width: 600px; margin: 2rem auto; background: var(--bg-card); padding: 2rem; border-radius: var(--radius-lg); text-align: center; }
+        input { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: var(--font-family); }
+        .result-box { margin-top: 1rem; padding: 1rem; background: var(--primary-light); color: white; border-radius: var(--radius-md); font-size: 1.5rem; font-weight: bold; display: none; }
+    </style>
+</head>
+<body>
+    <header class="site-header"><div class="container"><a href="../index.html" class="logo">🎓 Student DZ</a></div></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1 class="section-title">حساب النسبة المئوية</h1>
+            <label style="display:block; text-align:right; margin-bottom:5px;">القيمة الجزئية</label>
+            <input type="number" id="val1">
+            <label style="display:block; text-align:right; margin-bottom:5px;">القيمة الكلية</label>
+            <input type="number" id="val2">
+            <button class="btn" id="calcBtn" style="width:100%;">احسب النسبة</button>
+            <div id="result" class="result-box"></div>
+        </div>
+    </main>
+    <script src="../assets/js/storage.js"></script>
+    <script>
+        StorageApp.addRecent({ id: 'perc-calc', title: 'النسبة المئوية', url: 'tools/percentage-calculator.html', icon: '٪' });
+        document.getElementById('calcBtn').addEventListener('click', () => {
+            const v1 = parseFloat(document.getElementById('val1').value);
+            const v2 = parseFloat(document.getElementById('val2').value);
+            const res = document.getElementById('result');
+            if(!isNaN(v1) && !isNaN(v2) && v2 !== 0) {
+                res.textContent = `النسبة: ${((v1/v2)*100).toFixed(2)}%`;
+                res.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
