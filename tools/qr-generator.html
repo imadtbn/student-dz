@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إنشاء QR Code - Student DZ</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <script src="../assets/js/config.js"></script>
     <style>
@@ -15,16 +16,23 @@
             padding: 2rem;
             border-radius: var(--radius-lg);
             text-align: center;
+            box-shadow: var(--shadow-md);
         }
         textarea {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             border-radius: var(--radius-md);
             font-family: var(--font-family);
             background: var(--bg-main);
             color: var(--text-main);
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
         }
         #qrcode {
             margin: 20px auto;
@@ -34,38 +42,35 @@
             padding: 20px;
             border-radius: 10px;
             width: fit-content;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a>
-        </div>
+        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
     </header>
 
     <main class="container">
         <div class="tool-container">
-            <h1 class="section-title">إنشاء رمز استجابة سريعة (QR Code)</h1>
-            <p>قم بتحويل أي نص أو رابط إلى QR Code لطباعته أو مشاركته.</p>
+            <h1 class="section-title"><i class="fa-solid fa-qrcode"></i> إنشاء رمز استجابة سريعة</h1>
+            <p style="color:var(--text-muted); margin-bottom:20px;">قم بتحويل أي نص أو رابط إلى QR Code لطباعته أو مشاركته.</p>
 
             <textarea id="qrText" rows="4" placeholder="أدخل الرابط أو النص هنا..."></textarea>
 
-            <button class="btn" id="generateBtn">إنشاء الرمز</button>
+            <button class="btn" id="generateBtn" style="width:100%;"><i class="fa-solid fa-magic"></i> إنشاء الرمز</button>
 
             <div id="qrcode"></div>
 
-            <button class="btn btn-outline" id="downloadBtn" style="display: none; margin-top: 10px;">تحميل الصورة</button>
+            <button class="btn btn-outline" id="downloadBtn" style="display: none; width:100%; margin-top: 10px;"><i class="fa-solid fa-download"></i> تحميل الصورة</button>
         </div>
     </main>
 
     <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/storage.js"></script>
 
-    <!-- Lazy load qrcode.js -->
     <script>
-        StorageApp.addRecent({ id: 'qr-gen', title: 'إنشاء QR Code', url: 'tools/qr-generator.html', icon: '📱' });
+        StorageApp.addRecent({ id: 'qr-gen', title: 'إنشاء QR Code', url: 'tools/qr-generator.html', icon: 'fa-solid fa-qrcode' });
 
         const generateBtn = document.getElementById('generateBtn');
         let qrcodeInstance = null;
@@ -85,7 +90,7 @@
             if(!text) return alert("الرجاء إدخال نص أو رابط.");
 
             if (typeof QRCode === 'undefined') {
-                generateBtn.textContent = 'جاري التحميل...';
+                generateBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري التحميل...';
                 generateBtn.disabled = true;
                 try {
                     await loadScript('https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js');
@@ -93,7 +98,7 @@
                     alert('فشل في تحميل مكتبة QR');
                     return;
                 } finally {
-                    generateBtn.textContent = 'إنشاء الرمز';
+                    generateBtn.innerHTML = '<i class="fa-solid fa-magic"></i> إنشاء الرمز';
                     generateBtn.disabled = false;
                 }
             }
