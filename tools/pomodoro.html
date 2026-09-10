@@ -6,8 +6,8 @@
     <title>مؤقت بومودورو - Student DZ</title>
     <meta name="description" content="مؤقت بومودورو لتنظيم وقت الدراسة.">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
     <script src="../assets/js/config.js"></script>
     <style>
         .timer-container {
@@ -17,7 +17,7 @@
             background: var(--bg-card);
             padding: 3rem;
             border-radius: var(--radius-lg);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-md);
         }
         .time-display {
             font-size: 6rem;
@@ -36,6 +36,7 @@
             justify-content: center;
             gap: 1rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
         .mode-btn {
             background: transparent;
@@ -45,6 +46,7 @@
             cursor: pointer;
             font-weight: bold;
             color: var(--text-muted);
+            transition: all 0.3s ease;
         }
         .mode-btn.active {
             border-color: var(--primary-color);
@@ -52,38 +54,37 @@
             background: rgba(0, 122, 94, 0.1);
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a>
-        </div>
+        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
     </header>
 
     <main class="container">
         <div class="timer-container">
-            <h1 class="section-title">مؤقت الدراسة</h1>
+            <h1 class="section-title"><i class="fa-solid fa-stopwatch"></i> مؤقت الدراسة (بومودورو)</h1>
 
             <div class="mode-selector">
-                <button class="mode-btn active" data-time="25">دراسة (25 د)</button>
-                <button class="mode-btn" data-time="5">استراحة قصيرة (5 د)</button>
-                <button class="mode-btn" data-time="15">استراحة طويلة (15 د)</button>
+                <button class="mode-btn active" data-time="25"><i class="fa-solid fa-book-open"></i> دراسة (25 د)</button>
+                <button class="mode-btn" data-time="5"><i class="fa-solid fa-mug-hot"></i> استراحة (5 د)</button>
+                <button class="mode-btn" data-time="15"><i class="fa-solid fa-bed"></i> استراحة طويلة (15 د)</button>
             </div>
 
             <div class="time-display" id="timeDisplay">25:00</div>
 
             <div class="controls">
-                <button class="btn" id="startBtn">ابدأ</button>
-                <button class="btn btn-outline" id="resetBtn">إعادة ضبط</button>
+                <button class="btn" id="startBtn" style="font-size:1.2em; padding:10px 30px;"><i class="fa-solid fa-play"></i> ابدأ</button>
+                <button class="btn btn-outline" id="resetBtn" style="font-size:1.2em; padding:10px 30px;"><i class="fa-solid fa-rotate-right"></i> إعادة</button>
             </div>
+
+            <audio id="alertSound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
         </div>
     </main>
 
     <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/storage.js"></script>
     <script>
-        StorageApp.addRecent({ id: 'pomodoro', title: 'مؤقت بومودورو', url: 'tools/pomodoro.html', icon: '⏱️' });
+        StorageApp.addRecent({ id: 'pomodoro', title: 'مؤقت بومودورو', url: 'tools/pomodoro.html', icon: 'fa-solid fa-stopwatch' });
 
         let timer;
         let timeLeft = 25 * 60;
@@ -93,18 +94,19 @@
         const startBtn = document.getElementById('startBtn');
         const resetBtn = document.getElementById('resetBtn');
         const modeBtns = document.querySelectorAll('.mode-btn');
+        const alertSound = document.getElementById('alertSound');
 
         function updateDisplay() {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
             display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            document.title = `${display.textContent} - بومودورو`;
+            document.title = `${display.textContent} - Student DZ`;
         }
 
         function switchMode(minutes, btn) {
             clearInterval(timer);
             isRunning = false;
-            startBtn.textContent = 'ابدأ';
+            startBtn.innerHTML = '<i class="fa-solid fa-play"></i> ابدأ';
             timeLeft = minutes * 60;
             updateDisplay();
 
@@ -121,7 +123,7 @@
         startBtn.addEventListener('click', () => {
             if(isRunning) {
                 clearInterval(timer);
-                startBtn.textContent = 'استئناف';
+                startBtn.innerHTML = '<i class="fa-solid fa-play"></i> استئناف';
             } else {
                 timer = setInterval(() => {
                     timeLeft--;
@@ -129,11 +131,12 @@
                     if(timeLeft <= 0) {
                         clearInterval(timer);
                         isRunning = false;
-                        startBtn.textContent = 'ابدأ';
-                        alert('انتهى الوقت!'); // Could be replaced with a sound in a real app
+                        startBtn.innerHTML = '<i class="fa-solid fa-play"></i> ابدأ';
+                        alertSound.play();
+                        setTimeout(() => alert('انتهى الوقت!'), 100);
                     }
                 }, 1000);
-                startBtn.textContent = 'إيقاف';
+                startBtn.innerHTML = '<i class="fa-solid fa-pause"></i> إيقاف';
             }
             isRunning = !isRunning;
         });
