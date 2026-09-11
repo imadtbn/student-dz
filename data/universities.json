@@ -1,5 +1,5 @@
 {
-    "lastUpdated": "2023-10-01",
+    "lastUpdated": "2026-09-11",
     "source": "official",
     "universities": [
         {
@@ -13,6 +13,21 @@
                 "lng": 3.0544
             },
             "description": "من أقدم وأعرق الجامعات في الجزائر، متخصصة في الحقوق، العلوم الإسلامية، والطب."
+        },
+        {
+            "id": "esi-alger",
+            "name": "المدرسة الوطنية العليا للإعلام الآلي (ESI)",
+            "wilaya": "الجزائر",
+            "type": "higher-school",
+            "officialUrl": "https://www.esi.dz/",
+            "coordinates": {
+                "lat": 36.7051,
+                "lng": 3.1738
+            },
+            "specialties": [
+                "إعلام آلي",
+                "أنظمة المعلومات"
+            ]
         }
     ]
 }
