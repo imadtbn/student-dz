@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +18,27 @@
             max-width: 600px;
             margin: 0 auto 2rem;
         }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group select {
-            width: 100%; padding: 10px; border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm); font-family: inherit;
-            background: var(--bg-main); color: var(--text-main);
+
+        .form-group {
+            margin-bottom: 15px;
         }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            background: var(--bg-main);
+            color: var(--text-main);
+        }
+
         .route-result {
             background: var(--bg-main);
             padding: 1.5rem;
@@ -32,6 +47,7 @@
             margin-top: 20px;
             display: none;
         }
+
         .route-line {
             display: flex;
             align-items: center;
@@ -51,43 +67,51 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="og:title" content="Student DZ | الطالب الجزائري">
-    <meta property="og:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="og:description"
+        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="twitter:title" content="Student DZ | الطالب الجزائري">
-    <meta property="twitter:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="twitter:description"
+        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
             <a href="../index.html" class="logo">
-                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ
+                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32"
+                    style="border-radius: 8px;"> Student DZ
             </a>
 
             <nav class="main-nav" id="mainNav">
                 <a href="../index.html" class="nav-link">الرئيسية</a>
                 <a href="../universities/index.html" class="nav-link">الجامعات</a>
-                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس والمعاهد</a>
                 <a href="../residences/index.html" class="nav-link">الإقامات</a>
                 <a href="../transport/index.html" class="nav-link">النقل</a>
                 <a href="../tools/maps.html" class="nav-link">الخريطة</a>
                 <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../categories/student-life.html" class="nav-link">الحياة الجامعية</a>
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i
+                        class="fa-solid fa-moon"></i></button>
                 <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <h1 class="section-title" style="margin-top:2rem;">النقل الجامعي</h1>
-
+        <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-bus"></i> دليل النقل الجامعي
+        </h1>
         <div class="search-card">
             <h3 style="margin-bottom: 15px; text-align: center;">البحث عن مسار (نسخة تجريبية)</h3>
             <div class="form-group">
@@ -96,22 +120,26 @@
                     <option value="">-- اختر الجامعة --</option>
                 </select>
             </div>
-            <div style="text-align: center; color: var(--text-muted); margin: 10px 0;"><i class="fa-solid fa-arrow-down"></i></div>
+            <div style="text-align: center; color: var(--text-muted); margin: 10px 0;"><i
+                    class="fa-solid fa-arrow-down"></i></div>
             <div class="form-group">
                 <label>إلى: (الإقامة / المحطة)</label>
                 <select id="toSelect">
                     <option value="">-- اختر الإقامة --</option>
                 </select>
             </div>
-            <button class="btn" id="searchBtn" style="width: 100%; margin-top: 10px;"><i class="fa-solid fa-magnifying-glass"></i> بحث</button>
+            <button class="btn" id="searchBtn" style="width: 100%; margin-top: 10px;"><i
+                    class="fa-solid fa-magnifying-glass"></i> بحث</button>
 
             <div class="route-result" id="routeResult">
                 <div class="route-line">
-                    <i class="fa-solid fa-bus"></i> <span id="resFrom"></span> <i class="fa-solid fa-arrow-left-long"></i> <span id="resTo"></span>
+                    <i class="fa-solid fa-bus"></i> <span id="resFrom"></span> <i
+                        class="fa-solid fa-arrow-left-long"></i> <span id="resTo"></span>
                 </div>
                 <p style="text-align: center; color: var(--text-muted);">هذا المسار متاح عبر حافلات النقل الجامعي.</p>
                 <div style="text-align: center; margin-top: 15px;">
-                    <a href="../tools/maps.html" class="btn btn-outline"><i class="fa-solid fa-map"></i> فتح في الخريطة</a>
+                    <a href="../tools/maps.html" class="btn btn-outline"><i class="fa-solid fa-map"></i> فتح في
+                        الخريطة</a>
                 </div>
             </div>
         </div>
@@ -126,21 +154,21 @@
 
             // Load POC data from JSON
             const univData = await fetchAppJSON(CONFIG.API.UNIVERSITIES);
-            if(univData && univData.universities) {
+            if (univData && univData.universities) {
                 univData.universities.forEach(u => {
                     fromSelect.innerHTML += `<option value="${u.name}">${u.name}</option>`;
                 });
             }
 
             const resData = await fetchAppJSON(CONFIG.API.RESIDENCES);
-            if(resData && resData.residences) {
+            if (resData && resData.residences) {
                 resData.residences.forEach(r => {
                     toSelect.innerHTML += `<option value="${r.name}">${r.name}</option>`;
                 });
             }
 
             document.getElementById('searchBtn').addEventListener('click', () => {
-                if(!fromSelect.value || !toSelect.value) {
+                if (!fromSelect.value || !toSelect.value) {
                     alert("الرجاء اختيار نقطة الانطلاق ونقطة الوصول.");
                     return;
                 }
@@ -150,12 +178,13 @@
             });
         });
     </script>
-<footer class="site-footer">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>
-                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ
+                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
+                            style="border-radius: 4px; vertical-align: middle;"> Student DZ
                     </h3>
                     <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
                 </div>
@@ -164,7 +193,7 @@
                     <ul class="footer-links">
                         <li><a href="../categories/tools.html">الأدوات</a></li>
                         <li><a href="../universities/index.html">الجامعات</a></li>
-                        <li><a href="../ecoles/index.html">المدارس العليا</a></li>
+                        <li><a href="../ecoles/index.html">المدارس والمعاهد</a></li>
                         <li><a href="../platforms/index.html">المنصات</a></li>
                     </ul>
                 </div>
@@ -184,4 +213,5 @@
     </footer>
     <script src="../assets/js/navigation.js"></script>
 </body>
+
 </html>
