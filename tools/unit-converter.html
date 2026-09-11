@@ -1,18 +1,130 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>محول الوحدات - Student DZ</title><meta name="description" content="محول وحدات سريع للطلاب لتحويل الطول والوزن والحجم والحرارة والزمن.">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/main.css"><link rel="stylesheet" href="../assets/css/responsive.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="icon" type="image/png" href="../assets/images/icon.png">
-<style>
-.tool-container{max-width:800px;margin:2rem auto;background:var(--bg-card);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.input-group{display:flex;flex-direction:column;gap:7px}.input-group label{font-weight:700}.input-group input,.input-group select{width:100%;padding:12px;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-main);color:var(--text-main);font-family:var(--font-family)}.result-box{margin-top:20px;padding:18px;text-align:center;border-radius:var(--radius-md);background:var(--primary-light);color:white;display:none}.result-box strong{font-size:1.7rem}@media(max-width:600px){.tool-grid{grid-template-columns:1fr}.tool-container{padding:1rem}}
-</style></head>
-<body><header class="site-header"><div class="container"><a href="../index.html" class="logo"><img src="../assets/images/icon.png" alt="Student DZ" width="32" height="32"> Student DZ</a><nav class="main-nav" id="mainNav"><a href="../index.html" class="nav-link">الرئيسية</a><a href="../universities/index.html" class="nav-link">الجامعات</a><a href="../ecoles/index.html" class="nav-link">المدارس العليا</a><a href="../residences/index.html" class="nav-link">الإقامات</a><a href="../transport/index.html" class="nav-link">النقل</a><a href="../tools/maps.html" class="nav-link">الخريطة</a><a href="../categories/tools.html" class="nav-link">الأدوات</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button><button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button></div></div></header>
-<main class="container"><div class="tool-container"><h1 class="section-title">محول الوحدات</h1><p style="text-align:center;color:var(--text-muted);margin-bottom:2rem">حوّل بين أشهر وحدات القياس بسرعة.</p><div class="input-group" style="margin-bottom:16px"><label for="category">نوع الوحدة</label><select id="category"><option value="length">الطول</option><option value="mass">الوزن</option><option value="volume">الحجم</option><option value="temperature">الحرارة</option><option value="time">الزمن</option></select></div><div class="tool-grid"><div class="input-group"><label for="value">القيمة</label><input id="value" type="number" value="1" step="any"></div><div class="input-group"><label for="from">من</label><select id="from"></select></div><div class="input-group"><label for="to">إلى</label><select id="to"></select></div></div><button class="btn" id="convertBtn" style="width:100%;margin-top:20px"><i class="fa-solid fa-right-left"></i> تحويل</button><div class="result-box" id="result">النتيجة: <strong id="output">0</strong></div></div></main>
-<footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div></div></footer>
-<script src="../assets/js/theme.js"></script><script src="../assets/js/navigation.js"></script><script>
-const units={length:{meter:'متر',kilometer:'كيلومتر',centimeter:'سنتيمتر',millimeter:'مليمتر',foot:'قدم',inch:'بوصة'},mass:{gram:'غرام',kilogram:'كيلوغرام',milligram:'مليغرام',ton:'طن',pound:'رطل'},volume:{liter:'لتر',milliliter:'مليلتر',cubicMeter:'متر مكعب',gallon:'غالون'},temperature:{celsius:'مئوية',fahrenheit:'فهرنهايت',kelvin:'كلفن'},time:{second:'ثانية',minute:'دقيقة',hour:'ساعة',day:'يوم'}};
-const factors={length:{meter:1,kilometer:1000,centimeter:.01,millimeter:.001,foot:.3048,inch:.0254},mass:{gram:1,kilogram:1000,milligram:.001,ton:1000000,pound:.45359237},volume:{liter:1,milliliter:.001,cubicMeter:1000,gallon:3.785411784},time:{second:1,minute:60,hour:3600,day:86400}};
-const category=document.getElementById('category'),from=document.getElementById('from'),to=document.getElementById('to');function fill(){from.innerHTML='';to.innerHTML='';Object.entries(units[category.value]).forEach(([k,v])=>{from.add(new Option(v,k));to.add(new Option(v,k));});to.selectedIndex=1;}fill();category.onchange=fill;
-document.getElementById('convertBtn').onclick=()=>{const c=category.value,v=parseFloat(document.getElementById('value').value);if(Number.isNaN(v))return;if(c==='temperature'){let x=v;if(from.value==='fahrenheit')x=(x-32)*5/9;if(from.value==='kelvin')x=x-273.15;if(to.value==='fahrenheit')x=x*9/5+32;if(to.value==='kelvin')x=x+273.15;document.getElementById('output').textContent=x.toLocaleString('ar-DZ',{maximumFractionDigits:6});}else{const x=v*factors[c][from.value]/factors[c][to.value];document.getElementById('output').textContent=x.toLocaleString('ar-DZ',{maximumFractionDigits:6});}document.getElementById('result').style.display='block';};
-</script></body></html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول الوحدات - Student DZ</title>
+    <meta name="description" content="محول وحدات سريع للطلاب لتحويل الطول والوزن والحجم والحرارة والزمن.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/icon.png">
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md)
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px
+        }
+
+        .input-group label {
+            font-weight: 700
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-family)
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 18px;
+            text-align: center;
+            border-radius: var(--radius-md);
+            background: var(--primary-light);
+            color: white;
+            display: none
+        }
+
+        .result-box strong {
+            font-size: 1.7rem
+        }
+
+        @media(max-width:600px) {
+            .tool-grid {
+                grid-template-columns: 1fr
+            }
+
+            .tool-container {
+                padding: 1rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container"><a href="../index.html" class="logo"><img src="../assets/images/icon.png"
+                    alt="Student DZ" width="32" height="32"> Student DZ</a>
+            <nav class="main-nav" id="mainNav"><a href="../index.html" class="nav-link">الرئيسية</a><a
+                    href="../universities/index.html" class="nav-link">الجامعات</a><a href="../ecoles/index.html"
+                    class="nav-link">المدارس والمعاهد</a><a href="../residences/index.html"
+                    class="nav-link">الإقامات</a><a href="../transport/index.html" class="nav-link">النقل</a><a
+                    href="../tools/maps.html" class="nav-link">الخريطة</a><a href="../categories/tools.html"
+                    class="nav-link">الأدوات</a></nav>
+            <div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i
+                        class="fa-solid fa-moon"></i></button><button class="hamburger" id="menuToggle"
+                    aria-label="القائمة">☰</button></div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="tool-container">
+            <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-right-left"></i>محول الوحدات</h1>
+            <p style="text-align:center;color:var(--text-muted);margin-bottom:2rem">حوّل بين أشهر وحدات القياس بسرعة.
+            </p>
+            <div class="input-group" style="margin-bottom:16px"><label for="category">نوع الوحدة</label><select
+                    id="category">
+                    <option value="length">الطول</option>
+                    <option value="mass">الوزن</option>
+                    <option value="volume">الحجم</option>
+                    <option value="temperature">الحرارة</option>
+                    <option value="time">الزمن</option>
+                </select></div>
+            <div class="tool-grid">
+                <div class="input-group"><label for="value">القيمة</label><input id="value" type="number" value="1"
+                        step="any"></div>
+                <div class="input-group"><label for="from">من</label><select id="from"></select></div>
+                <div class="input-group"><label for="to">إلى</label><select id="to"></select></div>
+            </div><button class="btn" id="convertBtn" style="width:100%;margin-top:20px"><i
+                    class="fa-solid fa-right-left"></i> تحويل</button>
+            <div class="result-box" id="result">النتيجة: <strong id="output">0</strong></div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div>
+        </div>
+    </footer>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script>
+        const units = { length: { meter: 'متر', kilometer: 'كيلومتر', centimeter: 'سنتيمتر', millimeter: 'مليمتر', foot: 'قدم', inch: 'بوصة' }, mass: { gram: 'غرام', kilogram: 'كيلوغرام', milligram: 'مليغرام', ton: 'طن', pound: 'رطل' }, volume: { liter: 'لتر', milliliter: 'مليلتر', cubicMeter: 'متر مكعب', gallon: 'غالون' }, temperature: { celsius: 'مئوية', fahrenheit: 'فهرنهايت', kelvin: 'كلفن' }, time: { second: 'ثانية', minute: 'دقيقة', hour: 'ساعة', day: 'يوم' } };
+        const factors = { length: { meter: 1, kilometer: 1000, centimeter: .01, millimeter: .001, foot: .3048, inch: .0254 }, mass: { gram: 1, kilogram: 1000, milligram: .001, ton: 1000000, pound: .45359237 }, volume: { liter: 1, milliliter: .001, cubicMeter: 1000, gallon: 3.785411784 }, time: { second: 1, minute: 60, hour: 3600, day: 86400 } };
+        const category = document.getElementById('category'), from = document.getElementById('from'), to = document.getElementById('to'); function fill() { from.innerHTML = ''; to.innerHTML = ''; Object.entries(units[category.value]).forEach(([k, v]) => { from.add(new Option(v, k)); to.add(new Option(v, k)); }); to.selectedIndex = 1; } fill(); category.onchange = fill;
+        document.getElementById('convertBtn').onclick = () => { const c = category.value, v = parseFloat(document.getElementById('value').value); if (Number.isNaN(v)) return; if (c === 'temperature') { let x = v; if (from.value === 'fahrenheit') x = (x - 32) * 5 / 9; if (from.value === 'kelvin') x = x - 273.15; if (to.value === 'fahrenheit') x = x * 9 / 5 + 32; if (to.value === 'kelvin') x = x + 273.15; document.getElementById('output').textContent = x.toLocaleString('ar-DZ', { maximumFractionDigits: 6 }); } else { const x = v * factors[c][from.value] / factors[c][to.value]; document.getElementById('output').textContent = x.toLocaleString('ar-DZ', { maximumFractionDigits: 6 }); } document.getElementById('result').style.display = 'block'; };
+    </script>
+</body>
+
+</html>

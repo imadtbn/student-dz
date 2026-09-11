@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@
             text-align: center;
             box-shadow: var(--shadow-md);
         }
+
         textarea {
             width: 100%;
             padding: 15px;
@@ -30,10 +32,12 @@
             font-size: 1.1rem;
             transition: border-color 0.3s;
         }
+
         textarea:focus {
             outline: none;
             border-color: var(--primary-color);
         }
+
         #qrcode {
             margin: 20px auto;
             display: flex;
@@ -42,7 +46,7 @@
             padding: 20px;
             border-radius: 10px;
             width: fit-content;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
     <!-- Favicons -->
@@ -53,35 +57,43 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="og:title" content="Student DZ | الطالب الجزائري">
-    <meta property="og:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="og:description"
+        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="twitter:title" content="Student DZ | الطالب الجزائري">
-    <meta property="twitter:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="twitter:description"
+        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
             <a href="../index.html" class="logo">
-                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ
+                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32"
+                    style="border-radius: 8px;"> Student DZ
             </a>
 
             <nav class="main-nav" id="mainNav">
                 <a href="../index.html" class="nav-link">الرئيسية</a>
                 <a href="../universities/index.html" class="nav-link">الجامعات</a>
-                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس والمعاهد</a>
                 <a href="../residences/index.html" class="nav-link">الإقامات</a>
                 <a href="../transport/index.html" class="nav-link">النقل</a>
                 <a href="../tools/maps.html" class="nav-link">الخريطة</a>
                 <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../categories/student-life.html" class="nav-link">الحياة الجامعية</a>
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i
+                        class="fa-solid fa-moon"></i></button>
                 <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
             </div>
         </div>
@@ -90,15 +102,18 @@
     <main class="container">
         <div class="tool-container">
             <h1 class="section-title"><i class="fa-solid fa-qrcode"></i> إنشاء رمز استجابة سريعة</h1>
-            <p style="color:var(--text-muted); margin-bottom:20px;">قم بتحويل أي نص أو رابط إلى QR Code لطباعته أو مشاركته.</p>
+            <p style="color:var(--text-muted); margin-bottom:20px;">قم بتحويل أي نص أو رابط إلى QR Code لطباعته أو
+                مشاركته.</p>
 
             <textarea id="qrText" rows="4" placeholder="أدخل الرابط أو النص هنا..."></textarea>
 
-            <button class="btn" id="generateBtn" style="width:100%;"><i class="fa-solid fa-magic"></i> إنشاء الرمز</button>
+            <button class="btn" id="generateBtn" style="width:100%;"><i class="fa-solid fa-magic"></i> إنشاء
+                الرمز</button>
 
             <div id="qrcode"></div>
 
-            <button class="btn btn-outline" id="downloadBtn" style="display: none; width:100%; margin-top: 10px;"><i class="fa-solid fa-download"></i> تحميل الصورة</button>
+            <button class="btn btn-outline" id="downloadBtn" style="display: none; width:100%; margin-top: 10px;"><i
+                    class="fa-solid fa-download"></i> تحميل الصورة</button>
         </div>
     </main>
 
@@ -123,14 +138,14 @@
 
         generateBtn.addEventListener('click', async () => {
             const text = document.getElementById('qrText').value.trim();
-            if(!text) return alert("الرجاء إدخال نص أو رابط.");
+            if (!text) return alert("الرجاء إدخال نص أو رابط.");
 
             if (typeof QRCode === 'undefined') {
                 generateBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري التحميل...';
                 generateBtn.disabled = true;
                 try {
                     await loadScript('https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js');
-                } catch(e) {
+                } catch (e) {
                     alert('فشل في تحميل مكتبة QR');
                     return;
                 } finally {
@@ -146,9 +161,9 @@
                 text: text,
                 width: 256,
                 height: 256,
-                colorDark : "#000000",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
             });
 
             document.getElementById('downloadBtn').style.display = 'inline-block';
@@ -165,12 +180,13 @@
             }
         });
     </script>
-<footer class="site-footer">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>
-                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ
+                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
+                            style="border-radius: 4px; vertical-align: middle;"> Student DZ
                     </h3>
                     <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
                 </div>
@@ -179,7 +195,7 @@
                     <ul class="footer-links">
                         <li><a href="../categories/tools.html">الأدوات</a></li>
                         <li><a href="../universities/index.html">الجامعات</a></li>
-                        <li><a href="../ecoles/index.html">المدارس العليا</a></li>
+                        <li><a href="../ecoles/index.html">المدارس والمعاهد</a></li>
                         <li><a href="../platforms/index.html">المنصات</a></li>
                     </ul>
                 </div>
@@ -199,4 +215,5 @@
     </footer>
     <script src="../assets/js/navigation.js"></script>
 </body>
+
 </html>

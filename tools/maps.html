@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,49 +80,63 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="og:title" content="Student DZ | الطالب الجزائري">
-    <meta property="og:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="og:description"
+        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="twitter:title" content="Student DZ | الطالب الجزائري">
-    <meta property="twitter:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="twitter:description"
+        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
             <a href="../index.html" class="logo">
-                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ
+                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32"
+                    style="border-radius: 8px;"> Student DZ
             </a>
 
             <nav class="main-nav" id="mainNav">
                 <a href="../index.html" class="nav-link">الرئيسية</a>
                 <a href="../universities/index.html" class="nav-link">الجامعات</a>
-                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس والمعاهد</a>
                 <a href="../residences/index.html" class="nav-link">الإقامات</a>
                 <a href="../transport/index.html" class="nav-link">النقل</a>
                 <a href="../tools/maps.html" class="nav-link">الخريطة</a>
                 <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../categories/student-life.html" class="nav-link">الحياة الجامعية</a>
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i
+                        class="fa-solid fa-moon"></i></button>
                 <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-map-location-dot"></i> خريطة الطالب</h1>
+        <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-map-location-dot"></i> خريطة الطالب
+        </h1>
 
         <div class="map-controls">
             <button class="btn map-control-btn" id="loadMapBtn"><i class="fa-solid fa-map"></i> تحميل الخريطة</button>
-            <button class="btn btn-outline map-control-btn" id="btnNearMe" disabled><i class="fa-solid fa-location-crosshairs"></i> موقعي</button>
-            <button class="btn btn-outline map-control-btn" id="clearMapBtn" disabled><i class="fa-solid fa-eraser"></i> محو الاختيارات</button>
-            <button class="btn btn-outline map-control-btn" id="loadUnivBtn" disabled><i class="fa-solid fa-building-columns"></i> الجامعات</button>
-            <button class="btn btn-outline map-control-btn" id="loadResBtn" disabled><i class="fa-solid fa-building"></i> الإقامات</button>
-            <button class="btn btn-outline map-control-btn" id="loadEcolesBtn" disabled><i class="fa-solid fa-school"></i> المدارس</button>
+            <button class="btn btn-outline map-control-btn" id="btnNearMe" disabled><i
+                    class="fa-solid fa-location-crosshairs"></i> موقعي</button>
+            <button class="btn btn-outline map-control-btn" id="clearMapBtn" disabled><i class="fa-solid fa-eraser"></i>
+                محو الاختيارات</button>
+            <button class="btn btn-outline map-control-btn" id="loadUnivBtn" disabled><i
+                    class="fa-solid fa-building-columns"></i> الجامعات</button>
+            <button class="btn btn-outline map-control-btn" id="loadResBtn" disabled><i
+                    class="fa-solid fa-building"></i> الإقامات</button>
+            <button class="btn btn-outline map-control-btn" id="loadEcolesBtn" disabled><i
+                    class="fa-solid fa-school"></i> المدارس</button>
         </div>
 
         <div id="map" class="map-container" style="display:none; background:#eee;"></div>
@@ -225,9 +240,9 @@
 
         loadUnivBtn.addEventListener('click', async () => {
             const data = await fetchAppJSON(CONFIG.API.UNIVERSITIES);
-            if(data && data.universities) {
+            if (data && data.universities) {
                 data.universities.forEach(u => {
-                    if(u.coordinates) {
+                    if (u.coordinates) {
                         const content = `<a href="${u.officialUrl}" target="_blank" rel="noopener">الموقع الرسمي</a>` + getRouteLink(u.coordinates.lat, u.coordinates.lng);
                         const marker = addMarker(u.coordinates.lat, u.coordinates.lng, "الجامعة: " + u.name, content, 'university');
                         if (marker) markers.push(marker);
@@ -238,9 +253,9 @@
 
         loadResBtn.addEventListener('click', async () => {
             const data = await fetchAppJSON(CONFIG.API.RESIDENCES);
-            if(data && data.residences) {
+            if (data && data.residences) {
                 data.residences.forEach(r => {
-                    if(r.coordinates) {
+                    if (r.coordinates) {
                         const content = `الولاية: ${r.wilaya}` + getRouteLink(r.coordinates.lat, r.coordinates.lng);
                         const marker = addMarker(r.coordinates.lat, r.coordinates.lng, "الإقامة: " + r.name, content, 'residence');
                         if (marker) markers.push(marker);
@@ -255,7 +270,7 @@
                 if (response.ok) {
                     const data = await response.json();
                     data.forEach(e => {
-                        if(e.position) {
+                        if (e.position) {
                             const content = `<a href="${e.officialUrl}" target="_blank" rel="noopener">الموقع الرسمي</a><br>الولاية: ${e.wilaya}` + getRouteLink(e.position.lat, e.position.lng);
                             const marker = addMarker(e.position.lat, e.position.lng, "المدرسة: " + e.name, content, 'ecole');
                             if (marker) markers.push(marker);
@@ -272,7 +287,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>
-                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ
+                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
+                            style="border-radius: 4px; vertical-align: middle;"> Student DZ
                     </h3>
                     <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
                 </div>
@@ -281,7 +297,7 @@
                     <ul class="footer-links">
                         <li><a href="../categories/tools.html">الأدوات</a></li>
                         <li><a href="../universities/index.html">الجامعات</a></li>
-                        <li><a href="../ecoles/index.html">المدارس العليا</a></li>
+                        <li><a href="../ecoles/index.html">المدارس والمعاهد</a></li>
                         <li><a href="../platforms/index.html">المنصات</a></li>
                     </ul>
                 </div>
@@ -301,4 +317,5 @@
     </footer>
     <script src="../assets/js/navigation.js"></script>
 </body>
+
 </html>
