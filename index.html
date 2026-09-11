@@ -10,25 +10,15 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/feedback.css">
-    <!-- Inline config for critical path or script tag -->
     <script src="assets/js/config.js"></script>
-    <script>
-        // Set up base paths dynamically for link tags if needed, but relative paths work when starting from root.
-        // We will handle dynamic links in JS.
-    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Favicons -->
     <link rel="icon" type="image/png" href="assets/images/icon.png">
     <link rel="apple-touch-icon" href="assets/images/icon-192.png">
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="og:title" content="Student DZ | الطالب الجزائري">
     <meta property="og:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
     <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/">
     <meta property="twitter:title" content="Student DZ | الطالب الجزائري">
@@ -36,137 +26,15 @@
     <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ
-            </a>
-
-            <nav class="main-nav" id="mainNav">
-                <a href="index.html" class="nav-link">الرئيسية</a>
-                <a href="universities/index.html" class="nav-link">الجامعات</a>
-                <a href="ecoles/index.html" class="nav-link">المدارس العليا</a>
-                <a href="residences/index.html" class="nav-link">الإقامات</a>
-                <a href="transport/index.html" class="nav-link">النقل</a>
-                <a href="tools/maps.html" class="nav-link">الخريطة</a>
-                <a href="categories/tools.html" class="nav-link">الأدوات</a>
-            </nav>
-
-            <div class="header-actions">
-                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
-                <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>كل ما يحتاجه الطالب الجزائري في مكان واحد</h1>
-                <p>من التسجيل الجامعي والدراسة إلى النقل والإقامة والمنحة والتخرج، اكتشف الأدوات والخدمات والمنصات التي تساعدك طوال مسارك الدراسي.</p>
-                <div class="search-box">
-                    <input type="text" class="search-input" id="mainSearch" placeholder="ماذا تبحث عنه؟ (مثال: حساب المعدل، جامعة الجزائر)">
-                    <!-- Search results dropdown will be injected here via JS -->
-                    <div id="searchResults" class="search-results-container" style="display: none;"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="main-section bg-light">
-            <div class="container">
-                <h2 class="section-title">ماذا تريد أن تفعل؟</h2>
-                <div class="grid">
-                    <a href="tools/average-calculator.html" class="card">
-                        <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
-                        <h3 class="card-title">أريد حساب معدلي</h3>
-                        <p class="card-desc">احسب معدل السداسي أو السنة بدقة.</p>
-                    </a>
-                    <a href="universities/index.html" class="card">
-                        <div class="card-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <h3 class="card-title">أريد معرفة جامعتي</h3>
-                        <p class="card-desc">دليل الجامعات والكليات الجزائرية.</p>
-                    </a>
-                    <a href="residences/index.html" class="card">
-                        <div class="card-icon"><i class="fa-solid fa-building"></i></div>
-                        <h3 class="card-title">أريد إيجاد إقامة</h3>
-                        <p class="card-desc">ابحث عن الإقامات الجامعية القريبة.</p>
-                    </a>
-                    <a href="platforms/index.html" class="card">
-                        <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
-                        <h3 class="card-title">المنصات الرسمية</h3>
-                        <p class="card-desc">PROGRES، المنحة، وغيرها من المنصات.</p>
-                    </a>
-                    <a href="tools/cv-builder.html" class="card">
-                        <div class="card-icon"><i class="fa-solid fa-file-invoice"></i></div>
-                        <h3 class="card-title">أريد إنشاء CV</h3>
-                        <p class="card-desc">أنشئ سيرتك الذاتية بسهولة للعمل أو التخرج.</p>
-                    </a>
-                    <a href="tools/pomodoro.html" class="card">
-                        <div class="card-icon"><i class="fa-solid fa-stopwatch"></i></div>
-                        <h3 class="card-title">مؤقت الدراسة</h3>
-                        <p class="card-desc">نظم وقت دراستك باستخدام تقنية بومودورو.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="main-section" id="studentDashboard" style="display: none;">
-            <div class="container">
-                <h2 class="section-title">لوحة الطالب (My Dashboard)</h2>
-                <div class="grid" id="dashboardContent">
-                    <!-- Populated by LocalStorage/JS -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>
-                        <img src="assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ
-                    </h3>
-                    <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>روابط سريعة</h3>
-                    <ul class="footer-links">
-                        <li><a href="categories/tools.html">الأدوات</a></li>
-                        <li><a href="universities/index.html">الجامعات</a></li>
-                        <li><a href="ecoles/index.html">المدارس العليا</a></li>
-                        <li><a href="platforms/index.html">المنصات</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>قانوني</h3>
-                    <ul class="footer-links">
-                        <li><a href="pages/about.html">عن المنصة</a></li>
-                        <li><a href="pages/privacy.html">سياسة الخصوصية</a></li>
-                        <li><a href="pages/contact.html">اتصل بنا</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Feedback UI Container (Injected via JS) -->
-    <div id="feedbackContainer"></div>
-
-    <!-- Scripts -->
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/storage.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/search.js"></script>
-    <script src="assets/js/feedback.js"></script>
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-    <script src="assets/js/pwa.js"></script>
-    <script src="assets/js/ads-loader.js"></script>
+<header class="site-header"><div class="container"><a href="index.html" class="logo"><img src="assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ</a><nav class="main-nav" id="mainNav"><a href="index.html" class="nav-link">الرئيسية</a><a href="universities/index.html" class="nav-link">الجامعات</a><a href="ecoles/index.html" class="nav-link">المدارس العليا</a><a href="residences/index.html" class="nav-link">الإقامات</a><a href="transport/index.html" class="nav-link">النقل</a><a href="tools/maps.html" class="nav-link">الخريطة</a><a href="categories/tools.html" class="nav-link">الأدوات</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button><button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button></div></div></header>
+<main>
+<section class="hero"><div class="container"><h1>كل ما يحتاجه الطالب الجزائري في مكان واحد</h1><p>من التسجيل الجامعي والدراسة إلى النقل والإقامة والمنحة والتخرج، اكتشف الأدوات والخدمات والمنصات التي تساعدك طوال مسارك الدراسي.</p><div class="search-box"><input type="text" class="search-input" id="mainSearch" placeholder="ماذا تبحث عنه؟ (مثال: حساب المعدل، جامعة الجزائر)"><div id="searchResults" class="search-results-container" style="display: none;"></div></div></div></section>
+<section class="main-section bg-light"><div class="container"><h2 class="section-title">ماذا تريد أن تفعل؟</h2><div class="grid"><a href="tools/average-calculator.html" class="card"><div class="card-icon"><i class="fa-solid fa-calculator"></i></div><h3 class="card-title">أريد حساب معدلي</h3><p class="card-desc">احسب معدل السداسي أو السنة بدقة.</p></a><a href="universities/index.html" class="card"><div class="card-icon"><i class="fa-solid fa-building-columns"></i></div><h3 class="card-title">أريد معرفة جامعتي</h3><p class="card-desc">دليل الجامعات والكليات الجزائرية.</p></a><a href="residences/index.html" class="card"><div class="card-icon"><i class="fa-solid fa-building"></i></div><h3 class="card-title">أريد إيجاد إقامة</h3><p class="card-desc">ابحث عن الإقامات الجامعية القريبة.</p></a><a href="platforms/index.html" class="card"><div class="card-icon"><i class="fa-solid fa-globe"></i></div><h3 class="card-title">المنصات الرسمية</h3><p class="card-desc">PROGRES، المنحة، وغيرها من المنصات.</p></a><a href="tools/cv-builder.html" class="card"><div class="card-icon"><i class="fa-solid fa-file-invoice"></i></div><h3 class="card-title">أريد إنشاء CV</h3><p class="card-desc">أنشئ سيرتك الذاتية بسهولة للعمل أو التخرج.</p></a><a href="tools/pomodoro.html" class="card"><div class="card-icon"><i class="fa-solid fa-stopwatch"></i></div><h3 class="card-title">مؤقت الدراسة</h3><p class="card-desc">نظم وقت دراستك باستخدام تقنية بومودورو.</p></a></div></div></section>
+<section class="main-section"><div class="container"><h2 class="section-title">أدوات الطالب</h2><div class="grid"><a href="tools/average-calculator.html" class="card"><div class="card-icon"><i class="fa-solid fa-calculator"></i></div><h3 class="card-title">حاسبة المعدل</h3><p class="card-desc">احسب معدل السداسي بدقة.</p></a><a href="tools/budget-calculator.html" class="card"><div class="card-icon"><i class="fa-solid fa-wallet"></i></div><h3 class="card-title">حاسبة الميزانية</h3><p class="card-desc">احسب مصاريفك الشهرية والسنوية.</p></a><a href="tools/unit-converter.html" class="card"><div class="card-icon"><i class="fa-solid fa-right-left"></i></div><h3 class="card-title">محول الوحدات</h3><p class="card-desc">حوّل الطول والوزن والحجم والحرارة والزمن.</p></a><a href="tools/study-schedule.html" class="card"><div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div><h3 class="card-title">مولد جدول الدراسة</h3><p class="card-desc">أنشئ جدولك الأسبوعي ونظّم حصصك.</p></a><a href="tools/date-difference.html" class="card"><div class="card-icon"><i class="fa-solid fa-calendar-week"></i></div><h3 class="card-title">حساب الأيام بين تاريخين</h3><p class="card-desc">احسب المدة بالأيام والأسابيع.</p></a><a href="tools/points-ranking.html" class="card"><div class="card-icon"><i class="fa-solid fa-ranking-star"></i></div><h3 class="card-title">حاسبة الترتيب والنقاط</h3><p class="card-desc">احسب مجموع النقاط والمتوسط الموزون.</p></a></div><div style="text-align:center;margin-top:1.5rem;"><a href="categories/tools.html" class="btn">المزيد من الأدوات</a></div></div></section>
+<section class="main-section" id="studentDashboard" style="display: none;"><div class="container"><h2 class="section-title">لوحة الطالب (My Dashboard)</h2><div class="grid" id="dashboardContent"></div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3><img src="assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ</h3><p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p></div><div class="footer-col"><h3>روابط سريعة</h3><ul class="footer-links"><li><a href="categories/tools.html">الأدوات</a></li><li><a href="universities/index.html">الجامعات</a></li><li><a href="ecoles/index.html">المدارس العليا</a></li><li><a href="platforms/index.html">المنصات</a></li></ul></div><div class="footer-col"><h3>قانوني</h3><ul class="footer-links"><li><a href="pages/about.html">عن المنصة</a></li><li><a href="pages/privacy.html">سياسة الخصوصية</a></li><li><a href="pages/contact.html">اتصل بنا</a></li></ul></div></div><div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div></div></footer>
+<div id="feedbackContainer"></div>
+<script src="assets/js/theme.js"></script><script src="assets/js/navigation.js"></script><script src="assets/js/storage.js"></script><script src="assets/js/app.js"></script><script src="assets/js/search.js"></script><script src="assets/js/feedback.js"></script><script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script><script src="assets/js/pwa.js"></script><script src="assets/js/ads-loader.js"></script>
 </body>
 </html>
