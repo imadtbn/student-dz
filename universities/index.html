@@ -1,41 +1,157 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل الجامعات الجزائرية - Student DZ</title>
-    <meta name="description" content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
+    <meta name="description"
+        content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <script src="../assets/js/config.js"></script>
     <style>
-        .filter-bar { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .filter-bar input { flex: 1; min-width: 250px; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: inherit; background: var(--bg-main); color: var(--text-main); }
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
 
-        /* نفس نمط بطاقات المدارس العليا */
-        .univ-card { background: var(--bg-color); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); transition: transform 0.3s ease; display: flex; flex-direction: column; gap: 1rem; }
-        .univ-card:hover { transform: translateY(-5px); }
-        .univ-card h3 { color: var(--primary-color); margin: 0; font-size: 1.2rem; }
-        .univ-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.9rem; color: var(--text-color); opacity: 0.8; }
-        .univ-meta span { display: flex; align-items: center; gap: 0.3rem; background: rgba(0,0,0,0.05); padding: 0.2rem 0.5rem; border-radius: 4px; }
-        .univ-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
-        .univ-tags span { font-size: 0.8rem; background: var(--primary-color); color: white; padding: 0.2rem 0.6rem; border-radius: 12px; }
+        .filter-bar input {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            background: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        /* نفس نمط بطاقات المدارس والمعاهد */
+        .univ-card {
+            background: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .univ-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .univ-card h3 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .univ-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .univ-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .univ-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .univ-tags span {
+            font-size: 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
 
         /* أزرار البطاقات: نفس الحجم والحواف والمسافات والخط */
-        .univ-actions { display: flex; gap: 10px; width: 100%; margin-top: 15px; }
-        .univ-actions a { flex: 1 1 0; min-width: 0; min-height: 48px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 12px; border: 1px solid transparent; border-radius: var(--radius); font-family: inherit; font-size: 0.9rem; font-weight: 500; line-height: 1.2; text-align: center; text-decoration: none; white-space: nowrap; transition: all 0.2s ease; }
-        .btn-visit { background: var(--primary-color); border-color: var(--primary-color); color: white; }
-        .btn-visit:hover { background: var(--secondary-color); border-color: var(--secondary-color); color: white; }
+        .univ-actions {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .univ-actions a {
+            flex: 1 1 0;
+            min-width: 0;
+            min-height: 48px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.2;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .btn-visit {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-visit:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+        }
 
         /* زر المسار: أخضر متناسق مع هوية Google Maps */
-        .btn-map { background: #34a853; border-color: #34a853; color: white; }
-        .btn-map:hover { background: #2d8f47; border-color: #2d8f47; color: white; }
+        .btn-map {
+            background: #34a853;
+            border-color: #34a853;
+            color: white;
+        }
+
+        .btn-map:hover {
+            background: #2d8f47;
+            border-color: #2d8f47;
+            color: white;
+        }
 
         /* تبقى الأزرار أفقية على الهاتف */
         @media (max-width: 480px) {
-            .univ-actions { flex-direction: row; gap: 10px; }
-            .univ-actions a { min-height: 48px; padding: 8px 6px; font-size: 0.9rem; }
+            .univ-actions {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .univ-actions a {
+                min-height: 48px;
+                padding: 8px 6px;
+                font-size: 0.9rem;
+            }
         }
     </style>
     <link rel="icon" type="image/png" href="../assets/images/icon.png">
@@ -43,39 +159,56 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://imadtbn.github.io/student-dz/universities/">
     <meta property="og:title" content="دليل الجامعات الجزائرية | Student DZ">
-    <meta property="og:description" content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="og:description"
+        content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/universities/">
     <meta property="twitter:title" content="دليل الجامعات الجزائرية | Student DZ">
-    <meta property="twitter:description" content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="twitter:description"
+        content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="../index.html" class="logo"><img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ</a>
+            <a href="../index.html" class="logo"><img src="../assets/images/icon.png" alt="Student DZ Logo" width="32"
+                    height="32" style="border-radius: 8px;"> Student DZ</a>
             <nav class="main-nav" id="mainNav">
                 <a href="../index.html" class="nav-link">الرئيسية</a>
                 <a href="../universities/index.html" class="nav-link">الجامعات</a>
-                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس والمعاهد</a>
                 <a href="../residences/index.html" class="nav-link">الإقامات</a>
                 <a href="../transport/index.html" class="nav-link">النقل</a>
                 <a href="../tools/maps.html" class="nav-link">الخريطة</a>
                 <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../categories/student-life.html" class="nav-link">الحياة الجامعية</a>
             </nav>
-            <div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button><button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button></div>
+            <div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i
+                        class="fa-solid fa-moon"></i></button><button class="hamburger" id="menuToggle"
+                    aria-label="القائمة">☰</button></div>
         </div>
     </header>
 
     <main class="container">
-        <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-building-columns"></i> دليل الجامعات الجزائرية</h1>
-        <div class="filter-bar"><button id="btnNearMe" class="btn btn-outline" style="white-space: nowrap;"><i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ</button><input type="text" id="searchInput" placeholder="ابحث عن جامعة أو ولاية أو تخصص..."></div>
-        <div class="grid" id="univGrid"><div style="text-align:center; grid-column: 1/-1;"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل البيانات...</div></div>
-        <div style="text-align: center; margin-top: 2rem;"><button id="btnLoadMore" class="btn" style="display: none;">المزيد من الجامعات</button></div>
+        <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-building-columns"></i> دليل الجامعات
+            الجزائرية</h1>
+        <div class="filter-bar"><button id="btnNearMe" class="btn btn-outline" style="white-space: nowrap;"><i
+                    class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ</button><input type="text" id="searchInput"
+                placeholder="ابحث عن جامعة أو ولاية أو تخصص..."></div>
+        <div class="grid" id="univGrid">
+            <div style="text-align:center; grid-column: 1/-1;"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل
+                البيانات...</div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;"><button id="btnLoadMore" class="btn"
+                style="display: none;">المزيد من الجامعات</button></div>
     </main>
 
     <script src="../assets/js/app.js"></script>
+
     <script>
         let universities = [];
         let displayedCount = 0;
@@ -142,16 +275,37 @@
             );
         });
     </script>
+    
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h3><img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ</h3><p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p></div>
-                <div class="footer-col"><h3>روابط سريعة</h3><ul class="footer-links"><li><a href="../categories/tools.html">الأدوات</a></li><li><a href="../universities/index.html">الجامعات</a></li><li><a href="../ecoles/index.html">المدارس العليا</a></li><li><a href="../platforms/index.html">المنصات</a></li></ul></div>
-                <div class="footer-col"><h3>قانوني</h3><ul class="footer-links"><li><a href="../pages/about.html">عن المنصة</a></li><li><a href="../pages/privacy.html">سياسة الخصوصية</a></li><li><a href="../pages/contact.html">اتصل بنا</a></li></ul></div>
+                <div class="footer-col">
+                    <h3><img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
+                            style="border-radius: 4px; vertical-align: middle;"> Student DZ</h3>
+                    <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../categories/tools.html">الأدوات</a></li>
+                        <li><a href="../universities/index.html">الجامعات</a></li>
+                        <li><a href="../ecoles/index.html">المدارس والمعاهد</a></li>
+                        <li><a href="../platforms/index.html">المنصات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>قانوني</h3>
+                    <ul class="footer-links">
+                        <li><a href="../pages/about.html">عن المنصة</a></li>
+                        <li><a href="../pages/privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="../pages/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div>
         </div>
     </footer>
     <script src="../assets/js/navigation.js"></script>
 </body>
+
 </html>
