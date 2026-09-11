@@ -1,20 +1,132 @@
 {
-    "lastUpdated": "2023-10-01",
+    "lastUpdated": "2026-09-10",
     "source": "official",
     "platforms": [
         {
             "id": "progres",
-            "name": "نظام PROGRES",
+            "name": "الخدمات الجامعية",
             "category": "study",
-            "description": "المنصة المركزية للتعليم العالي في الجزائر لمتابعة المسار الدراسي والتسجيلات.",
-            "officialUrl": "https://progres.mesrs.dz/webetu/"
+            "description": "الخدمات الجامعية للتعليم العالي في الجزائر لمتابعة المسار الدراسي والتسجيلات.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/progres.mesrs.html"
         },
         {
-            "id": "onou",
-            "name": "منصة منحتي",
+            "id": "mesrs",
+            "name": "التعليم العالي والبحث العلمي",
             "category": "services",
-            "description": "منصة الديوان الوطني للخدمات الجامعية الخاصة بطلبات المنحة والإيواء.",
-            "officialUrl": "https://progres.mesrs.dz/webonou/"
+            "description": "المنصات الرقمية الرسمية  خدمات الطالب  والتعليم عن بعد والبحث والابتكار والإدارة والتعاون الدولي في مكان واحد.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/mesrs.dz.html"
+        },
+        {
+            "id": "dz_portal",
+            "name": "البوابة الجزائرية للخدمات الرقمية",
+            "category": "services",
+            "description": "منصة موحدة تتيح للمواطن الجزائري الوصول السريع والآمن إلى جميع الخدمات الحكومية والعمومية الرقمية من مكان واحد.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/"
+        },
+        {
+            "id": "telephon",
+            "name": "خدمات الهاتف النقال",
+            "category": "services",
+            "description": "مجموعة من الخدمات الرقمية عن بعد، من تطبيقات الهاتف، شحن الرصيد، تفعيل الخدمات، والعديد من المزايا.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/telephon.html"
+        },
+        {
+            "id": "poste",
+            "name": " بريد الجزائر",
+            "category": "services",
+            "description": "خدمات بريد الجزائر،  الإطلاع على الرصيد، تحويلات مالية، طلب البطاقة الذهبية، إرسال الطرود وتتبع مساراتها، فضاء الزبائن.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/poste.html"
+        },
+        {
+            "id": "interieur",
+            "name": "خدمات وزارة الداخلية والجماعات المحلية الرقمية",
+            "category": "services",
+            "description": "إستخراج الوثائق، البطاقة البيوميترية، جواز السفر، شهادة الميلاد، الشباك عن بعد،.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/interieur.html"
+        },
+        {
+            "id": "campuce.jobs",
+            "name": "منصة توظيف مخصصة للطلبة",
+            "category": "services",
+            "description": "منصة توظيف مخصصة للطلبة الجزائريين مجموعة من الخدمات بالدوام الجزئي موجهة للطلبة الجزائريين.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/campuce.jobs.html"
+        },
+        {
+            "id": "transport",
+            "name": "النقل والمواصلات",
+            "category": "services",
+            "description": "خدمات النقل والمواصلات في الجزائر، .",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/transport.html"
+        },
+        {
+            "id": "dgsn",
+            "name": "الشرطة الجزائرية",
+            "category": "services",
+            "description": "مجموعة من الخدمات الرقمية التي تهدف إلى تسهيل الوصول إلى الخدمات الأمنية للمواطنين، تطبيقات.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/dgsn.html"
+        },
+        {
+            "id": "hcn",
+            "name": "المحافظة السامية للرقمنة",
+            "category": "services",
+            "description": "بوابتك الموحدة للخدمات الرقمية، جميع الخدمات الحكومية في بوابة وطنية واحدة، بتجربة سهلة وآمنة .",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/hcn.html"
+        },
+        {
+            "id": "apostille",
+            "name": "المنصة الوطنية الرقمية للأبوستيل",
+            "category": "services",
+            "description": "المنصة الوطنية الرقمية للأبوستيل التصديق على الوثائق الموجهة للإستعمال بالخارج .",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/mfa.html#e-services.html"
+        },
+        {
+            "id": "sntf",
+            "name": "النقل والمواصلات",
+            "category": "services",
+            "description": "خدمات النقل بالسكك الحديدية SNTF في الجزائر .",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/sntf.html"
+        },
+        {
+            "id": "meteo",
+            "name": "أخبار الطقس",
+            "category": "services",
+            "description": "الطقس الذي تحتاجه قبل أن تتحرك.",
+            "officialUrl": "https://imadtbn.github.io/meteo-dz/"
+        },
+        {
+            "id": "meteo",
+            "name": "ANPDP",
+            "category": "services",
+            "description": "السلطة الوطنية لحماية المعطيات ذات الطابع الشخصي.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/anpdp.html"
+        },
+        {
+            "id": "ooredoo",
+            "name": "خدمات  - أوريدو",
+            "category": "services",
+            "description": "مجموعة من الخدمات الرقمية عن بعد، من تطبيقات الهاتف، شحن الرصيد، تفعيل الخدمات، والعديد من المزايا.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/ooredoo.html"
+        },
+        {
+            "id": "djezzy",
+            "name": "خدمات  - جازي",
+            "category": "services",
+            "description": "مجموعة من الخدمات الرقمية عن بعد، من تطبيقات الهاتف، شحن الرصيد، تفعيل الخدمات، والعديد من المزايا.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/djezzy.html"
+        },
+         {
+            "id": "mobilis",
+            "name": "خدمات  - موبيليس",
+            "category": "services",
+            "description": "مجموعة من الخدمات الرقمية عن بعد، من تطبيقات الهاتف، شحن الرصيد، تفعيل الخدمات، والعديد من المزايا.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/mobilis.html"
+        },
+         {
+            "id": "emergency",
+            "name": "أرقام الطوارئ والنجدة",
+            "category": "services",
+            "description": "دليل شامل بأرقام  الطوارئ والخدمات الحيوية في الجزائر. احفظ هذه الأرقام في هاتفك.",
+            "officialUrl": "https://imadtbn.github.io/dz_portal/sectors/emergency.html"
         }
     ]
 }
