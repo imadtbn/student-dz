@@ -16,7 +16,7 @@
         "source": "official"
     },
     {
-        "id": "epa-alger",
+        "id": "epau-alger",
         "name": "المدرسة المتعددة التقنيات للهندسة المعمارية والعمران (EPAU)",
         "wilaya": "الجزائر",
         "type": "ecole_superieure",
@@ -60,6 +60,38 @@
         "officialUrl": "https://www.ens-kouba.dz/",
         "specialties": ["رياضيات", "فيزياء", "كيمياء", "علوم طبيعية"],
         "services": ["مكتبة", "نقل جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "esi-sba",
+        "name": "المدرسة العليا للإعلام الآلي بسيدي بلعباس (ESI SBA)",
+        "wilaya": "سيدي بلعباس",
+        "type": "ecole_superieure",
+        "location": "Sidi Bel Abbes",
+        "position": {
+            "lat": 35.1911,
+            "lng": -0.6305
+        },
+        "officialUrl": "https://www.esi-sba.dz/",
+        "specialties": ["إعلام آلي", "أنظمة المعلومات"],
+        "services": ["مكتبة", "نوادي علمية", "إقامة جامعية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "hec-alger",
+        "name": "المدرسة العليا للتجارة (HEC)",
+        "wilaya": "تيبازة",
+        "type": "ecole_superieure",
+        "location": "Koléa, Tipaza",
+        "position": {
+            "lat": 36.6394,
+            "lng": 2.7661
+        },
+        "officialUrl": "https://www.hec.dz/",
+        "specialties": ["تجارة", "مالية", "تسويق"],
+        "services": ["مكتبة", "مدرجات", "إقامة قريبة"],
         "lastUpdated": "2024-03-01",
         "source": "official"
     }
