@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل الجامعات الجزائرية - Student DZ</title>
+    <meta name="description" content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -25,6 +26,94 @@
             background: var(--bg-main);
             color: var(--text-main);
         }
+
+        /* نفس نمط بطاقات المدارس العليا */
+        .univ-card {
+            background: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .univ-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .univ-card h3 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .univ-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .univ-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(0,0,0,0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .univ-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .univ-tags span {
+            font-size: 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        .univ-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .univ-actions a {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-visit {
+            background: var(--primary-color);
+            color: white;
+        }
+        .btn-visit:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-map {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-map:hover {
+            background: rgba(46, 204, 113, 0.1);
+        }
     </style>
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="../assets/images/icon.png">
@@ -32,16 +121,16 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://imadtbn.github.io/student-dz/">
-    <meta property="og:title" content="Student DZ | الطالب الجزائري">
-    <meta property="og:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="og:url" content="https://imadtbn.github.io/student-dz/universities/">
+    <meta property="og:title" content="دليل الجامعات الجزائرية | Student DZ">
+    <meta property="og:description" content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
     <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/">
-    <meta property="twitter:title" content="Student DZ | الطالب الجزائري">
-    <meta property="twitter:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/universities/">
+    <meta property="twitter:title" content="دليل الجامعات الجزائرية | Student DZ">
+    <meta property="twitter:description" content="دليل الجامعات والمؤسسات الجامعية في الجزائر. ابحث عن الجامعة، التخصصات، والموقع الجغرافي.">
     <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
 <body>
@@ -75,7 +164,7 @@
             <button id="btnNearMe" class="btn btn-outline" style="white-space: nowrap;">
                 <i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ
             </button>
-            <input type="text" id="searchInput" placeholder="ابحث عن جامعة أو ولاية...">
+            <input type="text" id="searchInput" placeholder="ابحث عن جامعة أو ولاية أو تخصص...">
         </div>
 
         <div class="grid" id="univGrid">
@@ -101,7 +190,7 @@
                 displayedCount = 0;
             }
 
-            if(data.length === 0 && !append) {
+            if (data.length === 0 && !append) {
                 grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">لا توجد نتائج.</p>';
                 document.getElementById('btnLoadMore').style.display = 'none';
                 return;
@@ -110,18 +199,24 @@
             const toDisplay = data.slice(displayedCount, displayedCount + INITIAL_COUNT);
 
             toDisplay.forEach(u => {
-                let mapUrl = u.coordinates ? `https://www.google.com/maps/dir/?api=1&destination=${u.coordinates.lat},${u.coordinates.lng}` : '#';
-                let distanceHtml = u.distance ? `<p class="card-desc" style="color:var(--primary-color); font-weight:bold;"><i class="fa-solid fa-route"></i> ${u.distance.toFixed(1)} كم</p>` : '';
+                const mapUrl = u.coordinates ? `https://www.google.com/maps/dir/?api=1&destination=${u.coordinates.lat},${u.coordinates.lng}` : '#';
+                const distanceHtml = u.distance ? `<span style="color:var(--primary-color); font-weight:bold; display:block; margin-top:5px;"><i class="fa-solid fa-route"></i> ${u.distance.toFixed(1)} كم</span>` : '';
+                const specialties = Array.isArray(u.specialties) ? u.specialties : [];
+                const specsHtml = specialties.map(s => `<span>${s}</span>`).join('');
+                const descriptionHtml = u.description ? `<p class="card-desc" style="margin:0;">${u.description}</p>` : '';
 
                 grid.innerHTML += `
-                    <div class="card" style="text-align:right; align-items:flex-start; display: flex; flex-direction: column;">
+                    <div class="card univ-card fadeInUp">
                         <h3 class="card-title">${u.name}</h3>
-                        <p class="card-desc"><i class="fa-solid fa-location-dot"></i> ${u.wilaya}</p>
-                        ${distanceHtml}
-                        <p class="card-desc" style="margin-top:10px; margin-bottom: 15px; flex-grow: 1;">${u.description || ''}</p>
-                        <div style="display: flex; gap: 10px; width: 100%; margin-top: auto;">
-                            <a href="${u.officialUrl}" target="_blank" class="btn btn-outline" style="flex: 1; text-align:center; padding: 8px;"><i class="fa-solid fa-globe"></i> الموقع</a>
-                            ${u.coordinates ? `<a href="${mapUrl}" target="_blank" rel="noopener" class="btn btn-outline" style="flex: 1; text-align:center; padding: 8px;"><i class="fa-solid fa-map-location-dot"></i> مسار</a>` : ''}
+                        <div class="univ-meta">
+                            <span><i class="fa-solid fa-map-pin"></i> ${u.wilaya}</span>
+                            ${distanceHtml}
+                        </div>
+                        ${descriptionHtml}
+                        ${specialties.length ? `<div class="univ-tags">${specsHtml}</div>` : ''}
+                        <div class="univ-actions">
+                            <a href="${u.officialUrl}" target="_blank" rel="noopener" class="btn-visit"><i class="fa-solid fa-globe"></i> الموقع</a>
+                            ${u.coordinates ? `<a href="${mapUrl}" target="_blank" rel="noopener" class="btn-map"><i class="fa-solid fa-map-location-dot"></i> مسار</a>` : ''}
                         </div>
                     </div>
                 `;
@@ -141,16 +236,16 @@
             const R = 6371; // km
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLon = (lon2 - lon1) * Math.PI / 180;
-            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
                     Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                    Math.sin(dLon/2) * Math.sin(dLon/2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
             return R * c;
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
             const data = await fetchAppJSON(CONFIG.API.UNIVERSITIES);
-            if(data && data.universities) {
+            if (data && data.universities) {
                 universities = data.universities;
                 currentData = [...universities];
                 renderGrid(currentData);
@@ -160,8 +255,14 @@
         });
 
         document.getElementById('searchInput').addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            currentData = universities.filter(u => u.name.toLowerCase().includes(term) || u.wilaya.toLowerCase().includes(term));
+            const term = e.target.value.toLowerCase().trim();
+            currentData = universities.filter(u => {
+                const specialties = Array.isArray(u.specialties) ? u.specialties : [];
+                return u.name.toLowerCase().includes(term) ||
+                    u.wilaya.toLowerCase().includes(term) ||
+                    specialties.some(s => s.toLowerCase().includes(term)) ||
+                    (u.description || '').toLowerCase().includes(term);
+            });
             renderGrid(currentData);
         });
 
@@ -184,7 +285,7 @@
                     const userLng = position.coords.longitude;
 
                     currentData = [...universities].map(univ => {
-                        if(univ.coordinates && univ.coordinates.lat && univ.coordinates.lng) {
+                        if (univ.coordinates && univ.coordinates.lat != null && univ.coordinates.lng != null) {
                             univ.distance = calculateDistance(userLat, userLng, univ.coordinates.lat, univ.coordinates.lng);
                         } else {
                             univ.distance = 999999;
