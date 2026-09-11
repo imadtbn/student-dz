@@ -1,4 +1,13 @@
 // Unified mobile navigation for all Student DZ pages.
+// A few legacy pages reference .mobile-menu-btn; provide a harmless compatibility node
+// so their old initialization code cannot throw before the unified handler runs.
+if (!document.querySelector('.mobile-menu-btn')) {
+    const legacyMenuHook = document.createElement('span');
+    legacyMenuHook.className = 'mobile-menu-btn';
+    legacyMenuHook.hidden = true;
+    document.documentElement.appendChild(legacyMenuHook);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
@@ -23,12 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.addEventListener('click', toggleMenu);
 
-    // Close after selecting a page.
     mainNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
-    // Close when tapping outside the menu/button.
     document.addEventListener('click', (event) => {
         if (mainNav.classList.contains('active') &&
             !event.target.closest('#mainNav') &&
@@ -37,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close with Escape for keyboard accessibility.
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && mainNav.classList.contains('active')) {
             closeMenu();
