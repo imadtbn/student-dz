@@ -1,9 +1,9 @@
 {
-    "lastUpdated": "2023-10-01",
-    "source": "official",
+    "lastUpdated": "2026-09-11",
+    "source": "google_maps_and_onou",
     "residences": [
         {
-            "id": "res-talebabderrahmane",
+            "id": "res-talebabderrahmane-1",
             "name": "الإقامة الجامعية طالب عبد الرحمان 1",
             "wilaya": "الجزائر",
             "universityId": "univ-algiers-1",
@@ -11,6 +11,237 @@
             "coordinates": {
                 "lat": 36.7690,
                 "lng": 3.0510
+            }
+        },
+        {
+            "id": "res-ben-aknoun-femmes",
+            "name": "الإقامة الجامعية للبنات بن عكنون",
+            "wilaya": "الجزائر",
+            "universityId": "univ-algiers-1",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7562,
+                "lng": 3.0185
+            }
+        },
+        {
+            "id": "res-bab-ezzouar-3",
+            "name": "الإقامة الجامعية باب الزوار 3 (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-usthb",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7142,
+                "lng": 3.1856
+            }
+        },
+        {
+            "id": "res-baya-hocine",
+            "name": "الإقامة الجامعية باية حسين (باب الزوار 4)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-usthb",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7165,
+                "lng": 3.1820
+            }
+        },
+        {
+            "id": "res-bouraoui-ammar",
+            "name": "الإقامة الجامعية بوراوي عمار (الحراش)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-usthb",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7215,
+                "lng": 3.1290
+            }
+        },
+        {
+            "id": "res-ouled-fayet-3",
+            "name": "الإقامة الجامعية أولاد فايت 3",
+            "wilaya": "الجزائر",
+            "universityId": "univ-algiers-3",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7385,
+                "lng": 2.9431
+            }
+        },
+        {
+            "id": "res-dergana-filles",
+            "name": "الإقامة الجامعية درقانة إناث",
+            "wilaya": "الجزائر",
+            "universityId": "univ-usthb",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7725,
+                "lng": 3.2550
+            }
+        },
+        {
+            "id": "res-belgaid-1",
+            "name": "الإقامة الجامعية بلقايد 1 (ذكور)",
+            "wilaya": "وهران",
+            "universityId": "univ-oran-2",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.7428,
+                "lng": -0.5318
+            }
+        },
+        {
+            "id": "res-belgaid-3",
+            "name": "الإقامة الجامعية بلقايد 3 (ذكور)",
+            "wilaya": "وهران",
+            "universityId": "univ-oran-2",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.7415,
+                "lng": -0.5321
+            }
+        },
+        {
+            "id": "res-castors-femmes",
+            "name": "الإقامة الجامعية مروال الهاشمي (كاستور)",
+            "wilaya": "وهران",
+            "universityId": "univ-usto",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.6980,
+                "lng": -0.6285
+            }
+        },
+        {
+            "id": "res-ain-el-bey-1",
+            "name": "الإقامة الجامعية عين الباي 1",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-constantine-1",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.3094,
+                "lng": 6.6236
+            }
+        },
+        {
+            "id": "res-zouaghi-slimane",
+            "name": "الإقامة الجامعية زواغي سليمان",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-constantine-3",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.3262,
+                "lng": 6.6184
+            }
+        },
+        {
+            "id": "res-el-hidhab-1",
+            "name": "الإقامة الجامعية الهضاب 1",
+            "wilaya": "سطيف",
+            "universityId": "univ-setif-1",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.2085,
+                "lng": 5.4312
+            }
+        },
+        {
+            "id": "res-el-mabouda",
+            "name": "الإقامة الجامعية المعبودة",
+            "wilaya": "سطيف",
+            "universityId": "univ-setif-1",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.1950,
+                "lng": 5.3980
+            }
+        },
+        {
+            "id": "res-soumaa-blida",
+            "name": "الإقامة الجامعية الصومعة",
+            "wilaya": "البليدة",
+            "universityId": "univ-blida-1",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.5180,
+                "lng": 2.8760
+            }
+        },
+        {
+            "id": "res-el-affroun-femmes",
+            "name": "الإقامة الجامعية العفرون إناث",
+            "wilaya": "البليدة",
+            "universityId": "univ-blida-2",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.4675,
+                "lng": 2.6280
+            }
+        },
+        {
+            "id": "res-sidi-amar-1",
+            "name": "الإقامة الجامعية سيدي عمار 1",
+            "wilaya": "عنابة",
+            "universityId": "univ-annaba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.8180,
+                "lng": 7.7120
+            }
+        },
+        {
+            "id": "res-corso-boumerdes",
+            "name": "الإقامة الجامعية قورصو",
+            "wilaya": "بومرداس",
+            "universityId": "univ-boumerdes",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7618,
+                "lng": 3.4420
+            }
+        },
+        {
+            "id": "res-sahel-boumerdes",
+            "name": "الإقامة الجامعية الساحل",
+            "wilaya": "بومرداس",
+            "universityId": "univ-boumerdes",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7580,
+                "lng": 3.4720
+            }
+        },
+        {
+            "id": "res-chetouane-tlemcen",
+            "name": "الإقامة الجامعية شتوان",
+            "wilaya": "تلمسان",
+            "universityId": "univ-tlemcen",
+            "gender": "male",
+            "coordinates": {
+                "lat": 34.9120,
+                "lng": -1.2850
+            }
+        },
+        {
+            "id": "res-imama-tlemcen",
+            "name": "الإقامة الجامعية إمامة للبنات",
+            "wilaya": "تلمسان",
+            "universityId": "univ-tlemcen",
+            "gender": "female",
+            "coordinates": {
+                "lat": 34.8820,
+                "lng": -1.3310
+            }
+        },
+        {
+            "id": "res-fesdis-batna",
+            "name": "الإقامة الجامعية فسديس ذكور",
+            "wilaya": "باتنة",
+            "universityId": "univ-batna-2",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.6320,
+                "lng": 6.2750
             }
         }
     ]
