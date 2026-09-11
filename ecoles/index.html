@@ -115,30 +115,24 @@
 </head>
 <body>
 
-    <header class="main-header">
+    <header class="site-header">
         <div class="container">
-            <div class="header-content">
-                <a href="../index.html" class="logo">
-                    <span>Student DZ</span>
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </a>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="../index.html">الرئيسية</a></li>
-                        <li><a href="../categories/tools.html">الأدوات</a></li>
-                        <li><a href="../universities/index.html">الجامعات</a></li>
-                        <li><a href="../ecoles/index.html" class="active">المدارس العليا</a></li>
-                        <li><a href="../residences/index.html">الإقامات</a></li>
-                    </ul>
-                </nav>
-                <div class="header-actions">
-                    <button id="themeToggle" class="btn-icon" aria-label="تبديل المظهر">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
-                    <button class="mobile-menu-btn" aria-label="القائمة">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Student DZ
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../universities/index.html" class="nav-link">الجامعات</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../platforms/index.html" class="nav-link">المنصات</a>
+                <a href="../residences/index.html" class="nav-link">الإقامات</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
             </div>
         </div>
     </header>
@@ -155,11 +149,15 @@
             <input type="text" id="searchInput" placeholder="ابحث عن مدرسة أو ولاية...">
         </div>
 
-        <div id="ecolesGrid" class="grid-4">
+        <div id="ecolesGrid" class="grid">
             <!-- Data will be loaded here via JS -->
             <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-color);">
                 جاري تحميل البيانات...
             </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button id="btnLoadMore" class="btn btn-outline" style="display: none;">المزيد من المدارس</button>
         </div>
     </main>
 
@@ -170,61 +168,88 @@
             const grid = document.getElementById('ecolesGrid');
             const searchInput = document.getElementById('searchInput');
             const btnNearMe = document.getElementById('btnNearMe');
+            const btnLoadMore = document.getElementById('btnLoadMore');
             let ecolesData = [];
+            let currentData = [];
+            let displayedCount = 0;
+            const INITIAL_COUNT = 8;
 
             try {
                 const response = await fetch(CONFIG.getUrl('data/ecoles.json'));
                 if (!response.ok) throw new Error('Network response was not ok');
                 ecolesData = await response.json();
-                renderEcoles(ecolesData);
+                currentData = [...ecolesData];
+                renderEcoles(currentData);
             } catch (error) {
                 console.error("Error loading ecoles:", error);
                 grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center;">تعذر تحميل البيانات.</div>';
             }
 
-            function renderEcoles(data) {
-                grid.innerHTML = '';
-                if (data.length === 0) {
+            function renderEcoles(data, append = false) {
+                if (!append) {
+                    grid.innerHTML = '';
+                    displayedCount = 0;
+                }
+
+                if (data.length === 0 && !append) {
                     grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center;">لا توجد نتائج مطابقة.</div>';
+                    btnLoadMore.style.display = 'none';
                     return;
                 }
 
-                data.forEach(ecole => {
+                const toDisplay = data.slice(displayedCount, displayedCount + INITIAL_COUNT);
+
+                toDisplay.forEach(ecole => {
                     const el = document.createElement('div');
-                    el.className = 'ecole-card fadeInUp';
+                    // Use standard card class as well for unified styling, override if needed via ecole-card
+                    el.className = 'card ecole-card fadeInUp';
+                    el.style.display = 'flex';
+                    el.style.flexDirection = 'column';
 
-                    let mapUrl = `https://www.google.com/maps/dir/?api=1&destination=${ecole.position.lat},${ecole.position.lng}`;
+                    let mapUrl = ecole.position ? `https://www.google.com/maps/dir/?api=1&destination=${ecole.position.lat},${ecole.position.lng}` : '#';
 
-                    let specsHtml = ecole.specialties.map(s => `<span>${s}</span>`).join('');
+                    let specsHtml = ecole.specialties.map(s => `<span style="font-size: 0.8rem; background: var(--primary-color); color: white; padding: 0.2rem 0.6rem; border-radius: 12px; display: inline-block; margin: 2px;">${s}</span>`).join('');
 
-                    let distanceHtml = ecole.distance ? `<span style="color:var(--primary-color); font-weight:bold;"><i class="fa-solid fa-route"></i> ${ecole.distance.toFixed(1)} كم</span>` : '';
+                    let distanceHtml = ecole.distance ? `<span style="color:var(--primary-color); font-weight:bold; display:block; margin-top:5px;"><i class="fa-solid fa-route"></i> ${ecole.distance.toFixed(1)} كم</span>` : '';
 
                     el.innerHTML = `
-                        <h3>${ecole.name}</h3>
-                        <div class="ecole-meta">
+                        <h3 class="card-title">${ecole.name}</h3>
+                        <div class="card-desc" style="flex-grow: 1;">
                             <span><i class="fa-solid fa-map-pin"></i> ${ecole.wilaya}</span>
                             ${distanceHtml}
+                            <div style="margin-top: 10px;">
+                                ${specsHtml}
+                            </div>
                         </div>
-                        <div class="ecole-tags">
-                            ${specsHtml}
-                        </div>
-                        <div class="ecole-actions">
-                            <a href="${ecole.officialUrl}" target="_blank" rel="noopener" class="btn-visit"><i class="fa-solid fa-globe"></i> الموقع</a>
-                            <a href="${mapUrl}" target="_blank" rel="noopener" class="btn-map"><i class="fa-solid fa-map-location-dot"></i> مسار</a>
+                        <div style="display: flex; gap: 10px; width: 100%; margin-top: 15px;">
+                            <a href="${ecole.officialUrl}" target="_blank" rel="noopener" class="btn btn-outline" style="flex: 1; text-align:center; padding: 8px;"><i class="fa-solid fa-globe"></i> الموقع</a>
+                            ${ecole.position ? `<a href="${mapUrl}" target="_blank" rel="noopener" class="btn btn-outline" style="flex: 1; text-align:center; padding: 8px;"><i class="fa-solid fa-map-location-dot"></i> مسار</a>` : ''}
                         </div>
                     `;
                     grid.appendChild(el);
                 });
+
+                displayedCount += toDisplay.length;
+
+                if (displayedCount >= data.length) {
+                    btnLoadMore.style.display = 'none';
+                } else {
+                    btnLoadMore.style.display = 'inline-block';
+                }
             }
 
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                const filtered = ecolesData.filter(ecole =>
+                currentData = ecolesData.filter(ecole =>
                     ecole.name.toLowerCase().includes(term) ||
                     ecole.wilaya.toLowerCase().includes(term) ||
                     ecole.specialties.some(s => s.toLowerCase().includes(term))
                 );
-                renderEcoles(filtered);
+                renderEcoles(currentData);
+            });
+
+            btnLoadMore.addEventListener('click', () => {
+                renderEcoles(currentData, true);
             });
 
             // Haversine formula
@@ -252,7 +277,14 @@
                         const userLat = position.coords.latitude;
                         const userLng = position.coords.longitude;
 
-                        let sortedEcoles = [...ecolesData].map(ecole => {
+                        const term = document.getElementById('searchInput').value.toLowerCase();
+                        let filtered = ecolesData.filter(ecole =>
+                            ecole.name.toLowerCase().includes(term) ||
+                            ecole.wilaya.toLowerCase().includes(term) ||
+                            ecole.specialties.some(s => s.toLowerCase().includes(term))
+                        );
+
+                        currentData = filtered.map(ecole => {
                             if(ecole.position && ecole.position.lat && ecole.position.lng) {
                                 ecole.distance = calculateDistance(userLat, userLng, ecole.position.lat, ecole.position.lng);
                             } else {
@@ -262,8 +294,9 @@
                         }).sort((a, b) => a.distance - b.distance);
 
                         btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ';
-                        btnNearMe.classList.add('active');
-                        renderEcoles(sortedEcoles);
+                        btnNearMe.style.backgroundColor = 'var(--primary-color)';
+                        btnNearMe.style.color = 'white';
+                        renderEcoles(currentData);
                     },
                     (error) => {
                         console.error(error);

@@ -26,7 +26,25 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Student DZ
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../universities/index.html" class="nav-link">الجامعات</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../platforms/index.html" class="nav-link">المنصات</a>
+                <a href="../residences/index.html" class="nav-link">الإقامات</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
+            </div>
+        </div>
     </header>
 
     <main class="container">
@@ -34,8 +52,10 @@
 
         <div class="map-controls">
             <button class="btn" id="loadMapBtn">تحميل الخريطة</button>
+            <button class="btn btn-outline" id="btnNearMe" disabled><i class="fa-solid fa-location-crosshairs"></i> موقعي</button>
             <button class="btn btn-outline" id="loadUnivBtn" disabled>عرض الجامعات</button>
             <button class="btn btn-outline" id="loadResBtn" disabled>عرض الإقامات</button>
+            <button class="btn btn-outline" id="loadEcolesBtn" disabled>عرض المدارس</button>
         </div>
 
         <div id="map" class="map-container" style="display:none; background:#eee;"></div>
@@ -50,7 +70,20 @@
         const loadMapBtn = document.getElementById('loadMapBtn');
         const loadUnivBtn = document.getElementById('loadUnivBtn');
         const loadResBtn = document.getElementById('loadResBtn');
+        const loadEcolesBtn = document.getElementById('loadEcolesBtn');
+        const btnNearMe = document.getElementById('btnNearMe');
         const mapDiv = document.getElementById('map');
+
+        let userLocation = null;
+        let markers = []; // keep track of markers to avoid duplicates if clicked multiple times
+
+        function getRouteLink(lat, lng) {
+            let baseUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+            if (userLocation) {
+                baseUrl += `&origin=${userLocation.lat},${userLocation.lng}`;
+            }
+            return `<br><a href="${baseUrl}" target="_blank" class="btn btn-outline" style="display:inline-block; margin-top:10px; padding: 5px 10px; text-decoration:none;"><i class="fa-solid fa-route"></i> مسار نحو الوجهة</a>`;
+        }
 
         loadMapBtn.addEventListener('click', async () => {
             loadMapBtn.textContent = 'جاري التحميل...';
@@ -62,6 +95,43 @@
             loadMapBtn.style.display = 'none';
             loadUnivBtn.disabled = false;
             loadResBtn.disabled = false;
+            loadEcolesBtn.disabled = false;
+            btnNearMe.disabled = false;
+        });
+
+        btnNearMe.addEventListener('click', () => {
+            if (!navigator.geolocation) {
+                alert('المتصفح لا يدعم تحديد الموقع.');
+                return;
+            }
+
+            btnNearMe.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> تحديد...';
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    userLocation = { lat, lng };
+
+                    if (mapInstance) {
+                        mapInstance.setView([lat, lng], 13);
+                        // Using a red icon for user location
+                        L.circleMarker([lat, lng], {
+                            color: 'red',
+                            fillColor: '#f03',
+                            fillOpacity: 0.5,
+                            radius: 8
+                        }).addTo(mapInstance).bindPopup("<b>موقعك الحالي</b>").openPopup();
+                    }
+
+                    btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> موقعي';
+                    btnNearMe.classList.add('active');
+                },
+                (error) => {
+                    alert('تعذر تحديد موقعك. يرجى تفعيل الصلاحية.');
+                    btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> موقعي';
+                }
+            );
         });
 
         loadUnivBtn.addEventListener('click', async () => {
@@ -69,7 +139,8 @@
             if(data && data.universities) {
                 data.universities.forEach(u => {
                     if(u.coordinates) {
-                        addMarker(u.coordinates.lat, u.coordinates.lng, "🎓 " + u.name, `<a href="${u.officialUrl}" target="_blank">الموقع الرسمي</a>`);
+                        const content = `<a href="${u.officialUrl}" target="_blank">الموقع الرسمي</a>` + getRouteLink(u.coordinates.lat, u.coordinates.lng);
+                        addMarker(u.coordinates.lat, u.coordinates.lng, "🎓 " + u.name, content);
                     }
                 });
             }
@@ -80,9 +151,27 @@
             if(data && data.residences) {
                 data.residences.forEach(r => {
                     if(r.coordinates) {
-                        addMarker(r.coordinates.lat, r.coordinates.lng, "🏢 " + r.name, `الولاية: ${r.wilaya}`);
+                        const content = `الولاية: ${r.wilaya}` + getRouteLink(r.coordinates.lat, r.coordinates.lng);
+                        addMarker(r.coordinates.lat, r.coordinates.lng, "🏢 " + r.name, content);
                     }
                 });
+            }
+        });
+
+        loadEcolesBtn.addEventListener('click', async () => {
+            try {
+                const response = await fetch(CONFIG.getUrl('data/ecoles.json'));
+                if (response.ok) {
+                    const data = await response.json();
+                    data.forEach(e => {
+                        if(e.position) {
+                            const content = `<a href="${e.officialUrl}" target="_blank">الموقع الرسمي</a><br>الولاية: ${e.wilaya}` + getRouteLink(e.position.lat, e.position.lng);
+                            addMarker(e.position.lat, e.position.lng, "🏫 " + e.name, content);
+                        }
+                    });
+                }
+            } catch (err) {
+                console.error('Failed to load ecoles data', err);
             }
         });
     </script>

@@ -29,49 +29,113 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Student DZ
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../universities/index.html" class="nav-link">الجامعات</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../platforms/index.html" class="nav-link">المنصات</a>
+                <a href="../residences/index.html" class="nav-link">الإقامات</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
+            </div>
+        </div>
     </header>
 
     <main class="container">
         <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-building-columns"></i> دليل الجامعات الجزائرية</h1>
 
         <div class="filter-bar">
+            <button id="btnNearMe" class="btn btn-outline" style="white-space: nowrap;">
+                <i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ
+            </button>
             <input type="text" id="searchInput" placeholder="ابحث عن جامعة أو ولاية...">
         </div>
 
         <div class="grid" id="univGrid">
             <div style="text-align:center; grid-column: 1/-1;"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل البيانات...</div>
         </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button id="btnLoadMore" class="btn" style="display: none;">المزيد من الجامعات</button>
+        </div>
     </main>
 
     <script src="../assets/js/app.js"></script>
     <script>
         let universities = [];
+        let displayedCount = 0;
+        const INITIAL_COUNT = 8;
+        let currentData = [];
 
-        function renderGrid(data) {
+        function renderGrid(data, append = false) {
             const grid = document.getElementById('univGrid');
-            grid.innerHTML = '';
-            if(data.length === 0) {
+            if (!append) {
+                grid.innerHTML = '';
+                displayedCount = 0;
+            }
+
+            if(data.length === 0 && !append) {
                 grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">لا توجد نتائج.</p>';
+                document.getElementById('btnLoadMore').style.display = 'none';
                 return;
             }
-            data.forEach(u => {
+
+            const toDisplay = data.slice(displayedCount, displayedCount + INITIAL_COUNT);
+
+            toDisplay.forEach(u => {
+                let mapUrl = u.coordinates ? `https://www.google.com/maps/dir/?api=1&destination=${u.coordinates.lat},${u.coordinates.lng}` : '#';
+                let distanceHtml = u.distance ? `<p class="card-desc" style="color:var(--primary-color); font-weight:bold;"><i class="fa-solid fa-route"></i> ${u.distance.toFixed(1)} كم</p>` : '';
+
                 grid.innerHTML += `
-                    <div class="card" style="text-align:right; align-items:flex-start;">
+                    <div class="card" style="text-align:right; align-items:flex-start; display: flex; flex-direction: column;">
                         <h3 class="card-title">${u.name}</h3>
                         <p class="card-desc"><i class="fa-solid fa-location-dot"></i> ${u.wilaya}</p>
-                        <p class="card-desc" style="margin-top:10px;">${u.description || ''}</p>
-                        <a href="${u.officialUrl}" target="_blank" class="btn btn-outline" style="margin-top:auto; width:100%; text-align:center;"><i class="fa-solid fa-link"></i> الموقع الرسمي</a>
+                        ${distanceHtml}
+                        <p class="card-desc" style="margin-top:10px; margin-bottom: 15px; flex-grow: 1;">${u.description || ''}</p>
+                        <div style="display: flex; gap: 10px; width: 100%; margin-top: auto;">
+                            <a href="${u.officialUrl}" target="_blank" class="btn btn-outline" style="flex: 1; text-align:center; padding: 8px;"><i class="fa-solid fa-globe"></i> الموقع</a>
+                            ${u.coordinates ? `<a href="${mapUrl}" target="_blank" rel="noopener" class="btn btn-outline" style="flex: 1; text-align:center; padding: 8px;"><i class="fa-solid fa-map-location-dot"></i> مسار</a>` : ''}
+                        </div>
                     </div>
                 `;
             });
+
+            displayedCount += toDisplay.length;
+
+            if (displayedCount >= data.length) {
+                document.getElementById('btnLoadMore').style.display = 'none';
+            } else {
+                document.getElementById('btnLoadMore').style.display = 'inline-block';
+            }
+        }
+
+        // Haversine formula
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; // km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                    Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c;
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
             const data = await fetchAppJSON(CONFIG.API.UNIVERSITIES);
             if(data && data.universities) {
                 universities = data.universities;
-                renderGrid(universities);
+                currentData = [...universities];
+                renderGrid(currentData);
             } else {
                 document.getElementById('univGrid').innerHTML = '<p style="text-align:center; grid-column: 1/-1;">تعذر تحميل البيانات.</p>';
             }
@@ -79,8 +143,49 @@
 
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
-            const filtered = universities.filter(u => u.name.toLowerCase().includes(term) || u.wilaya.toLowerCase().includes(term));
-            renderGrid(filtered);
+            currentData = universities.filter(u => u.name.toLowerCase().includes(term) || u.wilaya.toLowerCase().includes(term));
+            renderGrid(currentData);
+        });
+
+        document.getElementById('btnLoadMore').addEventListener('click', () => {
+            renderGrid(currentData, true);
+        });
+
+        const btnNearMe = document.getElementById('btnNearMe');
+        btnNearMe.addEventListener('click', () => {
+            if (!navigator.geolocation) {
+                alert('عذراً، المتصفح الخاص بك لا يدعم تحديد الموقع.');
+                return;
+            }
+
+            btnNearMe.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري التحديد...';
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLng = position.coords.longitude;
+
+                    currentData = [...universities].map(univ => {
+                        if(univ.coordinates && univ.coordinates.lat && univ.coordinates.lng) {
+                            univ.distance = calculateDistance(userLat, userLng, univ.coordinates.lat, univ.coordinates.lng);
+                        } else {
+                            univ.distance = 999999;
+                        }
+                        return univ;
+                    }).sort((a, b) => a.distance - b.distance);
+
+                    btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ';
+                    btnNearMe.style.backgroundColor = 'var(--primary-color)';
+                    btnNearMe.style.color = 'white';
+
+                    renderGrid(currentData);
+                },
+                (error) => {
+                    console.error(error);
+                    alert('تعذر تحديد موقعك. يرجى التأكد من منح الصلاحية.');
+                    btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ';
+                }
+            );
         });
     </script>
 </body>

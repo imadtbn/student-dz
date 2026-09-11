@@ -29,13 +29,34 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container"><a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Student DZ</a></div>
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Student DZ
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <a href="../categories/tools.html" class="nav-link">الأدوات</a>
+                <a href="../universities/index.html" class="nav-link">الجامعات</a>
+                <a href="../ecoles/index.html" class="nav-link">المدارس العليا</a>
+                <a href="../platforms/index.html" class="nav-link">المنصات</a>
+                <a href="../residences/index.html" class="nav-link">الإقامات</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
+            </div>
+        </div>
     </header>
 
     <main class="container">
         <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-building"></i> دليل الإقامات الجامعية</h1>
 
         <div class="filter-bar">
+            <button id="btnNearMe" class="btn btn-outline" style="white-space: nowrap;">
+                <i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ
+            </button>
             <input type="text" id="searchInput" placeholder="ابحث باسم الإقامة أو الولاية...">
             <select id="genderFilter">
                 <option value="">جميع الفئات (ذكور/إناث)</option>
@@ -47,36 +68,79 @@
         <div class="grid" id="resGrid">
             <div style="text-align:center; grid-column: 1/-1;"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل البيانات...</div>
         </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button id="btnLoadMore" class="btn" style="display: none;">المزيد من الإقامات</button>
+        </div>
     </main>
 
     <script src="../assets/js/app.js"></script>
     <script>
         let residences = [];
+        let currentData = [];
+        let displayedCount = 0;
+        const INITIAL_COUNT = 8;
 
-        function renderGrid(data) {
+        function renderGrid(data, append = false) {
             const grid = document.getElementById('resGrid');
-            grid.innerHTML = '';
-            if(data.length === 0) {
+            if (!append) {
+                grid.innerHTML = '';
+                displayedCount = 0;
+            }
+
+            if(data.length === 0 && !append) {
                 grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">لا توجد نتائج.</p>';
+                document.getElementById('btnLoadMore').style.display = 'none';
                 return;
             }
-            data.forEach(r => {
+
+            const toDisplay = data.slice(displayedCount, displayedCount + INITIAL_COUNT);
+
+            toDisplay.forEach(r => {
                 const genderIcon = r.gender === 'male' ? '<i class="fa-solid fa-mars" style="color:#3498db;"></i> ذكور' : '<i class="fa-solid fa-venus" style="color:#e74c3c;"></i> إناث';
+                let mapUrl = r.coordinates ? `https://www.google.com/maps/dir/?api=1&destination=${r.coordinates.lat},${r.coordinates.lng}` : '#';
+                let distanceHtml = r.distance ? `<p class="card-desc" style="color:var(--primary-color); font-weight:bold; margin-top:5px;"><i class="fa-solid fa-route"></i> ${r.distance.toFixed(1)} كم</p>` : '';
+
                 grid.innerHTML += `
-                    <div class="card" style="text-align:right; align-items:flex-start;">
+                    <div class="card" style="text-align:right; align-items:flex-start; display: flex; flex-direction: column;">
                         <h3 class="card-title">${r.name}</h3>
                         <p class="card-desc" style="margin: 5px 0;"><i class="fa-solid fa-location-dot"></i> ولاية ${r.wilaya}</p>
-                        <p class="card-desc">الفئة: ${genderIcon}</p>
+                        <p class="card-desc" style="margin-bottom: 15px; flex-grow: 1;">الفئة: ${genderIcon}</p>
+                        ${distanceHtml}
+                        <div style="display: flex; width: 100%; margin-top: auto;">
+                            ${r.coordinates ? `<a href="${mapUrl}" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; text-align:center; padding: 8px;"><i class="fa-solid fa-map-location-dot"></i> مسار</a>` : ''}
+                        </div>
                     </div>
                 `;
             });
+
+            displayedCount += toDisplay.length;
+
+            if (displayedCount >= data.length) {
+                document.getElementById('btnLoadMore').style.display = 'none';
+            } else {
+                document.getElementById('btnLoadMore').style.display = 'inline-block';
+            }
+        }
+
+        // Haversine formula
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; // km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                    Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c;
         }
 
         async function init() {
             const data = await fetchAppJSON(CONFIG.API.RESIDENCES);
             if(data && data.residences) {
                 residences = data.residences;
-                renderGrid(residences);
+                currentData = [...residences];
+                renderGrid(currentData);
             }
         }
 
@@ -84,16 +148,67 @@
             const term = document.getElementById('searchInput').value.toLowerCase();
             const gender = document.getElementById('genderFilter').value;
 
-            const filtered = residences.filter(r => {
+            currentData = residences.filter(r => {
                 const matchTerm = r.name.toLowerCase().includes(term) || r.wilaya.toLowerCase().includes(term);
                 const matchGender = gender === '' || r.gender === gender;
                 return matchTerm && matchGender;
             });
-            renderGrid(filtered);
+            renderGrid(currentData);
         }
 
         document.getElementById('searchInput').addEventListener('input', applyFilters);
         document.getElementById('genderFilter').addEventListener('change', applyFilters);
+
+        document.getElementById('btnLoadMore').addEventListener('click', () => {
+            renderGrid(currentData, true);
+        });
+
+        const btnNearMe = document.getElementById('btnNearMe');
+        btnNearMe.addEventListener('click', () => {
+            if (!navigator.geolocation) {
+                alert('عذراً، المتصفح الخاص بك لا يدعم تحديد الموقع.');
+                return;
+            }
+
+            btnNearMe.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري التحديد...';
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLng = position.coords.longitude;
+
+                    // Apply current filters before sorting by distance
+                    const term = document.getElementById('searchInput').value.toLowerCase();
+                    const gender = document.getElementById('genderFilter').value;
+
+                    let filtered = residences.filter(r => {
+                        const matchTerm = r.name.toLowerCase().includes(term) || r.wilaya.toLowerCase().includes(term);
+                        const matchGender = gender === '' || r.gender === gender;
+                        return matchTerm && matchGender;
+                    });
+
+                    currentData = filtered.map(r => {
+                        if(r.coordinates && r.coordinates.lat && r.coordinates.lng) {
+                            r.distance = calculateDistance(userLat, userLng, r.coordinates.lat, r.coordinates.lng);
+                        } else {
+                            r.distance = 999999;
+                        }
+                        return r;
+                    }).sort((a, b) => a.distance - b.distance);
+
+                    btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ';
+                    btnNearMe.style.backgroundColor = 'var(--primary-color)';
+                    btnNearMe.style.color = 'white';
+
+                    renderGrid(currentData);
+                },
+                (error) => {
+                    console.error(error);
+                    alert('تعذر تحديد موقعك. يرجى التأكد من منح الصلاحية.');
+                    btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ';
+                }
+            );
+        });
 
         document.addEventListener('DOMContentLoaded', init);
     </script>
