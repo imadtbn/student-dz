@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل المدارس العليا - Student DZ</title>
+    <meta name="description" content="دليل المدارس العليا في الجزائر. ابحث عن المدرسة، التخصصات، والموقع الجغرافي.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .filters-container {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        #searchInput {
+            flex: 1;
+            min-width: 300px;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+        }
+
+        .ecole-card {
+            background: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .ecole-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ecole-card h3 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .ecole-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .ecole-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(0,0,0,0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .ecole-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .ecole-tags span {
+            font-size: 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        .ecole-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .ecole-actions a {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-visit {
+            background: var(--primary-color);
+            color: white;
+        }
+        .btn-visit:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-map {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-map:hover {
+            background: rgba(46, 204, 113, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <span>Student DZ</span>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="../categories/tools.html">الأدوات</a></li>
+                        <li><a href="../universities/index.html">الجامعات</a></li>
+                        <li><a href="../ecoles/index.html" class="active">المدارس العليا</a></li>
+                        <li><a href="../residences/index.html">الإقامات</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button id="themeToggle" class="btn-icon" aria-label="تبديل المظهر">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-btn" aria-label="القائمة">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+        <div class="text-center" style="margin-bottom: 2rem;">
+            <h1 style="color: var(--primary-color); font-size: 2.5rem;"><i class="fa-solid fa-school"></i> دليل المدارس العليا</h1>
+        </div>
+
+        <div class="filters-container">
+            <button id="btnNearMe" class="btn btn-outline" style="white-space: nowrap;">
+                <i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ
+            </button>
+            <input type="text" id="searchInput" placeholder="ابحث عن مدرسة أو ولاية...">
+        </div>
+
+        <div id="ecolesGrid" class="grid-4">
+            <!-- Data will be loaded here via JS -->
+            <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-color);">
+                جاري تحميل البيانات...
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const grid = document.getElementById('ecolesGrid');
+            const searchInput = document.getElementById('searchInput');
+            const btnNearMe = document.getElementById('btnNearMe');
+            let ecolesData = [];
+
+            try {
+                const response = await fetch(CONFIG.getUrl('data/ecoles.json'));
+                if (!response.ok) throw new Error('Network response was not ok');
+                ecolesData = await response.json();
+                renderEcoles(ecolesData);
+            } catch (error) {
+                console.error("Error loading ecoles:", error);
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center;">تعذر تحميل البيانات.</div>';
+            }
+
+            function renderEcoles(data) {
+                grid.innerHTML = '';
+                if (data.length === 0) {
+                    grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center;">لا توجد نتائج مطابقة.</div>';
+                    return;
+                }
+
+                data.forEach(ecole => {
+                    const el = document.createElement('div');
+                    el.className = 'ecole-card fadeInUp';
+
+                    let mapUrl = `https://www.google.com/maps/dir/?api=1&destination=${ecole.position.lat},${ecole.position.lng}`;
+
+                    let specsHtml = ecole.specialties.map(s => `<span>${s}</span>`).join('');
+
+                    let distanceHtml = ecole.distance ? `<span style="color:var(--primary-color); font-weight:bold;"><i class="fa-solid fa-route"></i> ${ecole.distance.toFixed(1)} كم</span>` : '';
+
+                    el.innerHTML = `
+                        <h3>${ecole.name}</h3>
+                        <div class="ecole-meta">
+                            <span><i class="fa-solid fa-map-pin"></i> ${ecole.wilaya}</span>
+                            ${distanceHtml}
+                        </div>
+                        <div class="ecole-tags">
+                            ${specsHtml}
+                        </div>
+                        <div class="ecole-actions">
+                            <a href="${ecole.officialUrl}" target="_blank" rel="noopener" class="btn-visit"><i class="fa-solid fa-globe"></i> الموقع</a>
+                            <a href="${mapUrl}" target="_blank" rel="noopener" class="btn-map"><i class="fa-solid fa-map-location-dot"></i> مسار</a>
+                        </div>
+                    `;
+                    grid.appendChild(el);
+                });
+            }
+
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const filtered = ecolesData.filter(ecole =>
+                    ecole.name.toLowerCase().includes(term) ||
+                    ecole.wilaya.toLowerCase().includes(term) ||
+                    ecole.specialties.some(s => s.toLowerCase().includes(term))
+                );
+                renderEcoles(filtered);
+            });
+
+            // Haversine formula
+            function calculateDistance(lat1, lon1, lat2, lon2) {
+                const R = 6371; // km
+                const dLat = (lat2 - lat1) * Math.PI / 180;
+                const dLon = (lon2 - lon1) * Math.PI / 180;
+                const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                        Math.sin(dLon/2) * Math.sin(dLon/2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                return R * c;
+            }
+
+            btnNearMe.addEventListener('click', () => {
+                if (!navigator.geolocation) {
+                    alert('عذراً، المتصفح الخاص بك لا يدعم تحديد الموقع.');
+                    return;
+                }
+
+                btnNearMe.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري التحديد...';
+
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const userLat = position.coords.latitude;
+                        const userLng = position.coords.longitude;
+
+                        let sortedEcoles = [...ecolesData].map(ecole => {
+                            if(ecole.position && ecole.position.lat && ecole.position.lng) {
+                                ecole.distance = calculateDistance(userLat, userLng, ecole.position.lat, ecole.position.lng);
+                            } else {
+                                ecole.distance = 999999;
+                            }
+                            return ecole;
+                        }).sort((a, b) => a.distance - b.distance);
+
+                        btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ';
+                        btnNearMe.classList.add('active');
+                        renderEcoles(sortedEcoles);
+                    },
+                    (error) => {
+                        console.error(error);
+                        alert('تعذر تحديد موقعك. يرجى التأكد من منح الصلاحية.');
+                        btnNearMe.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> الأقرب إليّ';
+                    }
+                );
+            });
+
+            // Mobile Menu
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
