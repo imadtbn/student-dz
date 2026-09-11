@@ -1,0 +1,66 @@
+[
+    {
+        "id": "esi-alger",
+        "name": "المدرسة الوطنية العليا للإعلام الآلي (ESI)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Oued Smar, Alger",
+        "position": {
+            "lat": 36.7051,
+            "lng": 3.1738
+        },
+        "officialUrl": "https://www.esi.dz/",
+        "specialties": ["إعلام آلي", "أنظمة المعلومات"],
+        "services": ["مكتبة", "مطعم", "إقامة قريبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "epa-alger",
+        "name": "المدرسة المتعددة التقنيات للهندسة المعمارية والعمران (EPAU)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "El Harrach, Alger",
+        "position": {
+            "lat": 36.7118,
+            "lng": 3.1378
+        },
+        "officialUrl": "https://www.epau-alger.edu.dz/",
+        "specialties": ["هندسة معمارية", "عمران"],
+        "services": ["مكتبة متخصصة", "نادي علمي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enp-alger",
+        "name": "المدرسة الوطنية المتعددة التقنيات (ENP)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "El Harrach, Alger",
+        "position": {
+            "lat": 36.7232,
+            "lng": 3.1517
+        },
+        "officialUrl": "https://www.enp.edu.dz/",
+        "specialties": ["هندسة مدنية", "هندسة ميكانيكية", "إلكترونيك", "كيمياء"],
+        "services": ["مخابر بحث", "إقامة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-kouba",
+        "name": "المدرسة العليا للأساتذة بالقبة (ENS Kouba)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Kouba, Alger",
+        "position": {
+            "lat": 36.7335,
+            "lng": 3.0857
+        },
+        "officialUrl": "https://www.ens-kouba.dz/",
+        "specialties": ["رياضيات", "فيزياء", "كيمياء", "علوم طبيعية"],
+        "services": ["مكتبة", "نقل جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    }
+]
