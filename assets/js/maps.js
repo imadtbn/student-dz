@@ -31,9 +31,29 @@ async function initMap(containerId, centerLat = 36.7538, centerLng = 3.0588, zoo
     return mapInstance;
 }
 
-function addMarker(lat, lng, title, popupContent) {
+function addMarker(lat, lng, title, popupContent, iconType = 'default') {
     if(!mapInstance) return;
-    const marker = L.marker([lat, lng]).addTo(mapInstance);
+
+    let iconHtml = '<i class="fa-solid fa-location-dot" style="font-size: 24px; color: #3498db;"></i>'; // Default blue
+
+    if (iconType === 'university') {
+        iconHtml = '<i class="fa-solid fa-graduation-cap" style="font-size: 24px; color: #2ecc71;"></i>'; // Green
+    } else if (iconType === 'residence') {
+        iconHtml = '<i class="fa-solid fa-building" style="font-size: 24px; color: #e67e22;"></i>'; // Orange
+    } else if (iconType === 'ecole') {
+        iconHtml = '<i class="fa-solid fa-school" style="font-size: 24px; color: #9b59b6;"></i>'; // Purple
+    }
+
+    const customIcon = L.divIcon({
+        html: iconHtml,
+        className: 'custom-map-marker',
+        iconSize: [24, 24],
+        iconAnchor: [12, 24],
+        popupAnchor: [0, -24]
+    });
+
+    const marker = L.marker([lat, lng], { icon: customIcon }).addTo(mapInstance);
+
     if(popupContent) {
         marker.bindPopup(`<b>${title}</b><br>${popupContent}`);
     } else {
