@@ -1,5 +1,5 @@
 {
-    "lastUpdated": "2026-09-11",
+    "lastUpdated": "2026-09-12",
     "source": "official",
     "universities": [
         {
@@ -12,22 +12,2921 @@
                 "lat": 36.7725,
                 "lng": 3.0544
             },
-            "description": "من أقدم وأعرق الجامعات في الجزائر، متخصصة في الحقوق، العلوم الإسلامية، والطب."
+            "specialties": [
+                "الحقوق",
+                "طب"
+            ]
         },
         {
-            "id": "esi-alger",
-            "name": "المدرسة الوطنية العليا للإعلام الآلي (ESI)",
-            "wilaya": "الجزائر",
-            "type": "higher-school",
-            "officialUrl": "https://www.esi.dz/",
+            "id": "univ-boumerdes",
+            "name": "جامعة أمحمد بوقرة - بومرداس",
+            "wilaya": "بومرداس",
+            "type": "university",
+            "officialUrl": "https://www.univ-boumerdes.dz/",
             "coordinates": {
-                "lat": 36.7051,
-                "lng": 3.1738
+                "lat": 36.7597,
+                "lng": 3.4739
+            },
+            "specialties": [
+                "محروقات وكيمياء",
+                "هندسة كهربائية وإلكترونيك",
+                "علوم التكنولوجيا",
+                "علوم اقتصادية وتسيير"
+            ]
+        },
+        {
+            "id": "univ-usthb",
+            "name": "جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.usthb.dz/",
+            "coordinates": {
+                "lat": 36.7118,
+                "lng": 3.1814
             },
             "specialties": [
                 "إعلام آلي",
-                "أنظمة المعلومات"
+                "رياضيات",
+                "فيزياء",
+                "هندسة مدنية",
+                "إلكترونيك",
+                "بيولوجيا"
+            ]
+        },
+        {
+            "id": "univ-blida-1",
+            "name": "جامعة البليدة 1 - سعد دحلب",
+            "wilaya": "البليدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-blida.dz/",
+            "coordinates": {
+                "lat": 36.4526,
+                "lng": 2.8274
+            },
+            "specialties": [
+                "هندسة الطيران",
+                "طب",
+                "علوم الفلاحة والبيطرة",
+                "عمارة وتخطيط حضري"
+            ]
+        },
+        {
+            "id": "univ-oran-1",
+            "name": "جامعة وهران 1 - أحمد بن بلة",
+            "wilaya": "وهران",
+            "type": "university",
+            "officialUrl": "https://univ-oran1.dz/",
+            "coordinates": {
+                "lat": 35.6548,
+                "lng": -0.6124
+            },
+            "specialties": [
+                "طب",
+                "صيدلة",
+                "علوم المادة",
+                "علوم إنسانية واجتماعية"
+            ]
+        },
+        {
+            "id": "univ-constantine-1",
+            "name": "جامعة قسنطينة 1 - الإخوة منتوري",
+            "wilaya": "قسنطينة",
+            "type": "university",
+            "officialUrl": "https://www.umc.edu.dz/",
+            "coordinates": {
+                "lat": 36.3408,
+                "lng": 6.6192
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "علوم التكنولوجيا",
+                "رياضيات وإعلام آلي",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-annaba",
+            "name": "جامعة باجي مختار - عنابة",
+            "wilaya": "عنابة",
+            "type": "university",
+            "officialUrl": "https://www.univ-annaba.dz/",
+            "coordinates": {
+                "lat": 36.9292,
+                "lng": 7.7471
+            },
+            "specialties": [
+                "هندسة التعدين والميكانيك",
+                "هندسة كهربائية",
+                "علوم اقتصادية وتجارية",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiziouzou",
+            "name": "جامعة مولود معمري",
+            "wilaya": "تيزي وزو",
+            "type": "university",
+            "officialUrl": "https://www.ummto.dz/",
+            "coordinates": {
+                "lat": 36.7027,
+                "lng": 4.0569
+            },
+            "specialties": [
+                "لغة وأدب عربي",
+                "لغة وثقافة أمازيغية",
+                "علوم تكنولوجية",
+                "علوم بيولوجية"
+            ]
+        },
+        {
+            "id": "univ-setif-1",
+            "name": "جامعة سطيف 1 - فرحات عباس",
+            "wilaya": "سطيف",
+            "type": "university",
+            "officialUrl": "https://univ-setif.dz/",
+            "coordinates": {
+                "lat": 36.1953,
+                "lng": 5.3789
+            },
+            "specialties": [
+                "طب",
+                "هندسة العمليات",
+                "بصريات وميكانيك دقيقة",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-batna-1",
+            "name": "جامعة باتنة 1 - حاج لخضر",
+            "wilaya": "باتنة",
+            "type": "university",
+            "officialUrl": "https://www.univ-batna.dz/",
+            "coordinates": {
+                "lat": 35.5683,
+                "lng": 6.1842
+            },
+            "specialties": [
+                "علوم إسلامية",
+                "لغة وأدب عربي",
+                "علوم إنسانية",
+                "علوم المادة"
+            ]
+        },
+        {
+            "id": "univ-tlemcen",
+            "name": "جامعة أبي بكر بلقايد",
+            "wilaya": "تلمسان",
+            "type": "university",
+            "officialUrl": "https://www.univ-tlemcen.dz/",
+            "coordinates": {
+                "lat": 34.8876,
+                "lng": -1.3328
+            },
+            "specialties": [
+                "طب",
+                "اتصالات سلكية ولاسلكية",
+                "علوم بيئية",
+                "تاريخ وعلم الآثار"
+            ]
+        },
+        {
+            "id": "univ-ouargla",
+            "name": "جامعة قاصدي مرباح",
+            "wilaya": "ورقلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-ouargla.dz/",
+            "coordinates": {
+                "lat": 31.9566,
+                "lng": 5.3486
+            },
+            "specialties": [
+                "محروقات وطاقات متجددة",
+                "هندسة الطرائق",
+                "علوم الأرض والكون",
+                "علوم فلاحية صحراوية"
+            ]
+        },
+        {
+            "id": "univ-biskra",
+            "name": "جامعة محمد خيضر",
+            "wilaya": "بسكرة",
+            "type": "university",
+            "officialUrl": "https://univ-biskra.dz/",
+            "coordinates": {
+                "lat": 34.8464,
+                "lng": 5.7483
+            },
+            "specialties": [
+                "علوم بيطرية",
+                "هندسة معمارية",
+                "هندسة ميكانيكية",
+                "علوم قانونية وإدارية"
+            ]
+        },
+        {
+            "id": "univ-bechar",
+            "name": "جامعة طاهري محمد",
+            "wilaya": "بشار",
+            "type": "university",
+            "officialUrl": "https://www.univ-bechar.dz/",
+            "coordinates": {
+                "lat": 31.6264,
+                "lng": -2.2341
+            },
+            "specialties": [
+                "هندسة مدنية",
+                "طاقات متجددة",
+                "علوم اقتصادية",
+                "لغات أجنبية"
+            ]
+        },
+        {
+            "id": "univ-bejaia",
+            "name": "جامعة عبد الرحمن ميرة",
+            "wilaya": "بجاية",
+            "type": "university",
+            "officialUrl": "https://www.univ-bejaia.dz/",
+            "coordinates": {
+                "lat": 36.7516,
+                "lng": 5.0489
+            },
+            "specialties": [
+                "علوم تكنولوجية وطاقات",
+                "صناعات غذائية",
+                "علوم بيولوجية",
+                "حقوق وعلوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-sidi-bel-abbes",
+            "name": "جامعة الجيلالي اليابس",
+            "wilaya": "سيدي بلعباس",
+            "type": "university",
+            "officialUrl": "https://www.univ-sba.dz/",
+            "coordinates": {
+                "lat": 35.2045,
+                "lng": -0.6358
+            },
+            "specialties": [
+                "إلكترونيك وإعلام آلي",
+                "طب",
+                "هندسة مدنية ومعمارية",
+                "رياضيات"
+            ]
+        },
+        {
+            "id": "univ-mostaganem",
+            "name": "جامعة عبد الحميد بن باديس",
+            "wilaya": "مستغانم",
+            "type": "university",
+            "officialUrl": "https://www.univ-mosta.dz/",
+            "coordinates": {
+                "lat": 35.9383,
+                "lng": 0.0894
+            },
+            "specialties": [
+                "علوم فلاحية وصيد بحري",
+                "طب",
+                "علوم تجارية ومالية",
+                "فنون وإعلام"
+            ]
+        },
+        {
+            "id": "univ-chlef",
+            "name": "جامعة حسيبة بن بوعلي",
+            "wilaya": "الشلف",
+            "type": "university",
+            "officialUrl": "https://www.univ-chlef.dz/",
+            "coordinates": {
+                "lat": 36.1422,
+                "lng": 1.3411
+            },
+            "specialties": [
+                "هندسة ميكانيكية",
+                "علوم زراعية",
+                "علوم اقتصادية",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-djelfa",
+            "name": "جامعة زيان عاشور",
+            "wilaya": "الجلفة",
+            "type": "university",
+            "officialUrl": "https://www.univ-djelfa.dz/",
+            "coordinates": {
+                "lat": 34.6644,
+                "lng": 3.2505
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "تربية بدنية ورياضية",
+                "علوم قانونية وإدارية",
+                "علوم وتكنولوجيا"
+            ]
+        },
+        {
+            "id": "univ-msila",
+            "name": "جامعة محمد بوضياف",
+            "wilaya": "المسيلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-msila.dz/",
+            "coordinates": {
+                "lat": 35.7197,
+                "lng": 4.5028
+            },
+            "specialties": [
+                "رياضيات وإعلام آلي",
+                "هندسة مدنية",
+                "علوم التسيير",
+                "علم النفس وعلوم التربية"
+            ]
+        },
+        {
+            "id": "univ-skikda",
+            "name": "جامعة 20 أوت 1955",
+            "wilaya": "سكيكدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-skikda.dz/",
+            "coordinates": {
+                "lat": 36.8525,
+                "lng": 6.9453
+            },
+            "specialties": [
+                "بتروكيمياء وهندسة الطرائق",
+                "علوم فلاحية وبيئية",
+                "إلكتروتقني",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-adrar",
+            "name": "جامعة أحمد دراية",
+            "wilaya": "أدرار",
+            "type": "university",
+            "officialUrl": "https://www.univ-adrar.dz/",
+            "coordinates": {
+                "lat": 27.8864,
+                "lng": -0.2789
+            },
+            "specialties": [
+                "طاقات متجددة ومياه صحراوية",
+                "علوم إسلامية وحضارة",
+                "علوم اقتصادية",
+                "علوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-eloued",
+            "name": "جامعة الشهيد حمه لخضر",
+            "wilaya": "الوادي",
+            "type": "university",
+            "officialUrl": "https://www.univ-eloued.dz/",
+            "coordinates": {
+                "lat": 33.3686,
+                "lng": 6.8481
+            },
+            "specialties": [
+                "فلاحة صحراوية",
+                "كيمياء صناعية",
+                "علوم إسلامية",
+                "إعلام آلي"
+            ]
+        },
+        {
+            "id": "univ-ghardaia",
+            "name": "جامعة غرداية",
+            "wilaya": "غرداية",
+            "type": "university",
+            "officialUrl": "https://www.univ-ghardaia.dz/",
+            "coordinates": {
+                "lat": 32.4842,
+                "lng": 3.6631
+            },
+            "specialties": [
+                "علوم المادة",
+                "تهيئة عمرانية وهندسة ريفية",
+                "علوم إنسانية واجتماعية",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-jijel",
+            "name": "جامعة محمد الصديق بن يحيى",
+            "wilaya": "جيجل",
+            "type": "university",
+            "officialUrl": "https://www.univ-jijel.dz/",
+            "coordinates": {
+                "lat": 36.8042,
+                "lng": 5.7533
+            },
+            "specialties": [
+                "علوم بحرية وصيد",
+                "هندسة إلكترونية",
+                "علوم الطبيعة والحياة",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiaret",
+            "name": "جامعة ابن خلدون",
+            "wilaya": "تيارت",
+            "type": "university",
+            "officialUrl": "https://www.univ-tiaret.dz/",
+            "coordinates": {
+                "lat": 35.3789,
+                "lng": 1.3469
+            },
+            "specialties": [
+                "علوم بيطرية وتربية الخيول",
+                "علوم فلاحية",
+                "علوم المادة",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-mascara",
+            "name": "جامعة مصطفى اسطمبولي",
+            "wilaya": "معسكر",
+            "type": "university",
+            "officialUrl": "https://www.univ-mascara.dz/",
+            "coordinates": {
+                "lat": 35.4053,
+                "lng": 0.1511
+            },
+            "specialties": [
+                "بيولوجيا وصناعات غذائية",
+                "علوم المادة",
+                "علوم إنسانية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-tebessa",
+            "name": "جامعة العربي التبسي",
+            "wilaya": "تبسة",
+            "type": "university",
+            "officialUrl": "https://www.univ-tebessa.dz/",
+            "coordinates": {
+                "lat": 35.4192,
+                "lng": 8.1189
+            },
+            "specialties": [
+                "جيولوجيا ومناجم",
+                "علوم التكنولوجيا",
+                "علوم بيولوجية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-guelma",
+            "name": "جامعة 8 ماي 1945",
+            "wilaya": "قالمة",
+            "type": "university",
+            "officialUrl": "https://www.univ-guelma.dz/",
+            "coordinates": {
+                "lat": 36.4564,
+                "lng": 7.4267
+            },
+            "specialties": [
+                "أتمتة وتحكم آلي",
+                "رياضيات وإعلام آلي",
+                "علوم زراعية",
+                "علوم التسيير"
+            ]
+        },
+        {
+            "id": "univ-khenchela",
+            "name": "جامعة عباس لغرور",
+            "wilaya": "خنشلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-khenchela.dz/",
+            "coordinates": {
+                "lat": 35.4339,
+                "lng": 7.1353
+            },
+            "specialties": [
+                "غابات وتهيئة ريفية",
+                "هندسة معمارية",
+                "علوم اقتصادية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-saida",
+            "name": "جامعة د. مولاي الطاهر",
+            "wilaya": "سعيدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-saida.dz/",
+            "coordinates": {
+                "lat": 34.8428,
+                "lng": 0.1611
+            },
+            "specialties": [
+                "علوم وتقنيات النشاطات البدنية",
+                "علوم المادة",
+                "آداب ولغات أجنبية",
+                "تسيير واقتصاد"
+            ]
+        },
+        {
+            "id": "univ-laghouat",
+            "name": "جامعة عمار ثليجي",
+            "wilaya": "الأغواط",
+            "type": "university",
+            "officialUrl": "https://www.univ-lagh.dz/",
+            "coordinates": {
+                "lat": 33.7844,
+                "lng": 2.8711
+            },
+            "specialties": [
+                "طب",
+                "هندسة كهربائية وميكانيكية",
+                "عمارة وتخطيط حضري",
+                "علوم بيئية صحراوية"
+            ]
+        },
+                {
+            "id": "univ-algiers-1",
+            "name": "جامعة الجزائر 1 - بن يوسف بن خدة",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.univ-alger.dz/",
+            "coordinates": {
+                "lat": 36.7725,
+                "lng": 3.0544
+            },
+            "specialties": [
+                "الحقوق",
+                "طب"
+            ]
+        },
+        {
+            "id": "univ-boumerdes",
+            "name": "جامعة أمحمد بوقرة - بومرداس",
+            "wilaya": "بومرداس",
+            "type": "university",
+            "officialUrl": "https://www.univ-boumerdes.dz/",
+            "coordinates": {
+                "lat": 36.7597,
+                "lng": 3.4739
+            },
+            "specialties": [
+                "محروقات وكيمياء",
+                "هندسة كهربائية وإلكترونيك",
+                "علوم التكنولوجيا",
+                "علوم اقتصادية وتسيير"
+            ]
+        },
+        {
+            "id": "univ-usthb",
+            "name": "جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.usthb.dz/",
+            "coordinates": {
+                "lat": 36.7118,
+                "lng": 3.1814
+            },
+            "specialties": [
+                "إعلام آلي",
+                "رياضيات",
+                "فيزياء",
+                "هندسة مدنية",
+                "إلكترونيك",
+                "بيولوجيا"
+            ]
+        },
+        {
+            "id": "univ-blida-1",
+            "name": "جامعة البليدة 1 - سعد دحلب",
+            "wilaya": "البليدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-blida.dz/",
+            "coordinates": {
+                "lat": 36.4526,
+                "lng": 2.8274
+            },
+            "specialties": [
+                "هندسة الطيران",
+                "طب",
+                "علوم الفلاحة والبيطرة",
+                "عمارة وتخطيط حضري"
+            ]
+        },
+        {
+            "id": "univ-oran-1",
+            "name": "جامعة وهران 1 - أحمد بن بلة",
+            "wilaya": "وهران",
+            "type": "university",
+            "officialUrl": "https://univ-oran1.dz/",
+            "coordinates": {
+                "lat": 35.6548,
+                "lng": -0.6124
+            },
+            "specialties": [
+                "طب",
+                "صيدلة",
+                "علوم المادة",
+                "علوم إنسانية واجتماعية"
+            ]
+        },
+        {
+            "id": "univ-constantine-1",
+            "name": "جامعة قسنطينة 1 - الإخوة منتوري",
+            "wilaya": "قسنطينة",
+            "type": "university",
+            "officialUrl": "https://www.umc.edu.dz/",
+            "coordinates": {
+                "lat": 36.3408,
+                "lng": 6.6192
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "علوم التكنولوجيا",
+                "رياضيات وإعلام آلي",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-annaba",
+            "name": "جامعة باجي مختار - عنابة",
+            "wilaya": "عنابة",
+            "type": "university",
+            "officialUrl": "https://www.univ-annaba.dz/",
+            "coordinates": {
+                "lat": 36.9292,
+                "lng": 7.7471
+            },
+            "specialties": [
+                "هندسة التعدين والميكانيك",
+                "هندسة كهربائية",
+                "علوم اقتصادية وتجارية",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiziouzou",
+            "name": "جامعة مولود معمري",
+            "wilaya": "تيزي وزو",
+            "type": "university",
+            "officialUrl": "https://www.ummto.dz/",
+            "coordinates": {
+                "lat": 36.7027,
+                "lng": 4.0569
+            },
+            "specialties": [
+                "لغة وأدب عربي",
+                "لغة وثقافة أمازيغية",
+                "علوم تكنولوجية",
+                "علوم بيولوجية"
+            ]
+        },
+        {
+            "id": "univ-setif-1",
+            "name": "جامعة سطيف 1 - فرحات عباس",
+            "wilaya": "سطيف",
+            "type": "university",
+            "officialUrl": "https://univ-setif.dz/",
+            "coordinates": {
+                "lat": 36.1953,
+                "lng": 5.3789
+            },
+            "specialties": [
+                "طب",
+                "هندسة العمليات",
+                "بصريات وميكانيك دقيقة",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-batna-1",
+            "name": "جامعة باتنة 1 - حاج لخضر",
+            "wilaya": "باتنة",
+            "type": "university",
+            "officialUrl": "https://www.univ-batna.dz/",
+            "coordinates": {
+                "lat": 35.5683,
+                "lng": 6.1842
+            },
+            "specialties": [
+                "علوم إسلامية",
+                "لغة وأدب عربي",
+                "علوم إنسانية",
+                "علوم المادة"
+            ]
+        },
+        {
+            "id": "univ-tlemcen",
+            "name": "جامعة أبي بكر بلقايد",
+            "wilaya": "تلمسان",
+            "type": "university",
+            "officialUrl": "https://www.univ-tlemcen.dz/",
+            "coordinates": {
+                "lat": 34.8876,
+                "lng": -1.3328
+            },
+            "specialties": [
+                "طب",
+                "اتصالات سلكية ولاسلكية",
+                "علوم بيئية",
+                "تاريخ وعلم الآثار"
+            ]
+        },
+        {
+            "id": "univ-ouargla",
+            "name": "جامعة قاصدي مرباح",
+            "wilaya": "ورقلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-ouargla.dz/",
+            "coordinates": {
+                "lat": 31.9566,
+                "lng": 5.3486
+            },
+            "specialties": [
+                "محروقات وطاقات متجددة",
+                "هندسة الطرائق",
+                "علوم الأرض والكون",
+                "علوم فلاحية صحراوية"
+            ]
+        },
+        {
+            "id": "univ-biskra",
+            "name": "جامعة محمد خيضر",
+            "wilaya": "بسكرة",
+            "type": "university",
+            "officialUrl": "https://univ-biskra.dz/",
+            "coordinates": {
+                "lat": 34.8464,
+                "lng": 5.7483
+            },
+            "specialties": [
+                "علوم بيطرية",
+                "هندسة معمارية",
+                "هندسة ميكانيكية",
+                "علوم قانونية وإدارية"
+            ]
+        },
+        {
+            "id": "univ-bechar",
+            "name": "جامعة طاهري محمد",
+            "wilaya": "بشار",
+            "type": "university",
+            "officialUrl": "https://www.univ-bechar.dz/",
+            "coordinates": {
+                "lat": 31.6264,
+                "lng": -2.2341
+            },
+            "specialties": [
+                "هندسة مدنية",
+                "طاقات متجددة",
+                "علوم اقتصادية",
+                "لغات أجنبية"
+            ]
+        },
+        {
+            "id": "univ-bejaia",
+            "name": "جامعة عبد الرحمن ميرة",
+            "wilaya": "بجاية",
+            "type": "university",
+            "officialUrl": "https://www.univ-bejaia.dz/",
+            "coordinates": {
+                "lat": 36.7516,
+                "lng": 5.0489
+            },
+            "specialties": [
+                "علوم تكنولوجية وطاقات",
+                "صناعات غذائية",
+                "علوم بيولوجية",
+                "حقوق وعلوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-sidi-bel-abbes",
+            "name": "جامعة الجيلالي اليابس",
+            "wilaya": "سيدي بلعباس",
+            "type": "university",
+            "officialUrl": "https://www.univ-sba.dz/",
+            "coordinates": {
+                "lat": 35.2045,
+                "lng": -0.6358
+            },
+            "specialties": [
+                "إلكترونيك وإعلام آلي",
+                "طب",
+                "هندسة مدنية ومعمارية",
+                "رياضيات"
+            ]
+        },
+        {
+            "id": "univ-mostaganem",
+            "name": "جامعة عبد الحميد بن باديس",
+            "wilaya": "مستغانم",
+            "type": "university",
+            "officialUrl": "https://www.univ-mosta.dz/",
+            "coordinates": {
+                "lat": 35.9383,
+                "lng": 0.0894
+            },
+            "specialties": [
+                "علوم فلاحية وصيد بحري",
+                "طب",
+                "علوم تجارية ومالية",
+                "فنون وإعلام"
+            ]
+        },
+        {
+            "id": "univ-chlef",
+            "name": "جامعة حسيبة بن بوعلي",
+            "wilaya": "الشلف",
+            "type": "university",
+            "officialUrl": "https://www.univ-chlef.dz/",
+            "coordinates": {
+                "lat": 36.1422,
+                "lng": 1.3411
+            },
+            "specialties": [
+                "هندسة ميكانيكية",
+                "علوم زراعية",
+                "علوم اقتصادية",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-djelfa",
+            "name": "جامعة زيان عاشور",
+            "wilaya": "الجلفة",
+            "type": "university",
+            "officialUrl": "https://www.univ-djelfa.dz/",
+            "coordinates": {
+                "lat": 34.6644,
+                "lng": 3.2505
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "تربية بدنية ورياضية",
+                "علوم قانونية وإدارية",
+                "علوم وتكنولوجيا"
+            ]
+        },
+        {
+            "id": "univ-msila",
+            "name": "جامعة محمد بوضياف",
+            "wilaya": "المسيلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-msila.dz/",
+            "coordinates": {
+                "lat": 35.7197,
+                "lng": 4.5028
+            },
+            "specialties": [
+                "رياضيات وإعلام آلي",
+                "هندسة مدنية",
+                "علوم التسيير",
+                "علم النفس وعلوم التربية"
+            ]
+        },
+        {
+            "id": "univ-skikda",
+            "name": "جامعة 20 أوت 1955",
+            "wilaya": "سكيكدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-skikda.dz/",
+            "coordinates": {
+                "lat": 36.8525,
+                "lng": 6.9453
+            },
+            "specialties": [
+                "بتروكيمياء وهندسة الطرائق",
+                "علوم فلاحية وبيئية",
+                "إلكتروتقني",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-adrar",
+            "name": "جامعة أحمد دراية",
+            "wilaya": "أدرار",
+            "type": "university",
+            "officialUrl": "https://www.univ-adrar.dz/",
+            "coordinates": {
+                "lat": 27.8864,
+                "lng": -0.2789
+            },
+            "specialties": [
+                "طاقات متجددة ومياه صحراوية",
+                "علوم إسلامية وحضارة",
+                "علوم اقتصادية",
+                "علوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-eloued",
+            "name": "جامعة الشهيد حمه لخضر",
+            "wilaya": "الوادي",
+            "type": "university",
+            "officialUrl": "https://www.univ-eloued.dz/",
+            "coordinates": {
+                "lat": 33.3686,
+                "lng": 6.8481
+            },
+            "specialties": [
+                "فلاحة صحراوية",
+                "كيمياء صناعية",
+                "علوم إسلامية",
+                "إعلام آلي"
+            ]
+        },
+        {
+            "id": "univ-ghardaia",
+            "name": "جامعة غرداية",
+            "wilaya": "غرداية",
+            "type": "university",
+            "officialUrl": "https://www.univ-ghardaia.dz/",
+            "coordinates": {
+                "lat": 32.4842,
+                "lng": 3.6631
+            },
+            "specialties": [
+                "علوم المادة",
+                "تهيئة عمرانية وهندسة ريفية",
+                "علوم إنسانية واجتماعية",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-jijel",
+            "name": "جامعة محمد الصديق بن يحيى",
+            "wilaya": "جيجل",
+            "type": "university",
+            "officialUrl": "https://www.univ-jijel.dz/",
+            "coordinates": {
+                "lat": 36.8042,
+                "lng": 5.7533
+            },
+            "specialties": [
+                "علوم بحرية وصيد",
+                "هندسة إلكترونية",
+                "علوم الطبيعة والحياة",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiaret",
+            "name": "جامعة ابن خلدون",
+            "wilaya": "تيارت",
+            "type": "university",
+            "officialUrl": "https://www.univ-tiaret.dz/",
+            "coordinates": {
+                "lat": 35.3789,
+                "lng": 1.3469
+            },
+            "specialties": [
+                "علوم بيطرية وتربية الخيول",
+                "علوم فلاحية",
+                "علوم المادة",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-mascara",
+            "name": "جامعة مصطفى اسطمبولي",
+            "wilaya": "معسكر",
+            "type": "university",
+            "officialUrl": "https://www.univ-mascara.dz/",
+            "coordinates": {
+                "lat": 35.4053,
+                "lng": 0.1511
+            },
+            "specialties": [
+                "بيولوجيا وصناعات غذائية",
+                "علوم المادة",
+                "علوم إنسانية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-tebessa",
+            "name": "جامعة العربي التبسي",
+            "wilaya": "تبسة",
+            "type": "university",
+            "officialUrl": "https://www.univ-tebessa.dz/",
+            "coordinates": {
+                "lat": 35.4192,
+                "lng": 8.1189
+            },
+            "specialties": [
+                "جيولوجيا ومناجم",
+                "علوم التكنولوجيا",
+                "علوم بيولوجية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-guelma",
+            "name": "جامعة 8 ماي 1945",
+            "wilaya": "قالمة",
+            "type": "university",
+            "officialUrl": "https://www.univ-guelma.dz/",
+            "coordinates": {
+                "lat": 36.4564,
+                "lng": 7.4267
+            },
+            "specialties": [
+                "أتمتة وتحكم آلي",
+                "رياضيات وإعلام آلي",
+                "علوم زراعية",
+                "علوم التسيير"
+            ]
+        },
+        {
+            "id": "univ-khenchela",
+            "name": "جامعة عباس لغرور",
+            "wilaya": "خنشلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-khenchela.dz/",
+            "coordinates": {
+                "lat": 35.4339,
+                "lng": 7.1353
+            },
+            "specialties": [
+                "غابات وتهيئة ريفية",
+                "هندسة معمارية",
+                "علوم اقتصادية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-saida",
+            "name": "جامعة د. مولاي الطاهر",
+            "wilaya": "سعيدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-saida.dz/",
+            "coordinates": {
+                "lat": 34.8428,
+                "lng": 0.1611
+            },
+            "specialties": [
+                "علوم وتقنيات النشاطات البدنية",
+                "علوم المادة",
+                "آداب ولغات أجنبية",
+                "تسيير واقتصاد"
+            ]
+        },
+        {
+            "id": "univ-laghouat",
+            "name": "جامعة عمار ثليجي",
+            "wilaya": "الأغواط",
+            "type": "university",
+            "officialUrl": "https://www.univ-lagh.dz/",
+            "coordinates": {
+                "lat": 33.7844,
+                "lng": 2.8711
+            },
+            "specialties": [
+                "طب",
+                "هندسة كهربائية وميكانيكية",
+                "عمارة وتخطيط حضري",
+                "علوم بيئية صحراوية"
+            ]
+        },
+                {
+            "id": "univ-algiers-1",
+            "name": "جامعة الجزائر 1 - بن يوسف بن خدة",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.univ-alger.dz/",
+            "coordinates": {
+                "lat": 36.7725,
+                "lng": 3.0544
+            },
+            "specialties": [
+                "الحقوق",
+                "طب"
+            ]
+        },
+        {
+            "id": "univ-boumerdes",
+            "name": "جامعة أمحمد بوقرة - بومرداس",
+            "wilaya": "بومرداس",
+            "type": "university",
+            "officialUrl": "https://www.univ-boumerdes.dz/",
+            "coordinates": {
+                "lat": 36.7597,
+                "lng": 3.4739
+            },
+            "specialties": [
+                "محروقات وكيمياء",
+                "هندسة كهربائية وإلكترونيك",
+                "علوم التكنولوجيا",
+                "علوم اقتصادية وتسيير"
+            ]
+        },
+        {
+            "id": "univ-usthb",
+            "name": "جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.usthb.dz/",
+            "coordinates": {
+                "lat": 36.7118,
+                "lng": 3.1814
+            },
+            "specialties": [
+                "إعلام آلي",
+                "رياضيات",
+                "فيزياء",
+                "هندسة مدنية",
+                "إلكترونيك",
+                "بيولوجيا"
+            ]
+        },
+        {
+            "id": "univ-blida-1",
+            "name": "جامعة البليدة 1 - سعد دحلب",
+            "wilaya": "البليدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-blida.dz/",
+            "coordinates": {
+                "lat": 36.4526,
+                "lng": 2.8274
+            },
+            "specialties": [
+                "هندسة الطيران",
+                "طب",
+                "علوم الفلاحة والبيطرة",
+                "عمارة وتخطيط حضري"
+            ]
+        },
+        {
+            "id": "univ-oran-1",
+            "name": "جامعة وهران 1 - أحمد بن بلة",
+            "wilaya": "وهران",
+            "type": "university",
+            "officialUrl": "https://univ-oran1.dz/",
+            "coordinates": {
+                "lat": 35.6548,
+                "lng": -0.6124
+            },
+            "specialties": [
+                "طب",
+                "صيدلة",
+                "علوم المادة",
+                "علوم إنسانية واجتماعية"
+            ]
+        },
+        {
+            "id": "univ-constantine-1",
+            "name": "جامعة قسنطينة 1 - الإخوة منتوري",
+            "wilaya": "قسنطينة",
+            "type": "university",
+            "officialUrl": "https://www.umc.edu.dz/",
+            "coordinates": {
+                "lat": 36.3408,
+                "lng": 6.6192
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "علوم التكنولوجيا",
+                "رياضيات وإعلام آلي",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-annaba",
+            "name": "جامعة باجي مختار - عنابة",
+            "wilaya": "عنابة",
+            "type": "university",
+            "officialUrl": "https://www.univ-annaba.dz/",
+            "coordinates": {
+                "lat": 36.9292,
+                "lng": 7.7471
+            },
+            "specialties": [
+                "هندسة التعدين والميكانيك",
+                "هندسة كهربائية",
+                "علوم اقتصادية وتجارية",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiziouzou",
+            "name": "جامعة مولود معمري",
+            "wilaya": "تيزي وزو",
+            "type": "university",
+            "officialUrl": "https://www.ummto.dz/",
+            "coordinates": {
+                "lat": 36.7027,
+                "lng": 4.0569
+            },
+            "specialties": [
+                "لغة وأدب عربي",
+                "لغة وثقافة أمازيغية",
+                "علوم تكنولوجية",
+                "علوم بيولوجية"
+            ]
+        },
+        {
+            "id": "univ-setif-1",
+            "name": "جامعة سطيف 1 - فرحات عباس",
+            "wilaya": "سطيف",
+            "type": "university",
+            "officialUrl": "https://univ-setif.dz/",
+            "coordinates": {
+                "lat": 36.1953,
+                "lng": 5.3789
+            },
+            "specialties": [
+                "طب",
+                "هندسة العمليات",
+                "بصريات وميكانيك دقيقة",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-batna-1",
+            "name": "جامعة باتنة 1 - حاج لخضر",
+            "wilaya": "باتنة",
+            "type": "university",
+            "officialUrl": "https://www.univ-batna.dz/",
+            "coordinates": {
+                "lat": 35.5683,
+                "lng": 6.1842
+            },
+            "specialties": [
+                "علوم إسلامية",
+                "لغة وأدب عربي",
+                "علوم إنسانية",
+                "علوم المادة"
+            ]
+        },
+        {
+            "id": "univ-tlemcen",
+            "name": "جامعة أبي بكر بلقايد",
+            "wilaya": "تلمسان",
+            "type": "university",
+            "officialUrl": "https://www.univ-tlemcen.dz/",
+            "coordinates": {
+                "lat": 34.8876,
+                "lng": -1.3328
+            },
+            "specialties": [
+                "طب",
+                "اتصالات سلكية ولاسلكية",
+                "علوم بيئية",
+                "تاريخ وعلم الآثار"
+            ]
+        },
+        {
+            "id": "univ-ouargla",
+            "name": "جامعة قاصدي مرباح",
+            "wilaya": "ورقلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-ouargla.dz/",
+            "coordinates": {
+                "lat": 31.9566,
+                "lng": 5.3486
+            },
+            "specialties": [
+                "محروقات وطاقات متجددة",
+                "هندسة الطرائق",
+                "علوم الأرض والكون",
+                "علوم فلاحية صحراوية"
+            ]
+        },
+        {
+            "id": "univ-biskra",
+            "name": "جامعة محمد خيضر",
+            "wilaya": "بسكرة",
+            "type": "university",
+            "officialUrl": "https://univ-biskra.dz/",
+            "coordinates": {
+                "lat": 34.8464,
+                "lng": 5.7483
+            },
+            "specialties": [
+                "علوم بيطرية",
+                "هندسة معمارية",
+                "هندسة ميكانيكية",
+                "علوم قانونية وإدارية"
+            ]
+        },
+        {
+            "id": "univ-bechar",
+            "name": "جامعة طاهري محمد",
+            "wilaya": "بشار",
+            "type": "university",
+            "officialUrl": "https://www.univ-bechar.dz/",
+            "coordinates": {
+                "lat": 31.6264,
+                "lng": -2.2341
+            },
+            "specialties": [
+                "هندسة مدنية",
+                "طاقات متجددة",
+                "علوم اقتصادية",
+                "لغات أجنبية"
+            ]
+        },
+        {
+            "id": "univ-bejaia",
+            "name": "جامعة عبد الرحمن ميرة",
+            "wilaya": "بجاية",
+            "type": "university",
+            "officialUrl": "https://www.univ-bejaia.dz/",
+            "coordinates": {
+                "lat": 36.7516,
+                "lng": 5.0489
+            },
+            "specialties": [
+                "علوم تكنولوجية وطاقات",
+                "صناعات غذائية",
+                "علوم بيولوجية",
+                "حقوق وعلوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-sidi-bel-abbes",
+            "name": "جامعة الجيلالي اليابس",
+            "wilaya": "سيدي بلعباس",
+            "type": "university",
+            "officialUrl": "https://www.univ-sba.dz/",
+            "coordinates": {
+                "lat": 35.2045,
+                "lng": -0.6358
+            },
+            "specialties": [
+                "إلكترونيك وإعلام آلي",
+                "طب",
+                "هندسة مدنية ومعمارية",
+                "رياضيات"
+            ]
+        },
+        {
+            "id": "univ-mostaganem",
+            "name": "جامعة عبد الحميد بن باديس",
+            "wilaya": "مستغانم",
+            "type": "university",
+            "officialUrl": "https://www.univ-mosta.dz/",
+            "coordinates": {
+                "lat": 35.9383,
+                "lng": 0.0894
+            },
+            "specialties": [
+                "علوم فلاحية وصيد بحري",
+                "طب",
+                "علوم تجارية ومالية",
+                "فنون وإعلام"
+            ]
+        },
+        {
+            "id": "univ-chlef",
+            "name": "جامعة حسيبة بن بوعلي",
+            "wilaya": "الشلف",
+            "type": "university",
+            "officialUrl": "https://www.univ-chlef.dz/",
+            "coordinates": {
+                "lat": 36.1422,
+                "lng": 1.3411
+            },
+            "specialties": [
+                "هندسة ميكانيكية",
+                "علوم زراعية",
+                "علوم اقتصادية",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-djelfa",
+            "name": "جامعة زيان عاشور",
+            "wilaya": "الجلفة",
+            "type": "university",
+            "officialUrl": "https://www.univ-djelfa.dz/",
+            "coordinates": {
+                "lat": 34.6644,
+                "lng": 3.2505
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "تربية بدنية ورياضية",
+                "علوم قانونية وإدارية",
+                "علوم وتكنولوجيا"
+            ]
+        },
+        {
+            "id": "univ-msila",
+            "name": "جامعة محمد بوضياف",
+            "wilaya": "المسيلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-msila.dz/",
+            "coordinates": {
+                "lat": 35.7197,
+                "lng": 4.5028
+            },
+            "specialties": [
+                "رياضيات وإعلام آلي",
+                "هندسة مدنية",
+                "علوم التسيير",
+                "علم النفس وعلوم التربية"
+            ]
+        },
+        {
+            "id": "univ-skikda",
+            "name": "جامعة 20 أوت 1955",
+            "wilaya": "سكيكدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-skikda.dz/",
+            "coordinates": {
+                "lat": 36.8525,
+                "lng": 6.9453
+            },
+            "specialties": [
+                "بتروكيمياء وهندسة الطرائق",
+                "علوم فلاحية وبيئية",
+                "إلكتروتقني",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-adrar",
+            "name": "جامعة أحمد دراية",
+            "wilaya": "أدرار",
+            "type": "university",
+            "officialUrl": "https://www.univ-adrar.dz/",
+            "coordinates": {
+                "lat": 27.8864,
+                "lng": -0.2789
+            },
+            "specialties": [
+                "طاقات متجددة ومياه صحراوية",
+                "علوم إسلامية وحضارة",
+                "علوم اقتصادية",
+                "علوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-eloued",
+            "name": "جامعة الشهيد حمه لخضر",
+            "wilaya": "الوادي",
+            "type": "university",
+            "officialUrl": "https://www.univ-eloued.dz/",
+            "coordinates": {
+                "lat": 33.3686,
+                "lng": 6.8481
+            },
+            "specialties": [
+                "فلاحة صحراوية",
+                "كيمياء صناعية",
+                "علوم إسلامية",
+                "إعلام آلي"
+            ]
+        },
+        {
+            "id": "univ-ghardaia",
+            "name": "جامعة غرداية",
+            "wilaya": "غرداية",
+            "type": "university",
+            "officialUrl": "https://www.univ-ghardaia.dz/",
+            "coordinates": {
+                "lat": 32.4842,
+                "lng": 3.6631
+            },
+            "specialties": [
+                "علوم المادة",
+                "تهيئة عمرانية وهندسة ريفية",
+                "علوم إنسانية واجتماعية",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-jijel",
+            "name": "جامعة محمد الصديق بن يحيى",
+            "wilaya": "جيجل",
+            "type": "university",
+            "officialUrl": "https://www.univ-jijel.dz/",
+            "coordinates": {
+                "lat": 36.8042,
+                "lng": 5.7533
+            },
+            "specialties": [
+                "علوم بحرية وصيد",
+                "هندسة إلكترونية",
+                "علوم الطبيعة والحياة",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiaret",
+            "name": "جامعة ابن خلدون",
+            "wilaya": "تيارت",
+            "type": "university",
+            "officialUrl": "https://www.univ-tiaret.dz/",
+            "coordinates": {
+                "lat": 35.3789,
+                "lng": 1.3469
+            },
+            "specialties": [
+                "علوم بيطرية وتربية الخيول",
+                "علوم فلاحية",
+                "علوم المادة",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-mascara",
+            "name": "جامعة مصطفى اسطمبولي",
+            "wilaya": "معسكر",
+            "type": "university",
+            "officialUrl": "https://www.univ-mascara.dz/",
+            "coordinates": {
+                "lat": 35.4053,
+                "lng": 0.1511
+            },
+            "specialties": [
+                "بيولوجيا وصناعات غذائية",
+                "علوم المادة",
+                "علوم إنسانية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-tebessa",
+            "name": "جامعة العربي التبسي",
+            "wilaya": "تبسة",
+            "type": "university",
+            "officialUrl": "https://www.univ-tebessa.dz/",
+            "coordinates": {
+                "lat": 35.4192,
+                "lng": 8.1189
+            },
+            "specialties": [
+                "جيولوجيا ومناجم",
+                "علوم التكنولوجيا",
+                "علوم بيولوجية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-guelma",
+            "name": "جامعة 8 ماي 1945",
+            "wilaya": "قالمة",
+            "type": "university",
+            "officialUrl": "https://www.univ-guelma.dz/",
+            "coordinates": {
+                "lat": 36.4564,
+                "lng": 7.4267
+            },
+            "specialties": [
+                "أتمتة وتحكم آلي",
+                "رياضيات وإعلام آلي",
+                "علوم زراعية",
+                "علوم التسيير"
+            ]
+        },
+        {
+            "id": "univ-khenchela",
+            "name": "جامعة عباس لغرور",
+            "wilaya": "خنشلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-khenchela.dz/",
+            "coordinates": {
+                "lat": 35.4339,
+                "lng": 7.1353
+            },
+            "specialties": [
+                "غابات وتهيئة ريفية",
+                "هندسة معمارية",
+                "علوم اقتصادية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-saida",
+            "name": "جامعة د. مولاي الطاهر",
+            "wilaya": "سعيدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-saida.dz/",
+            "coordinates": {
+                "lat": 34.8428,
+                "lng": 0.1611
+            },
+            "specialties": [
+                "علوم وتقنيات النشاطات البدنية",
+                "علوم المادة",
+                "آداب ولغات أجنبية",
+                "تسيير واقتصاد"
+            ]
+        },
+        {
+            "id": "univ-laghouat",
+            "name": "جامعة عمار ثليجي",
+            "wilaya": "الأغواط",
+            "type": "university",
+            "officialUrl": "https://www.univ-lagh.dz/",
+            "coordinates": {
+                "lat": 33.7844,
+                "lng": 2.8711
+            },
+            "specialties": [
+                "طب",
+                "هندسة كهربائية وميكانيكية",
+                "عمارة وتخطيط حضري",
+                "علوم بيئية صحراوية"
+            ]
+        },
+        {
+            "id": "univ-bouira",
+            "name": "جامعة العقيد آكلي محند أولحاج",
+            "wilaya": "البويرة",
+            "type": "university",
+            "officialUrl": "https://www.univ-bouira.dz/",
+            "coordinates": {
+                "lat": 36.3785,
+                "lng": 3.8744
+            },
+            "specialties": [
+                "هندسة الطرائق",
+                "علوم اقتصادية ومالية",
+                "لغة وأدب أمازيغي",
+                "علوم قانونية"
+            ]
+        },
+        {
+            "id": "univ-medea",
+            "name": "جامعة يحيى فارس",
+            "wilaya": "المدية",
+            "type": "university",
+            "officialUrl": "https://www.univ-medea.dz/",
+            "coordinates": {
+                "lat": 36.2592,
+                "lng": 2.7606
+            },
+            "specialties": [
+                "علوم وتكنولوجيا",
+                "علوم بيولوجية وزراعية",
+                "علوم إنسانية واجتماعية",
+                "رياضيات"
+            ]
+        },
+        {
+            "id": "univ-bba",
+            "name": "جامعة محمد البشير الإبراهيمي",
+            "wilaya": "برج بوعريريج",
+            "type": "university",
+            "officialUrl": "https://www.univ-bba.dz/",
+            "coordinates": {
+                "lat": 36.0821,
+                "lng": 4.7834
+            },
+            "specialties": [
+                "إلكترونيك صناعي",
+                "إعلام آلي وشبكات",
+                "علوم المادة",
+                "علوم التسيير"
+            ]
+        },
+        {
+            "id": "univ-oeb",
+            "name": "جامعة العربي بن مهيدي",
+            "wilaya": "أم البواقي",
+            "type": "university",
+            "officialUrl": "https://www.univ-oeb.dz/",
+            "coordinates": {
+                "lat": 35.8672,
+                "lng": 7.1124
+            },
+            "specialties": [
+                "بيطرة وعلوم فلاحية",
+                "علوم دقيقة وإعلام آلي",
+                "علوم الأرض والكون",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-eltarf",
+            "name": "جامعة الشاذلي بن جديد",
+            "wilaya": "الطارف",
+            "type": "university",
+            "officialUrl": "https://www.univ-eltarf.dz/",
+            "coordinates": {
+                "lat": 36.7583,
+                "lng": 8.2971
+            },
+            "specialties": [
+                "علوم البيطرة",
+                "بيئة وعلوم المحيط",
+                "علوم تكنولوجية",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-ain-temouchent",
+            "name": "جامعة بلحاج بوشعيب",
+            "wilaya": "عين تموشنت",
+            "type": "university",
+            "officialUrl": "https://www.univ-temouchent.edu.dz/",
+            "coordinates": {
+                "lat": 35.3125,
+                "lng": -1.1342
+            },
+            "specialties": [
+                "هندسة بحرية وبيئة شاطئية",
+                "علوم تكنولوجية",
+                "علوم اقتصادية وتجارية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-relizane",
+            "name": "جامعة أحمد زبانة",
+            "wilaya": "غليزان",
+            "type": "university",
+            "officialUrl": "https://www.univ-relizane.dz/",
+            "coordinates": {
+                "lat": 35.7331,
+                "lng": 0.5482
+            },
+            "specialties": [
+                "علوم فلاحية وري",
+                "علوم التكنولوجيا",
+                "علوم اقتصادية",
+                "حقوق وعلوم إدارية"
+            ]
+        },
+        {
+            "id": "univ-khemis-miliana",
+            "name": "جامعة الجيلالي بونعامة",
+            "wilaya": "عين الدفلى",
+            "type": "university",
+            "officialUrl": "https://www.univ-dbkm.dz/",
+            "coordinates": {
+                "lat": 36.2624,
+                "lng": 2.2231
+            },
+            "specialties": [
+                "علوم فلاحية وإنتاج نباتي",
+                "علوم وتكنولوجيا",
+                "علوم إنسانية",
+                "لغات أجنبية"
+            ]
+        },
+        {
+            "id": "univ-souk-ahras",
+            "name": "جامعة محمد الشريف مساعدية",
+            "wilaya": "سوق أهراس",
+            "type": "university",
+            "officialUrl": "https://www.univ-soukahras.dz/",
+            "coordinates": {
+                "lat": 36.2762,
+                "lng": 7.9405
+            },
+            "specialties": [
+                "علوم فلاحية وبيطرية",
+                "علوم الطبيعة والحياة",
+                "هندسة صناعية",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-tamanrasset",
+            "name": "جامعة تمنراست",
+            "wilaya": "تمنراست",
+            "type": "university",
+            "officialUrl": "https://www.univ-tam.dz/",
+            "coordinates": {
+                "lat": 22.8042,
+                "lng": 5.5342
+            },
+            "specialties": [
+                "جيولوجيا ومناجم صحراوية",
+                "طاقات متجددة وتكييف صحراوي",
+                "علوم الطبيعة والحياة",
+                "علوم قانونية"
+            ]
+        },
+        {
+            "id": "univ-tipaza",
+            "name": "المركز الجامعي مرسلي عبد الله",
+            "wilaya": "تيبازة",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-tipaza.dz/",
+            "coordinates": {
+                "lat": 36.5891,
+                "lng": 2.4332
+            },
+            "specialties": [
+                "علم الآثار والتراث",
+                "علوم بحرية",
+                "علوم تجارية ومالية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-mila",
+            "name": "المركز الجامعي عبد الحفيظ بوالصوف",
+            "wilaya": "ميلة",
+            "type": "university-center",
+            "officialUrl": "https://www.centre-univ-mila.dz/",
+            "coordinates": {
+                "lat": 36.4442,
+                "lng": 6.2571
+            },
+            "specialties": [
+                "رياضيات وإعلام آلي",
+                "علوم وتكنولوجيا",
+                "علوم الطبيعة والحياة",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-tissemsilt",
+            "name": "المركز الجامعي أحمد بن يحيى الونشريسي",
+            "wilaya": "تسمسيلت",
+            "type": "university-center",
+            "officialUrl": "https://www.cuniv-tissemsilt.dz/",
+            "coordinates": {
+                "lat": 35.6023,
+                "lng": 1.8024
+            },
+            "specialties": [
+                "علوم فلاحية وغابات",
+                "علوم التكنولوجيا",
+                "علوم المادة",
+                "علوم قانونية"
+            ]
+        },
+        {
+            "id": "univ-elbayadh",
+            "name": "المركز الجامعي نور البشير",
+            "wilaya": "البيض",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-elbayadh.dz/",
+            "coordinates": {
+                "lat": 33.6821,
+                "lng": 1.0185
+            },
+            "specialties": [
+                "بيطرة ورعي سهبي",
+                "طاقات متجددة",
+                "علوم اقتصادية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-naama",
+            "name": "المركز الجامعي صالحي أحمد",
+            "wilaya": "النعامة",
+            "type": "university-center",
+            "officialUrl": "https://www.cuniv-naama.dz/",
+            "coordinates": {
+                "lat": 33.2674,
+                "lng": -0.3122
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة السهبية",
+                "علوم التكنولوجيا",
+                "علوم التسيير",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-tindouf",
+            "name": "المركز الجامعي علي كافي",
+            "wilaya": "تندوف",
+            "type": "university-center",
+            "officialUrl": "https://www.cuniv-tindouf.dz/",
+            "coordinates": {
+                "lat": 27.6741,
+                "lng": -8.1473
+            },
+            "specialties": [
+                "علوم الأرض ومناجم",
+                "علوم التسيير والمحاسبة",
+                "حقوق وعلوم إدارية",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-illizi",
+            "name": "المركز الجامعي الشيخ آمود بن المختار",
+            "wilaya": "إيليزي",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-illizi.dz/",
+            "coordinates": {
+                "lat": 26.5052,
+                "lng": 8.4861
+            },
+            "specialties": [
+                "طاقات صحراوية ومحروقات",
+                "علوم تجارية ومالية",
+                "علوم قانونية",
+                "علوم بيئية صحراوية"
+            ]
+        },
+                {
+            "id": "univ-algiers-1",
+            "name": "جامعة الجزائر 1 - بن يوسف بن خدة",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.univ-alger.dz/",
+            "coordinates": {
+                "lat": 36.7725,
+                "lng": 3.0544
+            },
+            "specialties": [
+                "الحقوق",
+                "طب"
+            ]
+        },
+        {
+            "id": "univ-boumerdes",
+            "name": "جامعة أمحمد بوقرة - بومرداس",
+            "wilaya": "بومرداس",
+            "type": "university",
+            "officialUrl": "https://www.univ-boumerdes.dz/",
+            "coordinates": {
+                "lat": 36.7597,
+                "lng": 3.4739
+            },
+            "specialties": [
+                "محروقات وكيمياء",
+                "هندسة كهربائية وإلكترونيك",
+                "علوم التكنولوجيا",
+                "علوم اقتصادية وتسيير"
+            ]
+        },
+        {
+            "id": "univ-usthb",
+            "name": "جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)",
+            "wilaya": "الجزائر",
+            "type": "university",
+            "officialUrl": "https://www.usthb.dz/",
+            "coordinates": {
+                "lat": 36.7118,
+                "lng": 3.1814
+            },
+            "specialties": [
+                "إعلام آلي",
+                "رياضيات",
+                "فيزياء",
+                "هندسة مدنية",
+                "إلكترونيك",
+                "بيولوجيا"
+            ]
+        },
+        {
+            "id": "univ-blida-1",
+            "name": "جامعة البليدة 1 - سعد دحلب",
+            "wilaya": "البليدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-blida.dz/",
+            "coordinates": {
+                "lat": 36.4526,
+                "lng": 2.8274
+            },
+            "specialties": [
+                "هندسة الطيران",
+                "طب",
+                "علوم الفلاحة والبيطرة",
+                "عمارة وتخطيط حضري"
+            ]
+        },
+        {
+            "id": "univ-oran-1",
+            "name": "جامعة وهران 1 - أحمد بن بلة",
+            "wilaya": "وهران",
+            "type": "university",
+            "officialUrl": "https://univ-oran1.dz/",
+            "coordinates": {
+                "lat": 35.6548,
+                "lng": -0.6124
+            },
+            "specialties": [
+                "طب",
+                "صيدلة",
+                "علوم المادة",
+                "علوم إنسانية واجتماعية"
+            ]
+        },
+        {
+            "id": "univ-constantine-1",
+            "name": "جامعة قسنطينة 1 - الإخوة منتوري",
+            "wilaya": "قسنطينة",
+            "type": "university",
+            "officialUrl": "https://www.umc.edu.dz/",
+            "coordinates": {
+                "lat": 36.3408,
+                "lng": 6.6192
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "علوم التكنولوجيا",
+                "رياضيات وإعلام آلي",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-annaba",
+            "name": "جامعة باجي مختار - عنابة",
+            "wilaya": "عنابة",
+            "type": "university",
+            "officialUrl": "https://www.univ-annaba.dz/",
+            "coordinates": {
+                "lat": 36.9292,
+                "lng": 7.7471
+            },
+            "specialties": [
+                "هندسة التعدين والميكانيك",
+                "هندسة كهربائية",
+                "علوم اقتصادية وتجارية",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiziouzou",
+            "name": "جامعة مولود معمري",
+            "wilaya": "تيزي وزو",
+            "type": "university",
+            "officialUrl": "https://www.ummto.dz/",
+            "coordinates": {
+                "lat": 36.7027,
+                "lng": 4.0569
+            },
+            "specialties": [
+                "لغة وأدب عربي",
+                "لغة وثقافة أمازيغية",
+                "علوم تكنولوجية",
+                "علوم بيولوجية"
+            ]
+        },
+        {
+            "id": "univ-setif-1",
+            "name": "جامعة سطيف 1 - فرحات عباس",
+            "wilaya": "سطيف",
+            "type": "university",
+            "officialUrl": "https://univ-setif.dz/",
+            "coordinates": {
+                "lat": 36.1953,
+                "lng": 5.3789
+            },
+            "specialties": [
+                "طب",
+                "هندسة العمليات",
+                "بصريات وميكانيك دقيقة",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-batna-1",
+            "name": "جامعة باتنة 1 - حاج لخضر",
+            "wilaya": "باتنة",
+            "type": "university",
+            "officialUrl": "https://www.univ-batna.dz/",
+            "coordinates": {
+                "lat": 35.5683,
+                "lng": 6.1842
+            },
+            "specialties": [
+                "علوم إسلامية",
+                "لغة وأدب عربي",
+                "علوم إنسانية",
+                "علوم المادة"
+            ]
+        },
+        {
+            "id": "univ-tlemcen",
+            "name": "جامعة أبي بكر بلقايد",
+            "wilaya": "تلمسان",
+            "type": "university",
+            "officialUrl": "https://www.univ-tlemcen.dz/",
+            "coordinates": {
+                "lat": 34.8876,
+                "lng": -1.3328
+            },
+            "specialties": [
+                "طب",
+                "اتصالات سلكية ولاسلكية",
+                "علوم بيئية",
+                "تاريخ وعلم الآثار"
+            ]
+        },
+        {
+            "id": "univ-ouargla",
+            "name": "جامعة قاصدي مرباح",
+            "wilaya": "ورقلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-ouargla.dz/",
+            "coordinates": {
+                "lat": 31.9566,
+                "lng": 5.3486
+            },
+            "specialties": [
+                "محروقات وطاقات متجددة",
+                "هندسة الطرائق",
+                "علوم الأرض والكون",
+                "علوم فلاحية صحراوية"
+            ]
+        },
+        {
+            "id": "univ-biskra",
+            "name": "جامعة محمد خيضر",
+            "wilaya": "بسكرة",
+            "type": "university",
+            "officialUrl": "https://univ-biskra.dz/",
+            "coordinates": {
+                "lat": 34.8464,
+                "lng": 5.7483
+            },
+            "specialties": [
+                "علوم بيطرية",
+                "هندسة معمارية",
+                "هندسة ميكانيكية",
+                "علوم قانونية وإدارية"
+            ]
+        },
+        {
+            "id": "univ-bechar",
+            "name": "جامعة طاهري محمد",
+            "wilaya": "بشار",
+            "type": "university",
+            "officialUrl": "https://www.univ-bechar.dz/",
+            "coordinates": {
+                "lat": 31.6264,
+                "lng": -2.2341
+            },
+            "specialties": [
+                "هندسة مدنية",
+                "طاقات متجددة",
+                "علوم اقتصادية",
+                "لغات أجنبية"
+            ]
+        },
+        {
+            "id": "univ-bejaia",
+            "name": "جامعة عبد الرحمن ميرة",
+            "wilaya": "بجاية",
+            "type": "university",
+            "officialUrl": "https://www.univ-bejaia.dz/",
+            "coordinates": {
+                "lat": 36.7516,
+                "lng": 5.0489
+            },
+            "specialties": [
+                "علوم تكنولوجية وطاقات",
+                "صناعات غذائية",
+                "علوم بيولوجية",
+                "حقوق وعلوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-sidi-bel-abbes",
+            "name": "جامعة الجيلالي اليابس",
+            "wilaya": "سيدي بلعباس",
+            "type": "university",
+            "officialUrl": "https://www.univ-sba.dz/",
+            "coordinates": {
+                "lat": 35.2045,
+                "lng": -0.6358
+            },
+            "specialties": [
+                "إلكترونيك وإعلام آلي",
+                "طب",
+                "هندسة مدنية ومعمارية",
+                "رياضيات"
+            ]
+        },
+        {
+            "id": "univ-mostaganem",
+            "name": "جامعة عبد الحميد بن باديس",
+            "wilaya": "مستغانم",
+            "type": "university",
+            "officialUrl": "https://www.univ-mosta.dz/",
+            "coordinates": {
+                "lat": 35.9383,
+                "lng": 0.0894
+            },
+            "specialties": [
+                "علوم فلاحية وصيد بحري",
+                "طب",
+                "علوم تجارية ومالية",
+                "فنون وإعلام"
+            ]
+        },
+        {
+            "id": "univ-chlef",
+            "name": "جامعة حسيبة بن بوعلي",
+            "wilaya": "الشلف",
+            "type": "university",
+            "officialUrl": "https://www.univ-chlef.dz/",
+            "coordinates": {
+                "lat": 36.1422,
+                "lng": 1.3411
+            },
+            "specialties": [
+                "هندسة ميكانيكية",
+                "علوم زراعية",
+                "علوم اقتصادية",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-djelfa",
+            "name": "جامعة زيان عاشور",
+            "wilaya": "الجلفة",
+            "type": "university",
+            "officialUrl": "https://www.univ-djelfa.dz/",
+            "coordinates": {
+                "lat": 34.6644,
+                "lng": 3.2505
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة",
+                "تربية بدنية ورياضية",
+                "علوم قانونية وإدارية",
+                "علوم وتكنولوجيا"
+            ]
+        },
+        {
+            "id": "univ-msila",
+            "name": "جامعة محمد بوضياف",
+            "wilaya": "المسيلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-msila.dz/",
+            "coordinates": {
+                "lat": 35.7197,
+                "lng": 4.5028
+            },
+            "specialties": [
+                "رياضيات وإعلام آلي",
+                "هندسة مدنية",
+                "علوم التسيير",
+                "علم النفس وعلوم التربية"
+            ]
+        },
+        {
+            "id": "univ-skikda",
+            "name": "جامعة 20 أوت 1955",
+            "wilaya": "سكيكدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-skikda.dz/",
+            "coordinates": {
+                "lat": 36.8525,
+                "lng": 6.9453
+            },
+            "specialties": [
+                "بتروكيمياء وهندسة الطرائق",
+                "علوم فلاحية وبيئية",
+                "إلكتروتقني",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-adrar",
+            "name": "جامعة أحمد دراية",
+            "wilaya": "أدرار",
+            "type": "university",
+            "officialUrl": "https://www.univ-adrar.dz/",
+            "coordinates": {
+                "lat": 27.8864,
+                "lng": -0.2789
+            },
+            "specialties": [
+                "طاقات متجددة ومياه صحراوية",
+                "علوم إسلامية وحضارة",
+                "علوم اقتصادية",
+                "علوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-eloued",
+            "name": "جامعة الشهيد حمه لخضر",
+            "wilaya": "الوادي",
+            "type": "university",
+            "officialUrl": "https://www.univ-eloued.dz/",
+            "coordinates": {
+                "lat": 33.3686,
+                "lng": 6.8481
+            },
+            "specialties": [
+                "فلاحة صحراوية",
+                "كيمياء صناعية",
+                "علوم إسلامية",
+                "إعلام آلي"
+            ]
+        },
+        {
+            "id": "univ-ghardaia",
+            "name": "جامعة غرداية",
+            "wilaya": "غرداية",
+            "type": "university",
+            "officialUrl": "https://www.univ-ghardaia.dz/",
+            "coordinates": {
+                "lat": 32.4842,
+                "lng": 3.6631
+            },
+            "specialties": [
+                "علوم المادة",
+                "تهيئة عمرانية وهندسة ريفية",
+                "علوم إنسانية واجتماعية",
+                "علوم تجارية"
+            ]
+        },
+        {
+            "id": "univ-jijel",
+            "name": "جامعة محمد الصديق بن يحيى",
+            "wilaya": "جيجل",
+            "type": "university",
+            "officialUrl": "https://www.univ-jijel.dz/",
+            "coordinates": {
+                "lat": 36.8042,
+                "lng": 5.7533
+            },
+            "specialties": [
+                "علوم بحرية وصيد",
+                "هندسة إلكترونية",
+                "علوم الطبيعة والحياة",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-tiaret",
+            "name": "جامعة ابن خلدون",
+            "wilaya": "تيارت",
+            "type": "university",
+            "officialUrl": "https://www.univ-tiaret.dz/",
+            "coordinates": {
+                "lat": 35.3789,
+                "lng": 1.3469
+            },
+            "specialties": [
+                "علوم بيطرية وتربية الخيول",
+                "علوم فلاحية",
+                "علوم المادة",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-mascara",
+            "name": "جامعة مصطفى اسطمبولي",
+            "wilaya": "معسكر",
+            "type": "university",
+            "officialUrl": "https://www.univ-mascara.dz/",
+            "coordinates": {
+                "lat": 35.4053,
+                "lng": 0.1511
+            },
+            "specialties": [
+                "بيولوجيا وصناعات غذائية",
+                "علوم المادة",
+                "علوم إنسانية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-tebessa",
+            "name": "جامعة العربي التبسي",
+            "wilaya": "تبسة",
+            "type": "university",
+            "officialUrl": "https://www.univ-tebessa.dz/",
+            "coordinates": {
+                "lat": 35.4192,
+                "lng": 8.1189
+            },
+            "specialties": [
+                "جيولوجيا ومناجم",
+                "علوم التكنولوجيا",
+                "علوم بيولوجية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-guelma",
+            "name": "جامعة 8 ماي 1945",
+            "wilaya": "قالمة",
+            "type": "university",
+            "officialUrl": "https://www.univ-guelma.dz/",
+            "coordinates": {
+                "lat": 36.4564,
+                "lng": 7.4267
+            },
+            "specialties": [
+                "أتمتة وتحكم آلي",
+                "رياضيات وإعلام آلي",
+                "علوم زراعية",
+                "علوم التسيير"
+            ]
+        },
+        {
+            "id": "univ-khenchela",
+            "name": "جامعة عباس لغرور",
+            "wilaya": "خنشلة",
+            "type": "university",
+            "officialUrl": "https://www.univ-khenchela.dz/",
+            "coordinates": {
+                "lat": 35.4339,
+                "lng": 7.1353
+            },
+            "specialties": [
+                "غابات وتهيئة ريفية",
+                "هندسة معمارية",
+                "علوم اقتصادية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-saida",
+            "name": "جامعة د. مولاي الطاهر",
+            "wilaya": "سعيدة",
+            "type": "university",
+            "officialUrl": "https://www.univ-saida.dz/",
+            "coordinates": {
+                "lat": 34.8428,
+                "lng": 0.1611
+            },
+            "specialties": [
+                "علوم وتقنيات النشاطات البدنية",
+                "علوم المادة",
+                "آداب ولغات أجنبية",
+                "تسيير واقتصاد"
+            ]
+        },
+        {
+            "id": "univ-laghouat",
+            "name": "جامعة عمار ثليجي",
+            "wilaya": "الأغواط",
+            "type": "university",
+            "officialUrl": "https://www.univ-lagh.dz/",
+            "coordinates": {
+                "lat": 33.7844,
+                "lng": 2.8711
+            },
+            "specialties": [
+                "طب",
+                "هندسة كهربائية وميكانيكية",
+                "عمارة وتخطيط حضري",
+                "علوم بيئية صحراوية"
+            ]
+        },
+        {
+            "id": "univ-bouira",
+            "name": "جامعة العقيد آكلي محند أولحاج",
+            "wilaya": "البويرة",
+            "type": "university",
+            "officialUrl": "https://www.univ-bouira.dz/",
+            "coordinates": {
+                "lat": 36.3785,
+                "lng": 3.8744
+            },
+            "specialties": [
+                "هندسة الطرائق",
+                "علوم اقتصادية ومالية",
+                "لغة وأدب أمازيغي",
+                "علوم قانونية"
+            ]
+        },
+        {
+            "id": "univ-medea",
+            "name": "جامعة يحيى فارس",
+            "wilaya": "المدية",
+            "type": "university",
+            "officialUrl": "https://www.univ-medea.dz/",
+            "coordinates": {
+                "lat": 36.2592,
+                "lng": 2.7606
+            },
+            "specialties": [
+                "علوم وتكنولوجيا",
+                "علوم بيولوجية وزراعية",
+                "علوم إنسانية واجتماعية",
+                "رياضيات"
+            ]
+        },
+        {
+            "id": "univ-bba",
+            "name": "جامعة محمد البشير الإبراهيمي",
+            "wilaya": "برج بوعريريج",
+            "type": "university",
+            "officialUrl": "https://www.univ-bba.dz/",
+            "coordinates": {
+                "lat": 36.0821,
+                "lng": 4.7834
+            },
+            "specialties": [
+                "إلكترونيك صناعي",
+                "إعلام آلي وشبكات",
+                "علوم المادة",
+                "علوم التسيير"
+            ]
+        },
+        {
+            "id": "univ-oeb",
+            "name": "جامعة العربي بن مهيدي",
+            "wilaya": "أم البواقي",
+            "type": "university",
+            "officialUrl": "https://www.univ-oeb.dz/",
+            "coordinates": {
+                "lat": 35.8672,
+                "lng": 7.1124
+            },
+            "specialties": [
+                "بيطرة وعلوم فلاحية",
+                "علوم دقيقة وإعلام آلي",
+                "علوم الأرض والكون",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-eltarf",
+            "name": "جامعة الشاذلي بن جديد",
+            "wilaya": "الطارف",
+            "type": "university",
+            "officialUrl": "https://www.univ-eltarf.dz/",
+            "coordinates": {
+                "lat": 36.7583,
+                "lng": 8.2971
+            },
+            "specialties": [
+                "علوم البيطرة",
+                "بيئة وعلوم المحيط",
+                "علوم تكنولوجية",
+                "حقوق وعلوم سياسية"
+            ]
+        },
+        {
+            "id": "univ-ain-temouchent",
+            "name": "جامعة بلحاج بوشعيب",
+            "wilaya": "عين تموشنت",
+            "type": "university",
+            "officialUrl": "https://www.univ-temouchent.edu.dz/",
+            "coordinates": {
+                "lat": 35.3125,
+                "lng": -1.1342
+            },
+            "specialties": [
+                "هندسة بحرية وبيئة شاطئية",
+                "علوم تكنولوجية",
+                "علوم اقتصادية وتجارية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-relizane",
+            "name": "جامعة أحمد زبانة",
+            "wilaya": "غليزان",
+            "type": "university",
+            "officialUrl": "https://www.univ-relizane.dz/",
+            "coordinates": {
+                "lat": 35.7331,
+                "lng": 0.5482
+            },
+            "specialties": [
+                "علوم فلاحية وري",
+                "علوم التكنولوجيا",
+                "علوم اقتصادية",
+                "حقوق وعلوم إدارية"
+            ]
+        },
+        {
+            "id": "univ-khemis-miliana",
+            "name": "جامعة الجيلالي بونعامة",
+            "wilaya": "عين الدفلى",
+            "type": "university",
+            "officialUrl": "https://www.univ-dbkm.dz/",
+            "coordinates": {
+                "lat": 36.2624,
+                "lng": 2.2231
+            },
+            "specialties": [
+                "علوم فلاحية وإنتاج نباتي",
+                "علوم وتكنولوجيا",
+                "علوم إنسانية",
+                "لغات أجنبية"
+            ]
+        },
+        {
+            "id": "univ-souk-ahras",
+            "name": "جامعة محمد الشريف مساعدية",
+            "wilaya": "سوق أهراس",
+            "type": "university",
+            "officialUrl": "https://www.univ-soukahras.dz/",
+            "coordinates": {
+                "lat": 36.2762,
+                "lng": 7.9405
+            },
+            "specialties": [
+                "علوم فلاحية وبيطرية",
+                "علوم الطبيعة والحياة",
+                "هندسة صناعية",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-tamanrasset",
+            "name": "جامعة تمنراست",
+            "wilaya": "تمنراست",
+            "type": "university",
+            "officialUrl": "https://www.univ-tam.dz/",
+            "coordinates": {
+                "lat": 22.8042,
+                "lng": 5.5342
+            },
+            "specialties": [
+                "جيولوجيا ومناجم صحراوية",
+                "طاقات متجددة وتكييف صحراوي",
+                "علوم الطبيعة والحياة",
+                "علوم قانونية"
+            ]
+        },
+        {
+            "id": "univ-tipaza",
+            "name": "المركز الجامعي مرسلي عبد الله",
+            "wilaya": "تيبازة",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-tipaza.dz/",
+            "coordinates": {
+                "lat": 36.5891,
+                "lng": 2.4332
+            },
+            "specialties": [
+                "علم الآثار والتراث",
+                "علوم بحرية",
+                "علوم تجارية ومالية",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-mila",
+            "name": "المركز الجامعي عبد الحفيظ بوالصوف",
+            "wilaya": "ميلة",
+            "type": "university-center",
+            "officialUrl": "https://www.centre-univ-mila.dz/",
+            "coordinates": {
+                "lat": 36.4442,
+                "lng": 6.2571
+            },
+            "specialties": [
+                "رياضيات وإعلام آلي",
+                "علوم وتكنولوجيا",
+                "علوم الطبيعة والحياة",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-tissemsilt",
+            "name": "المركز الجامعي أحمد بن يحيى الونشريسي",
+            "wilaya": "تسمسيلت",
+            "type": "university-center",
+            "officialUrl": "https://www.cuniv-tissemsilt.dz/",
+            "coordinates": {
+                "lat": 35.6023,
+                "lng": 1.8024
+            },
+            "specialties": [
+                "علوم فلاحية وغابات",
+                "علوم التكنولوجيا",
+                "علوم المادة",
+                "علوم قانونية"
+            ]
+        },
+        {
+            "id": "univ-elbayadh",
+            "name": "المركز الجامعي نور البشير",
+            "wilaya": "البيض",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-elbayadh.dz/",
+            "coordinates": {
+                "lat": 33.6821,
+                "lng": 1.0185
+            },
+            "specialties": [
+                "بيطرة ورعي سهبي",
+                "طاقات متجددة",
+                "علوم اقتصادية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-naama",
+            "name": "المركز الجامعي صالحي أحمد",
+            "wilaya": "النعامة",
+            "type": "university-center",
+            "officialUrl": "https://www.cuniv-naama.dz/",
+            "coordinates": {
+                "lat": 33.2674,
+                "lng": -0.3122
+            },
+            "specialties": [
+                "علوم الطبيعة والحياة السهبية",
+                "علوم التكنولوجيا",
+                "علوم التسيير",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-tindouf",
+            "name": "المركز الجامعي علي كافي",
+            "wilaya": "تندوف",
+            "type": "university-center",
+            "officialUrl": "https://www.cuniv-tindouf.dz/",
+            "coordinates": {
+                "lat": 27.6741,
+                "lng": -8.1473
+            },
+            "specialties": [
+                "علوم الأرض ومناجم",
+                "علوم التسيير والمحاسبة",
+                "حقوق وعلوم إدارية",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-illizi",
+            "name": "المركز الجامعي الشيخ آمود بن المختار",
+            "wilaya": "إيليزي",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-illizi.dz/",
+            "coordinates": {
+                "lat": 26.5052,
+                "lng": 8.4861
+            },
+            "specialties": [
+                "طاقات صحراوية ومحروقات",
+                "علوم تجارية ومالية",
+                "علوم قانونية",
+                "علوم بيئية صحراوية"
+            ]
+        },
+        {
+            "id": "univ-barika",
+            "name": "المركز الجامعي سي الحواس - بريكة",
+            "wilaya": "باتنة",
+            "type": "university-center",
+            "officialUrl": "https://cu-barika.dz/",
+            "coordinates": {
+                "lat": 35.3908,
+                "lng": 5.3524
+            },
+            "specialties": [
+                "حقوق وعلوم سياسية",
+                "علوم اقتصادية وتجارية",
+                "رياضيات وإعلام آلي",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-maghnia",
+            "name": "المركز الجامعي مغنية",
+            "wilaya": "تلمسان",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-maghnia.dz/",
+            "coordinates": {
+                "lat": 34.8517,
+                "lng": -1.7331
+            },
+            "specialties": [
+                "علوم وتكنولوجيا",
+                "علوم التسيير والاقتصاد",
+                "حقوق وعلوم سياسية",
+                "آداب ولغات"
+            ]
+        },
+        {
+            "id": "univ-aflou",
+            "name": "المركز الجامعي آفلو",
+            "wilaya": "الأغواط",
+            "type": "university-center",
+            "officialUrl": "https://www.cu-aflou.dz/",
+            "coordinates": {
+                "lat": 34.1162,
+                "lng": 2.0984
+            },
+            "specialties": [
+                "علوم وتكنولوجيا",
+                "علوم الطبيعة والحياة",
+                "علوم اقتصادية",
+                "لغة وأدب عربي"
+            ]
+        },
+        {
+            "id": "univ-djanet",
+            "name": "المركز الجامعي جانت",
+            "wilaya": "جانت",
+            "type": "university-center",
+            "officialUrl": "https://www.mesrs.dz/",
+            "coordinates": {
+                "lat": 24.5539,
+                "lng": 9.4851
+            },
+            "specialties": [
+                "سياحة وبيئة صحراوية",
+                "علوم وتكنولوجيا",
+                "علوم تجارية ومالية",
+                "علوم إنسانية"
+            ]
+        },
+        {
+            "id": "univ-timimoun",
+            "name": "المركز الجامعي تيميمون",
+            "wilaya": "تيميمون",
+            "type": "university-center",
+            "officialUrl": "https://www.mesrs.dz/",
+            "coordinates": {
+                "lat": 29.2571,
+                "lng": 0.2312
+            },
+            "specialties": [
+                "فلاحة الواحات والمياه الجوفية",
+                "طاقات متجددة",
+                "علوم التسيير",
+                "لغات أجنبية"
+            ]
+        },
+        {
+            "id": "univ-beni-abbes",
+            "name": "المركز الجامعي بني عباس",
+            "wilaya": "بني عباس",
+            "type": "university-center",
+            "officialUrl": "https://www.mesrs.dz/",
+            "coordinates": {
+                "lat": 30.1345,
+                "lng": -2.1648
+            },
+            "specialties": [
+                "علوم بيئية وجيولوجيا الواحات",
+                "علوم التكنولوجيا",
+                "حقوق وعلوم إدارية",
+                "علوم اقتصادية"
+            ]
+        },
+        {
+            "id": "univ-in-salah",
+            "name": "المركز الجامعي عين صالح",
+            "wilaya": "عين صالح",
+            "type": "university-center",
+            "officialUrl": "https://www.mesrs.dz/",
+            "coordinates": {
+                "lat": 27.2023,
+                "lng": 2.4789
+            },
+            "specialties": [
+                "محروقات وغاز",
+                "طاقات شمسية وبيئة صحراوية",
+                "علوم تجارية",
+                "رياضيات وإعلام آلي"
+            ]
+        },
+        {
+            "id": "univ-el-menia",
+            "name": "المركز الجامعي المنيعة",
+            "wilaya": "المنيعة",
+            "type": "university-center",
+            "officialUrl": "https://www.mesrs.dz/",
+            "coordinates": {
+                "lat": 30.5846,
+                "lng": 2.8812
+            },
+            "specialties": [
+                "علوم فلاحية متقدمة",
+                "علوم المادة",
+                "علوم التسيير والمحاسبة",
+                "حقوق"
+            ]
+        },
+        {
+            "id": "univ-ouled-djellal",
+            "name": "المركز الجامعي أولاد جلال",
+            "wilaya": "أولاد جلال",
+            "type": "university-center",
+            "officialUrl": "https://www.mesrs.dz/",
+            "coordinates": {
+                "lat": 34.4281,
+                "lng": 5.0683
+            },
+            "specialties": [
+                "تربية المواشي والبيطرة السهبية",
+                "فلاحة النخيل وتكنولوجيا الغذاء",
+                "علوم اقتصادية",
+                "علوم وتكنولوجيا"
+            ]
+        },
+        {
+            "id": "univ-bordj-badji-mokhtar",
+            "name": "المركز الجامعي برج باجي مختار",
+            "wilaya": "برج باجي مختار",
+            "type": "university-center",
+            "officialUrl": "https://www.mesrs.dz/",
+            "coordinates": {
+                "lat": 21.3289,
+                "lng": 0.9542
+            },
+            "specialties": [
+                "طاقات متجددة وتكييف صحراوي",
+                "تجارة دولية ومبادلات حدودية",
+                "علوم بيئية صحراوية",
+                "حقوق"
             ]
         }
+
+
     ]
 }

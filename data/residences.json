@@ -3140,6 +3140,941 @@
                 "lat": 34.0380,
                 "lng": 0.1490
             }
+        },
+                {
+            "id": "res-esi-oued-smar",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للإعلام الآلي (ESI وادي السمار)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-esi-algiers",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7050,
+                "lng": 3.1735
+            }
+        },
+        {
+            "id": "res-esi-sba-femmes",
+            "name": "الإقامة الجامعية للمدرسة العليا للإعلام الآلي بسيدي بلعباس (إناث)",
+            "wilaya": "سيدي بلعباس",
+            "universityId": "univ-esi-sba",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.2185,
+                "lng": -0.6310
+            }
+        },
+        {
+            "id": "res-esi-sba-hommes",
+            "name": "الإقامة الجامعية للمدرسة العليا للإعلام الآلي بسيدي بلعباس (ذكور)",
+            "wilaya": "سيدي بلعباس",
+            "universityId": "univ-esi-sba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.2210,
+                "lng": -0.6275
+            }
+        },
+        {
+            "id": "res-pole-technologique-algiers",
+            "name": "الإقامة الجامعية القطب التكنولوجي سيدي عبد الله للإعلام الآلي والذكاء الاصطناعي",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6735,
+                "lng": 2.8650
+            }
+        },
+        {
+            "id": "res-ensa-el-harrach-inra",
+            "name": "الإقامة الجامعية بيلفور 2 الفلاحية",
+            "wilaya": "الجزائر",
+            "universityId": "univ-ensa",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7225,
+                "lng": 3.1340
+            }
+        },
+        {
+            "id": "res-cpa-bouzar-girls",
+            "name": "الإقامة الجامعية بوزريعة 2 (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-algiers-2",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7890,
+                "lng": 3.0145
+            }
+        },
+        {
+            "id": "res-polytech-oran-male",
+            "name": "الإقامة الجامعية المدرسة الوطنية المتعددة التقنيات بوهران (ذكور)",
+            "wilaya": "وهران",
+            "universityId": "univ-enp-oran",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.7025,
+                "lng": -0.5890
+            }
+        },
+        {
+            "id": "res-polytech-oran-female",
+            "name": "الإقامة الجامعية المدرسة الوطنية المتعددة التقنيات بوهران (إناث)",
+            "wilaya": "وهران",
+            "universityId": "univ-enp-oran",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.7050,
+                "lng": -0.5865
+            }
+        },
+        {
+            "id": "res-polytech-constantine-female",
+            "name": "الإقامة الجامعية للمدرسة الوطنية متعددة التقنيات بقسنطينة (إناث)",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-constantine-3",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.3168,
+                "lng": 6.6135
+            }
+        },
+        {
+            "id": "res-ens-bouzareah-male",
+            "name": "الإقامة الجامعية للأساتذة بوزريعة (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-ens-bouzareah",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7912,
+                "lng": 3.0210
+            }
+        },
+        {
+            "id": "res-ens-oran-female",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة وهران (إناث)",
+            "wilaya": "وهران",
+            "universityId": "univ-ens-oran",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.6885,
+                "lng": -0.6190
+            }
+        },
+        {
+            "id": "res-ens-constantine-male",
+            "name": "الإقامة الجامعية آسيا جبار للأساتذة (ذكور)",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-ens-constantine",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.2510,
+                "lng": 6.5790
+            }
+        },
+        {
+            "id": "res-ens-constantine-female",
+            "name": "الإقامة الجامعية للمدرسة العليا للأساتذة علي منجلي (إناث)",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-ens-constantine",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.2535,
+                "lng": 6.5765
+            }
+        },
+        {
+            "id": "res-ens-setif-male",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بسطيف (ذكور)",
+            "wilaya": "سطيف",
+            "universityId": "univ-ens-setif",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.1885,
+                "lng": 5.3890
+            }
+        },
+        {
+            "id": "res-ens-laghouat-mixed",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بالأغواط",
+            "wilaya": "الأغواط",
+            "universityId": "univ-ens-laghouat",
+            "gender": "female",
+            "coordinates": {
+                "lat": 33.7885,
+                "lng": 2.8610
+            }
+        },
+        {
+            "id": "res-ens-bechar-male",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة ببشار",
+            "wilaya": "بشار",
+            "universityId": "univ-ens-bechar",
+            "gender": "male",
+            "coordinates": {
+                "lat": 31.6315,
+                "lng": -2.2175
+            }
+        },
+        {
+            "id": "res-ensmm-annaba-male",
+            "name": "الإقامة الجامعية للمدرسة الوطنية العليا للمناجم والمعادن بعنابة",
+            "wilaya": "عنابة",
+            "universityId": "univ-ensmm-annaba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.8210,
+                "lng": 7.7085
+            }
+        },
+        {
+            "id": "res-enst-algiers-dergana",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للتكنولوجيا درقانة",
+            "wilaya": "الجزائر",
+            "universityId": "univ-enst-algiers",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7750,
+                "lng": 3.2515
+            }
+        },
+        {
+            "id": "res-essab-algiers-female",
+            "name": "الإقامة الجامعية المدرسة العليا لعلوم الفلاحة والتغذية الزراعية (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-essab-algiers",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7260,
+                "lng": 3.1390
+            }
+        },
+        {
+            "id": "res-kolea-commerce-male",
+            "name": "الإقامة الجامعية المدرسة العليا للتجارة بالقليعة (ذكور)",
+            "wilaya": "تيبازة",
+            "universityId": "univ-pole-kolea",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6310,
+                "lng": 2.7660
+            }
+        },
+        {
+            "id": "res-kolea-management-female",
+            "name": "الإقامة الجامعية المدرسة العليا للتسيير والاقتصاد الرقمي بالقليعة (إناث)",
+            "wilaya": "تيبازة",
+            "universityId": "univ-pole-kolea",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6285,
+                "lng": 2.7750
+            }
+        },
+        {
+            "id": "res-oued-smar-filles",
+            "name": "الإقامة الجامعية وادي السمار (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-esi-algiers",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7075,
+                "lng": 3.1710
+            }
+        },
+        {
+            "id": "res-ensb-sidi-abdellah",
+            "name": "الإقامة الجامعية للمدرسة الوطنية العليا للبيوتكنولوجيا سيدي عبد الله",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6680,
+                "lng": 2.8730
+            }
+        },
+        {
+            "id": "res-ens-ouargla-female",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بورقلة",
+            "wilaya": "ورقلة",
+            "universityId": "univ-ens-ouargla",
+            "gender": "female",
+            "coordinates": {
+                "lat": 31.9635,
+                "lng": 5.3390
+            }
+        },
+        {
+            "id": "res-ens-skikda-female",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بسكيكدة (إناث)",
+            "wilaya": "سكيكدة",
+            "universityId": "univ-ens-skikda",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.8390,
+                "lng": 6.8970
+            }
+        },
+                {
+            "id": "res-esi-oued-smar-annex-male",
+            "name": "الإقامة الجامعية ملحقة وادي السمار ESI (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-esi-algiers",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7032,
+                "lng": 3.1762
+            }
+        },
+        {
+            "id": "res-ensia-sidi-abdellah-male",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للذكاء الاصطناعي (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6748,
+                "lng": 2.8624
+            }
+        },
+        {
+            "id": "res-ensm-sidi-abdellah-female",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للرياضيات (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6725,
+                "lng": 2.8665
+            }
+        },
+        {
+            "id": "res-ensi-sba-sud-male",
+            "name": "الإقامة الجامعية لمهندسي الإعلام الآلي سيدي بلعباس (جنوب)",
+            "wilaya": "سيدي بلعباس",
+            "universityId": "univ-esi-sba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.2162,
+                "lng": -0.6335
+            }
+        },
+        {
+            "id": "res-ensi-sba-residence-2-female",
+            "name": "الإقامة الجامعية مهندسات الإعلام الآلي 2 سيدي بلعباس",
+            "wilaya": "سيدي بلعباس",
+            "universityId": "univ-esi-sba",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.2238,
+                "lng": -0.6250
+            }
+        },
+        {
+            "id": "res-pole-cybersecurite-sidi-abdellah",
+            "name": "الإقامة الجامعية للمدرسة الوطنية للأمن السيبراني والأنظمة الذكية",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6760,
+                "lng": 2.8602
+            }
+        },
+        {
+            "id": "res-ens-kouba-garcons",
+            "name": "الإقامة الجامعية للمدرسة العليا للأساتذة بالقبة (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-kouba-ens",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7288,
+                "lng": 3.0782
+            }
+        },
+        {
+            "id": "res-ens-kouba-filles",
+            "name": "الإقامة الجامعية للمدرسة العليا للأساتذة بالقبة (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-kouba-ens",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7252,
+                "lng": 3.0745
+            }
+        },
+        {
+            "id": "res-esc-kolea-female",
+            "name": "الإقامة الجامعية المدرسة العليا للمصرفية والتأمين (إناث)",
+            "wilaya": "تيبازة",
+            "universityId": "univ-pole-kolea",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6335,
+                "lng": 2.7635
+            }
+        },
+        {
+            "id": "res-esg-kolea-male",
+            "name": "الإقامة الجامعية قطب المدارس العليا للإدارة والتسيير (ذكور)",
+            "wilaya": "تيبازة",
+            "universityId": "univ-pole-kolea",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6350,
+                "lng": 2.7610
+            }
+        },
+        {
+            "id": "res-ens-laghouat-male-annex",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بالأغواط (ذكور)",
+            "wilaya": "الأغواط",
+            "universityId": "univ-ens-laghouat",
+            "gender": "male",
+            "coordinates": {
+                "lat": 33.7860,
+                "lng": 2.8635
+            }
+        },
+        {
+            "id": "res-ens-setif-female-campus",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بسطيف (إناث)",
+            "wilaya": "سطيف",
+            "universityId": "univ-ens-setif",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.1912,
+                "lng": 5.3860
+            }
+        },
+        {
+            "id": "res-ens-ouargla-male-annex",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بورقلة (ذكور)",
+            "wilaya": "ورقلة",
+            "universityId": "univ-ens-ouargla",
+            "gender": "male",
+            "coordinates": {
+                "lat": 31.9660,
+                "lng": 5.3365
+            }
+        },
+        {
+            "id": "res-ens-skikda-male-annex",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بسكيكدة (ذكور)",
+            "wilaya": "سكيكدة",
+            "universityId": "univ-ens-skikda",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.8415,
+                "lng": 6.8942
+            }
+        },
+        {
+            "id": "res-enst-dergana-female",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للتكنولوجيا درقانة (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-enst-algiers",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7772,
+                "lng": 3.2490
+            }
+        },
+        {
+            "id": "res-ensa-belfort-female-annex",
+            "name": "الإقامة الجامعية للمدرسة الوطنية العليا للفلاحة بالحراش (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-ensa",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7238,
+                "lng": 3.1382
+            }
+        },
+        {
+            "id": "res-ensmm-annaba-female",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للمناجم والمعادن (إناث)",
+            "wilaya": "عنابة",
+            "universityId": "univ-ensmm-annaba",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.8235,
+                "lng": 7.7058
+            }
+        },
+        {
+            "id": "res-ens-bechar-female-annex",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة ببشار (إناث)",
+            "wilaya": "بشار",
+            "universityId": "univ-ens-bechar",
+            "gender": "female",
+            "coordinates": {
+                "lat": 31.6338,
+                "lng": -2.2150
+            }
+        },
+        {
+            "id": "res-ens-oran-male-annex",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بوهران (ذكور)",
+            "wilaya": "وهران",
+            "universityId": "univ-ens-oran",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.6860,
+                "lng": -0.6215
+            }
+        },
+        {
+            "id": "res-pole-nano-sidi-abdellah",
+            "name": "الإقامة الجامعية المدرسة العليا لتكنولوجيا النانو سيدي عبد الله",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6775,
+                "lng": 2.8580
+            }
+        },
+                {
+            "id": "res-esi-algiers-residence-principale",
+            "name": "الإقامة الجامعية المركزية للمدرسة العليا للإعلام الآلي ESI الجزائر",
+            "wilaya": "الجزائر",
+            "universityId": "univ-esi-algiers",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7061,
+                "lng": 3.1748
+            }
+        },
+        {
+            "id": "res-esi-algiers-campus-filles",
+            "name": "إقامة طالبات المدرسة العليا للإعلام الآلي ESI وادي السمار",
+            "wilaya": "الجزائر",
+            "universityId": "univ-esi-algiers",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7042,
+                "lng": 3.1721
+            }
+        },
+        {
+            "id": "res-esi-sba-campus-central",
+            "name": "الإقامة الجامعية لمهندسي البرمجيات ESI سيدي بلعباس",
+            "wilaya": "سيدي بلعباس",
+            "universityId": "univ-esi-sba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.2198,
+                "lng": -0.6292
+            }
+        },
+        {
+            "id": "res-pole-robotique-sidi-abdellah",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للأنظمة المستقلة والروبوتيك",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6755,
+                "lng": 2.8640
+            }
+        },
+        {
+            "id": "res-pole-ia-filles-sidi-abdellah",
+            "name": "إقامة طالبات قطب الذكاء الاصطناعي والإعلام الآلي سيدي عبد الله",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6718,
+                "lng": 2.8692
+            }
+        },
+        {
+            "id": "res-inph-boumerdes-male",
+            "name": "الإقامة الجامعية المعهد الوطني للمحروقات والكيمياء (ذكور)",
+            "wilaya": "بومرداس",
+            "universityId": "univ-inh-boumerdes",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7595,
+                "lng": 3.4682
+            }
+        },
+        {
+            "id": "res-inph-boumerdes-female",
+            "name": "الإقامة الجامعية المعهد الوطني للمحروقات والكيمياء (إناث)",
+            "wilaya": "بومرداس",
+            "universityId": "univ-inh-boumerdes",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7628,
+                "lng": 3.4650
+            }
+        },
+        {
+            "id": "res-enstp-kouba-male",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للأشغال العمومية بالقبة (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-enstp-kouba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7192,
+                "lng": 3.0795
+            }
+        },
+        {
+            "id": "res-ensh-blida-male",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للري بالبليدة (ذكور)",
+            "wilaya": "البليدة",
+            "universityId": "univ-ensh-blida",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.5140,
+                "lng": 2.8812
+            }
+        },
+        {
+            "id": "res-ensh-blida-female",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للري بالبليدة (إناث)",
+            "wilaya": "البليدة",
+            "universityId": "univ-ensh-blida",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.5162,
+                "lng": 2.8845
+            }
+        },
+        {
+            "id": "res-ensv-el-harrach-male",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للبيطرة بالحراش (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-ensv-algiers",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7170,
+                "lng": 3.1388
+            }
+        },
+        {
+            "id": "res-ensv-el-harrach-female",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للبيطرة بالحراش (إناث)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-ensv-algiers",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7155,
+                "lng": 3.1402
+            }
+        },
+        {
+            "id": "res-ensa-oran-male",
+            "name": "الإقامة الجامعية المدرسة العليا للعلوم التطبيقية بوهران (ذكور)",
+            "wilaya": "وهران",
+            "universityId": "univ-essao-oran",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.7008,
+                "lng": -0.5925
+            }
+        },
+        {
+            "id": "res-ensa-oran-female",
+            "name": "الإقامة الجامعية المدرسة العليا للعلوم التطبيقية بوهران (إناث)",
+            "wilaya": "وهران",
+            "universityId": "univ-essao-oran",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.7036,
+                "lng": -0.5902
+            }
+        },
+        {
+            "id": "res-ensb-constantine-male",
+            "name": "الإقامة الجامعية المدرسة العليا للبيوتكنولوجيا بقسنطينة (ذكور)",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-ensb-constantine",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.2462,
+                "lng": 6.5715
+            }
+        },
+        {
+            "id": "res-ensb-constantine-female",
+            "name": "الإقامة الجامعية المدرسة العليا للبيوتكنولوجيا بقسنطينة (إناث)",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-ensb-constantine",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.2440,
+                "lng": 6.5750
+            }
+        },
+        {
+            "id": "res-ens-tlemcen-male",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بتلمسان (ذكور)",
+            "wilaya": "تلمسان",
+            "universityId": "univ-ens-tlemcen",
+            "gender": "male",
+            "coordinates": {
+                "lat": 34.8872,
+                "lng": -1.3285
+            }
+        },
+        {
+            "id": "res-ens-tlemcen-female",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة بتلمسان (إناث)",
+            "wilaya": "تلمسان",
+            "universityId": "univ-ens-tlemcen",
+            "gender": "female",
+            "coordinates": {
+                "lat": 34.8895,
+                "lng": -1.3250
+            }
+        },
+        {
+            "id": "res-ens-bou-saada-male",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة ببوسعادة (ذكور)",
+            "wilaya": "المسيلة",
+            "universityId": "univ-ens-bousaada",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.2952,
+                "lng": 4.2050
+            }
+        },
+        {
+            "id": "res-ens-bou-saada-female",
+            "name": "الإقامة الجامعية المدرسة العليا للأساتذة ببوسعادة (إناث)",
+            "wilaya": "المسيلة",
+            "universityId": "univ-ens-bousaada",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.2970,
+                "lng": 4.2085
+            }
+        },
+                {
+            "id": "res-esi-oued-smar-pavillon-c",
+            "name": "الإقامة الجامعية جناح المهندسين ESI (وادي السمار)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-esi-algiers",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.7046,
+                "lng": 3.1755
+            }
+        },
+        {
+            "id": "res-esi-algiers-residence-cadres",
+            "name": "إقامة ما بعد التدرج والباحثين ESI الجزائر",
+            "wilaya": "الجزائر",
+            "universityId": "univ-esi-algiers",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7068,
+                "lng": 3.1738
+            }
+        },
+        {
+            "id": "res-esi-sba-pavillon-nord",
+            "name": "الإقامة الجامعية للمدرسة العليا للإعلام الآلي الجناح الشمالي سيدي بلعباس",
+            "wilaya": "سيدي بلعباس",
+            "universityId": "univ-esi-sba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.2225,
+                "lng": -0.6288
+            }
+        },
+        {
+            "id": "res-esi-sba-pavillon-est-filles",
+            "name": "الإقامة الجامعية للمدرسة العليا للإعلام الآلي الجناح الشرقي (إناث)",
+            "wilaya": "سيدي بلعباس",
+            "universityId": "univ-esi-sba",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.2202,
+                "lng": -0.6264
+            }
+        },
+        {
+            "id": "res-esi-sidi-abdellah-annex-male",
+            "name": "الإقامة الجامعية لمهندسي البرمجيات والذكاء الاصطناعي سيدي عبد الله",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6740,
+                "lng": 2.8632
+            }
+        },
+        {
+            "id": "res-esi-sidi-abdellah-annex-female",
+            "name": "إقامة طالبات الأنظمة الرقمية والإعلام الآلي سيدي عبد الله",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6710,
+                "lng": 2.8672
+            }
+        },
+        {
+            "id": "res-insea-algiers-male",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للإحصاء والاقتصاد التطبيقي (ذكور)",
+            "wilaya": "تيبازة",
+            "universityId": "univ-pole-kolea",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6322,
+                "lng": 2.7648
+            }
+        },
+        {
+            "id": "res-insea-algiers-female",
+            "name": "الإقامة الجامعية المدرسة الوطنية العليا للإحصاء والاقتصاد التطبيقي (إناث)",
+            "wilaya": "تيبازة",
+            "universityId": "univ-pole-kolea",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.6298,
+                "lng": 2.7712
+            }
+        },
+        {
+            "id": "res-ensa-algiers-el-harrach-east",
+            "name": "إقامة المدرسة الوطنية العليا للفلاحة الجناح الشرقي (الحراش)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-ensa",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7219,
+                "lng": 3.1360
+            }
+        },
+        {
+            "id": "res-enp-oran-campus-sud",
+            "name": "الإقامة الجامعية متعددة التقنيات بوهران الجناح الجنوبي (ذكور)",
+            "wilaya": "وهران",
+            "universityId": "univ-enp-oran",
+            "gender": "male",
+            "coordinates": {
+                "lat": 35.7018,
+                "lng": -0.5878
+            }
+        },
+        {
+            "id": "res-enp-oran-campus-nord-filles",
+            "name": "الإقامة الجامعية متعددة التقنيات بوهران الجناح الشمالي (إناث)",
+            "wilaya": "وهران",
+            "universityId": "univ-enp-oran",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.7042,
+                "lng": -0.5850
+            }
+        },
+        {
+            "id": "res-polytech-constantine-male-annex",
+            "name": "الإقامة الجامعية للمدرسة المتعددة التقنيات قسنطينة الجناح الغربي (ذكور)",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-constantine-3",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.3160,
+                "lng": 6.6122
+            }
+        },
+        {
+            "id": "res-ensmm-annaba-residence-principale",
+            "name": "الإقامة الجامعية المركزية للمدرسة الوطنية العليا للمناجم والمعادن",
+            "wilaya": "عنابة",
+            "universityId": "univ-ensmm-annaba",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.8222,
+                "lng": 7.7072
+            }
+        },
+        {
+            "id": "res-enst-dergana-residence-cadres",
+            "name": "الإقامة الجامعية لمهندسي التكنولوجيا درقانة",
+            "wilaya": "الجزائر",
+            "universityId": "univ-enst-algiers",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7761,
+                "lng": 3.2502
+            }
+        },
+        {
+            "id": "res-ensb-sidi-abdellah-male",
+            "name": "الإقامة الجامعية المدرسة الوطنية للبيوتكنولوجيا سيدي عبد الله (ذكور)",
+            "wilaya": "الجزائر",
+            "universityId": "univ-pole-sidi-abdellah",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.6690,
+                "lng": 2.8718
+            }
+        },
+        {
+            "id": "res-ens-kouba-annex-cheraga",
+            "name": "إقامة طالبات المدرسة العليا للأساتذة بالشراقة",
+            "wilaya": "الجزائر",
+            "universityId": "univ-kouba-ens",
+            "gender": "female",
+            "coordinates": {
+                "lat": 36.7672,
+                "lng": 2.9560
+            }
+        },
+        {
+            "id": "res-ens-oran-maraval-annex",
+            "name": "الإقامة الجامعية لأساتذة التعليم المتوسط والثانوي بوهران (إناث)",
+            "wilaya": "وهران",
+            "universityId": "univ-ens-oran",
+            "gender": "female",
+            "coordinates": {
+                "lat": 35.6872,
+                "lng": -0.6202
+            }
+        },
+        {
+            "id": "res-ens-constantine-residence-verte",
+            "name": "الإقامة الجامعية الإقامة الخضراء للأساتذة علي منجلي",
+            "wilaya": "قسنطينة",
+            "universityId": "univ-ens-constantine",
+            "gender": "male",
+            "coordinates": {
+                "lat": 36.2522,
+                "lng": 6.5778
+            }
+        },
+        {
+            "id": "res-ens-ouargla-residence-principale",
+            "name": "الإقامة الجامعية المركزية للمدرسة العليا للأساتذة بورقلة",
+            "wilaya": "ورقلة",
+            "universityId": "univ-ens-ouargla",
+            "gender": "female",
+            "coordinates": {
+                "lat": 31.9648,
+                "lng": 5.3378
+            }
+        },
+        {
+            "id": "res-ens-bechar-annex-sud",
+            "name": "الإقامة الجامعية لأساتذة الجنوب الغربي ببشار (ذكور)",
+            "wilaya": "بشار",
+            "universityId": "univ-ens-bechar",
+            "gender": "male",
+            "coordinates": {
+                "lat": 31.6328,
+                "lng": -2.2162
+            }
         }
 
     ]
