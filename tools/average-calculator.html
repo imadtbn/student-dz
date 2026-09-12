@@ -21,19 +21,40 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
-        .module-row {
+        .module-header {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr 40px;
+            gap: 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 0 2px;
+        }
+
+        .module-row {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(70px, 1fr) minmax(90px, 1fr) minmax(90px, 1fr) 40px;
             gap: 10px;
             margin-bottom: 10px;
             align-items: center;
         }
 
         .module-row input {
-            padding: 8px;
+            width: 100%;
+            min-width: 0;
+            height: 42px;
+            padding: 8px 10px;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
             font-family: var(--font-family);
+            font-size: 0.95rem;
+            background: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        .module-row input:focus {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 1px;
+            border-color: var(--primary-color);
         }
 
         .remove-btn {
@@ -41,17 +62,25 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 1rem;
+            justify-self: center;
         }
 
         .actions {
-            margin-top: 1rem;
-            display: flex;
+            margin-top: 1.25rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 10px;
-            justify-content: space-between;
+        }
+
+        .actions .btn {
+            width: 100%;
+            min-height: 46px;
+            font-family: var(--font-family);
         }
 
         .result-box {
@@ -65,39 +94,103 @@
             font-weight: bold;
             display: none;
         }
+
+        @media (max-width: 700px) {
+            .tool-container {
+                margin: 1rem auto;
+                padding: 1rem;
+                border-radius: var(--radius-md);
+            }
+
+            .tool-container .section-title {
+                font-size: 1.55rem;
+                margin-top: 0.25rem !important;
+                margin-bottom: 0.75rem;
+            }
+
+            .tool-container > p {
+                font-size: 0.9rem;
+                margin-bottom: 1.25rem !important;
+            }
+
+            .module-header {
+                display: none !important;
+            }
+
+            .module-row {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                gap: 8px;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid var(--border-color);
+                border-radius: var(--radius-md);
+                background: var(--bg-main);
+            }
+
+            .module-row input:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .module-row input {
+                height: 44px;
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .module-row .remove-btn {
+                grid-column: 1 / -1;
+                width: 100%;
+                height: 38px;
+                border-radius: var(--radius-md);
+            }
+
+            .actions {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .actions .btn {
+                min-height: 48px;
+            }
+
+            .result-box {
+                margin-top: 1.25rem;
+                padding: 1rem;
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .tool-container {
+                padding: 0.75rem;
+            }
+
+            .module-row {
+                padding: 8px;
+                gap: 7px;
+            }
+
+            .module-row input {
+                font-size: 0.84rem;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Favicons -->
     <link rel="icon" type="image/png" href="../assets/images/icon.png">
     <link rel="apple-touch-icon" href="../assets/images/icon-192.png">
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://imadtbn.github.io/student-dz/">
-    <meta property="og:title" content="Student DZ | الطالب الجزائري">
-    <meta property="og:description"
-        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/">
-    <meta property="twitter:title" content="Student DZ | الطالب الجزائري">
-    <meta property="twitter:description"
-        content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
-    <meta property="twitter:image"
-        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="og:url" content="https://imadtbn.github.io/student-dz/tools/average-calculator.html">
+    <meta property="og:title" content="حاسبة المعدل الجامعي - Student DZ">
+    <meta property="og:description" content="احسب معدلك الجامعي بسهولة وسرعة.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
 
 <body>
     <header class="site-header">
         <div class="container">
             <a href="../index.html" class="logo">
-                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32"
-                    style="border-radius: 8px;"> Student DZ
+                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ
             </a>
-
             <nav class="main-nav" id="mainNav">
                 <a href="../index.html" class="nav-link">الرئيسية</a>
                 <a href="../universities/index.html" class="nav-link">الجامعات</a>
@@ -108,10 +201,8 @@
                 <a href="../categories/tools.html" class="nav-link">الأدوات</a>
                 <a href="../categories/student-life.html" class="nav-link">الحياة الجامعية</a>
             </nav>
-
             <div class="header-actions">
-                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i
-                        class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
                 <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
             </div>
         </div>
@@ -119,13 +210,10 @@
 
     <main class="container">
         <div class="tool-container">
-            <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-calculator"></i>حاسبة معدل السداسي
-            </h1>
-            <p style="text-align:center; margin-bottom: 2rem; color: var(--text-muted);">أدخل المقاييس، المعاملات،
-                والعلامات لحساب معدلك بدقة.</p>
+            <h1 class="section-title"><i class="fa-solid fa-calculator"></i> حاسبة معدل السداسي</h1>
+            <p style="text-align:center; margin-bottom: 2rem; color: var(--text-muted);">أدخل المقاييس، المعاملات، والعلامات لحساب معدلك بدقة.</p>
 
-            <div class="module-header"
-                style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 40px; gap: 10px; font-weight: bold; margin-bottom: 10px;">
+            <div class="module-header">
                 <div>المقياس (اختياري)</div>
                 <div>المعامل</div>
                 <div>TD/TP</div>
@@ -133,13 +221,11 @@
                 <div></div>
             </div>
 
-            <div id="modulesContainer">
-                <!-- Rows will be injected here -->
-            </div>
+            <div id="modulesContainer"></div>
 
             <div class="actions">
-                <button class="btn btn-outline" id="addModuleBtn">+ إضافة مقياس</button>
-                <button class="btn" id="calculateBtn">احسب المعدل</button>
+                <button class="btn btn-outline" id="addModuleBtn"><i class="fa-solid fa-plus"></i> إضافة مقياس</button>
+                <button class="btn" id="calculateBtn"><i class="fa-solid fa-calculator"></i> احسب المعدل</button>
             </div>
 
             <div id="resultBox" class="result-box">
@@ -154,7 +240,6 @@
     <script src="../assets/js/storage.js"></script>
     <script src="../assets/js/feedback.js"></script>
     <script>
-        // Track recent tool usage
         StorageApp.addRecent({ id: 'average-calc', title: 'حاسبة المعدل', url: 'tools/average-calculator.html', icon: '🧮' });
 
         const container = document.getElementById('modulesContainer');
@@ -167,7 +252,7 @@
                 <input type="number" class="coef" placeholder="المعامل" min="1" value="1">
                 <input type="number" class="td" placeholder="TD/TP (اختياري)" min="0" max="20" step="0.01">
                 <input type="number" class="exam" placeholder="الامتحان /20" min="0" max="20" step="0.01">
-                <button class="remove-btn">×</button>
+                <button type="button" class="remove-btn" aria-label="حذف المقياس"><i class="fa-solid fa-trash"></i></button>
             `;
 
             row.querySelector('.remove-btn').addEventListener('click', () => {
@@ -180,10 +265,7 @@
             return row;
         }
 
-        // Add 3 default rows
-        for (let i = 0; i < 3; i++) {
-            container.appendChild(createRow());
-        }
+        for (let i = 0; i < 3; i++) container.appendChild(createRow());
 
         document.getElementById('addModuleBtn').addEventListener('click', () => {
             container.appendChild(createRow());
@@ -192,28 +274,19 @@
         document.getElementById('calculateBtn').addEventListener('click', () => {
             let totalScore = 0;
             let totalCoef = 0;
-            let isValid = true;
-
             const rows = container.querySelectorAll('.module-row');
+
             rows.forEach(row => {
                 const coef = parseFloat(row.querySelector('.coef').value) || 0;
                 const td = parseFloat(row.querySelector('.td').value);
                 const exam = parseFloat(row.querySelector('.exam').value);
 
-                if (coef <= 0) return; // Skip invalid coefs
+                if (coef <= 0) return;
 
                 let moduleAvg = 0;
-
-                // Simplified calculation logic for general use:
-                // If TD is provided, average = (Exam*0.6) + (TD*0.4) -- Common in DZ
-                // Else average = Exam
                 if (!isNaN(exam)) {
-                    if (!isNaN(td)) {
-                        moduleAvg = (exam * 0.6) + (td * 0.4);
-                    } else {
-                        moduleAvg = exam;
-                    }
-                    totalScore += (moduleAvg * coef);
+                    moduleAvg = !isNaN(td) ? (exam * 0.6) + (td * 0.4) : exam;
+                    totalScore += moduleAvg * coef;
                     totalCoef += coef;
                 }
             });
@@ -221,14 +294,9 @@
             if (totalCoef > 0) {
                 const final = (totalScore / totalCoef).toFixed(2);
                 document.getElementById('finalAverage').textContent = final;
-
                 const resultBox = document.getElementById('resultBox');
                 resultBox.style.display = 'block';
-                if (final >= 10) {
-                    resultBox.style.backgroundColor = 'var(--primary-color)';
-                } else {
-                    resultBox.style.backgroundColor = 'var(--secondary-color)';
-                }
+                resultBox.style.backgroundColor = final >= 10 ? 'var(--primary-color)' : 'var(--secondary-color)';
             } else {
                 alert("يرجى إدخال علامات صالحة ومعاملات.");
             }
@@ -238,10 +306,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>
-                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
-                            style="border-radius: 4px; vertical-align: middle;"> Student DZ
-                    </h3>
+                    <h3><img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ</h3>
                     <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
                 </div>
                 <div class="footer-col">
@@ -262,12 +327,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.
-            </div>
+            <div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div>
         </div>
     </footer>
     <script src="../assets/js/navigation.js"></script>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>
