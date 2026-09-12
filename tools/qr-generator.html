@@ -48,6 +48,24 @@
             width: fit-content;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        .qr-actions {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .qr-actions .btn {
+            width: 100%;
+            margin-top: 0 !important;
+        }
+
+        @media (max-width: 480px) {
+            .qr-actions {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="../assets/images/icon.png">
@@ -112,8 +130,12 @@
 
             <div id="qrcode"></div>
 
-            <button class="btn btn-outline" id="downloadBtn" style="display: none; width:100%; margin-top: 10px;"><i
-                    class="fa-solid fa-download"></i> تحميل الصورة</button>
+            <div class="qr-actions">
+                <button class="btn btn-outline" id="downloadBtn" style="display: none;"><i
+                        class="fa-solid fa-download"></i> تحميل الصورة</button>
+                <button class="btn btn-outline" id="shareBtn" style="display: none;"><i
+                        class="fa-solid fa-share-nodes"></i> مشاركة الرمز</button>
+            </div>
         </div>
     </main>
 
@@ -124,6 +146,8 @@
         StorageApp.addRecent({ id: 'qr-gen', title: 'إنشاء QR Code', url: 'tools/qr-generator.html', icon: 'fa-solid fa-qrcode' });
 
         const generateBtn = document.getElementById('generateBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const shareBtn = document.getElementById('shareBtn');
         let qrcodeInstance = null;
 
         function loadScript(src) {
@@ -134,6 +158,10 @@
                 script.onerror = reject;
                 document.head.appendChild(script);
             });
+        }
+
+        function getQrCanvas() {
+            return document.querySelector('#qrcode canvas');
         }
 
         generateBtn.addEventListener('click', async () => {
@@ -166,17 +194,53 @@
                 correctLevel: QRCode.CorrectLevel.H
             });
 
-            document.getElementById('downloadBtn').style.display = 'inline-block';
+            downloadBtn.style.display = 'inline-flex';
+            shareBtn.style.display = 'inline-flex';
         });
 
-        document.getElementById('downloadBtn').addEventListener('click', () => {
-            const canvas = document.querySelector('#qrcode canvas');
+        downloadBtn.addEventListener('click', () => {
+            const canvas = getQrCanvas();
             if (canvas) {
                 const url = canvas.toDataURL("image/png");
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = 'StudentDZ_QRCode.png';
                 a.click();
+            }
+        });
+
+        shareBtn.addEventListener('click', async () => {
+            const canvas = getQrCanvas();
+            const text = document.getElementById('qrText').value.trim();
+
+            if (!canvas || !text) return;
+
+            try {
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                const file = blob ? new File([blob], 'StudentDZ_QRCode.png', { type: 'image/png' }) : null;
+
+                if (file && navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        title: 'رمز QR - Student DZ',
+                        text: 'رمز استجابة سريعة تم إنشاؤه بواسطة Student DZ',
+                        files: [file]
+                    });
+                    return;
+                }
+
+                if (navigator.share) {
+                    await navigator.share({
+                        title: 'رمز QR - Student DZ',
+                        text: text
+                    });
+                    return;
+                }
+
+                alert('المشاركة المباشرة غير مدعومة على هذا الجهاز. يمكنك استخدام زر تحميل الصورة ثم مشاركتها.');
+            } catch (error) {
+                if (error.name !== 'AbortError') {
+                    alert('تعذر مشاركة الرمز. يمكنك تحميل الصورة ومشاركتها يدويًا.');
+                }
             }
         });
     </script>
