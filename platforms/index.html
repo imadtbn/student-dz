@@ -12,7 +12,7 @@
         .filter-bar {
             display: flex;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
             flex-wrap: wrap;
         }
         .filter-bar input {
@@ -25,6 +25,45 @@
             background: var(--bg-main);
             color: var(--text-main);
         }
+        .platform-count {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: fit-content;
+            min-width: 190px;
+            margin: 0 auto 24px;
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            background: var(--bg-card);
+            color: var(--text-main);
+            box-shadow: var(--shadow-sm);
+        }
+        .platform-count i {
+            color: var(--primary-color);
+            font-size: 1.15rem;
+        }
+        .platform-count strong {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+        .platform-count .count-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        @media (max-width: 480px) {
+            .filter-bar input {
+                min-width: 100%;
+            }
+            .platform-count {
+                width: 100%;
+                min-width: 0;
+                margin-bottom: 20px;
+                padding: 9px 14px;
+            }
+        }
     </style>
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="../assets/images/icon.png">
@@ -32,16 +71,16 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://imadtbn.github.io/student-dz/">
-    <meta property="og:title" content="Student DZ | الطالب الجزائري">
-    <meta property="og:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="og:url" content="https://imadtbn.github.io/student-dz/platforms/">
+    <meta property="og:title" content="Student DZ | دليل المنصات الرسمية">
+    <meta property="og:description" content="دليل المنصات الرقمية الرسمية للطالب الجزائري.">
     <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/">
-    <meta property="twitter:title" content="Student DZ | الطالب الجزائري">
-    <meta property="twitter:description" content="من أول تسجيلك إلى تخرجك، كل ما تحتاجه كطالب جزائري في مكان واحد. أدوات، جامعات، إقامات، خرائط، ومنصات.">
+    <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/platforms/">
+    <meta property="twitter:title" content="Student DZ | دليل المنصات الرسمية">
+    <meta property="twitter:description" content="دليل المنصات الرقمية الرسمية للطالب الجزائري.">
     <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 </head>
 <body>
@@ -73,7 +112,13 @@
         <h1 class="section-title" style="margin-top:2rem;"><i class="fa-solid fa-globe"></i> دليل المنصات الرسمية</h1>
 
         <div class="filter-bar">
-            <input type="text" id="searchInput" placeholder="ابحث عن منصة...">
+            <input type="text" id="searchInput" placeholder="ابحث عن منصة..." aria-label="البحث عن منصة رسمية">
+        </div>
+
+        <div class="platform-count" aria-live="polite" aria-atomic="true">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+            <strong id="platformCount">0</strong>
+            <span class="count-label" id="platformCountLabel">منصة رسمية</span>
         </div>
 
         <div class="grid" id="platGrid">
@@ -85,9 +130,20 @@
     <script>
         let platforms = [];
 
+        function updatePlatformCount(count) {
+            const countElement = document.getElementById('platformCount');
+            const labelElement = document.getElementById('platformCountLabel');
+            if (!countElement || !labelElement) return;
+
+            countElement.textContent = count.toLocaleString('ar-DZ');
+            labelElement.textContent = count === 1 ? 'منصة رسمية' : 'منصة رسمية';
+        }
+
         function renderGrid(data) {
             const grid = document.getElementById('platGrid');
             grid.innerHTML = '';
+            updatePlatformCount(data.length);
+
             if(data.length === 0) {
                 grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">لا توجد نتائج.</p>';
                 return;
@@ -97,7 +153,7 @@
                     <div class="card" style="text-align:right; align-items:flex-start;">
                         <h3 class="card-title">${p.name}</h3>
                         <p class="card-desc" style="margin-top:10px;">${p.description}</p>
-                        <a href="${p.officialUrl}" target="_blank" class="btn btn-outline" style="margin-top:auto; width:100%; text-align:center;"><i class="fa-solid fa-arrow-up-right-from-square"></i> دخول للمنصة</a>
+                        <a href="${p.officialUrl}" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:auto; width:100%; text-align:center;"><i class="fa-solid fa-arrow-up-right-from-square"></i> دخول للمنصة</a>
                     </div>
                 `;
             });
@@ -112,8 +168,11 @@
         });
 
         document.getElementById('searchInput').addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const filtered = platforms.filter(p => p.name.toLowerCase().includes(term) || p.description.toLowerCase().includes(term));
+            const term = e.target.value.toLowerCase().trim();
+            const filtered = platforms.filter(p =>
+                p.name.toLowerCase().includes(term) ||
+                p.description.toLowerCase().includes(term)
+            );
             renderGrid(filtered);
         });
     </script>
