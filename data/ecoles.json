@@ -94,5 +94,790 @@
         "services": ["مكتبة", "مدرجات", "إقامة قريبة"],
         "lastUpdated": "2024-03-01",
         "source": "official"
+    },
+    {
+        "id": "enpo-oran",
+        "name": "المدرسة الوطنية المتعددة التقنيات بوهران - موريس أودان (ENPO)",
+        "wilaya": "وهران",
+        "type": "ecole_superieure",
+        "location": "Es Sénia, Oran",
+        "position": {
+            "lat": 35.6548,
+            "lng": -0.6272
+        },
+        "officialUrl": "https://www.enp-oran.dz/",
+        "specialties": ["هندسة ميكانيكية", "هندسة كهربائية", "هندسة الطيران", "هندسة المواد"],
+        "services": ["مخابر تقنية", "مكتبة علمية", "نوادي بحث"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enpc-constantine",
+        "name": "المدرسة الوطنية المتعددة التقنيات بقسنطينة (ENPC)",
+        "wilaya": "قسنطينة",
+        "type": "ecole_superieure",
+        "location": "Ali Mendjeli, Constantine",
+        "position": {
+            "lat": 36.2464,
+            "lng": 6.5701
+        },
+        "officialUrl": "https://www.enp-constantine.dz/",
+        "specialties": ["هندسة العمليات", "إلكتروتقنيك", "هندسة صناعية", "ميكاترونيكس"],
+        "services": ["مخابر بحث", "إقامة جامعية", "مكتبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "estin-bejaia",
+        "name": "المدرسة العليا في علوم وتكنولوجيات الإعلام الآلي والرقمنة (ESTIN)",
+        "wilaya": "بجاية",
+        "type": "ecole_superieure",
+        "location": "Amizour, Béjaïa",
+        "position": {
+            "lat": 36.6436,
+            "lng": 4.9048
+        },
+        "officialUrl": "https://www.estin.dz/",
+        "specialties": ["ذكاء اصطناعي", "علم البيانات", "أمن سيبراني", "أنظمة موزعة"],
+        "services": ["حاضنة مشاريع", "إقامة جامعية", "نوادي برمجية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensia-alger",
+        "name": "المدرسة الوطنية العليا للذكاء الاصطناعي (ENSIA)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Sidi Abdellah, Alger",
+        "position": {
+            "lat": 36.6713,
+            "lng": 2.8596
+        },
+        "officialUrl": "https://www.ensia.edu.dz/",
+        "specialties": ["ذكاء اصطناعي", "تعلم الآلة", "روبوتات", "معالجة اللغات الطبيعية"],
+        "services": ["مركز حوسبة عالية الأداء", "إقامة مدمجة", "مكتبة رقمية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensm-alger",
+        "name": "المدرسة الوطنية العليا للرياضيات (ENSM)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Sidi Abdellah, Alger",
+        "position": {
+            "lat": 36.6722,
+            "lng": 2.8589
+        },
+        "officialUrl": "https://www.ensm.dz/",
+        "specialties": ["رياضيات تطبيقية", "رياضيات بحتة", "نمذجة حسابية"],
+        "services": ["مكتبة متخصصة", "إقامة حديثة", "قاعات بحوث"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensmm-annaba",
+        "name": "المدرسة الوطنية العليا للمناجم والمعادن (ENSMM)",
+        "wilaya": "عنابة",
+        "type": "ecole_superieure",
+        "location": "Sidi Amar, Annaba",
+        "position": {
+            "lat": 36.8152,
+            "lng": 7.7088
+        },
+        "officialUrl": "https://www.ensmm-annaba.dz/",
+        "specialties": ["هندسة المناجم", "علم المعادن", "هندسة المواد", "استغلال الموارد الجيولوجية"],
+        "services": ["مخابر فحص المعادن", "مكتبة", "نقل جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "essat-tlemcen",
+        "name": "المدرسة العليا للعلوم التطبيقية (ESSAT)",
+        "wilaya": "تلمسان",
+        "type": "ecole_superieure",
+        "location": "Chetouane, Tlemcen",
+        "position": {
+            "lat": 34.9085,
+            "lng": -1.2783
+        },
+        "officialUrl": "https://www.essat-tlemcen.dz/",
+        "specialties": ["طاقات متجددة", "أوتوماتيك وإلكترونيك", "اتصالات سلكية ولاسلكية"],
+        "services": ["مخابر للطاقات النظيفة", "مكتبة", "إقامة قريبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensth-ouargla",
+        "name": "المدرسة الوطنية العليا للتكنولوجيات المتقدمة (ENSTH)",
+        "wilaya": "ورقلة",
+        "type": "ecole_superieure",
+        "location": "Ouargla",
+        "position": {
+            "lat": 31.9542,
+            "lng": 5.3418
+        },
+        "officialUrl": "https://www.univ-ouargla.dz/",
+        "specialties": ["هندسة البترول والغاز", "طاقات صحراوية متجددة", "هندسة صناعية"],
+        "services": ["مخابر هيدروكربون", "إقامة جامعية", "مكتبة مركزية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-laghouat",
+        "name": "المدرسة العليا للأساتذة بالأغواط (ENS Laghouat)",
+        "wilaya": "الأغواط",
+        "type": "ecole_superieure",
+        "location": "Laghouat",
+        "position": {
+            "lat": 33.7871,
+            "lng": 2.8682
+        },
+        "officialUrl": "https://www.ens-laghouat.dz/",
+        "specialties": ["تعليم الرياضيات", "تعليم اللغة الفرنسية", "تعليم العلوم الفيزيائية"],
+        "services": ["مطعم", "إقامة", "مكتبة بيداغوجية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensa-alger",
+        "name": "المدرسة الوطنية العليا للفلاحة (ENSA)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "El Harrach, Alger",
+        "position": {
+            "lat": 36.7175,
+            "lng": 3.1491
+        },
+        "officialUrl": "https://www.ensa.dz/",
+        "specialties": ["إنتاج نباتي", "إنتاج حيواني", "صناعات غذائية", "اقتصاد ريفي"],
+        "services": ["حقول تجريبية", "مخابر تحاليل زراعية", "مكتبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensv-alger",
+        "name": "المدرسة الوطنية العليا للبيطرة (ENSV)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "El Harrach, Alger",
+        "position": {
+            "lat": 36.7225,
+            "lng": 3.1362
+        },
+        "officialUrl": "https://www.ensv.dz/",
+        "specialties": ["طب وجراحة الحيوان", "الصحة العامة البيطرية", "سلامة الأغذية"],
+        "services": ["عيادة بيطرية استشفائية", "مخابر تشريح", "إقامة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enssea-tipaza",
+        "name": "المدرسة الوطنية العليا للإحصاء والاقتصاد التطبيقي (ENSSEA)",
+        "wilaya": "تيبازة",
+        "type": "ecole_superieure",
+        "location": "Koléa, Tipaza",
+        "position": {
+            "lat": 36.6385,
+            "lng": 2.7645
+        },
+        "officialUrl": "https://www.enssea.dz/",
+        "specialties": ["إحصاء تطبيقي", "اقتصاد قياسي", "مالية وبيانات ضخمة"],
+        "services": ["مدرجات محاضرات", "مكتبة تخصصية", "إقامة قريبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensb-constantine",
+        "name": "المدرسة الوطنية العليا للبيوتكنولوجيا (ENSB)",
+        "wilaya": "قسنطينة",
+        "type": "ecole_superieure",
+        "location": "Ali Mendjeli, Constantine",
+        "position": {
+            "lat": 36.2427,
+            "lng": 6.5744
+        },
+        "officialUrl": "https://www.ensb.dz/",
+        "specialties": ["بيوتكنولوجيا صيدلانية", "بيوتكنولوجيا زراعية", "بيوتكنولوجيا بيئية"],
+        "services": ["غرف تعقيم وزراعة خلوية", "مخابر جينات", "مكتبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensa-mostaganem",
+        "name": "المدرسة العليا للعلوم الفلاحية بمستغانم (ESAM)",
+        "wilaya": "مستغانم",
+        "type": "ecole_superieure",
+        "location": "Mostaganem",
+        "position": {
+            "lat": 35.9392,
+            "lng": 0.0894
+        },
+        "officialUrl": "https://es-agronomique.dz/",
+        "specialties": ["إنتاج المحاصيل", "حماية النباتات", "التنمية المستدامة"],
+        "services": ["بيوت بلاستيكية تجريبية", "مكتبة", "مطعم جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+        {
+        "id": "esi-alger",
+        "name": "المدرسة الوطنية العليا للإعلام الآلي (ESI)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Oued Smar, Alger",
+        "position": {
+            "lat": 36.7051,
+            "lng": 3.1738
+        },
+        "officialUrl": "https://www.esi.dz/",
+        "specialties": ["إعلام آلي", "أنظمة المعلومات"],
+        "services": ["مكتبة", "مطعم", "إقامة قريبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "epau-alger",
+        "name": "المدرسة المتعددة التقنيات للهندسة المعمارية والعمران (EPAU)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "El Harrach, Alger",
+        "position": {
+            "lat": 36.7118,
+            "lng": 3.1378
+        },
+        "officialUrl": "https://www.epau-alger.edu.dz/",
+        "specialties": ["هندسة معمارية", "عمران"],
+        "services": ["مكتبة متخصصة", "نادي علمي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enp-alger",
+        "name": "المدرسة الوطنية المتعددة التقنيات (ENP)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "El Harrach, Alger",
+        "position": {
+            "lat": 36.7232,
+            "lng": 3.1517
+        },
+        "officialUrl": "https://www.enp.edu.dz/",
+        "specialties": ["هندسة مدنية", "هندسة ميكانيكية", "إلكترونيك", "كيمياء"],
+        "services": ["مخابر بحث", "إقامة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-kouba",
+        "name": "المدرسة العليا للأساتذة بالقبة (ENS Kouba)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Kouba, Alger",
+        "position": {
+            "lat": 36.7335,
+            "lng": 3.0857
+        },
+        "officialUrl": "https://www.ens-kouba.dz/",
+        "specialties": ["رياضيات", "فيزياء", "كيمياء", "علوم طبيعية"],
+        "services": ["مكتبة", "نقل جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "esi-sba",
+        "name": "المدرسة العليا للإعلام الآلي بسيدي بلعباس (ESI SBA)",
+        "wilaya": "سيدي بلعباس",
+        "type": "ecole_superieure",
+        "location": "Sidi Bel Abbes",
+        "position": {
+            "lat": 35.1911,
+            "lng": -0.6305
+        },
+        "officialUrl": "https://www.esi-sba.dz/",
+        "specialties": ["إعلام آلي", "أنظمة المعلومات"],
+        "services": ["مكتبة", "نوادي علمية", "إقامة جامعية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "hec-alger",
+        "name": "المدرسة العليا للتجارة (HEC)",
+        "wilaya": "تيبازة",
+        "type": "ecole_superieure",
+        "location": "Koléa, Tipaza",
+        "position": {
+            "lat": 36.6394,
+            "lng": 2.7661
+        },
+        "officialUrl": "https://www.hec.dz/",
+        "specialties": ["تجارة", "مالية", "تسويق"],
+        "services": ["مكتبة", "مدرجات", "إقامة قريبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enpo-oran",
+        "name": "المدرسة الوطنية المتعددة التقنيات بوهران - موريس أودان (ENPO)",
+        "wilaya": "وهران",
+        "type": "ecole_superieure",
+        "location": "Es Sénia, Oran",
+        "position": {
+            "lat": 35.6664,
+            "lng": -0.6326
+        },
+        "officialUrl": "https://www.enp-oran.dz/",
+        "specialties": ["هندسة ميكانيكية", "هندسة كهربائية", "هندسة الطيران", "هندسة المواد"],
+        "services": ["مخابر بحث متطورة", "مكتبة مركزية", "حاضنة أعمال"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enpc-constantine",
+        "name": "المدرسة الوطنية المتعددة التقنيات بقسنطينة - مالك بن نبي (ENPC)",
+        "wilaya": "قسنطينة",
+        "type": "ecole_superieure",
+        "location": "Ali Mendjeli, Constantine",
+        "position": {
+            "lat": 36.2464,
+            "lng": 6.5701
+        },
+        "officialUrl": "https://enp-constantine.dz/",
+        "specialties": ["هندسة العمليات", "إلكتروتقني", "هندسة صناعية", "ميكاترونيكس"],
+        "services": ["مخابر تقنية", "إقامة جامعية", "مكتبة علمية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "estin-bejaia",
+        "name": "المدرسة العليا في علوم وتكنولوجيات الإعلام الآلي والرقمنة (ESTIN)",
+        "wilaya": "بجاية",
+        "type": "ecole_superieure",
+        "location": "Amizour, Béjaïa",
+        "position": {
+            "lat": 36.6650,
+            "lng": 4.9100
+        },
+        "officialUrl": "https://estin.dz/",
+        "specialties": ["علم البيانات", "الذكاء الاصطناعي", "أنظمة المعلومات الموزعة", "الأمن السيبراني"],
+        "services": ["إقامة جامعية مدمجة", "مطعم جامعي", "نوادي برمجية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensia-alger",
+        "name": "المدرسة الوطنية العليا للذكاء الاصطناعي (ENSIA)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Sidi Abdellah, Alger",
+        "position": {
+            "lat": 36.6713,
+            "lng": 2.8596
+        },
+        "officialUrl": "https://www.ensia.edu.dz/",
+        "specialties": ["ذكاء اصطناعي", "تعلم الآلة", "رؤية حاسوبية", "الروبوتات المستقلة"],
+        "services": ["مركز حوسبة فائقة", "إقامة جامعية حديثة", "حاضنة مشاريع ناشئة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensm-alger",
+        "name": "المدرسة الوطنية العليا للرياضيات (ENSM)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Sidi Abdellah, Alger",
+        "position": {
+            "lat": 36.6720,
+            "lng": 2.8590
+        },
+        "officialUrl": "https://ensm.dz/",
+        "specialties": ["رياضيات تطبيقية", "رياضيات بحتة", "نمذجة إحصائية"],
+        "services": ["مكتبة رقمية", "إقامة جامعية", "مخابر بحث رياضي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensmm-annaba",
+        "name": "المدرسة الوطنية العليا للمناجم والمعادن (ENSMM)",
+        "wilaya": "عنابة",
+        "type": "ecole_superieure",
+        "location": "Sidi Amar, Annaba",
+        "position": {
+            "lat": 36.8152,
+            "lng": 7.7088
+        },
+        "officialUrl": "https://ensmm-annaba.dz/",
+        "specialties": ["هندسة المناجم", "علم المعادن", "هندسة المواد", "الجيوتكنولوجيا"],
+        "services": ["مخابر علم الصخور والفلزات", "مكتبة متخصصة", "نقل جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "essat-tlemcen",
+        "name": "المدرسة العليا للعلوم التطبيقية بتلمسان (ESSAT)",
+        "wilaya": "تلمسان",
+        "type": "ecole_superieure",
+        "location": "Chetouane, Tlemcen",
+        "position": {
+            "lat": 34.9085,
+            "lng": -1.2783
+        },
+        "officialUrl": "https://essat-tlemcen.dz/",
+        "specialties": ["أوتوماتيك", "طاقات متجددة", "هندسة الاتصالات", "هندسة بيئية"],
+        "services": ["مخابر تقنية", "مكتبة", "مساحات عمل مشتركة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enst-alger",
+        "name": "المدرسة الوطنية العليا للتكنولوجيا (ENST)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Rouïba, Alger",
+        "position": {
+            "lat": 36.7328,
+            "lng": 3.2984
+        },
+        "officialUrl": "https://enst.dz/",
+        "specialties": ["هندسة الطرائق والإنتاج الميكانيكي", "هندسة الأنظمة الكهربائية والمدمجة"],
+        "services": ["ورش صناعية ومخابر تجريبية", "مطعم", "إقامة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-ouargla",
+        "name": "المدرسة العليا للأساتذة بورقلة (ENS Ouargla)",
+        "wilaya": "ورقلة",
+        "type": "ecole_superieure",
+        "location": "Ouargla",
+        "position": {
+            "lat": 31.9542,
+            "lng": 5.3418
+        },
+        "officialUrl": "https://ens-ouargla.dz/",
+        "specialties": ["تعليم الرياضيات", "تعليم الفيزياء والكيمياء", "تعليم اللغات الأجنبية", "علوم طبيعية"],
+        "services": ["إقامة جامعية", "مكتبة مركزية", "مخابر تعليمية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+        {
+        "id": "ensh-blida",
+        "name": "المدرسة الوطنية العليا للري (ENSH)",
+        "wilaya": "البليدة",
+        "type": "ecole_superieure",
+        "location": "Route de Soumâa, Blida",
+        "position": {
+            "lat": 36.5109,
+            "lng": 2.8906
+        },
+        "officialUrl": "https://www.ensh.dz/",
+        "specialties": ["هندسة الري", "معالجة المياه والتطهير", "المنشآت الهيدروليكية", "التهيئة الهيدروفلاحية"],
+        "services": ["مخابر ميكانيك السوائل", "إقامة جامعية", "مكتبة متخصصة", "محطة تجارب ميدانية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enp-constantine-mf",
+        "name": "المدرسة العليا للمحاسبة والمالية بقسنطينة (ESMFC)",
+        "wilaya": "قسنطينة",
+        "type": "ecole_superieure",
+        "location": "Ali Mendjeli, Constantine",
+        "position": {
+            "lat": 36.2514,
+            "lng": 6.5732
+        },
+        "officialUrl": "https://www.esmfc.dz/",
+        "specialties": ["محاسبة وتدقيق", "مالية وبنوك", "مراقبة التسيير"],
+        "services": ["قاعات إعلام آلي مالية", "مكتبة اقتصادية", "مطعم جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "esm-tlemcen",
+        "name": "المدرسة العليا لإدارة الأعمال بتلمسان (ESM Tlemcen)",
+        "wilaya": "تلمسان",
+        "type": "ecole_superieure",
+        "location": "Bouhannak, Mansourah, Tlemcen",
+        "position": {
+            "lat": 34.8784,
+            "lng": -1.3620
+        },
+        "officialUrl": "https://www.esm-tlemcen.dz/",
+        "specialties": ["إدارة الأعمال والتسيير", "تسويق رقمي", "إدارة الموارد البشرية"],
+        "services": ["حاضنة أعمال جامعية", "مكتبة متخصصة", "مدرجات تفاعلية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enetet-skikda",
+        "name": "المدرسة العليا لأساتذة التعليم التكنولوجي بسكيكدة (ENSET)",
+        "wilaya": "سكيكدة",
+        "type": "ecole_superieure",
+        "location": "Skikda",
+        "position": {
+            "lat": 36.8620,
+            "lng": 6.9032
+        },
+        "officialUrl": "https://enset-skikda.dz/",
+        "specialties": ["تعليم الهندسة الميكانيكية", "تعليم الهندسة الكهربائية", "تعليم الهندسة المدنية"],
+        "services": ["ورشات صناعية تعليمية", "مكتبة", "إقامة جامعية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensjsi-alger",
+        "name": "المدرسة الوطنية العليا للصحافة وعلوم الإعلام (ENSJSI)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Ben Aknoun, Alger",
+        "position": {
+            "lat": 36.7578,
+            "lng": 3.0189
+        },
+        "officialUrl": "https://ensjsi.dz/",
+        "specialties": ["صحافة سمعية بصرية", "صحافة إلكترونية ورقمية", "اتصال مؤسساتي"],
+        "services": ["استوديوهات إذاعية وتلفزيونية", "قاعات تركيب مونتاج", "مكتبة وسائطية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enmss-alger",
+        "name": "المدرسة الوطنية العليا لعلوم البحر وتهيئة الساحل (ENSSMAL)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Dely Ibrahim, Alger",
+        "position": {
+            "lat": 36.7552,
+            "lng": 2.9819
+        },
+        "officialUrl": "https://www.enssmal.dz/",
+        "specialties": ["علم المحيطات البيولوجي", "تهيئة السواحل والموانئ", "تربية المائيات", "البيئة البحرية"],
+        "services": ["مخابر كيمياء وبيولوجيا بحرية", "سفينة بحوث أوقيانوغرافية", "مكتبة متخصصة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "inph-boumerdes",
+        "name": "المعهد الوطني للإنتاجية والتنمية الصناعية (INPED)",
+        "wilaya": "بومرداس",
+        "type": "institut_national",
+        "location": "Boumerdès",
+        "position": {
+            "lat": 36.7523,
+            "lng": 3.4799
+        },
+        "officialUrl": "https://www.inped.edu.dz/",
+        "specialties": ["التدقيق ومراقبة التسيير", "إدارة سلاسل الإمداد واللوجستيك", "مناجمنت وتطوير صناعي"],
+        "services": ["مراكز استشارات وتدريب", "قاعات مؤتمرات", "إقامة وتغذية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "esbo-oran",
+        "name": "المدرسة العليا للعلوم البيولوجية بوهران (ESBO)",
+        "wilaya": "وهران",
+        "type": "ecole_superieure",
+        "location": "Belgaïd, Bir El Djir, Oran",
+        "position": {
+            "lat": 35.7369,
+            "lng": -0.5284
+        },
+        "officialUrl": "https://www.esbo.dz/",
+        "specialties": ["بيولوجيا جزيئية وعلم الوراثة", "بيولوجيا تطبيقية ومناعة", "بيوتكنولوجيا صحية"],
+        "services": ["مخابر بيولوجيا مجهزة", "مكتبة علمية", "نوادي بيئية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "esgen-kolea",
+        "name": "المدرسة العليا للتسيير والاقتصاد الرقمي (ESGEN)",
+        "wilaya": "تيبازة",
+        "type": "ecole_superieure",
+        "location": "Koléa, Tipaza",
+        "position": {
+            "lat": 36.6377,
+            "lng": 2.7685
+        },
+        "officialUrl": "https://esgen.edu.dz/",
+        "specialties": ["اقتصاد رقمي", "تسيير أنظمة المعلومات", "تجارة إلكترونية وابتكار"],
+        "services": ["مختبرات محاكاة أعمال", "مكتبة حديثة", "حاضنة مؤسسات ناشئة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-constantine",
+        "name": "المدرسة العليا للأساتذة بقسنطينة - آسيا جبار (ENSC)",
+        "wilaya": "قسنطينة",
+        "type": "ecole_superieure",
+        "location": "Ali Mendjeli, Constantine",
+        "position": {
+            "lat": 36.2570,
+            "lng": 6.5786
+        },
+        "officialUrl": "https://www.ensc.dz/",
+        "specialties": ["تعليم الأدب العربي", "تعليم الفلسفة", "تعليم التاريخ والجغرافيا", "تعليم اللغات الأجنبية"],
+        "services": ["مكتبة مركزية متخصصة", "مدرجات رقمية", "إقامة جامعية مخصصة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+        {
+        "id": "ens-bouzareah",
+        "name": "المدرسة العليا للأساتذة ببوزريعة - الشيخ مبارك الميلي (ENS Bouzareah)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Bouzareah, Alger",
+        "position": {
+            "lat": 36.7908,
+            "lng": 3.0182
+        },
+        "officialUrl": "https://www.ens-bouzareah.dz/",
+        "specialties": ["تعليم اللغة العربية وآدابها", "تعليم التاريخ والجغرافيا", "تعليم الفلسفة", "تعليم اللغة الإنجليزية"],
+        "services": ["مكتبة بيداغوجية", "مطعم جامعي", "إقامة قريبة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensb-alger",
+        "name": "المدرسة العليا للبنك (ESB)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Bouzareah, Alger",
+        "position": {
+            "lat": 36.7871,
+            "lng": 3.0135
+        },
+        "officialUrl": "https://www.esb.edu.dz/",
+        "specialties": ["اقتصاد بنكي ومالي", "تسيير المخاطر المصرفية", "تقنيات الصيرفة الإسلامية"],
+        "services": ["قاعات محاكاة أسواق المال", "مكتبة مالية", "مدرجات محاضرات"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-setif",
+        "name": "المدرسة العليا للأساتذة بسطيف - مسعود زقار (ENS Sétif)",
+        "wilaya": "سطيف",
+        "type": "ecole_superieure",
+        "location": "El Hidhab, Sétif",
+        "position": {
+            "lat": 36.2163,
+            "lng": 5.4312
+        },
+        "officialUrl": "https://www.ens-setif.dz/",
+        "specialties": ["تعليم العلوم الفيزيائية", "تعليم الرياضيات", "تعليم العلوم الطبيعية", "تعليم اللغات الأجنبية"],
+        "services": ["مخابر تجارب علمية", "مكتبة جامعية", "إقامة داخلية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "enst-oran",
+        "name": "المدرسة العليا للعلوم التطبيقية بوهران (ESSA Oran)",
+        "wilaya": "وهران",
+        "type": "ecole_superieure",
+        "location": "Bir El Djir, Oran",
+        "position": {
+            "lat": 35.7355,
+            "lng": -0.5248
+        },
+        "officialUrl": "https://www.essa-oran.dz/",
+        "specialties": ["هندسة كهربائية", "هندسة ميكانيكية ومواد", "أوتوماتيك وأنظمة صناعية"],
+        "services": ["مخابر محاكاة وتصنيع", "مكتبة علمية", "مطعم ومساحات أنشطة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-bechar",
+        "name": "المدرسة العليا للأساتذة ببشار (ENS Béchar)",
+        "wilaya": "بشار",
+        "type": "ecole_superieure",
+        "location": "Béchar",
+        "position": {
+            "lat": 31.6247,
+            "lng": -2.2158
+        },
+        "officialUrl": "https://ens-bechar.dz/",
+        "specialties": ["تعليم العلوم الفيزيائية والكيميائية", "تعليم الرياضيات", "تعليم اللغة الفرنسية"],
+        "services": ["مكتبة بيداغوجية", "إقامة جامعية", "مطعم جامعي"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "insea-oran",
+        "name": "المعهد الوطني للاتصالات وتكنولوجيات الإعلام والاتصال (INTTIC)",
+        "wilaya": "وهران",
+        "type": "institut_national",
+        "location": "Oran",
+        "position": {
+            "lat": 35.6983,
+            "lng": -0.6124
+        },
+        "officialUrl": "https://www.inttic.dz/",
+        "specialties": ["شبكات وأنظمة الاتصالات", "هندسة الاتصالات الفضائية", "أمن شبكات الاتصال"],
+        "services": ["مخابر قياس الترددات والألياف البصرية", "مكتبة تخصصية", "إقامة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "esaa-alger",
+        "name": "المدرسة العليا الجزائرية للأعمال (ESAA)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Les Pins Maritimes, Mohammadia, Alger",
+        "position": {
+            "lat": 36.7362,
+            "lng": 3.1488
+        },
+        "officialUrl": "https://esaa.dz/",
+        "specialties": ["إدارة الأعمال الدولية", "تسويق استراتيجي", "تمويل الشركات والمشاريع"],
+        "services": ["حاضنة ابتكار مؤسساتي", "مكتبة متعددة الوسائط", "قاعات مؤتمرات دولية"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-msila",
+        "name": "المدرسة العليا للأساتذة بالمسيلة (ENS M'Sila)",
+        "wilaya": "المسيلة",
+        "type": "ecole_superieure",
+        "location": "M'Sila",
+        "position": {
+            "lat": 35.7088,
+            "lng": 4.5422
+        },
+        "officialUrl": "https://ens-msila.dz/",
+        "specialties": ["تعليم العلوم الدقيقة", "تعليم اللغة الإنجليزية", "تعليم اللغة العربية"],
+        "services": ["مخابر تدريسية", "مكتبة رقمية", "إقامة جامعية مدمجة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ensa-alger-art",
+        "name": "المدرسة العليا للفنون الجميلة (ESBA)",
+        "wilaya": "الجزائر",
+        "type": "ecole_superieure",
+        "location": "Telemly, Alger",
+        "position": {
+            "lat": 36.7648,
+            "lng": 3.0519
+        },
+        "officialUrl": "https://www.esba.dz/",
+        "specialties": ["تصميم جرافيكي وتواصلي", "نحت ورسم تشكيلي", "ترميم التراث الفني", "خزف وفنون زخرفية"],
+        "services": ["ورشات فنون تشكيلية ومسابك", "أروقة معارض", "مكتبة فن وتاريخ"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
+    },
+    {
+        "id": "ens-salhi-annaba",
+        "name": "المدرسة العليا للعلوم والتكنولوجيات الصناعية بعنابة (ESSTI)",
+        "wilaya": "عنابة",
+        "type": "ecole_superieure",
+        "location": "Sidi Amar, Annaba",
+        "position": {
+            "lat": 36.8201,
+            "lng": 7.7123
+        },
+        "officialUrl": "https://www.essti-annaba.dz/",
+        "specialties": ["هندسة المواد والسباكة", "أنظمة كهروميكانيكية صناعية", "صيانة صناعية وموثوقية"],
+        "services": ["مخابر فحص ميكانيكي", "مكتبة هندسية", "قاعات برمجيات محاكاة"],
+        "lastUpdated": "2024-03-01",
+        "source": "official"
     }
+
 ]
