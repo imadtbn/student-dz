@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "endpoint": "",
+  "method": "POST",
+  "description": "ضع هنا رابط Web App أو API خارجي يستقبل JSON. يرسل النظام pageKey وpagePath وpageUrl وpageTitle وtype وdescription وtimestamp، ويمكن للخادم حفظ كل صفحة في ملف مستقل حسب pageKey."
+}
