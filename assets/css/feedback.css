@@ -28,11 +28,11 @@
 .directory-notice-dismiss { margin-top: 8px; background: #d32f2f; color: #fff; }
 .directory-notice-card small { display: block; margin-top: 12px; color: var(--text-muted,#68747b); font-size: .78rem; }
 
-/* Data verification badge: appears beside the favorite star. */
+/* Directory card controls: favorite on top-right, verification on top-left. */
 .favorite-card { position: relative; }
 .favorite-card > .favorite-toggle,.favorite-card > .data-verification-badge { position: absolute; top: 12px; z-index: 3; }
-.favorite-card > .favorite-toggle { left: 12px; }
-.favorite-card > .data-verification-badge { left: 52px; }
+.favorite-card > .favorite-toggle { right: 12px; left: auto; }
+.favorite-card > .data-verification-badge { left: 12px; right: auto; }
 .data-verification-badge { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--bg-card,#fff); box-shadow: 0 2px 7px rgba(0,0,0,.10); font-size: 1rem; cursor: help; }
 .data-verification-badge.verification-verified { color: var(--primary-color,#007A5E); background: #e8f6f1; }
 .data-verification-badge.verification-review { color: #c77700; background: #fff5df; }
@@ -44,6 +44,6 @@
     .directory-notice-card { width: 100%; padding: 23px 17px 17px; border-radius: 16px; }
     .directory-notice-card p { font-size: .88rem; line-height: 1.65; }
     .directory-notice-icon { width: 46px; height: 46px; font-size: 1.2rem; }
-    .favorite-card > .favorite-toggle { left: 10px; }
-    .favorite-card > .data-verification-badge { left: 48px; }
+    .favorite-card > .favorite-toggle { right: 10px; left: auto; }
+    .favorite-card > .data-verification-badge { left: 10px; right: auto; }
 }
