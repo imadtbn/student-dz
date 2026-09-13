@@ -1,0 +1,23 @@
+{
+  "description": "سجل مراجعة يحدد حالة التحقق اليدوي لبيانات الجامعات والمدارس والمعاهد والإقامات.",
+  "statuses": {
+    "verified": "مؤكدة",
+    "review": "قيد المراجعة",
+    "pending": "غير مؤكدة"
+  },
+  "universities": {
+    "univ-algiers-1": "verified",
+    "univ-boumerdes": "review",
+    "univ-usthb": "pending"
+  },
+  "ecoles": {
+    "esi-alger": "verified",
+    "epau-alger": "review",
+    "enp-alger": "pending"
+  },
+  "residences": {
+    "res-talebabderrahmane-1": "verified",
+    "res-ben-aknoun-femmes": "review",
+    "res-bab-ezzouar-3": "pending"
+  }
+}
