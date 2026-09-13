@@ -33,15 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.key === 'Escape' && mainNav.classList.contains('active')) { closeMenu(); menuToggle.focus(); }
     });
 });
-
-// Load real Web Push only on the planner page.
-if (location.pathname.endsWith('/tools/notes-calendar.html')) {
-    const config = document.createElement('script');
-    config.src = '../assets/js/push-config.js';
-    config.onload = () => {
-        const client = document.createElement('script');
-        client.src = '../assets/js/push-notifications.js';
-        document.body.appendChild(client);
-    };
-    document.body.appendChild(config);
-}
