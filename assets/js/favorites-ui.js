@@ -1,4 +1,4 @@
-// Unified favorite-star UI for Student DZ cards.
+// Unified favorite-star UI + verification badge for Student DZ directory cards.
 (function () {
     'use strict';
 
@@ -28,6 +28,31 @@
         button.innerHTML = `<i class="${active ? ICON_ON : ICON_OFF}" aria-hidden="true"></i>`;
     }
 
+    function addVerificationBadge(card) {
+        if (card.querySelector('.data-verification-badge')) return;
+
+        const status = (card.getAttribute('data-verification-status') || 'pending').toLowerCase();
+        const badge = document.createElement('span');
+        badge.className = 'data-verification-badge verification-' + status;
+        badge.setAttribute('role', 'img');
+
+        if (status === 'verified') {
+            badge.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i>';
+            badge.setAttribute('aria-label', 'بيانات مؤكدة');
+            badge.title = 'بيانات مؤكدة — تم التحقق من المعلومات';
+        } else if (status === 'review') {
+            badge.innerHTML = '<i class="fa-solid fa-clock" aria-hidden="true"></i>';
+            badge.setAttribute('aria-label', 'البيانات قيد المراجعة');
+            badge.title = 'البيانات قيد المراجعة — قد تحتاج بعض المعلومات إلى التحديث';
+        } else {
+            badge.innerHTML = '<i class="fa-solid fa-circle-question" aria-hidden="true"></i>';
+            badge.setAttribute('aria-label', 'البيانات قيد التحقق');
+            badge.title = 'البيانات قيد التحقق — يرجى التأكد من المعلومات قبل الاعتماد عليها';
+        }
+
+        card.insertBefore(badge, card.firstChild);
+    }
+
     function bindCard(card) {
         if (!card || card.dataset.favoriteBound === 'true') return;
         const item = itemFrom(card);
@@ -35,6 +60,7 @@
 
         card.dataset.favoriteBound = 'true';
         card.classList.add('favorite-card');
+        addVerificationBadge(card);
 
         const button = document.createElement('button');
         button.type = 'button';
