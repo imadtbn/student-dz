@@ -4,6 +4,7 @@
 
     const ICON_OFF = 'fa-regular fa-star';
     const ICON_ON = 'fa-solid fa-star';
+    let verificationRegistry = { universities: {}, ecoles: {}, residences: {} };
 
     function value(el, name) {
         return el.getAttribute('data-favorite-' + name) || '';
@@ -28,14 +29,28 @@
         button.innerHTML = `<i class="${active ? ICON_ON : ICON_OFF}" aria-hidden="true"></i>`;
     }
 
+    function getVerificationStatus(card) {
+        const explicit = (card.getAttribute('data-verification-status') || '').toLowerCase();
+        if (explicit === 'verified' || explicit === 'review' || explicit === 'pending') return explicit;
+        const type = value(card, 'type');
+        const id = value(card, 'id').replace(/^(university|school|residence):/, '');
+        const collection = verificationRegistry[type];
+        return collection && collection[id] ? collection[id] : 'pending';
+    }
+
     function addVerificationBadge(card) {
-        if (card.querySelector('.data-verification-badge')) return;
+        let badge = card.querySelector('.data-verification-badge');
+        const status = getVerificationStatus(card);
+        card.setAttribute('data-verification-status', status);
 
-        const status = (card.getAttribute('data-verification-status') || 'pending').toLowerCase();
-        const badge = document.createElement('span');
+        if (!badge) {
+            badge = document.createElement('span');
+            badge.className = 'data-verification-badge';
+            badge.setAttribute('role', 'img');
+            card.insertBefore(badge, card.firstChild);
+        }
+
         badge.className = 'data-verification-badge verification-' + status;
-        badge.setAttribute('role', 'img');
-
         if (status === 'verified') {
             badge.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i>';
             badge.setAttribute('aria-label', 'بيانات مؤكدة');
@@ -43,25 +58,29 @@
         } else if (status === 'review') {
             badge.innerHTML = '<i class="fa-solid fa-clock" aria-hidden="true"></i>';
             badge.setAttribute('aria-label', 'البيانات قيد المراجعة');
-            badge.title = 'البيانات قيد المراجعة — قد تحتاج بعض المعلومات إلى التحديث';
+            badge.title = 'البيانات قيد المراجعة — تحتاج إلى مراجعة يدوية';
         } else {
             badge.innerHTML = '<i class="fa-solid fa-circle-question" aria-hidden="true"></i>';
-            badge.setAttribute('aria-label', 'البيانات قيد التحقق');
-            badge.title = 'البيانات قيد التحقق — يرجى التأكد من المعلومات قبل الاعتماد عليها';
+            badge.setAttribute('aria-label', 'البيانات غير مؤكدة');
+            badge.title = 'البيانات غير مؤكدة — لم تتم مراجعتها بعد';
         }
-
-        card.insertBefore(badge, card.firstChild);
     }
 
     function bindCard(card) {
-        if (!card || card.dataset.favoriteBound === 'true') return;
+        if (!card) return;
         const item = itemFrom(card);
         if (!item.id || !item.title || !item.url) return;
 
-        card.dataset.favoriteBound = 'true';
         card.classList.add('favorite-card');
         addVerificationBadge(card);
 
+        if (card.dataset.favoriteBound === 'true') {
+            const button = card.querySelector('.favorite-toggle');
+            if (button) updateButton(button, window.StudentFavorites.has(item.id));
+            return;
+        }
+
+        card.dataset.favoriteBound = 'true';
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'favorite-toggle';
@@ -86,10 +105,25 @@
         (root || document).querySelectorAll('[data-favorite-id]').forEach(bindCard);
     }
 
+    async function loadVerificationRegistry() {
+        try {
+            const base = window.CONFIG?.BASE_PATH || '/student-dz';
+            const response = await fetch(`${base}/data/verification-status.json`, { cache: 'no-store' });
+            if (response.ok) verificationRegistry = await response.json();
+        } catch (error) {
+            console.warn('Student DZ verification registry unavailable:', error);
+        }
+        document.querySelectorAll('[data-favorite-id]').forEach(card => {
+            if (card.dataset.favoriteBound === 'true') addVerificationBadge(card);
+        });
+        bindAll(document);
+    }
+
     window.StudentFavoritesUI = { bind: bindAll, refresh: bindAll };
 
     document.addEventListener('DOMContentLoaded', function () {
         bindAll(document);
+        loadVerificationRegistry();
 
         const observer = new MutationObserver(function (mutations) {
             mutations.forEach(function (mutation) {
