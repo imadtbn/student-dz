@@ -39,6 +39,10 @@
     }
 
     function addVerificationBadge(card) {
+        // Verification has meaning only for university, school/institute and residence records.
+        const type = value(card, 'type');
+        if (!['universities', 'schools', 'ecoles', 'residences'].includes(type)) return;
+
         let badge = card.querySelector('.data-verification-badge');
         const status = getVerificationStatus(card);
         card.setAttribute('data-verification-status', status);
