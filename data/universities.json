@@ -4,10 +4,8 @@
     "universities": [
         {
             "id": "univ-algiers-1",
-            
-  "name": "جامعة الجزائر 1",
-  "verified": "true",
-
+            "name": "جامعة الجزائر 1",
+            "verified": "true",
             "wilaya": "الجزائر",
             "type": "university",
             "officialUrl": "https://www.univ-alger.dz/",
@@ -582,25 +580,6 @@
             ]
         },
         {
-            "id": "univ-usthb",
-            "name": "جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)",
-            "wilaya": "الجزائر",
-            "type": "university",
-            "officialUrl": "https://www.usthb.dz/",
-            "coordinates": {
-                "lat": 36.7118,
-                "lng": 3.1814
-            },
-            "specialties": [
-                "إعلام آلي",
-                "رياضيات",
-                "فيزياء",
-                "هندسة مدنية",
-                "إلكترونيك",
-                "بيولوجيا"
-            ]
-        },
-        {
             "id": "univ-blida-1",
             "name": "جامعة البليدة 1 - سعد دحلب",
             "wilaya": "البليدة",
@@ -1123,25 +1102,6 @@
                 "هندسة كهربائية وإلكترونيك",
                 "علوم التكنولوجيا",
                 "علوم اقتصادية وتسيير"
-            ]
-        },
-        {
-            "id": "univ-usthb",
-            "name": "جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)",
-            "wilaya": "الجزائر",
-            "type": "university",
-            "officialUrl": "https://www.usthb.dz/",
-            "coordinates": {
-                "lat": 36.7118,
-                "lng": 3.1814
-            },
-            "specialties": [
-                "إعلام آلي",
-                "رياضيات",
-                "فيزياء",
-                "هندسة مدنية",
-                "إلكترونيك",
-                "بيولوجيا"
             ]
         },
         {
@@ -1956,25 +1916,6 @@
                 "هندسة كهربائية وإلكترونيك",
                 "علوم التكنولوجيا",
                 "علوم اقتصادية وتسيير"
-            ]
-        },
-        {
-            "id": "univ-usthb",
-            "name": "جامعة العلوم والتكنولوجيا هواري بومدين (USTHB)",
-            "wilaya": "الجزائر",
-            "type": "university",
-            "officialUrl": "https://www.usthb.dz/",
-            "coordinates": {
-                "lat": 36.7118,
-                "lng": 3.1814
-            },
-            "specialties": [
-                "إعلام آلي",
-                "رياضيات",
-                "فيزياء",
-                "هندسة مدنية",
-                "إلكترونيك",
-                "بيولوجيا"
             ]
         },
         {
