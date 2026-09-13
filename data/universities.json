@@ -4,7 +4,10 @@
     "universities": [
         {
             "id": "univ-algiers-1",
-            "name": "جامعة الجزائر 1 - بن يوسف بن خدة",
+            
+  "name": "جامعة الجزائر 1",
+  "verified": true
+
             "wilaya": "الجزائر",
             "type": "university",
             "officialUrl": "https://www.univ-alger.dz/",
