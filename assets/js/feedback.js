@@ -22,6 +22,70 @@
         document.head.appendChild(link);
     }
 
+    function isDirectoryPage() {
+        const path = window.location.pathname;
+        return /\/universities(?:\/|$)/.test(path) || /\/ecoles(?:\/|$)/.test(path) || /\/residences(?:\/|$)/.test(path);
+    }
+
+    function directoryNoticeHtml() {
+        return `
+            <div class="directory-notice" id="directoryNotice" role="dialog" aria-modal="true" aria-labelledby="directoryNoticeTitle">
+                <div class="directory-notice-card">
+                    <button class="directory-notice-close" id="directoryNoticeClose" type="button" aria-label="إغلاق">×</button>
+                    <div class="directory-notice-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3 id="directoryNoticeTitle">تنبيه مهم للزوار</h3>
+                    <p>هذا القسم ما زال <strong>قيد التصميم والتحديث</strong>، وقد تكون بعض البيانات مثل الموقع الجغرافي، اسم المؤسسة، التخصصات والروابط بحاجة إلى تأكيد أو تصحيح.</p>
+                    <p>ساهم معنا في تحسين الخدمة بإرسال أي <strong>تصحيح أو معلومة موثوقة أو اقتراح</strong> يساعدنا على إثراء الموقع.</p>
+                    <button class="directory-notice-feedback" id="directoryNoticeFeedback" type="button">
+                        <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                        إرسال تصحيح أو اقتراح
+                    </button>
+                    <button class="directory-notice-dismiss" id="directoryNoticeDismiss" type="button">إغلاق</button>
+                    <small>شكراً لمساهمتكم في تحسين Student DZ.</small>
+                </div>
+            </div>`;
+    }
+
+    function initDirectoryNotice() {
+        if (!isDirectoryPage()) return;
+
+        const storageKey = `studentDzDirectoryNotice:${window.location.pathname}`;
+        try {
+            if (localStorage.getItem(storageKey) === '1') return;
+        } catch (_) { /* Private browsing/storage restrictions: still show the notice. */ }
+
+        document.body.insertAdjacentHTML('beforeend', directoryNoticeHtml());
+        const notice = document.getElementById('directoryNotice');
+        const closeBtn = document.getElementById('directoryNoticeClose');
+        const dismissBtn = document.getElementById('directoryNoticeDismiss');
+        const feedbackBtn = document.getElementById('directoryNoticeFeedback');
+        const fab = document.getElementById('feedbackFab');
+        const feedbackModal = document.getElementById('feedbackModal');
+
+        const dismiss = () => {
+            notice.classList.remove('active');
+            try { localStorage.setItem(storageKey, '1'); } catch (_) {}
+            window.setTimeout(() => notice.remove(), 220);
+        };
+
+        closeBtn.addEventListener('click', dismiss);
+        dismissBtn.addEventListener('click', dismiss);
+        notice.addEventListener('click', event => {
+            if (event.target === notice) dismiss();
+        });
+
+        feedbackBtn.addEventListener('click', () => {
+            dismiss();
+            window.setTimeout(() => fab?.click(), 80);
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && notice.classList.contains('active')) dismiss();
+        }, { once: true });
+
+        requestAnimationFrame(() => notice.classList.add('active'));
+    }
+
     function init() {
         ensureCss();
         let container = document.getElementById('feedbackContainer');
@@ -30,7 +94,10 @@
             container.id = 'feedbackContainer';
             document.body.appendChild(container);
         }
-        if (document.getElementById('feedbackFab')) return;
+        if (document.getElementById('feedbackFab')) {
+            initDirectoryNotice();
+            return;
+        }
 
         const path = window.location.pathname;
         const key = pageKey();
@@ -130,6 +197,8 @@
                 submit.textContent = 'إرسال البلاغ';
             }
         });
+
+        initDirectoryNotice();
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
