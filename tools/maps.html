@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
   results.style.display='block';search.setAttribute('aria-expanded','true');
  }
  try{
-  const [u,r,e]=await Promise.all([fetchAppJSON(CONFIG.API.UNIVERSITIES),fetchAppJSON(CONFIG.API.RESIDENCES),fetchAppJSON(CONFIG.getUrl('data/ecoles.json'))]);
+  const [u,r,e]=await Promise.all([fetchAppJSON(CONFIG.API.UNIVERSITIES),fetchAppJSON(CONFIG.API.RESIDENCES),fetchAppJSON('data/ecoles.json')]);
   (u?.universities||[]).forEach(x=>x.coordinates&&addPlaceData(x.name,'جامعة',x.coordinates.lat,x.coordinates.lng,x.wilaya,x.officialUrl));
   (r?.residences||[]).forEach(x=>x.coordinates&&addPlaceData(x.name,'إقامة',x.coordinates.lat,x.coordinates.lng,x.wilaya));
   (Array.isArray(e)?e:[]).forEach(x=>{const p=x.position||x.coordinates;if(p)addPlaceData(x.name,'مدرسة / معهد',p.lat,p.lng,x.wilaya,x.officialUrl)});
