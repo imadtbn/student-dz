@@ -1,54 +1,43 @@
-const CACHE_NAME = 'student-dz-v3';
+const CACHE_NAME = 'student-dz-v4';
 const ASSETS_TO_CACHE = [
-    './',
-    './index.html',
-    './offline.html',
-    './assets/css/main.css',
-    './assets/css/responsive.css',
-    './assets/js/config.js',
-    './assets/js/app.js',
-    './assets/js/navigation.js',
-    './assets/images/icon.png',
-    './assets/images/icon-192.png',
-    './assets/images/icon-512.png'
+    './', './index.html', './offline.html',
+    './assets/css/main.css', './assets/css/responsive.css',
+    './assets/js/config.js', './assets/js/app.js', './assets/js/navigation.js',
+    './assets/js/push-config.js', './assets/js/push-notifications.js',
+    './assets/images/icon.png', './assets/images/icon-192.png', './assets/images/icon-512.png'
 ];
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
     self.skipWaiting();
+    event.waitUntil(caches.open(CACHE_NAME).then(async cache => {
+        for (const asset of ASSETS_TO_CACHE) {
+            try { await cache.add(asset); } catch (e) { console.warn('Cache skip:', asset); }
+        }
+    }));
+});
+
+self.addEventListener('activate', event => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(async (cache) => {
-            for (const asset of ASSETS_TO_CACHE) {
-                try { await cache.add(asset); } catch (error) { console.warn('Cache skip:', asset, error); }
-            }
-        })
+        caches.keys().then(keys => Promise.all(keys.map(k => k === CACHE_NAME ? null : caches.delete(k))))
+            .then(() => self.clients.claim())
     );
 });
 
-self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => Promise.all(
-            cacheNames.map((cache) => cache === CACHE_NAME ? null : caches.delete(cache))
-        )).then(() => self.clients.claim())
-    );
-});
-
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
     if (event.request.method !== 'GET') return;
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request).catch(() => {
-                if (event.request.mode === 'navigate') return caches.match('./offline.html');
-                return new Response('', { status: 503, statusText: 'Offline' });
-            });
-        })
-    );
+    event.respondWith(caches.match(event.request).then(cached =>
+        cached || fetch(event.request).catch(() =>
+            event.request.mode === 'navigate' ? caches.match('./offline.html') : new Response('', { status: 503 })
+        )
+    ));
 });
 
-// Display notifications requested by the planner page.
-self.addEventListener('message', (event) => {
-    const data = event.data || {};
-    if (data.type !== 'SHOW_PLANNER_NOTIFICATION') return;
-
+// Real Web Push: the browser wakes this worker even when the page is closed.
+self.addEventListener('push', event => {
+    let data = {};
+    try { data = event.data ? event.data.json() : {}; } catch (_) {
+        data = { body: event.data ? event.data.text() : 'لديك تذكير جديد.' };
+    }
     const title = data.title || 'Student DZ — تذكير';
     const options = {
         body: data.body || 'لديك موعد أو مهمة قادمة.',
@@ -59,40 +48,29 @@ self.addEventListener('message', (event) => {
         requireInteraction: true,
         data: { url: data.url || './tools/notes-calendar.html' }
     };
-
     event.waitUntil(self.registration.showNotification(title, options));
 });
 
-// Notification click: return the student to the planner and focus an existing tab when possible.
-self.addEventListener('notificationclick', (event) => {
+self.addEventListener('notificationclick', event => {
     event.notification.close();
-    const targetUrl = new URL(
-        event.notification.data?.url || './tools/notes-calendar.html',
-        self.registration.scope
-    ).href;
-
-    event.waitUntil(
-        clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
-            for (const client of clientList) {
-                if ('focus' in client) {
-                    if (client.url !== targetUrl && 'navigate' in client) client.navigate(targetUrl);
-                    return client.focus();
-                }
+    const target = new URL(event.notification.data?.url || './tools/notes-calendar.html', self.registration.scope).href;
+    event.waitUntil(clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+        for (const client of list) {
+            if ('focus' in client) {
+                if (client.url !== target && 'navigate' in client) client.navigate(target);
+                return client.focus();
             }
-            if (clients.openWindow) return clients.openWindow(targetUrl);
-        })
-    );
+        }
+        return clients.openWindow ? clients.openWindow(target) : undefined;
+    }));
 });
 
-// Best-effort background wake-up for browsers that support Periodic Background Sync.
-self.addEventListener('periodicsync', (event) => {
-    if (event.tag === 'student-dz-reminders') {
-        event.waitUntil(self.registration.showNotification('Student DZ — تذكيراتك', {
-            body: 'افتح سجل المواعيد والمهام للتحقق من التذكيرات القادمة.',
-            icon: './assets/images/icon.png',
-            badge: './assets/images/icon-192.png',
-            tag: 'student-dz-background-check',
-            data: { url: './tools/notes-calendar.html' }
-        }));
-    }
+self.addEventListener('message', event => {
+    if (event.data?.type !== 'SHOW_PLANNER_NOTIFICATION') return;
+    event.waitUntil(self.registration.showNotification(event.data.title || 'Student DZ — تذكير', {
+        body: event.data.body || 'لديك تذكير جديد.',
+        icon: './assets/images/icon.png', badge: './assets/images/icon-192.png',
+        tag: event.data.tag || 'student-dz-planner', requireInteraction: true,
+        data: { url: event.data.url || './tools/notes-calendar.html' }
+    }));
 });
