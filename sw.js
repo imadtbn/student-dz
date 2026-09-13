@@ -3,7 +3,6 @@ const ASSETS_TO_CACHE = [
     './', './index.html', './offline.html',
     './assets/css/main.css', './assets/css/responsive.css',
     './assets/js/config.js', './assets/js/app.js', './assets/js/navigation.js',
-    './assets/js/push-config.js', './assets/js/push-notifications.js',
     './assets/images/icon.png', './assets/images/icon-192.png', './assets/images/icon-512.png'
 ];
 
@@ -32,39 +31,7 @@ self.addEventListener('fetch', event => {
     ));
 });
 
-// Real Web Push: the browser wakes this worker even when the page is closed.
-self.addEventListener('push', event => {
-    let data = {};
-    try { data = event.data ? event.data.json() : {}; } catch (_) {
-        data = { body: event.data ? event.data.text() : 'لديك تذكير جديد.' };
-    }
-    const title = data.title || 'Student DZ — تذكير';
-    const options = {
-        body: data.body || 'لديك موعد أو مهمة قادمة.',
-        icon: data.icon || './assets/images/icon.png',
-        badge: data.badge || './assets/images/icon-192.png',
-        tag: data.tag || 'student-dz-planner',
-        renotify: false,
-        requireInteraction: true,
-        data: { url: data.url || './tools/notes-calendar.html' }
-    };
-    event.waitUntil(self.registration.showNotification(title, options));
-});
-
-self.addEventListener('notificationclick', event => {
-    event.notification.close();
-    const target = new URL(event.notification.data?.url || './tools/notes-calendar.html', self.registration.scope).href;
-    event.waitUntil(clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
-        for (const client of list) {
-            if ('focus' in client) {
-                if (client.url !== target && 'navigate' in client) client.navigate(target);
-                return client.focus();
-            }
-        }
-        return clients.openWindow ? clients.openWindow(target) : undefined;
-    }));
-});
-
+// Local browser notifications from the planner while the site is active.
 self.addEventListener('message', event => {
     if (event.data?.type !== 'SHOW_PLANNER_NOTIFICATION') return;
     event.waitUntil(self.registration.showNotification(event.data.title || 'Student DZ — تذكير', {
