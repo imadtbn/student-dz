@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "endpoint": "",
+  "endpoint": "https://script.google.com/macros/s/AKfycbwUFM23N5nnClelD7522s3FZCt2HiKwXixntkrNuH--ncpk49NMrCm0d2-Qzqo8it2RFQ/exec",
   "method": "POST",
-  "description": "ضع هنا رابط Web App أو API خارجي يستقبل JSON. يرسل النظام pageKey وpagePath وpageUrl وpageTitle وtype وdescription وtimestamp، ويمكن للخادم حفظ كل صفحة في ملف مستقل حسب pageKey."
+  "description": "يستقبل البلاغات عبر Google Apps Script ويوزعها تلقائيًا في ورقة مستقلة حسب pageKey/صفحة المصدر."
 }

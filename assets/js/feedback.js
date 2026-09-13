@@ -7,6 +7,12 @@
         return window.location.pathname.replace(/^\/student-dz\/?/, '').replace(/\//g, '__').replace(/\.html$/, '') || 'home';
     }
 
+    function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>'"]/g, char => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+        }[char]));
+    }
+
     function ensureCss() {
         if (document.querySelector('link[data-feedback-css]')) return;
         const link = document.createElement('link');
@@ -49,9 +55,9 @@
                             <option value="other">أخرى</option>
                         </select>
                         <label for="feedbackPage">الصفحة الحالية</label>
-                        <input type="text" id="feedbackPage" readonly value="${path}">
+                        <input type="text" id="feedbackPage" readonly value="${escapeHtml(path)}">
                         <label for="feedbackDesc">وصف المشكلة / الاقتراح</label>
-                        <textarea id="feedbackDesc" rows="4" required></textarea>
+                        <textarea id="feedbackDesc" rows="4" required maxlength="5000"></textarea>
                         <button type="submit" id="feedbackSubmit">إرسال البلاغ</button>
                     </form>
                     <div id="feedbackSuccess" class="feedback-success" role="status" aria-live="polite"></div>
@@ -77,18 +83,23 @@
 
         form.addEventListener('submit', async e => {
             e.preventDefault();
+            const description = document.getElementById('feedbackDesc').value.trim();
+            if (!description) return;
             const report = {
                 pageKey: key,
                 pagePath: path,
                 pageUrl: window.location.href,
                 pageTitle: title,
                 type: document.getElementById('feedbackType').value,
-                description: document.getElementById('feedbackDesc').value.trim(),
-                timestamp: new Date().toISOString()
+                description,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                submissionId: (window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`)
             };
 
             submit.disabled = true;
             submit.textContent = 'جارٍ الإرسال...';
+            success.style.display = 'none';
 
             try {
                 const settingsUrl = window.CONFIG?.getUrl
@@ -96,17 +107,16 @@
                     : '/student-dz/data/feedback-settings.json';
                 const settingsResponse = await fetch(settingsUrl, { cache: 'no-store' });
                 const settings = settingsResponse.ok ? await settingsResponse.json() : {};
+                if (!settings.enabled || !settings.endpoint) throw new Error('FEEDBACK_ENDPOINT_NOT_CONFIGURED');
 
-                if (!settings.endpoint) {
-                    throw new Error('FEEDBACK_ENDPOINT_NOT_CONFIGURED');
-                }
-
+                // text/plain prevents a CORS preflight; Apps Script receives and parses the JSON body.
                 const response = await fetch(settings.endpoint, {
-                    method: settings.method || 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                     body: JSON.stringify(report)
                 });
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                if (response.type !== 'opaque' && !response.ok) throw new Error(`HTTP ${response.status}`);
 
                 success.textContent = 'تم إرسال البلاغ بنجاح. شكرًا لمساهمتك في تحسين Student DZ.';
                 form.style.display = 'none';
