@@ -21,24 +21,35 @@
 
 
 
-<!-- Structured Data: Organization + WebSite + SearchAction -->
-    <script type="application/ld+json">
+<!-- Structured Data: Organization + WebSite -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://imadtbn.github.io/student-dz/#org",
-      "name": "Student DZ | مساعد الطالب الجزائري",
-      "alternateName": "منصة مساعد الطالب الجزائري",
+      "@id": "https://imadtbn.github.io/student-dz/#organization",
+      "name": "مساعد الطالب الجزائري student dz",
+      "alternateName": "Student DZ",
       "url": "https://imadtbn.github.io/student-dz/",
       "logo": "https://imadtbn.github.io/student-dz/assets/images/icon-512.png",
-      "description": "المنصة الرقمية الشاملة للطالب الجزائري: دليل الجامعات والإقامات الجامعية، المنصات الرسمية، وأدوات دراسية من التسجيل إلى التخرج.",
+      "description": "مساعد الطالب الجزائري: منصة رقمية تجمع الأدلة الجامعية والأدوات والخدمات المفيدة للطالب الجزائري.",
       "areaServed": {
         "@type": "Country",
         "name": "Algeria"
       },
-      "sameAs": []
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+213697743721",
+        "email": "tabaniimadeddine@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": ["ar", "fr"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "35015",
+        "addressCountry": "DZ"
+      }
     },
     {
       "@type": "WebSite",
@@ -48,13 +59,13 @@
       "alternateName": "Student DZ",
       "inLanguage": "ar-DZ",
       "publisher": {
-        "@id": "https://imadtbn.github.io/student-dz/#org"
+        "@id": "https://imadtbn.github.io/student-dz/#organization"
       },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://imadtbn.github.io/student-dz/index.html?q={search_term_string}"
+          "urlTemplate": "https://imadtbn.github.io/student-dz/?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
