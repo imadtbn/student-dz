@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             margin-bottom: 14px;
             flex-wrap: wrap;
         }
+
         .filter-bar input {
             flex: 1;
             min-width: 250px;
@@ -25,6 +27,7 @@
             background: var(--bg-main);
             color: var(--text-main);
         }
+
         .platform-count {
             display: flex;
             align-items: center;
@@ -40,23 +43,28 @@
             color: var(--text-main);
             box-shadow: var(--shadow-sm);
         }
+
         .platform-count i {
             color: var(--primary-color);
             font-size: 1.15rem;
         }
+
         .platform-count strong {
             color: var(--primary-color);
             font-size: 1.25rem;
             font-weight: 800;
         }
+
         .platform-count .count-label {
             font-size: 0.95rem;
             font-weight: 500;
         }
+
         @media (max-width: 480px) {
             .filter-bar input {
                 min-width: 100%;
             }
+
             .platform-count {
                 width: 100%;
                 min-width: 0;
@@ -74,20 +82,66 @@
     <meta property="og:url" content="https://imadtbn.github.io/student-dz/platforms/">
     <meta property="og:title" content="Student DZ | دليل المنصات الرسمية">
     <meta property="og:description" content="دليل المنصات الرقمية الرسمية للطالب الجزائري.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://imadtbn.github.io/student-dz/platforms/">
     <meta property="twitter:title" content="Student DZ | دليل المنصات الرسمية">
     <meta property="twitter:description" content="دليل المنصات الرقمية الرسمية للطالب الجزائري.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
+
+    <meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
+    <meta name="msvalidate.01" content="9BCA38377A234DCCEB9991EAD1A2F6C2" />
+
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "yi4hhmflse");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRLNY4TW3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8TRLNY4TW3');
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M27X7VLD');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M27X7VLD" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
 <body>
     <header class="site-header">
         <div class="container">
             <a href="../index.html" class="logo">
-                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;"> Student DZ
+                <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32"
+                    style="border-radius: 8px;"> Student DZ
             </a>
 
             <nav class="main-nav" id="mainNav">
@@ -102,7 +156,8 @@
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع"><i
+                        class="fa-solid fa-moon"></i></button>
                 <button class="hamburger" id="menuToggle" aria-label="القائمة">☰</button>
             </div>
         </div>
@@ -122,7 +177,8 @@
         </div>
 
         <div class="grid" id="platGrid">
-            <div style="text-align:center; grid-column: 1/-1;"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل البيانات...</div>
+            <div style="text-align:center; grid-column: 1/-1;"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل
+                البيانات...</div>
         </div>
     </main>
 
@@ -144,7 +200,7 @@
             grid.innerHTML = '';
             updatePlatformCount(data.length);
 
-            if(data.length === 0) {
+            if (data.length === 0) {
                 grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">لا توجد نتائج.</p>';
                 return;
             }
@@ -161,7 +217,7 @@
 
         document.addEventListener('DOMContentLoaded', async () => {
             const data = await fetchAppJSON(CONFIG.API.PLATFORMS);
-            if(data && data.platforms) {
+            if (data && data.platforms) {
                 platforms = data.platforms;
                 renderGrid(platforms);
             }
@@ -176,13 +232,13 @@
             renderGrid(filtered);
         });
     </script>
-<footer class="site-footer">
+
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>
-                        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24" style="border-radius: 4px; vertical-align: middle;"> Student DZ
-                    </h3>
+                    <h3><img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
+                            style="border-radius:4px;vertical-align:middle"> Student DZ</h3>
                     <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
                 </div>
                 <div class="footer-col">
@@ -200,14 +256,15 @@
                         <li><a href="../pages/about.html">عن المنصة</a></li>
                         <li><a href="../pages/privacy.html">سياسة الخصوصية</a></li>
                         <li><a href="../pages/contact.html">اتصل بنا</a></li>
+                        <li><a href="../pages/guides.html">دليل المستخدم</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.
-            </div>
+            <div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div>
         </div>
     </footer>
+
     <script src="../assets/js/navigation.js"></script>
 </body>
+
 </html>
