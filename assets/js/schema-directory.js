@@ -10,21 +10,24 @@
     const SITE = window.location.origin + BASE;
     const pages = {
         universities: {
-            match: `${BASE}/universities/index.html`,
+            match: `${BASE}/universities`,
+            url: `${BASE}/universities/`,
             data: `${BASE}/data/universities.json`,
             list: 'universities',
             name: 'دليل الجامعات الجزائرية',
             description: 'دليل الجامعات الجزائرية والمعلومات المتاحة للطالب الجزائري.'
         },
         schools: {
-            match: `${BASE}/ecoles/index.html`,
+            match: `${BASE}/ecoles`,
+            url: `${BASE}/ecoles/`,
             data: `${BASE}/data/ecoles.json`,
             list: 'schools',
             name: 'دليل المدارس والمعاهد الجزائرية',
             description: 'دليل المدارس العليا والمعاهد الجزائرية والمعلومات المتاحة للطالب.'
         },
         residences: {
-            match: `${BASE}/residences/index.html`,
+            match: `${BASE}/residences`,
+            url: `${BASE}/residences/`,
             data: `${BASE}/data/residences.json`,
             list: 'residences',
             name: 'دليل الإقامات الجامعية في الجزائر',
@@ -82,7 +85,7 @@
     function breadcrumb() {
         return {
             '@type': 'BreadcrumbList',
-            '@id': `${SITE}${current.match}#breadcrumb`,
+            '@id': `${SITE}${current.url}#breadcrumb`,
             itemListElement: [
                 {
                     '@type': 'ListItem',
@@ -94,7 +97,7 @@
                     '@type': 'ListItem',
                     position: 2,
                     name: current.name,
-                    item: `${SITE}${current.match}`
+                    item: `${SITE}${current.url}`
                 }
             ]
         };
@@ -108,14 +111,14 @@
         const items = records.map(itemSchema).filter(Boolean);
         if (!items.length) return;
 
-        const collectionId = `${SITE}${current.match}#collection`;
-        const listId = `${SITE}${current.match}#itemlist`;
+        const collectionId = `${SITE}${current.url}#collection`;
+        const listId = `${SITE}${current.url}#itemlist`;
 
         addJsonLd('studentDzDirectorySchema', [
             {
                 '@type': 'CollectionPage',
                 '@id': collectionId,
-                url: `${SITE}${current.match}`,
+                url: `${SITE}${current.url}`,
                 name: current.name,
                 description: current.description,
                 inLanguage: 'ar-DZ',
@@ -123,7 +126,7 @@
                     '@id': `${SITE}/#website`
                 },
                 breadcrumb: {
-                    '@id': `${SITE}${current.match}#breadcrumb`
+                    '@id': `${SITE}${current.url}#breadcrumb`
                 },
                 mainEntity: {
                     '@id': listId
