@@ -1,1 +1,142 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>أدوات الطالب - Student DZ</title><meta name="description" content="مجموعة أدوات رقمية مفيدة للطالب الجزائري."><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/main.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="icon" href="../assets/images/icon.png"></head><body><header class="site-header"><div class="container"><a href="../index.html" class="logo"><img src="../assets/images/icon.png" width="32" height="32"> Student DZ</a><nav class="main-nav" id="mainNav"><a href="../index.html" class="nav-link">الرئيسية</a><a href="../universities/index.html" class="nav-link">الجامعات</a><a href="../ecoles/index.html" class="nav-link">المدارس والمعاهد</a><a href="../residences/index.html" class="nav-link">الإقامات</a><a href="../transport/index.html" class="nav-link">النقل</a><a href="../categories/tools.html" class="nav-link">الأدوات</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle"><i class="fa-solid fa-moon"></i></button><button class="hamburger" id="menuToggle">☰</button></div></div></header><main class="container"><h1 class="section-title" style="margin-top:2rem"><i class="fa-solid fa-tools"></i> أدوات الطالب</h1><div class="grid" id="toolsGrid"></div><div style="text-align:center;margin:1.5rem 0 2rem"><button class="btn" id="moreToolsBtn" aria-expanded="false">المزيد من الأدوات</button></div></main><footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ</div></div></footer><script src="../assets/js/theme.js"></script><script src="../assets/js/navigation.js"></script><script src="../assets/js/storage.js"></script><script src="../assets/js/favorites-ui.js"></script><script>const tools=[['budget-calculator.html','حاسبة الميزانية','احسب مصاريفك الشهرية والسنوية','fa-solid fa-wallet'],['text-tools.html','أدوات النصوص','عداد الكلمات وتنسيق النصوص للبحوث','fa-solid fa-font'],['average-calculator.html','حاسبة المعدل','احسب معدل السداسي','fa-solid fa-calculator'],['semester-calculator.html','المعدل السنوي','احسب المعدل السنوي','fa-solid fa-chart-bar'],['percentage-calculator.html','حساب النسبة','حساب النسبة المئوية','fa-solid fa-percent'],['pomodoro.html','مؤقت بومودورو','نظم وقت دراستك','fa-solid fa-stopwatch'],['notes-calendar.html','سجل الملاحظات والمواعيد','دوّن ملاحظاتك ومهامك ومواعيدك','fa-solid fa-calendar-check'],['research-plan.html','مولّد خطة البحث','أنشئ هيكل مذكرة التخرج','fa-solid fa-diagram-project'],['apa-generator.html','مولّد المراجع APA','أنشئ مراجع APA 7','fa-solid fa-book-bookmark'],['cv-builder.html','إنشاء CV','أنشئ سيرتك الذاتية','fa-solid fa-file-invoice'],['qr-generator.html','إنشاء QR Code','تحويل نص أو رابط لرمز','fa-solid fa-qrcode'],['pdf-tools.html','أدوات PDF','دمج ملفات PDF','fa-solid fa-file-pdf'],['image-compressor.html','ضغط الصور','تصغير حجم الصور','fa-solid fa-image'],['maps.html','الخريطة الجامعية','الجامعات والإقامات','fa-solid fa-map-location-dot'],['unit-converter.html','محول الوحدات','تحويل الوحدات','fa-solid fa-right-left'],['study-schedule.html','مولد جدول الدراسة','أنشئ جدولك الأسبوعي','fa-solid fa-calendar-days'],['date-difference.html','حساب الأيام بين تاريخين','احسب المدة بالأيام والأسابيع','fa-solid fa-calendar-week'],['points-ranking.html','حاسبة الترتيب والنقاط','احسب مجموع النقاط والمتوسط الموزون','fa-solid fa-ranking-star']];const grid=document.getElementById('toolsGrid');tools.forEach((t,i)=>{grid.insertAdjacentHTML('beforeend',`<div class="card tool-card favorite-card ${i>8?'extra-tool-card':''}" data-favorite-id="tool:${t[0]}" data-favorite-title="${t[1]}" data-favorite-url="../tools/${t[0]}" data-favorite-type="tools" data-favorite-icon="${t[3]}" data-favorite-description="${t[2]}"><a class="card-link" href="../tools/${t[0]}"><div class="card-icon"><i class="${t[3]}"></i></div><h3 class="card-title">${t[1]}</h3><p class="card-desc">${t[2]}</p></a></div>`)});const extras=document.querySelectorAll('.extra-tool-card'),btn=document.getElementById('moreToolsBtn');extras.forEach(c=>c.hidden=true);btn.onclick=()=>{const show=extras[0]?.hidden;extras.forEach(c=>c.hidden=!show);btn.textContent=show?'إخفاء الأدوات الإضافية':'المزيد من الأدوات';btn.setAttribute('aria-expanded',String(show))};document.getElementById('currentYear').textContent=new Date().getFullYear();</script></body></html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>أدوات الطالب - Student DZ</title>
+    <meta name="description" content="مجموعة أدوات رقمية مفيدة للطالب الجزائري.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../assets/images/icon.png">
+
+    <meta name="google-site-verification" content="f5Xi4oFx0v5dN6iPZd9qCw-7vnc3vIbAeYF9jr4vwVM" />
+    <meta name="msvalidate.01" content="9BCA38377A234DCCEB9991EAD1A2F6C2" />
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "yi4hhmflse");
+    </script>
+
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "yi4hhmflse");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRLNY4TW3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8TRLNY4TW3');
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M27X7VLD');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M27X7VLD" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<body>
+    <header class="site-header">
+        <div class="container"><a href="../index.html" class="logo"><img src="../assets/images/icon.png" width="32"
+                    height="32"> Student DZ</a>
+            <nav class="main-nav" id="mainNav"><a href="../index.html" class="nav-link">الرئيسية</a><a
+                    href="../universities/index.html" class="nav-link">الجامعات</a><a href="../ecoles/index.html"
+                    class="nav-link">المدارس والمعاهد</a><a href="../residences/index.html"
+                    class="nav-link">الإقامات</a><a href="../transport/index.html" class="nav-link">النقل</a><a
+                    href="../categories/tools.html" class="nav-link">الأدوات</a></nav>
+            <div class="header-actions"><button class="icon-btn" id="themeToggle"><i
+                        class="fa-solid fa-moon"></i></button><button class="hamburger" id="menuToggle">☰</button></div>
+        </div>
+    </header>
+    <main class="container">
+        <h1 class="section-title" style="margin-top:2rem"><i class="fa-solid fa-tools"></i> أدوات الطالب</h1>
+        <div class="grid" id="toolsGrid"></div>
+        <div style="text-align:center;margin:1.5rem 0 2rem"><button class="btn" id="moreToolsBtn"
+                aria-expanded="false">المزيد من الأدوات</button></div>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
+                            style="border-radius:4px;vertical-align:middle"> Student DZ</h3>
+                    <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../categories/tools.html">الأدوات</a></li>
+                        <li><a href="../universities/index.html">الجامعات</a></li>
+                        <li><a href="../ecoles/index.html">المدارس والمعاهد</a></li>
+                        <li><a href="../platforms/index.html">المنصات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>قانوني</h3>
+                    <ul class="footer-links">
+                        <li><a href="../pages/about.html">عن المنصة</a></li>
+                        <li><a href="../pages/privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="../pages/contact.html">اتصل بنا</a></li>
+                        <li><a href="../pages/guides.html">دليل المستخدم</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/favorites-ui.js"></script>
+    <script>const tools = [
+            ['budget-calculator.html', 'حاسبة الميزانية', 'احسب مصاريفك الشهرية والسنوية', 'fa-solid fa-wallet'],
+            ['text-tools.html', 'أدوات النصوص', 'عداد الكلمات وتنسيق النصوص للبحوث', 'fa-solid fa-font'],
+            ['average-calculator.html', 'حاسبة المعدل', 'احسب معدل السداسي', 'fa-solid fa-calculator'],
+            ['semester-calculator.html', 'المعدل السنوي', 'احسب المعدل السنوي', 'fa-solid fa-chart-bar'],
+            ['percentage-calculator.html', 'حساب النسبة', 'حساب النسبة المئوية', 'fa-solid fa-percent'],
+            ['pomodoro.html', 'مؤقت بومودورو', 'نظم وقت دراستك', 'fa-solid fa-stopwatch'],
+            ['notes-calendar.html', 'سجل الملاحظات والمواعيد', 'دوّن ملاحظاتك ومهامك ومواعيدك', 'fa-solid fa-calendar-check'],
+            ['research-plan.html', 'مولّد خطة البحث', 'أنشئ هيكل مذكرة التخرج', 'fa-solid fa-diagram-project'],
+            ['apa-generator.html', 'مولّد المراجع APA', 'أنشئ مراجع APA 7', 'fa-solid fa-book-bookmark'],
+            ['cv-builder.html', 'إنشاء CV', 'أنشئ سيرتك الذاتية', 'fa-solid fa-file-invoice'],
+            ['qr-generator.html', 'إنشاء QR Code', 'تحويل نص أو رابط لرمز', 'fa-solid fa-qrcode'],
+            ['pdf-tools.html', 'أدوات PDF', 'دمج ملفات PDF', 'fa-solid fa-file-pdf'],
+            ['image-compressor.html', 'ضغط الصور', 'تصغير حجم الصور', 'fa-solid fa-image'],
+            ['maps.html', 'الخريطة الجامعية', 'الجامعات والإقامات', 'fa-solid fa-map-location-dot'],
+            ['unit-converter.html', 'محول الوحدات', 'تحويل الوحدات', 'fa-solid fa-right-left'],
+            ['study-schedule.html', 'مولد جدول الدراسة', 'أنشئ جدولك الأسبوعي', 'fa-solid fa-calendar-days'],
+            ['countdown.html', 'عدّاد المواعيد الدراسية', 'أنشئ رزنامتك الخاصة وحدد مواعيدك حسب جامعتك وتخصصك', 'fa-solid fa-hourglass-half'],
+            ['date-difference.html', 'حساب الأيام بين تاريخين', 'احسب المدة بالأيام والأسابيع', 'fa-solid fa-calendar-week'],
+            ['points-ranking.html', 'حاسبة الترتيب والنقاط', 'احسب مجموع النقاط والمتوسط الموزون', 'fa-solid fa-ranking-star']
+        ]; const grid = document.getElementById('toolsGrid'); tools.forEach((t, i) => { grid.insertAdjacentHTML('beforeend', `<div class="card tool-card favorite-card ${i > 8 ? 'extra-tool-card' : ''}" data-favorite-id="tool:${t[0]}" data-favorite-title="${t[1]}" data-favorite-url="../tools/${t[0]}" data-favorite-type="tools" data-favorite-icon="${t[3]}" data-favorite-description="${t[2]}"><a class="card-link" href="../tools/${t[0]}"><div class="card-icon"><i class="${t[3]}"></i></div><h3 class="card-title">${t[1]}</h3><p class="card-desc">${t[2]}</p></a></div>`) }); const extras = document.querySelectorAll('.extra-tool-card'), btn = document.getElementById('moreToolsBtn'); extras.forEach(c => c.hidden = true); btn.onclick = () => { const show = extras[0]?.hidden; extras.forEach(c => c.hidden = !show); btn.textContent = show ? 'إخفاء الأدوات الإضافية' : 'المزيد من الأدوات'; btn.setAttribute('aria-expanded', String(show)) }; document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>
