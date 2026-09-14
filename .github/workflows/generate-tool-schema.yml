@@ -23,12 +23,13 @@ jobs:
 
       - name: Commit generated schema
         run: |
-          if git diff --quiet -- tools/*.html; then
+          if git diff --quiet -- tools/*.html assets/js/config.js assets/js/schema-tools.js; then
             echo 'No structured-data changes needed.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/*.html
-          git commit -m 'Generate static WebApplication structured data [skip ci]'
+          git add tools/*.html assets/js/config.js
+          git add -u assets/js/schema-tools.js
+          git commit -m 'Finalize static WebApplication structured data [skip ci]'
           git push
