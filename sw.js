@@ -1,9 +1,8 @@
 // Student DZ service worker: network-fresh content with resilient offline fallback.
-// The cache name is stable; changing this file is not required for normal content updates.
 const CACHE_NAME = 'student-dz-runtime';
 const ASSETS_TO_CACHE = [
     './', './index.html', './offline.html',
-    './assets/css/main.css', './assets/css/responsive.css',
+    './assets/css/main.css', './assets/css/responsive.css', './assets/css/ads.css',
     './assets/js/config.js', './assets/js/app.js', './assets/js/navigation.js',
     './assets/images/icon.png', './assets/images/icon-192.png', './assets/images/icon-512.png'
 ];
@@ -26,7 +25,6 @@ self.addEventListener('activate', event => {
 
 const isPageOrJson = request => request.mode === 'navigate' || new URL(request.url).pathname.endsWith('.json');
 
-// Stale-while-revalidate for HTML/JSON: return cached data immediately, then refresh it in the background.
 const staleWhileRevalidate = async request => {
     const cache = await caches.open(CACHE_NAME);
     const cached = await cache.match(request);
@@ -43,7 +41,6 @@ self.addEventListener('fetch', event => {
         event.respondWith(staleWhileRevalidate(event.request));
         return;
     }
-    // Static assets remain cache-first for fast repeat visits.
     event.respondWith(caches.match(event.request).then(cached =>
         cached || fetch(event.request).then(response => {
             if (response && response.ok && new URL(event.request.url).origin === self.location.origin) {
