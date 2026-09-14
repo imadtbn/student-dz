@@ -31,12 +31,14 @@
 
     function getVerificationStatus(card) {
         const type = value(card, 'type');
-        const id = value(card, 'id').replace(/^(university|school|residence):/, '');
-        const collection = verificationRegistry[type];
+        const id = value(card, 'id').replace(/^(university|school|ecole|residence):/, '');
+
+        // The cards use "schools" for favorites, while the central registry
+        // stores school/institute records under the Arabic directory key "ecoles".
+        const registryKey = type === 'schools' ? 'ecoles' : type;
+        const collection = verificationRegistry[registryKey];
 
         // The central verification registry is the source of truth when available.
-        // This prevents an old data-verification-status="pending" written during
-        // the initial render from overriding a newly updated registry value.
         if (collection && collection[id]) return collection[id];
 
         const explicit = (card.getAttribute('data-verification-status') || '').toLowerCase();
@@ -121,7 +123,8 @@
             const response = await fetch(`${base}/data/verification-status.json?updated=${Date.now()}`, {
                 cache: 'no-store'
             });
-            if (response.ok) verificationRegistry = await response.json();
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            verificationRegistry = await response.json();
         } catch (error) {
             console.warn('Student DZ verification registry unavailable:', error);
         }
