@@ -257,3 +257,15 @@ if (typeof module !== 'undefined' && module.exports) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
     else init();
 })();
+
+/* Shared WebApplication structured data for all existing tools. */
+(function loadToolSchema() {
+    const path = window.location.pathname;
+    if (!path.includes(`${CONFIG.BASE_PATH}/tools/`) || !path.endsWith('.html')) return;
+    if (window.__studentDzToolSchemaLoaded) return;
+    window.__studentDzToolSchemaLoaded = true;
+    const script = document.createElement('script');
+    script.src = `${CONFIG.BASE_PATH}/assets/js/schema-tools.js`;
+    script.defer = true;
+    document.head.appendChild(script);
+})();
