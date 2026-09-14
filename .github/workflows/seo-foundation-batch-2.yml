@@ -1,0 +1,89 @@
+name: SEO Foundation - Tools Batch 2
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  seo-tools:
+    if: "!contains(github.event.head_commit.message, '[skip seo]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply SEO Foundation to tools
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          base = 'https://imadtbn.github.io/student-dz/'
+          image = 'https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png'
+
+          descriptions = {
+              'apa-generator.html': 'أنشئ مراجع APA 7 منسقة للكتب والمقالات والمواقع بسهولة، مع أداة عملية للطالب الجزائري.',
+              'average-calculator.html': 'احسب معدل السداسي والجامعة بدقة اعتماداً على المقاييس والمعاملات والعلامات.',
+              'budget-calculator.html': 'احسب ميزانية الطالب ومصاريفك اليومية والأسبوعية والشهرية والسنوية بالدينار الجزائري.',
+              'countdown.html': 'أنشئ عدادات تنازلية للمواعيد الدراسية الرسمية وتابع التسجيلات والنتائج والامتحانات والتخرج.',
+              'cv-builder.html': 'أنشئ سيرة ذاتية احترافية للطالب بسهولة ونظم معلوماتك الدراسية والشخصية والخبرات والمهارات.',
+              'date-difference.html': 'احسب الفرق بين تاريخين بالأيام والأسابيع والأشهر والسنوات باستخدام أداة سهلة للطلاب.',
+              'image-compressor.html': 'اضغط صورك مباشرة في المتصفح لتقليل حجمها مع الحفاظ على جودة مناسبة للاستخدام والدراسة.',
+              'maps.html': 'استخدم خريطة الطالب للبحث عن الجامعات والمدارس والمعاهد والإقامات في الجزائر.',
+              'notes-calendar.html': 'نظم ملاحظاتك ومواعيدك ومهامك الدراسية في تقويم عملي مع الحفظ داخل المتصفح.',
+              'pdf-tools.html': 'مجموعة أدوات PDF للطالب لمعالجة ملفات PDF وتنفيذ المهام الأساسية بسهولة من المتصفح.',
+              'percentage-calculator.html': 'احسب النسب المئوية والزيادة والنقصان والنتائج المرتبطة بالنسبة المئوية بسرعة.',
+              'points-ranking.html': 'احسب مجموع النقاط والمتوسط الموزون والترتيب اعتماداً على العلامات والمعاملات.',
+              'pomodoro.html': 'مؤقت بومودورو لتنظيم جلسات الدراسة والعمل مع فترات التركيز والاستراحة.',
+              'qr-generator.html': 'أنشئ رموز QR للنصوص والروابط بسهولة وبسرعة مباشرة من المتصفح.',
+              'research-plan.html': 'أنشئ خطة بحث ومذكرة تخرج منظمة تشمل الإشكالية والفرضيات والمقدمة والخطة وعناصر البحث.',
+              'semester-calculator.html': 'احسب النتائج المرتبطة بالسداسي الدراسي اعتماداً على العلامات والمعاملات بطريقة سهلة.',
+              'study-schedule.html': 'أنشئ جدول دراسة أسبوعي منظم حسب المواد والأيام والأوقات لمساعدتك على تنظيم وقتك الدراسي.',
+              'text-tools.html': 'مجموعة أدوات للنصوص لمعالجة النصوص وتنظيمها وإجراء العمليات الشائعة عليها بسرعة.',
+              'unit-converter.html': 'محول وحدات سريع للطلاب لتحويل الطول والوزن والحجم والحرارة والزمن بين الوحدات المختلفة.',
+          }
+
+          def clean_tags(html):
+              patterns = [
+                  r'(?is)\s*<link\b[^>]*\brel=["\']canonical["\'][^>]*>\s*',
+                  r'(?is)\s*<meta\b[^>]*\bname=["\']description["\'][^>]*>\s*',
+                  r'(?is)\s*<meta\b[^>]*\bname=["\']robots["\'][^>]*>\s*',
+                  r'(?is)\s*<meta\b[^>]*\bproperty=["\']og:[^"\']+["\'][^>]*>\s*',
+                  r'(?is)\s*<meta\b[^>]*\bname=["\']twitter:[^"\']+["\'][^>]*>\s*',
+              ]
+              for pattern in patterns:
+                  html = re.sub(pattern, '\n', html)
+              return html
+
+          for path in sorted(Path('tools').glob('*.html')):
+              name = path.name
+              html = path.read_text(encoding='utf-8')
+              if not html.strip() or '</head>' not in html.lower():
+                  continue
+
+              title_match = re.search(r'(?is)<title>\s*(.*?)\s*</title>', html)
+              title = re.sub(r'\s+', ' ', title_match.group(1)).strip() if title_match else f'{name} - Student DZ'
+              description = descriptions.get(name, f'{title.replace(" - Student DZ", "")} — أداة رقمية مفيدة للطالب الجزائري من Student DZ.')
+              canonical = base + 'tools/' + name
+
+              html = clean_tags(html)
+              seo = f'''\n    <!-- SEO Foundation -->\n    <link rel="canonical" href="{canonical}">\n    <meta name="description" content="{description}">\n    <meta name="robots" content="index, follow">\n\n    <!-- Open Graph -->\n    <meta property="og:type" content="website">\n    <meta property="og:url" content="{canonical}">\n    <meta property="og:title" content="{title}">\n    <meta property="og:description" content="{description}">\n    <meta property="og:image" content="{image}">\n\n    <!-- Twitter -->\n    <meta name="twitter:card" content="summary_large_image">\n    <meta name="twitter:url" content="{canonical}">\n    <meta name="twitter:title" content="{title}">\n    <meta name="twitter:description" content="{description}">\n    <meta name="twitter:image" content="{image}">\n'''
+
+              html = re.sub(r'(?is)(<meta\b[^>]*\bname=["\']viewport["\'][^>]*>)', r'\1' + seo, html, count=1)
+              path.write_text(html, encoding='utf-8')
+
+      - name: Commit SEO changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/*.html
+          if git diff --cached --quiet; then
+            echo "No SEO changes needed."
+            exit 0
+          fi
+          git commit -m "SEO Foundation: optimize tools pages [skip seo]"
+          git push
