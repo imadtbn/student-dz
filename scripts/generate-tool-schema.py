@@ -72,11 +72,29 @@ def process(path: Path) -> bool:
     return False
 
 
+def remove_legacy_dynamic_loader() -> bool:
+    config = ROOT / "assets/js/config.js"
+    html = config.read_text(encoding="utf-8")
+    marker = "/* Shared WebApplication structured data for all existing tools. */"
+    if marker not in html:
+        return False
+    updated = html.split(marker, 1)[0].rstrip() + "\n"
+    config.write_text(updated, encoding="utf-8")
+    return True
+
+
 changed = []
 for page in sorted(TOOLS.glob("*.html")):
     if process(page):
         changed.append(page.relative_to(ROOT).as_posix())
 
+removed_loader = remove_legacy_dynamic_loader()
+legacy = ROOT / "assets/js/schema-tools.js"
+if legacy.exists():
+    legacy.unlink()
+    removed_loader = True
+
 print(f"Generated static WebApplication JSON-LD for {len(changed)} tool page(s).")
 for item in changed:
     print(item)
+print(f"Removed legacy dynamic loader: {'yes' if removed_loader else 'no'}")
