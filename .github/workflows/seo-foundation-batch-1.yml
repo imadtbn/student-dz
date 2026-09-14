@@ -1,117 +1,14 @@
-name: Student DZ SEO Foundation — Batch 1
+name: Student DZ SEO Foundation — Batch 1 (completed)
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
 
+# One-time migration workflow retained as an audit record; no automatic runs.
 jobs:
-  seo:
-    if: github.actor != 'github-actions[bot]'
+  completed:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Apply SEO foundation to core pages
-        run: |
-          python3 <<'PY'
-          from pathlib import Path
-          import re
-          from xml.sax.saxutils import escape
-
-          BASE = 'https://imadtbn.github.io/student-dz'
-          SOCIAL = BASE + '/assets/images/social-preview.png'
-
-          pages = {
-              'index.html': ('مساعد الطالب الجزائري | Student DZ', 'منصة مساعد الطالب الجزائري للخدمات الجامعية والمعلومات التعليمية والموارد الدراسية والأدوات الرقمية في مكان واحد.'),
-              'universities/index.html': ('دليل الجامعات الجزائرية | Student DZ', 'دليل الجامعات الجزائرية والكليات والتخصصات، مع معلومات ومواقع الجامعات المتاحة للطالب الجزائري.'),
-              'ecoles/index.html': ('دليل المدارس والمعاهد الجزائرية | Student DZ', 'دليل المدارس العليا والمعاهد في الجزائر، مع البحث حسب المؤسسة والولاية والتخصص.'),
-              'residences/index.html': ('دليل الإقامات الجامعية في الجزائر | Student DZ', 'دليل الإقامات الجامعية في الجزائر لمساعدة الطالب على البحث عن الإقامة وموقعها ومعلوماتها المتاحة.'),
-              'platforms/index.html': ('المنصات الرسمية للطالب الجزائري | Student DZ', 'دليل المنصات والخدمات الرقمية الرسمية التي يحتاجها الطالب الجزائري خلال مساره الدراسي.'),
-              'transport/index.html': ('النقل الجامعي للطالب الجزائري | Student DZ', 'أداة ومعلومات النقل الجامعي لمساعدة الطالب الجزائري على الوصول بين الجامعة والإقامة أو المحطة.'),
-              'categories/tools.html': ('أدوات الطالب الجزائري | Student DZ', 'مجموعة أدوات رقمية مجانية ومفيدة للطالب الجزائري، من حساب المعدل وتنظيم الوقت إلى أدوات الدراسة والإنتاجية.'),
-              'categories/student-life.html': ('الحياة الجامعية | Student DZ', 'موارد وخدمات وأدوات تساعد الطالب الجزائري في حياته الجامعية والدراسة والتنظيم اليومي.'),
-              'pages/about.html': ('عن Student DZ | مساعد الطالب الجزائري', 'تعرف على منصة Student DZ ومهمتها في جمع الأدوات والمعلومات والخدمات المفيدة للطالب الجزائري في مكان واحد.'),
-              'pages/contact.html': ('اتصل بنا | Student DZ', 'تواصل مع فريق Student DZ لإرسال الملاحظات والاقتراحات والإبلاغ عن الأخطاء المتعلقة بالموقع والمحتوى.'),
-              'pages/guides.html': ('دليل استخدام Student DZ | مساعد الطالب الجزائري', 'دليل استخدام منصة Student DZ للوصول إلى الجامعات والمدارس والإقامات والمنصات والأدوات والخدمات المتاحة.'),
-              'pages/privacy.html': ('سياسة الخصوصية | Student DZ', 'سياسة الخصوصية لمنصة Student DZ وشرح عام لكيفية التعامل مع بيانات التصفح والتخزين والخدمات المستخدمة.'),
-          }
-
-          def canonical(path):
-              if path == 'index.html': return BASE + '/'
-              return BASE + '/' + path
-
-          def clean_meta(html):
-              patterns = [
-                  r'\\s*<link\\s+rel=["\']canonical["\'][^>]*>\\s*',
-                  r'\\s*<meta\\s+name=["\']description["\'][^>]*>\\s*',
-                  r'\\s*<meta\\s+name=["\']robots["\'][^>]*>\\s*',
-                  r'\\s*<meta\\s+property=["\']og:[^"\']+["\'][^>]*>\\s*',
-                  r'\\s*<meta\\s+name=["\']twitter:[^"\']+["\'][^>]*>\\s*',
-              ]
-              for p in patterns:
-                  html = re.sub(p, '\\n', html, flags=re.I)
-              return html
-
-          for path, (title, desc) in pages.items():
-              p = Path(path)
-              if not p.exists():
-                  print('SKIP missing', path)
-                  continue
-              html = p.read_text(encoding='utf-8')
-              html = clean_meta(html)
-              url = canonical(path)
-              block = f'''\n    <!-- SEO Foundation -->\n    <link rel="canonical" href="{url}">\n    <meta name="description" content="{desc}">\n    <meta name="robots" content="index, follow">\n\n    <!-- Open Graph -->\n    <meta property="og:type" content="website">\n    <meta property="og:site_name" content="Student DZ | مساعد الطالب الجزائري">\n    <meta property="og:locale" content="ar_DZ">\n    <meta property="og:url" content="{url}">\n    <meta property="og:title" content="{title}">\n    <meta property="og:description" content="{desc}">\n    <meta property="og:image" content="{SOCIAL}">\n    <meta property="og:image:secure_url" content="{SOCIAL}">\n    <meta property="og:image:type" content="image/png">\n    <meta property="og:image:width" content="1200">\n    <meta property="og:image:height" content="630">\n    <meta property="og:image:alt" content="{title}">\n\n    <!-- Twitter -->\n    <meta name="twitter:card" content="summary_large_image">\n    <meta name="twitter:title" content="{title}">\n    <meta name="twitter:description" content="{desc}">\n    <meta name="twitter:image" content="{SOCIAL}">\n    <meta name="twitter:image:alt" content="{title}">\n'''
-              html = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', html, count=1, flags=re.I|re.S)
-              html = html.replace('</head>', block + '    </head>', 1)
-              p.write_text(html, encoding='utf-8')
-              print('UPDATED', path)
-
-          # 404 and offline are not search landing pages.
-          for path, title, desc in [
-              ('404.html', 'الصفحة غير موجودة | Student DZ', 'الصفحة التي تبحث عنها غير موجودة في منصة Student DZ.'),
-              ('offline.html', 'أنت غير متصل | Student DZ', 'تعذر الاتصال بالإنترنت. يمكنك العودة عند توفر الاتصال لإكمال التصفح.')
-          ]:
-              p = Path(path)
-              if not p.exists(): continue
-              html = p.read_text(encoding='utf-8')
-              html = clean_meta(html)
-              url = BASE + '/' + path
-              block = f'''\n    <link rel="canonical" href="{url}">\n    <meta name="description" content="{desc}">\n    <meta name="robots" content="noindex, follow">\n    <meta property="og:type" content="website">\n    <meta property="og:site_name" content="Student DZ | مساعد الطالب الجزائري">\n    <meta property="og:locale" content="ar_DZ">\n    <meta property="og:url" content="{url}">\n    <meta property="og:title" content="{title}">\n    <meta property="og:description" content="{desc}">\n    <meta property="og:image" content="{SOCIAL}">\n    <meta name="twitter:card" content="summary_large_image">\n    <meta name="twitter:title" content="{title}">\n    <meta name="twitter:description" content="{desc}">\n    <meta name="twitter:image" content="{SOCIAL}">\n'''
-              html = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', html, count=1, flags=re.I|re.S)
-              html = html.replace('</head>', block + '    </head>', 1)
-              p.write_text(html, encoding='utf-8')
-
-          # robots.txt
-          Path('robots.txt').write_text(f'''User-agent: *\nAllow: /student-dz/\nDisallow: /student-dz/404.html\nDisallow: /student-dz/offline.html\n\nSitemap: {BASE}/sitemap.xml\n''', encoding='utf-8')
-
-          # Build sitemap from all HTML pages. Exclude utility/error/legal pages that should not be discovery targets.
-          excluded = {'404.html', 'offline.html', 'pages/privacy.html', 'pages/cookies.html', 'pages/terms.html', 'pages/disclaimer.html'}
-          urls = []
-          for p in sorted(Path('.').rglob('*.html')):
-              s = p.as_posix()
-              if s.startswith('.git/') or s in excluded: continue
-              urls.append(canonical(s))
-          urls = sorted(set(urls))
-          xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-          for u in urls:
-              xml.append(f'  <url><loc>{escape(u)}</loc></url>')
-          xml.append('</urlset>')
-          Path('sitemap.xml').write_text('\n'.join(xml) + '\n', encoding='utf-8')
-          print('SITEMAP URLs', len(urls))
-          PY
-
-      - name: Commit SEO batch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html universities/index.html ecoles/index.html residences/index.html platforms/index.html transport/index.html categories/tools.html categories/student-life.html pages/about.html pages/contact.html pages/guides.html pages/privacy.html 404.html offline.html robots.txt sitemap.xml
-          if git diff --cached --quiet; then
-            echo "No SEO changes to commit."
-          else
-            git commit -m "SEO: foundation batch 1 for core pages"
-            git push
-          fi
+      - run: echo "SEO Foundation Batch 1 completed in commit c7e98526dfc0598a4e13f40212cbde5fe5a2cdeb"
