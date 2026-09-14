@@ -6,18 +6,18 @@
     "pending": "غير مؤكدة"
   },
   "universities": {
-    "univ-algiers-1": "review",
+    "univ-algiers-1": "pending",
     "univ-boumerdes": "review",
-    "univ-usthb": "review"
+    "univ-usthb": "verified"
   },
   "ecoles": {
-    "esi-alger": "review",
-    "epau-alger": "review",
+    "esi-alger": "pending",
+    "epau-alger": "verified",
     "enp-alger": "review"
   },
   "residences": {
     "res-talebabderrahmane-1": "review",
-    "res-ben-aknoun-femmes": "review",
+    "res-ben-aknoun-femmes": "verified",
     "res-bab-ezzouar-3": "review"
   }
 }
