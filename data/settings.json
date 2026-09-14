@@ -1,11 +1,11 @@
 {
     "ads": {
-        "enabled": false,
-        "publisherId": "",
+        "enabled": true,
+        "publisherId": "ca-pub-8310657804532081",
         "slots": {
-            "homepage": "",
-            "tool": "",
-            "article": ""
+            "homepage": "7803975574",
+            "tool": "7803975574",
+            "article": "7803975574"
         }
     }
 }
