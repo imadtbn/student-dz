@@ -90,7 +90,7 @@ if (typeof module !== 'undefined' && module.exports) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', load, { once: true }); else load();
 })();
 
-/* Shared AdSense: one clearly separated responsive unit on eligible content pages. */
+/* Shared AdSense: one clearly separated unit on each eligible page. */
 (function loadGlobalAds() {
     const EXCLUDED = ['/pages/about.html', '/pages/contact.html', '/pages/privacy.html', '/pages/cookies.html', '/pages/terms.html', '/pages/disclaimer.html', '/404.html', '/offline.html'];
 
@@ -108,56 +108,90 @@ if (typeof module !== 'undefined' && module.exports) {
         return !EXCLUDED.some(item => path.endsWith(item));
     }
 
-    function findPlacement() {
-        const path = window.location.pathname;
-        if (path.endsWith('/student-dz/') || path.endsWith('/student-dz/index.html')) {
-            return document.querySelector('main .hero')?.nextElementSibling || document.querySelector('main');
+    function getAdType() {
+        const path = window.location.pathname.replace(/\\/+$/, '');
+        if (path === CONFIG.BASE_PATH || path === `${CONFIG.BASE_PATH}/index.html`) return 'homepage';
+        if (path.includes(`${CONFIG.BASE_PATH}/tools/`)) return 'tool';
+        return 'content';
+    }
+
+    function findPlacement(type) {
+        const main = document.querySelector('main');
+        if (!main) return null;
+
+        if (type === 'homepage') {
+            return main.querySelector('.hero') || main.firstElementChild;
         }
 
-        if (path.includes('/tools/')) {
-            const container = document.querySelector('main .tool-container');
-            if (container) return container.querySelector('.section-title')?.nextElementSibling || container.firstElementChild;
-            return document.querySelector('main');
+        if (type === 'tool') {
+            const container = main.querySelector('.tool-container') || main;
+            const heading = container.querySelector('h1, h2.section-title, .section-title');
+            return heading?.nextElementSibling || heading || container.firstElementChild;
         }
 
-        return document.querySelector('main h1.section-title')?.nextElementSibling || document.querySelector('main');
+        return main.querySelector('h1.section-title, h1, .section-title')?.nextElementSibling || main.firstElementChild;
     }
 
     function createAd(settings) {
         if (document.querySelector('.student-dz-ad')) return;
-        const slot = settings?.ads?.slots?.tool || settings?.ads?.slots?.homepage || settings?.ads?.slots?.article;
+        const adType = getAdType();
+        const unit = settings?.ads?.slots?.[adType];
         const publisherId = settings?.ads?.publisherId;
-        if (!settings?.ads?.enabled || !publisherId || !slot) return;
+        if (!settings?.ads?.enabled || !publisherId || !unit?.id) return;
 
-        const anchor = findPlacement();
+        const anchor = findPlacement(adType);
         if (!anchor?.parentNode) return;
 
         const wrapper = document.createElement('section');
         wrapper.className = 'ad-container student-dz-ad';
         wrapper.setAttribute('aria-label', 'إعلان');
-        wrapper.innerHTML = `<span class="ad-label">إعلان</span><ins class="adsbygoogle ad-placeholder" style="display:block" data-ad-client="${publisherId}" data-ad-slot="${slot}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
 
-        if (window.location.pathname.includes('/tools/')) {
-            anchor.insertAdjacentElement('afterend', wrapper);
+        const label = document.createElement('span');
+        label.className = 'ad-label';
+        label.textContent = 'إعلان';
+
+        const ins = document.createElement('ins');
+        ins.className = 'adsbygoogle ad-placeholder';
+        ins.style.display = 'block';
+        ins.setAttribute('data-ad-client', publisherId);
+        ins.setAttribute('data-ad-slot', unit.id);
+
+        if (unit.format === 'fluid') {
+            ins.setAttribute('data-ad-format', 'fluid');
+            if (unit.layoutKey) ins.setAttribute('data-ad-layout-key', unit.layoutKey);
         } else {
-            anchor.parentNode.insertBefore(wrapper, anchor);
+            ins.setAttribute('data-ad-format', 'auto');
+            if (unit.fullWidthResponsive !== false) ins.setAttribute('data-full-width-responsive', 'true');
         }
 
-        loadAdSense(publisherId, wrapper.querySelector('.adsbygoogle'));
+        wrapper.append(label, ins);
+        anchor.parentNode.insertBefore(wrapper, anchor.nextSibling);
+        loadAdSense(publisherId, ins);
+    }
+
+    function pushAd() {
+        try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+            console.warn('AdSense push skipped:', e);
+        }
     }
 
     function loadAdSense(publisherId, adElement) {
         if (window.__studentDzAdSenseLoaded) {
-            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) { console.warn('AdSense push skipped:', e); }
+            pushAd();
             return;
         }
-        window.__studentDzAdSenseLoaded = true;
         const script = document.createElement('script');
         script.async = true;
         script.crossOrigin = 'anonymous';
         script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(publisherId)}`;
         script.onload = () => {
-            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) { console.warn('AdSense push skipped:', e); }
+            window.__studentDzAdSenseLoaded = true;
+            pushAd();
+        };
+        script.onerror = () => {
+            console.warn('AdSense script failed to load.');
         };
         document.head.appendChild(script);
     }
