@@ -1,11 +1,23 @@
 {
-    "ads": {
-        "enabled": true,
-        "publisherId": "ca-pub-5656416032906373",
-        "slots": {
-            "homepage": "3143411927",
-            "tool": "7867079394",
-            "article": "6528123169"
-        }
+  "ads": {
+    "enabled": true,
+    "publisherId": "ca-pub-5656416032906373",
+    "slots": {
+      "homepage": {
+        "id": "3143411927",
+        "format": "auto",
+        "fullWidthResponsive": true
+      },
+      "tool": {
+        "id": "1760836049",
+        "format": "auto",
+        "fullWidthResponsive": true
+      },
+      "content": {
+        "id": "7867079394",
+        "format": "fluid",
+        "layoutKey": "-fr+57+4a-dc+8g"
+      }
     }
+  }
 }
