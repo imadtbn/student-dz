@@ -1,0 +1,67 @@
+/* Student DZ — Shared AdSense container */
+.ad-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 1.5rem auto;
+    padding: 0.65rem 0;
+    box-sizing: border-box;
+    text-align: center;
+    clear: both;
+}
+
+.ad-label {
+    display: block;
+    margin: 0 0 0.4rem;
+    color: var(--text-muted, #6b7280);
+    font-size: 0.72rem;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.ad-placeholder {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.ad-placeholder.adsbygoogle {
+    min-height: 100px;
+}
+
+/* Keep ads visually separate from buttons, forms and navigation controls. */
+.ad-container + .btn,
+.ad-container + button,
+.ad-container + input,
+.ad-container + select,
+.ad-container + textarea {
+    margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .ad-container {
+        margin: 1.75rem auto;
+        padding: 0.75rem 0;
+    }
+
+    .ad-placeholder,
+    .ad-placeholder.adsbygoogle {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-container {
+        margin: 1.15rem auto;
+        padding: 0.5rem 0;
+    }
+
+    .ad-label {
+        font-size: 0.68rem;
+    }
+}
