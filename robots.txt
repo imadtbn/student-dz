@@ -1,4 +1,6 @@
 User-agent: *
-Allow: /
+Allow: /student-dz/
+Disallow: /student-dz/404.html
+Disallow: /student-dz/offline.html
 
 Sitemap: https://imadtbn.github.io/student-dz/sitemap.xml
