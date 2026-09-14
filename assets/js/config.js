@@ -89,3 +89,90 @@ if (typeof module !== 'undefined' && module.exports) {
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', load, { once: true }); else load();
 })();
+
+/* Shared AdSense: one clearly separated responsive unit on eligible content pages. */
+(function loadGlobalAds() {
+    const EXCLUDED = ['/pages/about.html', '/pages/contact.html', '/pages/privacy.html', '/pages/cookies.html', '/pages/terms.html', '/pages/disclaimer.html', '/404.html', '/offline.html'];
+
+    function addStylesheet() {
+        if (document.getElementById('studentDzAdsCss')) return;
+        const link = document.createElement('link');
+        link.id = 'studentDzAdsCss';
+        link.rel = 'stylesheet';
+        link.href = `${CONFIG.BASE_PATH}/assets/css/ads.css`;
+        document.head.appendChild(link);
+    }
+
+    function isEligible() {
+        const path = window.location.pathname;
+        return !EXCLUDED.some(item => path.endsWith(item));
+    }
+
+    function findPlacement() {
+        const path = window.location.pathname;
+        if (path.endsWith('/student-dz/') || path.endsWith('/student-dz/index.html')) {
+            return document.querySelector('main .hero')?.nextElementSibling || document.querySelector('main');
+        }
+
+        if (path.includes('/tools/')) {
+            const container = document.querySelector('main .tool-container');
+            if (container) return container.querySelector('.section-title')?.nextElementSibling || container.firstElementChild;
+            return document.querySelector('main');
+        }
+
+        return document.querySelector('main h1.section-title')?.nextElementSibling || document.querySelector('main');
+    }
+
+    function createAd(settings) {
+        if (document.querySelector('.student-dz-ad')) return;
+        const slot = settings?.ads?.slots?.tool || settings?.ads?.slots?.homepage || settings?.ads?.slots?.article;
+        const publisherId = settings?.ads?.publisherId;
+        if (!settings?.ads?.enabled || !publisherId || !slot) return;
+
+        const anchor = findPlacement();
+        if (!anchor?.parentNode) return;
+
+        const wrapper = document.createElement('section');
+        wrapper.className = 'ad-container student-dz-ad';
+        wrapper.setAttribute('aria-label', 'إعلان');
+        wrapper.innerHTML = `<span class="ad-label">إعلان</span><ins class="adsbygoogle ad-placeholder" style="display:block" data-ad-client="${publisherId}" data-ad-slot="${slot}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
+
+        if (window.location.pathname.includes('/tools/')) {
+            anchor.insertAdjacentElement('afterend', wrapper);
+        } else {
+            anchor.parentNode.insertBefore(wrapper, anchor);
+        }
+
+        loadAdSense(publisherId, wrapper.querySelector('.adsbygoogle'));
+    }
+
+    function loadAdSense(publisherId, adElement) {
+        if (window.__studentDzAdSenseLoaded) {
+            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) { console.warn('AdSense push skipped:', e); }
+            return;
+        }
+        window.__studentDzAdSenseLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.crossOrigin = 'anonymous';
+        script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(publisherId)}`;
+        script.onload = () => {
+            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) { console.warn('AdSense push skipped:', e); }
+        };
+        document.head.appendChild(script);
+    }
+
+    async function init() {
+        if (!isEligible()) return;
+        addStylesheet();
+        try {
+            const response = await fetch(CONFIG.getUrl(CONFIG.API.SETTINGS), { cache: 'no-store' });
+            if (!response.ok) return;
+            createAd(await response.json());
+        } catch (e) {
+            console.warn('AdSense configuration unavailable.');
+        }
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true }); else init();
+})();
