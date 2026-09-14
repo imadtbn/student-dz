@@ -1,0 +1,34 @@
+name: Generate tool structured data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/*.html'
+      - 'scripts/generate-tool-schema.py'
+      - '.github/workflows/generate-tool-schema.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate static WebApplication JSON-LD
+        run: python3 scripts/generate-tool-schema.py
+
+      - name: Commit generated schema
+        run: |
+          if git diff --quiet -- tools/*.html; then
+            echo 'No structured-data changes needed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/*.html
+          git commit -m 'Generate static WebApplication structured data [skip ci]'
+          git push
