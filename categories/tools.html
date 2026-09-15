@@ -147,12 +147,12 @@
 
         function updateToolsVisibility() {
             cards.forEach((card, index) => {
-                card.hidden = index >= visibleCount;
+                card.style.display = index >= visibleCount ? 'none' : '';
             });
             if (visibleCount >= cards.length) {
-                btn.hidden = true;
+                btn.style.display = 'none';
             } else {
-                btn.hidden = false;
+                btn.style.display = '';
                 btn.textContent = 'المزيد من الأدوات';
                 btn.setAttribute('aria-expanded', 'false');
             }
