@@ -1,5 +1,5 @@
-/* Student DZ — Shared AdSense container */
-.ad-container {
+/* Student DZ — Shared Google AdSense container */
+.dz-ad-container {
     width: 100%;
     max-width: 100%;
     margin: 1.5rem auto;
@@ -9,7 +9,7 @@
     clear: both;
 }
 
-.ad-label {
+.dz-ad-label {
     display: block;
     margin: 0 0 0.4rem;
     color: var(--text-muted, #6b7280);
@@ -19,49 +19,44 @@
     letter-spacing: 0.02em;
 }
 
-.ad-placeholder {
+.dz-ad-placeholder {
     display: block;
     width: 100%;
-    min-height: 100px;
     max-width: 100%;
+    min-height: 100px;
     overflow: hidden;
     margin: 0 auto;
     text-align: center;
     box-sizing: border-box;
 }
 
-.ad-placeholder.adsbygoogle {
-    min-height: 100px;
-}
-
-/* Keep ads visually separate from buttons, forms and navigation controls. */
-.ad-container + .btn,
-.ad-container + button,
-.ad-container + input,
-.ad-container + select,
-.ad-container + textarea {
+/* Keep the ad visually separated from page controls and content. */
+.dz-ad-container + .btn,
+.dz-ad-container + button,
+.dz-ad-container + input,
+.dz-ad-container + select,
+.dz-ad-container + textarea {
     margin-top: 0.75rem;
 }
 
 @media (min-width: 768px) {
-    .ad-container {
+    .dz-ad-container {
         margin: 1.75rem auto;
         padding: 0.75rem 0;
     }
 
-    .ad-placeholder,
-    .ad-placeholder.adsbygoogle {
+    .dz-ad-placeholder {
         min-height: 120px;
     }
 }
 
 @media (max-width: 480px) {
-    .ad-container {
+    .dz-ad-container {
         margin: 1.15rem auto;
         padding: 0.5rem 0;
     }
 
-    .ad-label {
+    .dz-ad-label {
         font-size: 0.68rem;
     }
 }
