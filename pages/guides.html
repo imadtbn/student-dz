@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>دليل استخدام Student DZ | مساعد الطالب الجزائري</title>
-<meta name="keywords" content="أدلة الطالب, المنحة الجامعية الجزائر, التسجيل الأولي, السكن الجامعي, ONOU, منصة التوجيه">
-<meta name="theme-color" content="#007A5E">
-<link rel="icon" type="image/png" sizes="192x192" href="../assets/images/icon-192.png">
+  <meta name="keywords"
+    content="أدلة الطالب, المنحة الجامعية الجزائر, التسجيل الأولي, السكن الجامعي, ONOU, منصة التوجيه">
+  <meta name="theme-color" content="#007A5E">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/icon-192.png">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,51 +57,355 @@
   </script>
 
   <style>
-    .guides-page{padding:1rem 0 2rem}
-    .guides-breadcrumb{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;color:var(--text-muted);font-size:.9rem;margin:.25rem 0 1rem}
-    .guides-breadcrumb a{font-weight:700}
-    .guides-intro{background:linear-gradient(135deg,var(--primary-color),var(--primary-dark));color:#fff;border-radius:var(--radius-lg);padding:clamp(1.5rem,4vw,2.5rem);margin-bottom:1.25rem;box-shadow:var(--shadow-md);text-align:center}
-    .guides-intro-icon{width:58px;height:58px;margin:0 auto .75rem;border-radius:16px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
-    .guides-intro h1{font-size:clamp(1.65rem,4vw,2.35rem);margin:0 0 .5rem}
-    .guides-intro p{max-width:760px;margin:0 auto;opacity:.92;font-size:1rem}
-    .guide-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:1.25rem;align-items:start}
-    .guide-content{min-width:0}
-    .guide-nav{position:sticky;top:86px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:.75rem;box-shadow:var(--shadow-sm)}
-    .guide-nav-title{font-weight:800;color:var(--primary-dark);padding:.55rem .65rem .7rem;border-bottom:1px solid var(--border-color);margin-bottom:.35rem}
-    [data-theme="dark"] .guide-nav-title{color:var(--primary-light)}
-    .guide-nav a{display:flex;align-items:center;gap:.65rem;padding:.7rem .65rem;border-radius:var(--radius-md);color:var(--text-main);font-weight:600;transition:background-color .2s,color .2s}
-    .guide-nav a:hover{background:var(--bg-main);color:var(--primary-color)}
-    .guide-nav i{width:20px;text-align:center;color:var(--primary-color)}
-    .guide-section{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:clamp(1rem,3vw,1.5rem);margin-bottom:1.25rem;box-shadow:var(--shadow-sm)}
-    .guide-section h2{display:flex;align-items:center;gap:.65rem;color:var(--primary-dark);font-size:clamp(1.2rem,3vw,1.45rem);margin:0 0 1rem;padding-bottom:.8rem;border-bottom:1px solid var(--border-color)}
-    [data-theme="dark"] .guide-section h2{color:var(--primary-light)}
-    .guide-section h2 i{width:30px;text-align:center;color:var(--primary-color)}
-    .steps{counter-reset:guide-step;list-style:none;padding:0;margin:0}
-    .steps li{counter-increment:guide-step;display:grid;grid-template-columns:38px minmax(0,1fr);gap:.75rem;align-items:start;padding:.9rem .25rem;border-bottom:1px dashed var(--border-color)}
-    .steps li:last-child{border-bottom:0;padding-bottom:.2rem}
-    .steps li::before{content:counter(guide-step);width:34px;height:34px;border-radius:50%;background:rgba(0,122,94,.1);color:var(--primary-color);display:flex;align-items:center;justify-content:center;font-weight:800}
-    [data-theme="dark"] .steps li::before{background:rgba(0,166,128,.16);color:var(--primary-light)}
-    .steps strong{display:block;margin-bottom:.2rem;font-weight:800}
-    .steps div{min-width:0;line-height:1.8}
-    .faq-list{border-top:1px solid var(--border-color)}
-    .faq-item{border-bottom:1px solid var(--border-color)}
-    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem .25rem;background:transparent;border:0;color:var(--text-main);font:inherit;font-weight:800;text-align:right;cursor:pointer}
-    .faq-q:hover{color:var(--primary-color)}
-    .faq-q i{flex:0 0 auto;color:var(--primary-color);transition:transform .25s ease}
-    .faq-item.open .faq-q i{transform:rotate(180deg)}
-    .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s ease;color:var(--text-muted);line-height:1.85}
-    .faq-a-inner{overflow:hidden}
-    .faq-a p{margin:0;padding:0 .25rem 1rem}
-    .faq-item.open .faq-a{grid-template-rows:1fr}
-    .guide-note{display:flex;gap:.7rem;align-items:flex-start;margin-top:.9rem;padding:.85rem 1rem;border-radius:var(--radius-md);background:rgba(0,122,94,.07);border:1px solid rgba(0,122,94,.14);color:var(--text-muted);font-size:.9rem}
-    .guide-note i{color:var(--primary-color);margin-top:.25rem}
-    @media(max-width:900px){.guide-layout{grid-template-columns:1fr}.guide-nav{position:static;order:-1}.guide-nav-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem}.guide-nav a{justify-content:center;text-align:center;flex-direction:column;gap:.25rem;font-size:.82rem;padding:.65rem .35rem}}
-    @media(max-width:600px){.guides-page{padding-top:.65rem}.guides-intro{border-radius:var(--radius-md);padding:1.35rem 1rem}.guide-nav-links{grid-template-columns:1fr}.guide-nav a{flex-direction:row;justify-content:flex-start;text-align:right}.guide-section{border-radius:var(--radius-md);padding:1rem}.steps li{grid-template-columns:32px minmax(0,1fr);gap:.65rem;padding:.8rem 0}.steps li::before{width:30px;height:30px;font-size:.85rem}.faq-q{font-size:.95rem;padding:.9rem 0}.guide-note{font-size:.84rem}}
-    @media(prefers-reduced-motion:reduce){.faq-a,.faq-q i{transition:none}}
+    .guides-page {
+      padding: 1rem 0 2rem
+    }
+
+    .guides-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-size: .9rem;
+      margin: .25rem 0 1rem
+    }
+
+    .guides-breadcrumb a {
+      font-weight: 700
+    }
+
+    .guides-intro {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-md);
+      text-align: center
+    }
+
+    .guides-intro-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto .75rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem
+    }
+
+    .guides-intro h1 {
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      margin: 0 0 .5rem
+    }
+
+    .guides-intro p {
+      max-width: 760px;
+      margin: 0 auto;
+      opacity: .92;
+      font-size: 1rem
+    }
+
+    .guide-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 1.25rem;
+      align-items: start
+    }
+
+    .guide-content {
+      min-width: 0
+    }
+
+    .guide-nav {
+      position: sticky;
+      top: 86px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: .75rem;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .guide-nav-title {
+      font-weight: 800;
+      color: var(--primary-dark);
+      padding: .55rem .65rem .7rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: .35rem
+    }
+
+    [data-theme="dark"] .guide-nav-title {
+      color: var(--primary-light)
+    }
+
+    .guide-nav a {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      padding: .7rem .65rem;
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      font-weight: 600;
+      transition: background-color .2s, color .2s
+    }
+
+    .guide-nav a:hover {
+      background: var(--bg-main);
+      color: var(--primary-color)
+    }
+
+    .guide-nav i {
+      width: 20px;
+      text-align: center;
+      color: var(--primary-color)
+    }
+
+    .guide-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: clamp(1rem, 3vw, 1.5rem);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .guide-section h2 {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--primary-dark);
+      font-size: clamp(1.2rem, 3vw, 1.45rem);
+      margin: 0 0 1rem;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid var(--border-color)
+    }
+
+    [data-theme="dark"] .guide-section h2 {
+      color: var(--primary-light)
+    }
+
+    .guide-section h2 i {
+      width: 30px;
+      text-align: center;
+      color: var(--primary-color)
+    }
+
+    .steps {
+      counter-reset: guide-step;
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .steps li {
+      counter-increment: guide-step;
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: .75rem;
+      align-items: start;
+      padding: .9rem .25rem;
+      border-bottom: 1px dashed var(--border-color)
+    }
+
+    .steps li:last-child {
+      border-bottom: 0;
+      padding-bottom: .2rem
+    }
+
+    .steps li::before {
+      content: counter(guide-step);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0, 122, 94, .1);
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800
+    }
+
+    [data-theme="dark"] .steps li::before {
+      background: rgba(0, 166, 128, .16);
+      color: var(--primary-light)
+    }
+
+    .steps strong {
+      display: block;
+      margin-bottom: .2rem;
+      font-weight: 800
+    }
+
+    .steps div {
+      min-width: 0;
+      line-height: 1.8
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--border-color)
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color)
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem .25rem;
+      background: transparent;
+      border: 0;
+      color: var(--text-main);
+      font: inherit;
+      font-weight: 800;
+      text-align: right;
+      cursor: pointer
+    }
+
+    .faq-q:hover {
+      color: var(--primary-color)
+    }
+
+    .faq-q i {
+      flex: 0 0 auto;
+      color: var(--primary-color);
+      transition: transform .25s ease
+    }
+
+    .faq-item.open .faq-q i {
+      transform: rotate(180deg)
+    }
+
+    .faq-a {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .25s ease;
+      color: var(--text-muted);
+      line-height: 1.85
+    }
+
+    .faq-a-inner {
+      overflow: hidden
+    }
+
+    .faq-a p {
+      margin: 0;
+      padding: 0 .25rem 1rem
+    }
+
+    .faq-item.open .faq-a {
+      grid-template-rows: 1fr
+    }
+
+    .guide-note {
+      display: flex;
+      gap: .7rem;
+      align-items: flex-start;
+      margin-top: .9rem;
+      padding: .85rem 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(0, 122, 94, .07);
+      border: 1px solid rgba(0, 122, 94, .14);
+      color: var(--text-muted);
+      font-size: .9rem
+    }
+
+    .guide-note i {
+      color: var(--primary-color);
+      margin-top: .25rem
+    }
+
+    @media(max-width:900px) {
+      .guide-layout {
+        grid-template-columns: 1fr
+      }
+
+      .guide-nav {
+        position: static;
+        order: -1
+      }
+
+      .guide-nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .35rem
+      }
+
+      .guide-nav a {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: .25rem;
+        font-size: .82rem;
+        padding: .65rem .35rem
+      }
+    }
+
+    @media(max-width:600px) {
+      .guides-page {
+        padding-top: .65rem
+      }
+
+      .guides-intro {
+        border-radius: var(--radius-md);
+        padding: 1.35rem 1rem
+      }
+
+      .guide-nav-links {
+        grid-template-columns: 1fr
+      }
+
+      .guide-nav a {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: right
+      }
+
+      .guide-section {
+        border-radius: var(--radius-md);
+        padding: 1rem
+      }
+
+      .steps li {
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: .65rem;
+        padding: .8rem 0
+      }
+
+      .steps li::before {
+        width: 30px;
+        height: 30px;
+        font-size: .85rem
+      }
+
+      .faq-q {
+        font-size: .95rem;
+        padding: .9rem 0
+      }
+
+      .guide-note {
+        font-size: .84rem
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .faq-a,
+      .faq-q i {
+        transition: none
+      }
+    }
   </style>
 
-    <!-- SEO Foundation -->
-<!-- Open Graph -->
+  <!-- SEO Foundation -->
+  <!-- Open Graph -->
 
 
 
@@ -111,53 +417,65 @@
 
 
 
-<!-- Twitter -->
+  <!-- Twitter -->
 
 
 
 
 
-    <!-- SEO Foundation -->
-    <link rel="canonical" href="https://imadtbn.github.io/student-dz/pages/guides.html">
-    <meta name="description" content="دليل استخدام منصة Student DZ للوصول إلى الجامعات والمدارس والإقامات والمنصات والأدوات والخدمات المتاحة.">
-    <meta name="robots" content="index, follow">
+  <!-- SEO Foundation -->
+  <link rel="canonical" href="https://imadtbn.github.io/student-dz/pages/guides.html">
+  <meta name="description"
+    content="دليل استخدام منصة Student DZ للوصول إلى الجامعات والمدارس والإقامات والمنصات والأدوات والخدمات المتاحة.">
+  <meta name="robots" content="index, follow">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Student DZ | مساعد الطالب الجزائري">
-    <meta property="og:locale" content="ar_DZ">
-    <meta property="og:url" content="https://imadtbn.github.io/student-dz/pages/guides.html">
-    <meta property="og:title" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
-    <meta property="og:description" content="دليل استخدام منصة Student DZ للوصول إلى الجامعات والمدارس والإقامات والمنصات والأدوات والخدمات المتاحة.">
-    <meta property="og:image" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
-    <meta property="og:image:secure_url" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Student DZ | مساعد الطالب الجزائري">
+  <meta property="og:locale" content="ar_DZ">
+  <meta property="og:url" content="https://imadtbn.github.io/student-dz/pages/guides.html">
+  <meta property="og:title" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
+  <meta property="og:description"
+    content="دليل استخدام منصة Student DZ للوصول إلى الجامعات والمدارس والإقامات والمنصات والأدوات والخدمات المتاحة.">
+  <meta property="og:image" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
+  <meta property="og:image:secure_url" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
-    <meta name="twitter:description" content="دليل استخدام منصة Student DZ للوصول إلى الجامعات والمدارس والإقامات والمنصات والأدوات والخدمات المتاحة.">
-    <meta name="twitter:image" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
-    <meta name="twitter:image:alt" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
-    </head>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
+  <meta name="twitter:description"
+    content="دليل استخدام منصة Student DZ للوصول إلى الجامعات والمدارس والإقامات والمنصات والأدوات والخدمات المتاحة.">
+  <meta name="twitter:image" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
+  <meta name="twitter:image:alt" content="دليل استخدام Student DZ | مساعد الطالب الجزائري">
+</head>
 
 <body>
   <header class="site-header">
     <div class="container">
-      <a href="../index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> الطالب الجزائري</a>
-      <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
-        <a href="../index.html" class="nav-link">الرئيسية</a>
-        <a href="../universities/index.html" class="nav-link">الجامعات</a>
-        <a href="../residences/index.html" class="nav-link">الإقامات</a>
-        <a href="../categories/tools.html" class="nav-link">الأدوات</a>
-        <a href="guides.html" class="nav-link" aria-current="page">الأدلة</a>
-      </nav>
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius: 8px;">
+        Student DZ
+      </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <a href="../universities/index.html" class="nav-link">جامعات</a>
+                <a href="../ecoles/index.html" class="nav-link">مدارس ومعاهد</a>
+                <a href="../residences/index.html" class="nav-link">إقامات</a>
+                <a href="../transport/index.html" class="nav-link">نقل</a>
+                <a href="../tools/maps.html" class="nav-link">خريطة</a>
+                <a href="../categories/tools.html" class="nav-link">أدوات</a>
+                <a href="../categories/student-life.html" class="nav-link">حياة جامعية</a>
+                <a href="../platforms/index.html" class="nav-link">منصات</a>
+                <a href="../pages/favorites.html" class="nav-link">مفضلة</a>
+            </nav>
       <div class="header-actions">
         <button class="icon-btn" id="themeToggle" type="button" aria-label="تبديل الوضع">🌙</button>
-        <button class="hamburger" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mainNav">☰</button>
+        <button class="hamburger" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false"
+          aria-controls="mainNav">☰</button>
       </div>
     </div>
   </header>
@@ -170,7 +488,8 @@
     <section class="guides-intro" aria-labelledby="guides-title">
       <div class="guides-intro-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
       <h1 id="guides-title">أدلة الطالب الجزائري</h1>
-      <p>إجراءات عملية خطوة بخطوة حول المنحة الجامعية، التسجيل الأولي والسكن الجامعي، في تصميم واضح وسهل التصفح على الهاتف والحاسوب.</p>
+      <p>إجراءات عملية خطوة بخطوة حول المنحة الجامعية، التسجيل الأولي والسكن الجامعي، في تصميم واضح وسهل التصفح على
+        الهاتف والحاسوب.</p>
     </section>
 
     <div class="guide-layout">
@@ -178,70 +497,159 @@
         <section class="guide-section" id="bourse">
           <h2><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>دليل المنحة الجامعية</h2>
           <ol class="steps">
-            <li><div><strong>التحقق من استحقاقك</strong>تأكد أنك مسجل بصفة نظامية وأن ظروفك (الإقامة أو الدخل) تخوّلك الاستفادة من المنحة.</div></li>
-            <li><div><strong>تجهيز الملف</strong>جهّز الوثائق المطلوبة، مثل شهادة الميلاد السلبية ونسخة من شهادة البكالوريا أو التسجيل الجامعي ووثيقة تثبت الإقامة، وفق تعليمات الجهة المعنية.</div></li>
-            <li><div><strong>التقديم بالطلب</strong>قدّم طلبك لدى إدارة جامعتك أو الخدمات الجامعية ضمن آجال التقديم المعلنة.</div></li>
-            <li><div><strong>متابعة الملف</strong>تتبع القوائم المعلنة وتأكد من قبول ملفك قبل انقضاء أجل الاعتراضات.</div></li>
-            <li><div><strong>استلام المنحة</strong>بعد القبول، اتبع تعليمات الجامعة أو الخدمات الجامعية الخاصة بصرف المستحقات.</div></li>
+            <li>
+              <div><strong>التحقق من استحقاقك</strong>تأكد أنك مسجل بصفة نظامية وأن ظروفك (الإقامة أو الدخل) تخوّلك
+                الاستفادة من المنحة.</div>
+            </li>
+            <li>
+              <div><strong>تجهيز الملف</strong>جهّز الوثائق المطلوبة، مثل شهادة الميلاد السلبية ونسخة من شهادة
+                البكالوريا أو التسجيل الجامعي ووثيقة تثبت الإقامة، وفق تعليمات الجهة المعنية.</div>
+            </li>
+            <li>
+              <div><strong>التقديم بالطلب</strong>قدّم طلبك لدى إدارة جامعتك أو الخدمات الجامعية ضمن آجال التقديم
+                المعلنة.</div>
+            </li>
+            <li>
+              <div><strong>متابعة الملف</strong>تتبع القوائم المعلنة وتأكد من قبول ملفك قبل انقضاء أجل الاعتراضات.</div>
+            </li>
+            <li>
+              <div><strong>استلام المنحة</strong>بعد القبول، اتبع تعليمات الجامعة أو الخدمات الجامعية الخاصة بصرف
+                المستحقات.</div>
+            </li>
           </ol>
         </section>
 
         <section class="guide-section" id="inscription">
           <h2><i class="fa-solid fa-user-graduate" aria-hidden="true"></i>دليل التسجيل الأولي</h2>
           <ol class="steps">
-            <li><div><strong>إنشاء الحساب</strong>ادخل إلى منصة التوجيه الوطنية وأنشئ حسابك بمعلومات شهادة البكالوريا.</div></li>
-            <li><div><strong>تعبئة استمارة الرغبات</strong>رتّب رغباتك حسب شعبتك ومعدلك مع الاطلاع على التخصصات المتاحة.</div></li>
-            <li><div><strong>طبع الاستمارة</strong>احفظ واطبع وصل التسجيل الأولي، فقد تحتاجه في التسجيل النهائي.</div></li>
-            <li><div><strong>متابعة التوجيه</strong>تابع إعلان نتائج التوجيه في الآجال المحددة.</div></li>
-            <li><div><strong>التسجيل النهائي</strong>توجّه إلى الجامعة بالوثائق المطلوبة لاستكمال تسجيلك واستلام بطاقة الطالب.</div></li>
+            <li>
+              <div><strong>إنشاء الحساب</strong>ادخل إلى منصة التوجيه الوطنية وأنشئ حسابك بمعلومات شهادة البكالوريا.
+              </div>
+            </li>
+            <li>
+              <div><strong>تعبئة استمارة الرغبات</strong>رتّب رغباتك حسب شعبتك ومعدلك مع الاطلاع على التخصصات المتاحة.
+              </div>
+            </li>
+            <li>
+              <div><strong>طبع الاستمارة</strong>احفظ واطبع وصل التسجيل الأولي، فقد تحتاجه في التسجيل النهائي.</div>
+            </li>
+            <li>
+              <div><strong>متابعة التوجيه</strong>تابع إعلان نتائج التوجيه في الآجال المحددة.</div>
+            </li>
+            <li>
+              <div><strong>التسجيل النهائي</strong>توجّه إلى الجامعة بالوثائق المطلوبة لاستكمال تسجيلك واستلام بطاقة
+                الطالب.</div>
+            </li>
           </ol>
         </section>
 
         <section class="guide-section" id="logement">
           <h2><i class="fa-solid fa-bed" aria-hidden="true"></i>دليل السكن الجامعي</h2>
           <ol class="steps">
-            <li><div><strong>التقديم بالطلب</strong>قدّم طلب السكن لدى المؤسسة الوطنية للأشغال الجامعية (ONOU) أو عبر المنصة المعلن عنها.</div></li>
-            <li><div><strong>إرفاق الوثائق</strong>أرفق الوثائق المطلوبة، مثل شهادة الميلاد وشهادة التسجيل الجامعي وما يثبت الحاجة للسكن.</div></li>
-            <li><div><strong>انتظار المعالجة</strong>تُدرس الملفات حسب الإجراءات والأولويات المعلنة وتُنشر قوائم التخصيص.</div></li>
-            <li><div><strong>الاستلام والدفع</strong>بعد التخصيص، سدّد الرسوم المطلوبة واستلم مفتاح الإقامة في الآجال المحددة.</div></li>
+            <li>
+              <div><strong>التقديم بالطلب</strong>قدّم طلب السكن لدى المؤسسة الوطنية للأشغال الجامعية (ONOU) أو عبر
+                المنصة المعلن عنها.</div>
+            </li>
+            <li>
+              <div><strong>إرفاق الوثائق</strong>أرفق الوثائق المطلوبة، مثل شهادة الميلاد وشهادة التسجيل الجامعي وما
+                يثبت الحاجة للسكن.</div>
+            </li>
+            <li>
+              <div><strong>انتظار المعالجة</strong>تُدرس الملفات حسب الإجراءات والأولويات المعلنة وتُنشر قوائم التخصيص.
+              </div>
+            </li>
+            <li>
+              <div><strong>الاستلام والدفع</strong>بعد التخصيص، سدّد الرسوم المطلوبة واستلم مفتاح الإقامة في الآجال
+                المحددة.</div>
+            </li>
           </ol>
-          <div class="guide-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>قد تختلف الوثائق والآجال حسب السنة الجامعية والجهة التابعة لها الإقامة، لذلك تحقّق دائماً من الإعلان الرسمي الأخير.</span></div>
+          <div class="guide-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>قد تختلف الوثائق
+              والآجال حسب السنة الجامعية والجهة التابعة لها الإقامة، لذلك تحقّق دائماً من الإعلان الرسمي الأخير.</span>
+          </div>
         </section>
 
         <section class="guide-section" id="faq">
           <h2><i class="fa-solid fa-circle-question" aria-hidden="true"></i>الأسئلة الشائعة</h2>
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-1">من يستحق المنحة الجامعية في الجزائر؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-1"><div class="faq-a-inner"><p>تُمنح للطلبة المسجلين بصفة نظامية الذين يستوفون شروط الاستحقاق. تختلف الشروط والتفاصيل حسب النصوص والتنظيمات المعمول بها، لذلك يُنصح بالتحقق من الجامعة أو الخدمات الجامعية.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-1">من يستحق المنحة الجامعية
+                في الجزائر؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-1">
+                <div class="faq-a-inner">
+                  <p>تُمنح للطلبة المسجلين بصفة نظامية الذين يستوفون شروط الاستحقاق. تختلف الشروط والتفاصيل حسب النصوص
+                    والتنظيمات المعمول بها، لذلك يُنصح بالتحقق من الجامعة أو الخدمات الجامعية.</p>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2">ما هي الوثائق المطلوبة للمنحة الجامعية؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-2"><div class="faq-a-inner"><p>عادةً تشمل شهادة ميلاد سلبية، نسخة من شهادة البكالوريا أو التسجيل الجامعي، وشهادة إقامة أو ما يثبت الإقامة بعيداً عن مقر العائلة. تحقّق من القائمة التفصيلية لدى جامعتك قبل إيداع الملف.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2">ما هي الوثائق المطلوبة
+                للمنحة الجامعية؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-2">
+                <div class="faq-a-inner">
+                  <p>عادةً تشمل شهادة ميلاد سلبية، نسخة من شهادة البكالوريا أو التسجيل الجامعي، وشهادة إقامة أو ما يثبت
+                    الإقامة بعيداً عن مقر العائلة. تحقّق من القائمة التفصيلية لدى جامعتك قبل إيداع الملف.</p>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3">كيف يتم التسجيل الأولي في الجامعة؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-3"><div class="faq-a-inner"><p>عبر المنصة الوطنية للتوجيه خلال الفترة المعلنة: إنشاء حساب، تعبئة استمارة الرغبات حسب الشعبة والمعدل، ثم متابعة نتيجة التوجيه واستكمال التسجيل النهائي بالوثائق المطلوبة.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3">كيف يتم التسجيل الأولي
+                في الجامعة؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-3">
+                <div class="faq-a-inner">
+                  <p>عبر المنصة الوطنية للتوجيه خلال الفترة المعلنة: إنشاء حساب، تعبئة استمارة الرغبات حسب الشعبة
+                    والمعدل، ثم متابعة نتيجة التوجيه واستكمال التسجيل النهائي بالوثائق المطلوبة.</p>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4">ما هي الوثائق المطلوبة للتسجيل الجامعي النهائي؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-4"><div class="faq-a-inner"><p>تشمل عادةً شهادة البكالوريا الأصلية، شهادة ميلاد، صوراً شمسية ووصل التوجيه، وتُستكمل حسب متطلبات كل جامعة وتخصص.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4">ما هي الوثائق المطلوبة
+                للتسجيل الجامعي النهائي؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-4">
+                <div class="faq-a-inner">
+                  <p>تشمل عادةً شهادة البكالوريا الأصلية، شهادة ميلاد، صوراً شمسية ووصل التوجيه، وتُستكمل حسب متطلبات كل
+                    جامعة وتخصص.</p>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5">كيف أحصل على السكن الجامعي؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-5"><div class="faq-a-inner"><p>يُقدَّم الطلب لدى ONOU أو عبر المنصة المعلن عنها مع الوثائق المطلوبة، ثم تُعالج الملفات وتُنشر قوائم التخصيص وفق الإجراءات المعمول بها.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5">كيف أحصل على السكن
+                الجامعي؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-5">
+                <div class="faq-a-inner">
+                  <p>يُقدَّم الطلب لدى ONOU أو عبر المنصة المعلن عنها مع الوثائق المطلوبة، ثم تُعالج الملفات وتُنشر
+                    قوائم التخصيص وفق الإجراءات المعمول بها.</p>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-6">كم تبلغ رسوم الإقامة الجامعية؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-6"><div class="faq-a-inner"><p>تختلف تفاصيل الرسوم وطرق الدفع حسب التعليمات الرسمية المعمول بها. يُفضّل الرجوع إلى الخدمات الجامعية التابعة لها الإقامة للتأكد من المبلغ وطريقة التسديد.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-6">كم تبلغ رسوم الإقامة
+                الجامعية؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-6">
+                <div class="faq-a-inner">
+                  <p>تختلف تفاصيل الرسوم وطرق الدفع حسب التعليمات الرسمية المعمول بها. يُفضّل الرجوع إلى الخدمات
+                    الجامعية التابعة لها الإقامة للتأكد من المبلغ وطريقة التسديد.</p>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-7">هل يمكن تغيير التخصص بعد التسجيل الأولي؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-7"><div class="faq-a-inner"><p>قد توجد فترات لإعادة التوجيه أو التحويل تُعلن عنها الوزارة والجامعات، وتخضع لمعدلات وشواغر وشروط محددة.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-7">هل يمكن تغيير التخصص بعد
+                التسجيل الأولي؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-7">
+                <div class="faq-a-inner">
+                  <p>قد توجد فترات لإعادة التوجيه أو التحويل تُعلن عنها الوزارة والجامعات، وتخضع لمعدلات وشواغر وشروط
+                    محددة.</p>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-8">ما هي المنصة الرسمية لنتائج البكالوريا؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-              <div class="faq-a" id="faq-a-8"><div class="faq-a-inner"><p>اعتمد على المصادر الرسمية التابعة لوزارة التربية الوطنية والديوان الوطني للامتحانات والمسابقات (ONEC) عند إعلان النتائج، وتجنب المواقع غير الموثوقة.</p></div></div>
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-8">ما هي المنصة الرسمية
+                لنتائج البكالوريا؟<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <div class="faq-a" id="faq-a-8">
+                <div class="faq-a-inner">
+                  <p>اعتمد على المصادر الرسمية التابعة لوزارة التربية الوطنية والديوان الوطني للامتحانات والمسابقات
+                    (ONEC) عند إعلان النتائج، وتجنب المواقع غير الموثوقة.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -250,8 +658,10 @@
       <aside class="guide-nav" aria-label="التنقل داخل الأدلة">
         <div class="guide-nav-title">الوصول السريع</div>
         <div class="guide-nav-links">
-          <a href="#bourse"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i><span>المنحة الجامعية</span></a>
-          <a href="#inscription"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><span>التسجيل الأولي</span></a>
+          <a href="#bourse"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i><span>المنحة
+              الجامعية</span></a>
+          <a href="#inscription"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><span>التسجيل
+              الأولي</span></a>
           <a href="#logement"><i class="fa-solid fa-bed" aria-hidden="true"></i><span>السكن الجامعي</span></a>
           <a href="#faq"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>الأسئلة الشائعة</span></a>
         </div>
@@ -263,7 +673,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h3><img src="../assets/images/icon.png" alt="" width="24" height="24" style="border-radius:4px;vertical-align:middle"> Student DZ</h3>
+          <h3><img src="../assets/images/icon.png" alt="" width="24" height="24"
+              style="border-radius:4px;vertical-align:middle"> Student DZ</h3>
           <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
         </div>
         <div class="footer-col">
@@ -305,4 +716,5 @@
     document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
