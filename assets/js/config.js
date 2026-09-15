@@ -3,7 +3,9 @@ const CONFIG = {
     BASE_PATH: "/student-dz",
     API: {
         UNIVERSITIES: "/data/universities.json",
+        ECOLES: "/data/ecoles.json",
         RESIDENCES: "/data/residences.json",
+        VERIFICATION_STATUS: "/data/verification-status.json",
         PLATFORMS: "/data/platforms.json",
         SETTINGS: "/data/settings.json",
         FEEDBACK_SETTINGS: "/data/feedback-settings.json"
@@ -34,7 +36,7 @@ if (typeof module !== 'undefined' && module.exports) {
     } else if (path.includes('/ecoles/')) {
         type = 'ecoles';
         title = 'مدرسة / معهد';
-        dataPath = '/data/ecoles.json';
+        dataPath = CONFIG.API.ECOLES;
     } else if (path.includes('/residences/')) {
         type = 'residences';
         title = 'إقامة جامعية';
