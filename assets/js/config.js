@@ -55,15 +55,25 @@ if (typeof module !== 'undefined' && module.exports) {
 
     function createCounter() {
         if (document.getElementById('directoryDataCounter')) return;
+
+        /* New directory pages use .page-intro; keep the counter outside the
+           intro card so it remains visible without disturbing the new design. */
+        const intro = document.querySelector('main .page-intro');
         const heading = document.querySelector('main h1.section-title');
-        if (!heading) return;
+        const anchor = intro || heading;
+        if (!anchor) return;
 
         const counter = document.createElement('div');
         counter.id = 'directoryDataCounter';
         counter.className = 'directory-data-counter';
         counter.setAttribute('aria-live', 'polite');
         counter.innerHTML = `<i class="fa-solid ${type === 'universities' ? 'fa-building-columns' : type === 'ecoles' ? 'fa-school' : 'fa-building'}"></i><span class="directory-counter-number" id="directoryCounterNumber">0</span><span class="directory-counter-label" id="directoryCounterLabel">${title}</span>`;
-        heading.insertAdjacentElement('afterend', counter);
+
+        if (intro) {
+            intro.insertAdjacentElement('afterend', counter);
+        } else {
+            anchor.insertAdjacentElement('afterend', counter);
+        }
     }
 
     function addStyles() {
@@ -178,82 +188,28 @@ if (typeof module !== 'undefined' && module.exports) {
         if (!main) return null;
         if (type === 'homepage') return main.querySelector('.hero') || main.firstElementChild;
         if (type === 'tool') {
-            const container = main.querySelector('.tool-container') || main;
-            const heading = container.querySelector('h1, h2.section-title, .section-title');
-            return heading?.nextElementSibling || heading || container.firstElementChild;
+            return main.querySelector('.tool-container,.tool-header,.tool-card') || main.firstElementChild;
         }
-        return main.querySelector('h1.section-title, h1, .section-title')?.nextElementSibling || main.firstElementChild;
+        return main.querySelector('.page-intro,.section-title') || main.firstElementChild;
     }
 
-    function createAd(settings) {
-        if (document.querySelector('.student-dz-ad')) return;
-        const adType = getAdType();
-        const unit = settings?.ads?.slots?.[adType];
-        const publisherId = settings?.ads?.publisherId;
-        if (!settings?.ads?.enabled || !publisherId || !unit?.id) return;
-        const anchor = findPlacement(adType);
-        if (!anchor?.parentNode) return;
-
-        const wrapper = document.createElement('section');
-        wrapper.className = 'ad-container student-dz-ad';
+    function createAd(type) {
+        if (document.getElementById('globalAdUnit')) return;
+        const placement = findPlacement(type);
+        if (!placement) return;
+        const wrapper = document.createElement('div');
+        wrapper.id = 'globalAdUnit';
+        wrapper.className = 'dz-ad-container dz-ad-container--' + type;
         wrapper.setAttribute('aria-label', 'إعلان');
-        const label = document.createElement('span');
-        label.className = 'ad-label';
-        label.textContent = 'إعلان';
-        const ins = document.createElement('ins');
-        ins.className = 'adsbygoogle ad-placeholder';
-        ins.style.display = 'block';
-        ins.setAttribute('data-ad-client', publisherId);
-        ins.setAttribute('data-ad-slot', unit.id);
-
-        if (unit.format === 'fluid') {
-            ins.setAttribute('data-ad-format', 'fluid');
-            if (unit.layoutKey) ins.setAttribute('data-ad-layout-key', unit.layoutKey);
-        } else {
-            ins.setAttribute('data-ad-format', 'auto');
-            if (unit.fullWidthResponsive !== false) ins.setAttribute('data-full-width-responsive', 'true');
-        }
-
-        wrapper.append(label, ins);
-        anchor.parentNode.insertBefore(wrapper, anchor.nextSibling);
-        loadAdSense(publisherId);
+        wrapper.innerHTML = '<span class="dz-ad-label">إعلان</span><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+        placement.insertAdjacentElement('afterend', wrapper);
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
     }
 
-    function pushAd() {
-        try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (error) {
-            console.warn('AdSense push skipped:', error);
-        }
-    }
-
-    function loadAdSense(publisherId) {
-        if (window.__studentDzAdSenseLoaded) {
-            pushAd();
-            return;
-        }
-        const script = document.createElement('script');
-        script.async = true;
-        script.crossOrigin = 'anonymous';
-        script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(publisherId)}`;
-        script.onload = () => {
-            window.__studentDzAdSenseLoaded = true;
-            pushAd();
-        };
-        script.onerror = () => console.warn('AdSense script failed to load.');
-        document.head.appendChild(script);
-    }
-
-    async function init() {
+    function init() {
         if (!isEligible()) return;
         addStylesheet();
-        try {
-            const response = await fetch(CONFIG.getUrl(CONFIG.API.SETTINGS), { cache: 'no-store' });
-            if (!response.ok) return;
-            createAd(await response.json());
-        } catch (error) {
-            console.warn('AdSense configuration unavailable.');
-        }
+        createAd(getAdType());
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
