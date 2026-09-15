@@ -133,13 +133,13 @@ if (typeof module !== 'undefined' && module.exports) module.exports = CONFIG;
     else load();
 })();
 
-/* Shared AdSense loader. Reads the real publisher/slot configuration from settings.json. */
+/* Shared AdSense loader: one responsive ad unit per normal site page. */
 (function loadGlobalAds() {
-    const EXCLUDED = ['/pages/about.html', '/pages/contact.html', '/pages/privacy.html', '/pages/cookies.html', '/pages/terms.html', '/pages/disclaimer.html', '/404.html', '/offline.html'];
+    const EXCLUDED = ['/404.html', '/offline.html'];
     let settings = null;
 
     function isEligible() {
-        const path = window.location.pathname;
+        const path = window.location.pathname.replace(/\/+$/, '') || '/';
         return !EXCLUDED.some(item => path.endsWith(item));
     }
 
@@ -177,12 +177,14 @@ if (typeof module !== 'undefined' && module.exports) module.exports = CONFIG;
         const main = document.querySelector('main');
         if (!main) return null;
         if (type === 'homepage') return main.querySelector('.hero') || main.firstElementChild;
-        if (type === 'tool') return main.querySelector('.tool-container,.tool-header,.tool-card') || main.firstElementChild;
-        return main.querySelector('.page-intro,.section-title') || main.firstElementChild;
+        if (type === 'tool') return main.querySelector('.tool-container,.tool-header,.tool-card,.page-intro') || main.firstElementChild;
+        return main.querySelector('.page-intro,.section-title,.breadcrumb') || main.firstElementChild;
     }
 
     function createAd(type) {
-        if (document.getElementById('globalAdUnit')) return;
+        /* Hard guard: never create a second unit, even if this loader is triggered twice. */
+        if (document.getElementById('globalAdUnit') || document.querySelector('.dz-ad-container .adsbygoogle')) return;
+
         const placement = findPlacement(type);
         const slot = settings?.ads?.slots?.[type];
         const client = settings?.ads?.publisherId;
@@ -192,6 +194,11 @@ if (typeof module !== 'undefined' && module.exports) module.exports = CONFIG;
         wrapper.id = 'globalAdUnit';
         wrapper.className = `dz-ad-container dz-ad-container--${type}`;
         wrapper.setAttribute('aria-label', 'إعلان');
+        wrapper.setAttribute('role', 'complementary');
+
+        const label = document.createElement('span');
+        label.className = 'dz-ad-label';
+        label.textContent = 'إعلان';
 
         const ins = document.createElement('ins');
         ins.className = 'adsbygoogle dz-ad-placeholder';
@@ -202,14 +209,15 @@ if (typeof module !== 'undefined' && module.exports) module.exports = CONFIG;
         if (slot.fullWidthResponsive) ins.dataset.fullWidthResponsive = 'true';
         if (slot.layoutKey) ins.dataset.adLayoutKey = slot.layoutKey;
 
-        const label = document.createElement('span');
-        label.className = 'dz-ad-label';
-        label.textContent = 'إعلان';
         wrapper.append(label, ins);
         placement.insertAdjacentElement('afterend', wrapper);
 
         window.adsbygoogle = window.adsbygoogle || [];
-        try { window.adsbygoogle.push({}); } catch (error) { console.warn('AdSense initialization:', error); }
+        try {
+            window.adsbygoogle.push({});
+        } catch (error) {
+            console.warn('AdSense initialization:', error);
+        }
     }
 
     async function init() {
