@@ -156,13 +156,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <nav class="main-nav" id="mainNav">
                 <a href="../index.html" class="nav-link">الرئيسية</a>
-                <a href="../universities/index.html" class="nav-link">الجامعات</a>
-                <a href="../ecoles/index.html" class="nav-link">المدارس والمعاهد</a>
-                <a href="../residences/index.html" class="nav-link">الإقامات</a>
-                <a href="../transport/index.html" class="nav-link">النقل</a>
-                <a href="../tools/maps.html" class="nav-link">الخريطة</a>
-                <a href="../categories/tools.html" class="nav-link">الأدوات</a>
-                <a href="../categories/student-life.html" class="nav-link">الحياة الجامعية</a>
+                <a href="../universities/index.html" class="nav-link">جامعات</a>
+                <a href="../ecoles/index.html" class="nav-link">مدارس ومعاهد</a>
+                <a href="../residences/index.html" class="nav-link">إقامات</a>
+                <a href="../transport/index.html" class="nav-link">نقل</a>
+                <a href="../tools/maps.html" class="nav-link">خريطة</a>
+                <a href="../categories/student-life.html" class="nav-link">حياة جامعية</a>
+                <a href="../platforms/index.html" class="nav-link">منصات</a>
+                <a href="../pages/favorites.html" class="nav-link">مفضلة</a>
             </nav>
 
             <div class="header-actions">
@@ -175,10 +176,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <main class="container">
         <div class="tool-container">
-            <h1 class="section-title"><i class="fa-solid fa-image"></i>ضغط الصور محلياً</h1>
-            <p>صغّر حجم الصور لرفعها على المنصات الجامعية دون فقدان كبير للجودة.</p>
 
-            <input type="file" id="imgInput" accept="image/jpeg, image/png, image/webp" style="margin-bottom: 20px;">
+                    <nav class="page-breadcrumb" aria-label="مسار التنقل">
+            <a href="../index.html">الرئيسية</a><span aria-hidden="true">›</span><span>ضغط الصور محلياً</span>
+        </nav>
+
+        <section class="page-intro" aria-labelledby="img-compressor-title">
+            <div class="page-intro-icon" aria-hidden="true"><i class="fa-solid fa-image"></i></div>
+            <h1 id="img-compressor-title"> ضغط الصور محلياً</h1>
+            <p>صغّر حجم الصور لرفعها على المنصات الجامعية دون فقدان كبير للجودة.</p>
+        </section>
+
+            <input type="file" id="imgInput" accept="image/jpeg, image/png, image/webp" style="margin-bottom: 30px;">
 
             <img id="previewImg" class="preview">
 
