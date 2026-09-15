@@ -89,22 +89,18 @@
             <button class="calc-key utility" type="button" data-action="backspace" aria-label="حذف آخر رمز"><i class="fa-solid fa-delete-left"></i></button>
             <button class="calc-key operator" type="button" data-value="%">%</button>
             <button class="calc-key operator" type="button" data-value="/">÷</button>
-
             <button class="calc-key" type="button" data-value="7">7</button>
             <button class="calc-key" type="button" data-value="8">8</button>
             <button class="calc-key" type="button" data-value="9">9</button>
             <button class="calc-key operator" type="button" data-value="*">×</button>
-
             <button class="calc-key" type="button" data-value="4">4</button>
             <button class="calc-key" type="button" data-value="5">5</button>
             <button class="calc-key" type="button" data-value="6">6</button>
             <button class="calc-key operator" type="button" data-value="-">−</button>
-
             <button class="calc-key" type="button" data-value="1">1</button>
             <button class="calc-key" type="button" data-value="2">2</button>
             <button class="calc-key" type="button" data-value="3">3</button>
             <button class="calc-key operator" type="button" data-value="+">+</button>
-
             <button class="calc-key zero" type="button" data-value="0">0</button>
             <button class="calc-key" type="button" data-value=".">.</button>
             <button class="calc-key" type="button" data-value="(">(</button>
@@ -145,9 +141,11 @@
   <div id="feedbackContainer"></div>
 
   <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/navigation.js"></script>
   <script src="../assets/js/storage.js"></script>
   <script src="../assets/js/feedback.js"></script>
   <script src="../assets/js/calculator.js"></script>
+  <script src="../assets/js/pwa.js"></script>
   <script>
     if (typeof StorageApp !== 'undefined' && StorageApp.addRecent) {
       StorageApp.addRecent({ id: 'smart-calculator', title: 'الآلة الحاسبة الذكية', url: 'tools/calculator.html', icon: '🧮' });
