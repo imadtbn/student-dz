@@ -18,9 +18,7 @@ const CONFIG = {
     }
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = CONFIG;
-}
+if (typeof module !== 'undefined' && module.exports) module.exports = CONFIG;
 
 /* Dynamic counters for universities, schools/institutes and residences. */
 (function initDirectoryCounter() {
@@ -30,20 +28,12 @@ if (typeof module !== 'undefined' && module.exports) {
     let dataPath = '';
 
     if (path.includes('/universities/')) {
-        type = 'universities';
-        title = 'جامعة';
-        dataPath = CONFIG.API.UNIVERSITIES;
+        type = 'universities'; title = 'جامعة'; dataPath = CONFIG.API.UNIVERSITIES;
     } else if (path.includes('/ecoles/')) {
-        type = 'ecoles';
-        title = 'مدرسة / معهد';
-        dataPath = CONFIG.API.ECOLES;
+        type = 'ecoles'; title = 'مدرسة / معهد'; dataPath = CONFIG.API.ECOLES;
     } else if (path.includes('/residences/')) {
-        type = 'residences';
-        title = 'إقامة جامعية';
-        dataPath = CONFIG.API.RESIDENCES;
-    } else {
-        return;
-    }
+        type = 'residences'; title = 'إقامة جامعية'; dataPath = CONFIG.API.RESIDENCES;
+    } else return;
 
     const normalize = value => String(value ?? '').toLowerCase().trim();
 
@@ -55,25 +45,16 @@ if (typeof module !== 'undefined' && module.exports) {
 
     function createCounter() {
         if (document.getElementById('directoryDataCounter')) return;
-
-        /* New directory pages use .page-intro; keep the counter outside the
-           intro card so it remains visible without disturbing the new design. */
         const intro = document.querySelector('main .page-intro');
         const heading = document.querySelector('main h1.section-title');
         const anchor = intro || heading;
         if (!anchor) return;
-
         const counter = document.createElement('div');
         counter.id = 'directoryDataCounter';
         counter.className = 'directory-data-counter';
         counter.setAttribute('aria-live', 'polite');
         counter.innerHTML = `<i class="fa-solid ${type === 'universities' ? 'fa-building-columns' : type === 'ecoles' ? 'fa-school' : 'fa-building'}"></i><span class="directory-counter-number" id="directoryCounterNumber">0</span><span class="directory-counter-label" id="directoryCounterLabel">${title}</span>`;
-
-        if (intro) {
-            intro.insertAdjacentElement('afterend', counter);
-        } else {
-            anchor.insertAdjacentElement('afterend', counter);
-        }
+        anchor.insertAdjacentElement('afterend', counter);
     }
 
     function addStyles() {
@@ -97,9 +78,7 @@ if (typeof module !== 'undefined' && module.exports) {
         const gender = document.getElementById('genderFilter');
         const term = normalize(search?.value);
         const genderValue = gender?.value || '';
-
         if (!term && !genderValue) return records;
-
         return records.filter(item => {
             if (type === 'universities') {
                 const specialties = Array.isArray(item.specialties) ? item.specialties : [];
@@ -134,12 +113,8 @@ if (typeof module !== 'undefined' && module.exports) {
             setCount(0, false);
         }
     }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', start, { once: true });
-    } else {
-        start();
-    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+    else start();
 })();
 
 /* Global feedback. */
@@ -158,18 +133,10 @@ if (typeof module !== 'undefined' && module.exports) {
     else load();
 })();
 
-/* Shared AdSense: one clearly separated unit on each eligible page. */
+/* Shared AdSense loader. Reads the real publisher/slot configuration from settings.json. */
 (function loadGlobalAds() {
     const EXCLUDED = ['/pages/about.html', '/pages/contact.html', '/pages/privacy.html', '/pages/cookies.html', '/pages/terms.html', '/pages/disclaimer.html', '/404.html', '/offline.html'];
-
-    function addStylesheet() {
-        if (document.getElementById('studentDzAdsCss')) return;
-        const link = document.createElement('link');
-        link.id = 'studentDzAdsCss';
-        link.rel = 'stylesheet';
-        link.href = `${CONFIG.BASE_PATH}/assets/css/ads.css`;
-        document.head.appendChild(link);
-    }
+    let settings = null;
 
     function isEligible() {
         const path = window.location.pathname;
@@ -183,33 +150,83 @@ if (typeof module !== 'undefined' && module.exports) {
         return 'content';
     }
 
+    function addStylesheet() {
+        if (document.getElementById('studentDzAdsCss')) return;
+        const link = document.createElement('link');
+        link.id = 'studentDzAdsCss';
+        link.rel = 'stylesheet';
+        link.href = `${CONFIG.BASE_PATH}/assets/css/ads.css`;
+        document.head.appendChild(link);
+    }
+
+    function loadAdSenseScript(client) {
+        if (document.querySelector('script[data-student-dz-adsense]')) return Promise.resolve();
+        return new Promise(resolve => {
+            const script = document.createElement('script');
+            script.async = true;
+            script.crossOrigin = 'anonymous';
+            script.dataset.studentDzAdsense = 'true';
+            script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(client)}`;
+            script.onload = resolve;
+            script.onerror = resolve;
+            document.head.appendChild(script);
+        });
+    }
+
     function findPlacement(type) {
         const main = document.querySelector('main');
         if (!main) return null;
         if (type === 'homepage') return main.querySelector('.hero') || main.firstElementChild;
-        if (type === 'tool') {
-            return main.querySelector('.tool-container,.tool-header,.tool-card') || main.firstElementChild;
-        }
+        if (type === 'tool') return main.querySelector('.tool-container,.tool-header,.tool-card') || main.firstElementChild;
         return main.querySelector('.page-intro,.section-title') || main.firstElementChild;
     }
 
     function createAd(type) {
         if (document.getElementById('globalAdUnit')) return;
         const placement = findPlacement(type);
-        if (!placement) return;
+        const slot = settings?.ads?.slots?.[type];
+        const client = settings?.ads?.publisherId;
+        if (!placement || !slot?.id || !client || settings?.ads?.enabled !== true) return;
+
         const wrapper = document.createElement('div');
         wrapper.id = 'globalAdUnit';
-        wrapper.className = 'dz-ad-container dz-ad-container--' + type;
+        wrapper.className = `dz-ad-container dz-ad-container--${type}`;
         wrapper.setAttribute('aria-label', 'إعلان');
-        wrapper.innerHTML = '<span class="dz-ad-label">إعلان</span><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+
+        const ins = document.createElement('ins');
+        ins.className = 'adsbygoogle dz-ad-placeholder';
+        ins.style.display = 'block';
+        ins.dataset.adClient = client;
+        ins.dataset.adSlot = slot.id;
+        ins.dataset.adFormat = slot.format || 'auto';
+        if (slot.fullWidthResponsive) ins.dataset.fullWidthResponsive = 'true';
+        if (slot.layoutKey) ins.dataset.adLayoutKey = slot.layoutKey;
+
+        const label = document.createElement('span');
+        label.className = 'dz-ad-label';
+        label.textContent = 'إعلان';
+        wrapper.append(label, ins);
         placement.insertAdjacentElement('afterend', wrapper);
-        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+        window.adsbygoogle = window.adsbygoogle || [];
+        try { window.adsbygoogle.push({}); } catch (error) { console.warn('AdSense initialization:', error); }
     }
 
-    function init() {
+    async function init() {
         if (!isEligible()) return;
         addStylesheet();
-        createAd(getAdType());
+        try {
+            const response = await fetch(CONFIG.getUrl(CONFIG.API.SETTINGS), { cache: 'no-store' });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            settings = await response.json();
+            if (settings?.ads?.enabled !== true) return;
+            const client = settings?.ads?.publisherId;
+            if (!client) return;
+            await loadAdSenseScript(client);
+            createAd(getAdType());
+        } catch (error) {
+            console.error('Global AdSense error:', error);
+        }
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
