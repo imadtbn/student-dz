@@ -1,0 +1,95 @@
+name: Submit updated URLs to IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - '*.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Build changed URL list
+        id: urls
+        shell: bash
+        run: |
+          SITE="https://imadtbn.github.io/student-dz"
+          urls=""
+
+          while IFS= read -r file; do
+            case "$file" in
+              *.html)
+                # Do not submit utility/error/offline pages that should not be indexed.
+                case "$file" in
+                  404.html|offline.html|9f4c2d7a6e1b8c35d0f2a7e6c4b9d1f8.txt) continue ;;
+                esac
+                if [ "$file" = "index.html" ]; then
+                  urls="$urls\n$SITE/"
+                else
+                  urls="$urls\n$SITE/${file%.html}.html"
+                fi
+                ;;
+            esac
+          done < <(git diff --name-only HEAD^ HEAD)
+
+          # Always notify the search engines when the sitemap itself changes.
+          if git diff --name-only HEAD^ HEAD | grep -qx 'sitemap.xml'; then
+            urls="$urls\n$SITE/"
+          fi
+
+          printf '%b\n' "$urls" | sed '/^$/d' | sort -u > /tmp/urls.txt
+          echo "urls<<EOF" >> "$GITHUB_OUTPUT"
+          cat /tmp/urls.txt >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "Submitting $(wc -l < /tmp/urls.txt) URL(s)"
+          cat /tmp/urls.txt
+
+      - name: Submit to IndexNow
+        if: steps.urls.outputs.urls != ''
+        env:
+          INDEXNOW_KEY: 9f4c2d7a6e1b8c35d0f2a7e6c4b9d1f8
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+
+          urls = [u for u in os.environ.get('URLS', '').splitlines() if u.strip()]
+          if not urls:
+              raise SystemExit(0)
+
+          payload = json.dumps({
+              'host': 'imadtbn.github.io',
+              'key': os.environ['INDEXNOW_KEY'],
+              'keyLocation': 'https://imadtbn.github.io/student-dz/9f4c2d7a6e1b8c35d0f2a7e6c4b9d1f8.txt',
+              'urlList': urls,
+          }).encode()
+
+          req = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=payload,
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+              method='POST'
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  print(f'IndexNow response: {response.status}')
+          except urllib.error.HTTPError as e:
+              print(f'IndexNow response: {e.code}')
+              if e.code not in (200, 202):
+                  raise
+          PY
+        env:
+          URLS: ${{ steps.urls.outputs.urls }}
