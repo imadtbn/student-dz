@@ -32,4 +32,62 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && mainNav.classList.contains('active')) { closeMenu(); menuToggle.focus(); }
     });
+
+    // Smart Calculator card integration. This is intentionally scoped to the
+    // homepage and tools category so existing page content remains untouched.
+    const calculator = {
+        id: 'tool:calculator.html',
+        title: 'الآلة الحاسبة الذكية',
+        description: 'احسب المعادلات واحفظ النتائج والمعادلات في المتصفح مع إمكانية التعديل والحذف وإعادة الاستخدام',
+        url: 'tools/calculator.html',
+        icon: 'fa-solid fa-calculator'
+    };
+
+    function loadFavoritesUI() {
+        if (window.StudentFavoritesUI || document.querySelector('script[data-student-favorites-ui]')) return;
+        const script = document.createElement('script');
+        script.src = `${window.CONFIG?.BASE_PATH || '/student-dz'}/assets/js/favorites-ui.js`;
+        script.defer = true;
+        script.dataset.studentFavoritesUi = 'true';
+        document.body.appendChild(script);
+    }
+
+    function createCard(relativeUrl) {
+        const card = document.createElement('a');
+        card.href = relativeUrl;
+        card.className = 'card favorite-card';
+        card.setAttribute('data-favorite-id', calculator.id);
+        card.setAttribute('data-favorite-title', calculator.title);
+        card.setAttribute('data-favorite-description', calculator.description);
+        card.setAttribute('data-favorite-url', relativeUrl);
+        card.setAttribute('data-favorite-type', 'tools');
+        card.setAttribute('data-favorite-icon', calculator.icon);
+        card.innerHTML = `<div class="card-icon"><i class="${calculator.icon}"></i></div><h3 class="card-title">${calculator.title}</h3><p class="card-desc">${calculator.description}</p>`;
+        return card;
+    }
+
+    function addCalculatorCard() {
+        const path = window.location.pathname;
+        const isCategory = path.includes('/categories/tools.html');
+        const isHome = path === '/student-dz/' || path.endsWith('/student-dz/index.html');
+        if (!isCategory && !isHome) return;
+
+        if (isCategory) {
+            const grid = document.getElementById('toolsGrid');
+            if (!grid || grid.querySelector('[data-favorite-id="tool:calculator.html"]')) return;
+            const card = createCard('../tools/calculator.html');
+            grid.insertBefore(card, grid.firstElementChild);
+            loadFavoritesUI();
+            return;
+        }
+
+        const sections = [...document.querySelectorAll('main .main-section')];
+        const toolsSection = sections.find(section => section.querySelector('.section-title')?.textContent.includes('أدوات الطالب'));
+        const grid = toolsSection?.querySelector('.grid');
+        if (!grid || grid.querySelector('[data-favorite-id="tool:calculator.html"]')) return;
+        grid.insertBefore(createCard('tools/calculator.html'), grid.firstElementChild);
+        loadFavoritesUI();
+    }
+
+    addCalculatorCard();
 });
