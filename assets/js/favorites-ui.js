@@ -32,13 +32,9 @@
     function getVerificationStatus(card) {
         const type = value(card, 'type');
         const id = value(card, 'id').replace(/^(university|school|ecole|residence):/, '');
-
-        // The cards use "schools" for favorites, while the central registry
-        // stores school/institute records under the Arabic directory key "ecoles".
         const registryKey = type === 'schools' ? 'ecoles' : type;
         const collection = verificationRegistry[registryKey];
 
-        // The central verification registry is the source of truth when available.
         if (collection && collection[id]) return collection[id];
 
         const explicit = (card.getAttribute('data-verification-status') || '').toLowerCase();
@@ -47,7 +43,6 @@
     }
 
     function addVerificationBadge(card) {
-        // Verification has meaning only for university, school/institute and residence records.
         const type = value(card, 'type');
         if (!['universities', 'schools', 'ecoles', 'residences'].includes(type)) return;
 
@@ -119,18 +114,16 @@
 
     async function loadVerificationRegistry() {
         try {
-            const base = window.CONFIG?.BASE_PATH || '/student-dz';
-            const response = await fetch(`${base}/data/verification-status.json?updated=${Date.now()}`, {
-                cache: 'no-store'
-            });
+            const url = window.CONFIG?.getUrl
+                ? CONFIG.getUrl(CONFIG.API.VERIFICATION_STATUS)
+                : '/student-dz/data/verification-status.json';
+            const response = await fetch(`${url}?updated=${Date.now()}`, { cache: 'no-store' });
             if (!response.ok) throw new Error('HTTP ' + response.status);
             verificationRegistry = await response.json();
         } catch (error) {
             console.warn('Student DZ verification registry unavailable:', error);
         }
 
-        // Re-apply the registry after it loads so cards already rendered with the
-        // fallback status immediately receive the latest manual verification state.
         document.querySelectorAll('[data-favorite-id]').forEach(addVerificationBadge);
         bindAll(document);
     }
