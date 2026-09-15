@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.key === 'Escape' && mainNav.classList.contains('active')) { closeMenu(); menuToggle.focus(); }
     });
 
-    // Smart Calculator card integration. Scoped only to the homepage and tools category.
+    // Smart Calculator card integration. Scoped only to the homepage.
     const calculator = {
         id: 'tool:calculator.html',
         title: 'الآلة الحاسبة الذكية',
@@ -70,17 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addCalculatorCard() {
         const path = window.location.pathname;
-        const isCategory = path.includes('/categories/tools.html');
         const isHome = path === '/student-dz/' || path.endsWith('/student-dz/index.html');
-        if (!isCategory && !isHome) return;
-
-        if (isCategory) {
-            const grid = document.getElementById('toolsGrid');
-            if (!grid || grid.querySelector('[data-favorite-id="tool:calculator.html"]')) return;
-            grid.insertBefore(createCard('../tools/calculator.html'), grid.firstElementChild);
-            loadFavoritesUI();
-            return;
-        }
+        if (!isHome) return;
 
         const sections = [...document.querySelectorAll('main .main-section')];
         const toolsSection = sections.find(section => section.querySelector('.section-title')?.textContent.includes('أدوات الطالب'));
