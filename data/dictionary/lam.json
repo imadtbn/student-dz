@@ -1,0 +1,24 @@
+{
+  "letter": "ل",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0014",
+      "word": "لغة",
+      "root": "ل غ و",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "نظام من الأصوات والرموز للتواصل والتعبير"
+        }
+      ],
+      "synonyms": [
+        "لسان"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
