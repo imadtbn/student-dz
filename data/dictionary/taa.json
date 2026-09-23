@@ -1,0 +1,235 @@
+{
+  "letter": "ت",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0002",
+      "word": "تعليم",
+      "root": "ع ل م",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "نقل المعرفة والمهارات إلى المتعلم"
+        }
+      ],
+      "synonyms": [
+        "تدريس"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0003",
+      "word": "تعلم",
+      "root": "ع ل م",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "اكتساب المعرفة أو المهارة بالدراسة والتجربة"
+        }
+      ],
+      "synonyms": [
+        "اكتساب"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0033",
+      "word": "تحليل",
+      "root": "ح ل ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تفكيك الموضوع إلى عناصر لفهم العلاقات بينها"
+        }
+      ],
+      "synonyms": [
+        "تفصيل",
+        "تفسير"
+      ],
+      "antonyms": [
+        "تركيب"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0034",
+      "word": "تفسير",
+      "root": "ف س ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "بيان المعنى أو توضيح الأسباب"
+        }
+      ],
+      "synonyms": [
+        "شرح",
+        "إيضاح"
+      ],
+      "antonyms": [
+        "إبهام"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0035",
+      "word": "تجربة",
+      "root": "ج ر ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إجراء عملي لاختبار فكرة أو ملاحظة ظاهرة"
+        }
+      ],
+      "synonyms": [
+        "اختبار"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0046",
+      "word": "تقنية",
+      "root": "ت ق ن",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "أسلوب أو وسيلة عملية تستعمل لتحقيق غرض"
+        }
+      ],
+      "synonyms": [
+        "تكنولوجيا",
+        "وسيلة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0069",
+      "word": "تاريخ",
+      "root": "أ ر خ",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "دراسة أحداث الماضي وتطور المجتمعات عبر الزمن"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0073",
+      "word": "تفكير",
+      "root": "ف ك ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "نشاط عقلي لمعالجة الأفكار والمعلومات"
+        }
+      ],
+      "synonyms": [
+        "تأمل"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0076",
+      "word": "تركيز",
+      "root": "ر ك ز",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "توجيه الانتباه إلى موضوع أو نشاط محدد"
+        }
+      ],
+      "synonyms": [
+        "انتباه"
+      ],
+      "antonyms": [
+        "تشتت"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0087",
+      "word": "تخرج",
+      "root": "خ ر ج",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إتمام مرحلة دراسية والحصول على مؤهلها"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0092",
+      "word": "توثيق",
+      "root": "و ث ق",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إثبات المعلومات وإسنادها إلى مصادر محددة"
+        }
+      ],
+      "synonyms": [
+        "إسناد"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0095",
+      "word": "تعاون",
+      "root": "ع و ن",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "اشتراك عدة أشخاص في إنجاز عمل أو هدف"
+        }
+      ],
+      "synonyms": [
+        "مساعدة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0096",
+      "word": "تواصل",
+      "root": "و ص ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تبادل الأفكار والمعلومات بين طرفين أو أكثر"
+        }
+      ],
+      "synonyms": [
+        "اتصال"
+      ],
+      "antonyms": [
+        "انقطاع"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
