@@ -1,0 +1,56 @@
+{
+  "letter": "ك",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0011",
+      "word": "كتاب",
+      "root": "ك ت ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مجموعة صفحات مكتوبة أو مطبوعة تجمع في مجلد"
+        }
+      ],
+      "synonyms": [
+        "مؤلَّف"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0013",
+      "word": "كتابة",
+      "root": "ك ت ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تدوين الكلام بالحروف والرموز"
+        }
+      ],
+      "synonyms": [
+        "تدوين"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0057",
+      "word": "كيمياء",
+      "root": null,
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يدرس تركيب المادة وخواصها وتحولاتها"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
