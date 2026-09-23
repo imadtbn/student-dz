@@ -1,0 +1,74 @@
+{
+  "letter": "ج",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0007",
+      "word": "جامعة",
+      "root": "ج م ع",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مؤسسة للتعليم العالي والبحث العلمي"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0019",
+      "word": "جذر",
+      "root": "ج ذ ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الحروف الأصلية التي تُشتق منها كلمات متعددة"
+        }
+      ],
+      "synonyms": [
+        "أصل"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0040",
+      "word": "جواب",
+      "root": "ج و ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "ما يقال أو يكتب ردًا على سؤال"
+        }
+      ],
+      "synonyms": [
+        "إجابة",
+        "رد"
+      ],
+      "antonyms": [
+        "سؤال"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0070",
+      "word": "جغرافيا",
+      "root": null,
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يدرس سطح الأرض والظواهر الطبيعية والبشرية وتوزيعها"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
