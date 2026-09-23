@@ -1,0 +1,43 @@
+{
+  "letter": "س",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0022",
+      "word": "سياق",
+      "root": "س و ق",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الكلام أو الظروف المحيطة باللفظ وتساعد على فهمه"
+        }
+      ],
+      "synonyms": [
+        "قرينة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0039",
+      "word": "سؤال",
+      "root": "س أ ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "طلب معرفة أو استيضاح عن أمر"
+        }
+      ],
+      "synonyms": [
+        "استفسار"
+      ],
+      "antonyms": [
+        "جواب"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
