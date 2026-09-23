@@ -1,0 +1,22 @@
+{
+  "letter": "ص",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0024",
+      "word": "صرف",
+      "root": "ص ر ف",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يبحث في بنية الكلمة وصيغها وتحولاتها"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
