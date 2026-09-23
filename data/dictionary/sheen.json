@@ -1,0 +1,22 @@
+{
+  "letter": "ش",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0050",
+      "word": "شبكة",
+      "root": "ش ب ك",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مجموعة عناصر مترابطة لتبادل المعلومات أو الخدمات"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
