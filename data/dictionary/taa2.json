@@ -1,0 +1,57 @@
+{
+  "letter": "ط",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0008",
+      "word": "طالب",
+      "root": "ط ل ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "شخص يطلب العلم في مؤسسة تعليمية"
+        }
+      ],
+      "synonyms": [
+        "متعلم",
+        "دارس"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0060",
+      "word": "طاقة",
+      "root": "ط و ق",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مقدرة نظام على إحداث شغل أو تغيير"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0066",
+      "word": "طقس",
+      "root": "ط ق س",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "حالة الجو في مكان وزمن معينين"
+        }
+      ],
+      "synonyms": [
+        "جو"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
