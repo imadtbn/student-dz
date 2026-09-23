@@ -1,0 +1,61 @@
+{
+  "letter": "ع",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0001",
+      "word": "علم",
+      "root": "ع ل م",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إدراك الشيء ومعرفته"
+        }
+      ],
+      "synonyms": [
+        "معرفة",
+        "دراية"
+      ],
+      "antonyms": [
+        "جهل"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0052",
+      "word": "عدد",
+      "root": "ع د د",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مقدار يعبّر عن كمية أو ترتيب"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0100",
+      "word": "عدالة",
+      "root": "ع د ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إعطاء كل ذي حق حقه وتطبيق معايير الإنصاف"
+        }
+      ],
+      "synonyms": [
+        "إنصاف"
+      ],
+      "antonyms": [
+        "ظلم"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
