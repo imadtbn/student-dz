@@ -1,0 +1,185 @@
+{
+  "letter": "ا",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0025",
+      "word": "إعراب",
+      "root": "ع ر ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "بيان موقع الكلمة وحالتها النحوية في الجملة"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0044",
+      "word": "إبداع",
+      "root": "ب د ع",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إنتاج أفكار أو أعمال جديدة ومتميزة"
+        }
+      ],
+      "synonyms": [
+        "ابتكار"
+      ],
+      "antonyms": [
+        "تقليد"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0045",
+      "word": "ابتكار",
+      "root": "ب ك ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إحداث شيء أو طريقة جديدة ذات فائدة"
+        }
+      ],
+      "synonyms": [
+        "اختراع",
+        "إبداع"
+      ],
+      "antonyms": [
+        "تقليد"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0058",
+      "word": "أحياء",
+      "root": "ح ي ي",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يدرس الكائنات الحية وبنيتها ووظائفها"
+        }
+      ],
+      "synonyms": [
+        "علم الحياة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0067",
+      "word": "اقتصاد",
+      "root": "ق ص د",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم أو نظام يتعلق بإنتاج الموارد وتوزيعها واستهلاكها"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0075",
+      "word": "انتباه",
+      "root": "ن ب ه",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تركيز الوعي على أمر معين"
+        }
+      ],
+      "synonyms": [
+        "تركيز"
+      ],
+      "antonyms": [
+        "غفلة"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0078",
+      "word": "امتحان",
+      "root": "م ح ن",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "اختبار لقياس المعرفة أو المهارة"
+        }
+      ],
+      "synonyms": [
+        "اختبار"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0081",
+      "word": "اجتهاد",
+      "root": "ج ه د",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "بذل الوسع والجهد في العمل أو التحصيل"
+        }
+      ],
+      "synonyms": [
+        "مثابرة",
+        "جد"
+      ],
+      "antonyms": [
+        "كسل"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0091",
+      "word": "اقتباس",
+      "root": "ق ب س",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "نقل قول أو فكرة من مصدر آخر مع الإشارة إليه"
+        }
+      ],
+      "synonyms": [
+        "استشهاد"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0093",
+      "word": "أمانة",
+      "root": "أ م ن",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الصدق وحفظ الحقوق وأداء ما اؤتمن عليه الشخص"
+        }
+      ],
+      "synonyms": [
+        "نزاهة"
+      ],
+      "antonyms": [
+        "خيانة"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
