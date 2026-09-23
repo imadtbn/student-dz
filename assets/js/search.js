@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!searchInput || !searchResults) return;
 
     const tools = [
+        ['القاموس العربي العربي','معاني الكلمات والجذور والمرادفات والأضداد','tools/arabic-dictionary.html','أداة'],
         ['حاسبة الميزانية','احسب مصاريفك الشهرية والسنوية','tools/budget-calculator.html','أداة'],
         ['أدوات النصوص','عداد الكلمات وتنسيق النصوص للبحوث','tools/text-tools.html','أداة'],
         ['حاسبة المعدل','احسب معدل السداسي بدقة','tools/average-calculator.html','أداة'],
