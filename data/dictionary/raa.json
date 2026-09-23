@@ -1,0 +1,22 @@
+{
+  "letter": "ر",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0051",
+      "word": "رياضيات",
+      "root": "ر ي ض",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يدرس الأعداد والأشكال والعلاقات والبنى"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
