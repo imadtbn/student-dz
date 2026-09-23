@@ -1,0 +1,91 @@
+{
+  "letter": "ف",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0030",
+      "word": "فرضية",
+      "root": "ف ر ض",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تفسير أو توقع أولي قابل للفحص والاختبار"
+        }
+      ],
+      "synonyms": [
+        "افتراض"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0043",
+      "word": "فكرة",
+      "root": "ف ك ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تصور ذهني يمكن صياغته أو تطويره"
+        }
+      ],
+      "synonyms": [
+        "خاطر",
+        "تصور"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0056",
+      "word": "فيزياء",
+      "root": null,
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يدرس المادة والطاقة وتفاعلهما وقوانين الطبيعة"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0071",
+      "word": "فلسفة",
+      "root": null,
+      "pos": "",
+      "senses": [
+        {
+          "definition": "بحث عقلي منظم في الوجود والمعرفة والقيم"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0080",
+      "word": "فشل",
+      "root": "ف ش ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "عدم تحقيق الغاية المطلوبة"
+        }
+      ],
+      "synonyms": [
+        "إخفاق"
+      ],
+      "antonyms": [
+        "نجاح"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
