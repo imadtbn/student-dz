@@ -1,0 +1,61 @@
+{
+  "letter": "خ",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0029",
+      "word": "خاتمة",
+      "root": "خ ت م",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الجزء الأخير الذي يلخص ما انتهى إليه النص"
+        }
+      ],
+      "synonyms": [
+        "نهاية"
+      ],
+      "antonyms": [
+        "مقدمة"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0059",
+      "word": "خلية",
+      "root": "خ ل و",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "أصغر وحدة بنائية ووظيفية أساسية في الكائنات الحية"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0085",
+      "word": "خطة",
+      "root": "خ ط ط",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مجموعة خطوات منظمة لتحقيق غاية"
+        }
+      ],
+      "synonyms": [
+        "برنامج",
+        "منهج"
+      ],
+      "antonyms": [
+        "ارتجال"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
