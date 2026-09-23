@@ -1,0 +1,78 @@
+{
+  "letter": "ب",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0005",
+      "word": "بحث",
+      "root": "ب ح ث",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تقصٍ منظم للوصول إلى معلومات أو نتائج"
+        }
+      ],
+      "synonyms": [
+        "دراسة",
+        "تحرٍ"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0026",
+      "word": "بلاغة",
+      "root": "ب ل غ",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "حسن التعبير عن المعنى بوضوح وتأثير"
+        }
+      ],
+      "synonyms": [
+        "فصاحة"
+      ],
+      "antonyms": [
+        "ركاكة"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0048",
+      "word": "بيانات",
+      "root": "ب ي ن",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "معطيات يمكن جمعها وتنظيمها وتحليلها"
+        }
+      ],
+      "synonyms": [
+        "معطيات"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0064",
+      "word": "بيئة",
+      "root": "ب و أ",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "المحيط الذي تعيش فيه الكائنات وتتفاعل معه"
+        }
+      ],
+      "synonyms": [
+        "محيط"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
