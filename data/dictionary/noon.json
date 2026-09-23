@@ -1,0 +1,98 @@
+{
+  "letter": "ن",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0023",
+      "word": "نحو",
+      "root": "ن ح و",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يدرس أحوال أواخر الكلمات وعلاقاتها في الجملة"
+        }
+      ],
+      "synonyms": [
+        "إعراب"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0032",
+      "word": "نتيجة",
+      "root": "ن ت ج",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "ما يترتب على عمل أو بحث أو سبب"
+        }
+      ],
+      "synonyms": [
+        "حصيلة"
+      ],
+      "antonyms": [
+        "سبب"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0036",
+      "word": "نظرية",
+      "root": "ن ظ ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "منظومة من الأفكار تفسر ظواهر ضمن مجال محدد"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0079",
+      "word": "نجاح",
+      "root": "ن ج ح",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تحقيق هدف أو بلوغ نتيجة مرغوبة"
+        }
+      ],
+      "synonyms": [
+        "تفوق",
+        "فوز"
+      ],
+      "antonyms": [
+        "إخفاق"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0094",
+      "word": "نزاهة",
+      "root": "ن ز ه",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الابتعاد عن الغش والانحياز غير المشروع"
+        }
+      ],
+      "synonyms": [
+        "أمانة",
+        "استقامة"
+      ],
+      "antonyms": [
+        "فساد"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
