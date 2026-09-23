@@ -1,0 +1,26 @@
+{
+  "letter": "ض",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0018",
+      "word": "ضد",
+      "root": "ض د د",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "ما يخالف الشيء أو يقابله في المعنى"
+        }
+      ],
+      "synonyms": [
+        "نقيض"
+      ],
+      "antonyms": [
+        "مماثل"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
