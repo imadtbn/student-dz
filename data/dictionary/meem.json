@@ -1,0 +1,479 @@
+{
+  "letter": "م",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0004",
+      "word": "معرفة",
+      "root": "ع ر ف",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إدراك شيء بعد التعرف عليه أو الاطلاع عليه"
+        }
+      ],
+      "synonyms": [
+        "علم",
+        "دراية"
+      ],
+      "antonyms": [
+        "جهل"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0009",
+      "word": "مدرسة",
+      "root": "د ر س",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مؤسسة يُقدَّم فيها التعليم"
+        }
+      ],
+      "synonyms": [
+        "معهد"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0010",
+      "word": "معهد",
+      "root": "ع ه د",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مؤسسة متخصصة في التعليم أو التدريب أو البحث"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0015",
+      "word": "معجم",
+      "root": "ع ج م",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مورد يجمع الكلمات ويشرح معانيها"
+        }
+      ],
+      "synonyms": [
+        "قاموس"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0017",
+      "word": "مرادف",
+      "root": "ر د ف",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "لفظ يقترب معناه من معنى لفظ آخر"
+        }
+      ],
+      "synonyms": [
+        "نظير"
+      ],
+      "antonyms": [
+        "مضاد"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0020",
+      "word": "مفردة",
+      "root": "ف ر د",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "كلمة واحدة من كلمات اللغة"
+        }
+      ],
+      "synonyms": [
+        "كلمة",
+        "لفظ"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0021",
+      "word": "معنى",
+      "root": "ع ن ي",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الدلالة التي يحملها اللفظ أو التعبير"
+        }
+      ],
+      "synonyms": [
+        "دلالة",
+        "مفهوم"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0027",
+      "word": "مقال",
+      "root": "ق و ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "نص مكتوب يعالج فكرة أو موضوعًا محددًا"
+        }
+      ],
+      "synonyms": [
+        "موضوع"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0028",
+      "word": "مقدمة",
+      "root": "ق د م",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الجزء الأول الذي يمهد لموضوع أو بحث"
+        }
+      ],
+      "synonyms": [
+        "تمهيد"
+      ],
+      "antonyms": [
+        "خاتمة"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0031",
+      "word": "منهج",
+      "root": "ن ه ج",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "طريقة منظمة تتبع لبلوغ هدف أو دراسة موضوع"
+        }
+      ],
+      "synonyms": [
+        "طريقة",
+        "أسلوب"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0037",
+      "word": "ملاحظة",
+      "root": "ل ح ظ",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "انتباه منظم إلى ظاهرة أو تفاصيلها"
+        }
+      ],
+      "synonyms": [
+        "رصد"
+      ],
+      "antonyms": [
+        "غفلة"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0041",
+      "word": "مشكلة",
+      "root": "ش ك ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مسألة تحتاج إلى حل أو تفسير"
+        }
+      ],
+      "synonyms": [
+        "إشكال",
+        "معضلة"
+      ],
+      "antonyms": [
+        "حل"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0049",
+      "word": "معلومات",
+      "root": "ع ل م",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "حقائق أو معارف جرى تنظيمها أو بيانها"
+        }
+      ],
+      "synonyms": [
+        "معطيات"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0054",
+      "word": "معادلة",
+      "root": "ع د ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علاقة رياضية تقوم على تساوي تعبيرين"
+        }
+      ],
+      "synonyms": [
+        "مساواة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0061",
+      "word": "مادة",
+      "root": "م د د",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "ما له كتلة ويشغل حيزًا في الاستعمال الفيزيائي"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0063",
+      "word": "مكان",
+      "root": "م ك ن",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "موضع يشغله شيء أو يقع فيه حدث"
+        }
+      ],
+      "synonyms": [
+        "موضع"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0065",
+      "word": "مناخ",
+      "root": "ن و خ",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "متوسط أحوال الطقس وأنماطها في منطقة خلال فترة طويلة"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0068",
+      "word": "مجتمع",
+      "root": "ج م ع",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مجموعة من الناس تربطهم علاقات ونظم مشتركة"
+        }
+      ],
+      "synonyms": [
+        "جماعة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0072",
+      "word": "منطق",
+      "root": "ن ط ق",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "علم يدرس قواعد الاستدلال الصحيح"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0077",
+      "word": "مراجعة",
+      "root": "ر ج ع",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إعادة النظر في المعلومات أو النصوص للتثبيت أو التصحيح"
+        }
+      ],
+      "synonyms": [
+        "تدقيق"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0082",
+      "word": "مثابرة",
+      "root": "ث ب ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "الاستمرار في الجهد رغم الصعوبات"
+        }
+      ],
+      "synonyms": [
+        "مواظبة",
+        "إصرار"
+      ],
+      "antonyms": [
+        "استسلام"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0086",
+      "word": "مشروع",
+      "root": "ش ر ع",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "عمل منظم يهدف إلى إنتاج نتيجة محددة"
+        }
+      ],
+      "synonyms": [
+        "عمل",
+        "مبادرة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0088",
+      "word": "مذكرة",
+      "root": "ذ ك ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "عمل أكاديمي مكتوب يعالج موضوعًا بحثيًا"
+        }
+      ],
+      "synonyms": [
+        "بحث جامعي"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0089",
+      "word": "مرجع",
+      "root": "ر ج ع",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "مصدر يُرجع إليه للتحقق من المعلومات أو الاستشهاد بها"
+        }
+      ],
+      "synonyms": [
+        "مصدر"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0090",
+      "word": "مصدر",
+      "root": "ص د ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "أصل تُؤخذ منه المعلومات أو المواد"
+        }
+      ],
+      "synonyms": [
+        "مرجع"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0098",
+      "word": "مسؤولية",
+      "root": "س أ ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تحمل نتائج الأفعال والقيام بالواجبات"
+        }
+      ],
+      "synonyms": [
+        "التزام"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0099",
+      "word": "مساواة",
+      "root": "س و ي",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "تكافؤ الأشخاص في الحقوق أو المعاملة وفق معيار محدد"
+        }
+      ],
+      "synonyms": [
+        "تكافؤ"
+      ],
+      "antonyms": [
+        "تمييز"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
