@@ -1,0 +1,80 @@
+{
+  "letter": "ح",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0042",
+      "word": "حل",
+      "root": "ح ل ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "طريقة أو نتيجة تزيل صعوبة أو تجيب عن مسألة"
+        }
+      ],
+      "synonyms": [
+        "معالجة"
+      ],
+      "antonyms": [
+        "مشكلة"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0047",
+      "word": "حاسوب",
+      "root": "ح س ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "جهاز إلكتروني يعالج البيانات وفق تعليمات"
+        }
+      ],
+      "synonyms": [
+        "كمبيوتر"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0053",
+      "word": "حساب",
+      "root": "ح س ب",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "إجراء العمليات على الأعداد أو تقدير المقادير"
+        }
+      ],
+      "synonyms": [
+        "عدّ",
+        "تقدير"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0097",
+      "word": "حرية",
+      "root": "ح ر ر",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "قدرة الفرد على الاختيار والتصرف ضمن الحقوق والقوانين"
+        }
+      ],
+      "synonyms": [
+        "استقلال"
+      ],
+      "antonyms": [
+        "قيد"
+      ],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
