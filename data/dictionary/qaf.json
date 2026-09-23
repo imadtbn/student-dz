@@ -1,0 +1,41 @@
+{
+  "letter": "ق",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0012",
+      "word": "قراءة",
+      "root": "ق ر أ",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "فهم الكلام المكتوب بالنظر إليه"
+        }
+      ],
+      "synonyms": [
+        "مطالعة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0016",
+      "word": "قاموس",
+      "root": "ق م س",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "كتاب أو مورد يشرح مفردات اللغة ومعانيها"
+        }
+      ],
+      "synonyms": [
+        "معجم"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
