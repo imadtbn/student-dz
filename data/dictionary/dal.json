@@ -1,0 +1,43 @@
+{
+  "letter": "د",
+  "license": "CC0-1.0 (original starter glosses)",
+  "editorial_status": "draft pending lexicographer review",
+  "entries": [
+    {
+      "id": "sdz-0006",
+      "word": "دراسة",
+      "root": "د ر س",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "قراءة موضوع وتحليله بقصد فهمه أو تعلمه"
+        }
+      ],
+      "synonyms": [
+        "بحث",
+        "تعلم"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    },
+    {
+      "id": "sdz-0038",
+      "word": "دليل",
+      "root": "د ل ل",
+      "pos": "",
+      "senses": [
+        {
+          "definition": "ما يُستدل به لإثبات أمر أو بيان صحته"
+        }
+      ],
+      "synonyms": [
+        "برهان",
+        "حجة"
+      ],
+      "antonyms": [],
+      "source": "student-dz-original",
+      "reviewed": false
+    }
+  ]
+}
