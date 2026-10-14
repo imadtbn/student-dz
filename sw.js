@@ -1,5 +1,5 @@
 // Student DZ service worker: fresh navigation/data with fast static assets and resilient offline fallback.
-const CACHE_NAME = 'student-dz-runtime-v2-dictionary';
+const CACHE_NAME = 'student-dz-runtime-v3-footer-icons';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
