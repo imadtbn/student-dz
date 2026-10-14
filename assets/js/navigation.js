@@ -7,6 +7,49 @@ if (!document.querySelector('.mobile-menu-btn')) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Enhance existing footer links centrally: keep labels, destinations and layout intact.
+    const footerIconPaths = {
+        'index.html': '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M9 22V12h6v10"/>',
+        'categories/tools.html': '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6.6 6.6a2 2 0 0 0 2.8 2.8l6.6-6.6a4 4 0 0 0 5.4-5.4l-2.7 2.7-2.8-2.8 2.7-2.7Z"/>',
+        'universities/index.html': '<path d="M3 22h18M6 18v-7m4 7v-7m4 7v-7m4 7v-7M2 10h20L12 3 2 10ZM4 22v-4m16 4v-4"/>',
+        'ecoles/index.html': '<path d="M22 10v6M2 10l10-6 10 6-10 6-10-6ZM6 13v5c3 2.5 9 2.5 12 0v-5"/>',
+        'platforms/index.html': '<rect x="2" y="3" width="20" height="15" rx="2"/><path d="M8 21h8m-4-3v3M2 8h20"/>',
+        'pages/about.html': '<circle cx="12" cy="12" r="10"/><path d="M12 11v6m0-10h.01"/>',
+        'pages/privacy.html': '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/>',
+        'pages/contact.html': '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>',
+        'pages/guides.html': '<path d="M12 7v14M3 18V5a2 2 0 0 1 2-2h3a5 5 0 0 1 4 2 5 5 0 0 1 4-2h3a2 2 0 0 1 2 2v13h-5a5 5 0 0 0-4 2 5 5 0 0 0-4-2H3Z"/>',
+        'pages/favorites.html': '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',
+        'categories/student-life.html': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+        'tools/maps.html': '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
+        'transport/index.html': '<rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 15h.01M16 15h.01M8 18v3m8-3v3"/>',
+        'residences/index.html': '<path d="M3 20v-9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9M3 15h18M3 20v2m18-2v2M7 9V6h10v3"/>'
+    };
+    const genericFooterIcon = '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7.1-7.1l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7"/>';
+    const externalFooterIcon = '<path d="M14 3h7v7m0-7-10 10"/><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/>';
+    const footerRoutes = Object.keys(footerIconPaths).sort((a, b) => b.length - a.length);
+    document.querySelectorAll('.site-footer .footer-links a[href]').forEach(link => {
+        if (link.querySelector('.footer-icon')) return;
+        let url;
+        try { url = new URL(link.getAttribute('href'), document.baseURI); }
+        catch { return; }
+        const local = url.origin === location.origin;
+        const route = local && footerRoutes.find(item => url.pathname.endsWith('/' + item));
+        const isHome = local && (url.pathname === '/student-dz/' || url.pathname === '/student-dz/index.html');
+        const iconPaths = route ? footerIconPaths[route] : isHome ? footerIconPaths['index.html'] : local ? genericFooterIcon : externalFooterIcon;
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.classList.add('footer-icon');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '1.9');
+        svg.setAttribute('stroke-linecap', 'round');
+        svg.setAttribute('stroke-linejoin', 'round');
+        svg.setAttribute('aria-hidden', 'true');
+        svg.setAttribute('focusable', 'false');
+        svg.innerHTML = iconPaths; // Paths are hard-coded, never built from link text or external input.
+        link.prepend(svg);
+    });
+
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
     if (!mainNav) return;
