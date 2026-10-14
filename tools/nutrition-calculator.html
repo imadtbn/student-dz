@@ -1,56 +1,27 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حاسبة الاحتياجات اليومية من السعرات والمغذيات الكبرى وتوزيع الوجبات</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Cairo & Tajawal -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        cairo: ['Cairo', 'sans-serif'],
-                        tajawal: ['Tajawal', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            900: '#064e3b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>حاسبة التغذية والوجبات الذكية | Student DZ</title><meta name="description" content="احسب سعراتك والمغذيات الكبرى ووزع وجباتك اليومية، مع حساب BMR وTDEE ومؤشر الكتلة للبالغين."><meta name="robots" content="index,follow"><meta name="theme-color" content="#007A5E"><link rel="canonical" href="https://imadtbn.github.io/student-dz/tools/nutrition-calculator.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Student DZ | مساعد الطالب الجزائري"><meta property="og:locale" content="ar_DZ"><meta property="og:url" content="https://imadtbn.github.io/student-dz/tools/nutrition-calculator.html"><meta property="og:title" content="حاسبة التغذية والوجبات الذكية | Student DZ"><meta property="og:description" content="احسب سعراتك والمغذيات الكبرى ووزع وجباتك اليومية، مع حساب BMR وTDEE ومؤشر الكتلة للبالغين."><meta property="og:image" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="حاسبة التغذية والوجبات الذكية | Student DZ"><meta name="twitter:description" content="احسب سعراتك والمغذيات الكبرى ووزع وجباتك اليومية، مع حساب BMR وTDEE ومؤشر الكتلة للبالغين."><meta name="twitter:image" content="https://imadtbn.github.io/student-dz/assets/images/social-preview.png">
+<link rel="icon" href="../assets/images/icon.png"><link rel="apple-touch-icon" href="../assets/images/icon-192.png"><link rel="manifest" href="../manifest.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css"><link rel="stylesheet" href="../assets/css/responsive.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="../assets/js/config.js"></script><script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={important:'#nutrition-app',corePlugins:{preflight:false},theme:{extend:{colors:{emerald:{50:'#eefaf6',100:'#d5f1e7',200:'#a9decf',300:'#7bcfb9',400:'#42b493',500:'#00A680',600:'#007A5E',700:'#005440',800:'#004a3b',900:'#003a2f',950:'#00281d'}}}}};</script>
+<style>
+        #nutrition-app {
             font-family: 'Cairo', sans-serif;
             background-color: #f8fafc;
             color: #1e293b;
         }
         
         /* Custom Range Slider Styling */
-        input[type=range] {
+        #nutrition-app input[type=range] {
             -webkit-appearance: none;
             width: 100%;
             background: transparent;
         }
-        input[type=range]::-webkit-slider-thumb {
+        #nutrition-app input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
             height: 20px;
             width: 20px;
@@ -62,26 +33,26 @@
             border: 2px solid #ffffff;
             transition: transform 0.15s ease;
         }
-        input[type=range]::-webkit-slider-thumb:hover {
+        #nutrition-app input[type=range]::-webkit-slider-thumb:hover {
             transform: scale(1.15);
         }
-        input[type=range]::-webkit-slider-runnable-track {
+        #nutrition-app input[type=range]::-webkit-slider-runnable-track {
             width: 100%;
             height: 8px;
             cursor: pointer;
             background: #e2e8f0;
             border-radius: 999px;
         }
-        input[type=range]:focus {
+        #nutrition-app input[type=range]:focus {
             outline: none;
         }
 
         /* Print Styles */
         @media print {
-            body {
+            #nutrition-app {
                 background-color: #ffffff;
             }
-            .no-print {
+            #nutrition-app .no-print {
                 display: none !important;
             }
             .print-full {
@@ -101,47 +72,63 @@
         }
         
         /* Donut Chart Animation */
-        .donut-segment {
+        #nutrition-app .donut-segment {
             transition: stroke-dasharray 0.6s ease, stroke-dashoffset 0.6s ease;
         }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
-
-    <!-- Toast Notification -->
+    
+.nutrition-page{min-width:0;padding-block:18px 48px}
+.nutrition-toolbar{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin:14px 0}
+.nutrition-toolbar .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+#nutrition-app{font-family:var(--font-family);background:var(--bg-main);color:var(--text-main);min-width:0;isolation:isolate}
+#nutrition-app .bg-white{background-color:var(--bg-card)}
+#nutrition-app .bg-slate-50,#nutrition-app .bg-slate-100{background-color:var(--bg-main)}
+#nutrition-app .text-slate-800,#nutrition-app .text-slate-700{color:var(--text-main)}
+#nutrition-app .text-slate-400,#nutrition-app .text-slate-500,#nutrition-app .text-slate-600{color:var(--text-muted)}
+#nutrition-app .border-slate-100,#nutrition-app .border-slate-200{border-color:var(--border-color)}
+#nutrition-app button{font-family:inherit;min-width:0}
+#nutrition-app #food-modal{z-index:1500}#nutrition-app #toast{z-index:1600}
+#nutrition-app .nutrition-note{padding:14px;margin:14px 0;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-card);color:var(--text-muted);font-size:.9rem}
+[data-theme=dark] #nutrition-app .bg-slate-900,[data-theme=dark] #nutrition-app .bg-slate-800{background-color:#13352d}
+@media(max-width:480px){.nutrition-page{padding-inline:12px}.nutrition-toolbar{display:grid;grid-template-columns:1fr 1fr}.nutrition-toolbar .btn{padding:10px 5px;font-size:.83rem}#nutrition-app .p-6{padding:16px}#nutrition-app .p-4{padding:12px}#nutrition-app .goal-btn,#nutrition-app .int-btn,#nutrition-app .meals-btn{padding:8px 3px;font-size:.72rem;overflow-wrap:anywhere}#nutrition-app .text-2xl{font-size:1.25rem}}
+@media print{.site-header,.site-footer,.page-breadcrumb,.page-intro,.nutrition-toolbar,#nutrition-app .no-print,#nutrition-app #food-modal,#nutrition-app #toast{display:none!important}.nutrition-page{max-width:none;width:100%;padding:0}#nutrition-app .print-full{width:100%;max-width:100%}#nutrition-app .rounded-3xl{break-inside:avoid}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"حاسبة التغذية والوجبات الذكية","url":"https://imadtbn.github.io/student-dz/tools/nutrition-calculator.html","applicationCategory":"HealthApplication","operatingSystem":"Web Browser","inLanguage":"ar-DZ","isAccessibleForFree":true}</script>
+</head><body>
+<header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/icon.png" alt="Student DZ Logo" width="32" height="32" style="border-radius:8px"> Student DZ
+      </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">الرئيسية</a>
+                <a href="../universities/index.html" class="nav-link">جامعات</a>
+                <a href="../ecoles/index.html" class="nav-link">مدارس ومعاهد</a>
+                <a href="../residences/index.html" class="nav-link">إقامات</a>
+                <a href="../transport/index.html" class="nav-link">نقل</a>
+                <a href="../tools/maps.html" class="nav-link">خريطة</a>
+                <a href="../categories/student-life.html" class="nav-link">حياة جامعية</a>
+                <a href="../platforms/index.html" class="nav-link">منصات</a>
+                <a href="../pages/favorites.html" class="nav-link">مفضلة</a>
+            </nav>
+            
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="menuToggle" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="mainNav">☰</button>
+      </div>
+    </div>
+  </header>
+<main class="container nutrition-page">
+<nav class="page-breadcrumb" aria-label="مسار التنقل"><a href="../index.html">الرئيسية</a><span aria-hidden="true">›</span><a href="../categories/tools.html">الأدوات</a><span aria-hidden="true">›</span><span aria-current="page">حاسبة التغذية والوجبات الذكية</span></nav>
+<section class="page-intro" aria-labelledby="nutrition-title"><div class="page-intro-icon" aria-hidden="true"><i class="fa-solid fa-apple-whole"></i></div><h1 id="nutrition-title">حاسبة التغذية والوجبات الذكية</h1><p>احسب سعراتك والمغذيات الكبرى، واختر هدفك الغذائي ووزع وجباتك.</p></section>
+<div class="nutrition-toolbar"><button class="btn" type="button" onclick="openFoodModal()"><i class="fa-solid fa-utensils"></i> دليل المصادر الغذائية</button><button class="btn btn-outline" type="button" onclick="resetDefaults()"><i class="fa-solid fa-rotate-right"></i> إعادة الضبط</button></div>
+<div id="nutrition-app" class="w-full min-w-0"><!-- Toast Notification -->
     <div id="toast" class="fixed bottom-5 left-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3">
         <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
         <span id="toast-msg" class="font-medium text-sm">تم نسخ الخطة بنجاح!</span>
     </div>
 
-    <!-- Header / Navbar -->
-    <header class="bg-gradient-to-l from-emerald-800 via-teal-700 to-emerald-600 text-white shadow-lg no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-inner">
-                        <i class="fa-solid fa-apple-whole text-3xl text-emerald-200"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">حاسبة التغذية والوجبات الذكية</h1>
-                        <p class="text-emerald-100 text-sm sm:text-base mt-0.5 font-tajawal">احسب سعراتك، المغذيات الكبرى (البروتين، الكارب، الدهون) ووزع وجباتك بدقة علمية</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-2.5 self-start md:self-auto">
-                    <button onclick="openFoodModal()" class="px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-semibold text-sm transition flex items-center gap-2 border border-white/20">
-                        <i class="fa-solid fa-utensils text-emerald-200"></i>
-                        <span>دليل المصادر الغذائية</span>
-                    </button>
-                    <button onclick="resetDefaults()" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition border border-white/10" title="إعادة ضبط">
-                        <i class="fa-solid fa-rotate-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <!-- Main Content Container -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             <!-- RIGHT COLUMN: USER INPUT FORM (5 Cols on Desktop) -->
@@ -174,11 +161,11 @@
                         <div class="flex justify-between items-center mb-2">
                             <label for="age-input" class="text-sm font-bold text-slate-700">العمر</label>
                             <div class="flex items-center gap-1 bg-slate-100 px-3 py-1 rounded-xl border border-slate-200">
-                                <input type="number" id="age-input" min="14" max="90" value="28" oninput="syncInput('age', this.value)" class="w-12 text-center font-bold text-emerald-700 bg-transparent focus:outline-none">
+                                <input type="number" id="age-input" min="18" max="90" value="28" onchange="syncInput('age', this.value)" class="w-12 text-center font-bold text-emerald-700 bg-transparent focus:outline-none">
                                 <span class="text-xs font-semibold text-slate-500">سنة</span>
                             </div>
                         </div>
-                        <input type="range" id="age-slider" min="14" max="90" value="28" oninput="syncInput('age', this.value)">
+                        <input type="range" id="age-slider" min="18" max="90" value="28" oninput="syncInput('age', this.value)">
                     </div>
 
                     <!-- Weight Slider & Input -->
@@ -186,7 +173,7 @@
                         <div class="flex justify-between items-center mb-2">
                             <label for="weight-input" class="text-sm font-bold text-slate-700">الوزن الحالي</label>
                             <div class="flex items-center gap-1 bg-slate-100 px-3 py-1 rounded-xl border border-slate-200">
-                                <input type="number" id="weight-input" min="35" max="220" step="0.5" value="75" oninput="syncInput('weight', this.value)" class="w-16 text-center font-bold text-emerald-700 bg-transparent focus:outline-none">
+                                <input type="number" id="weight-input" min="35" max="220" step="0.5" value="75" onchange="syncInput('weight', this.value)" class="w-16 text-center font-bold text-emerald-700 bg-transparent focus:outline-none">
                                 <span class="text-xs font-semibold text-slate-500">كجم</span>
                             </div>
                         </div>
@@ -198,7 +185,7 @@
                         <div class="flex justify-between items-center mb-2">
                             <label for="height-input" class="text-sm font-bold text-slate-700">الطول</label>
                             <div class="flex items-center gap-1 bg-slate-100 px-3 py-1 rounded-xl border border-slate-200">
-                                <input type="number" id="height-input" min="120" max="230" value="175" oninput="syncInput('height', this.value)" class="w-14 text-center font-bold text-emerald-700 bg-transparent focus:outline-none">
+                                <input type="number" id="height-input" min="120" max="230" value="175" onchange="syncInput('height', this.value)" class="w-14 text-center font-bold text-emerald-700 bg-transparent focus:outline-none">
                                 <span class="text-xs font-semibold text-slate-500">سم</span>
                             </div>
                         </div>
@@ -573,7 +560,7 @@
                                 <i class="fa-solid fa-clock text-emerald-600"></i>
                                 <span>خطة توزيع الوجبات اليومية المقترحة</span>
                             </h3>
-                            <p class="text-xs text-slate-500 mt-0.5">توزيع ذكي للسعرات والماكروز على مدار اليوم لتحقيق أفضل امتصاص وطاقة</p>
+                            <p class="text-xs text-slate-500 mt-0.5">توزيع ذكي للسعرات والماكروز على مدار اليوم كتوزيع إرشادي يمكن تغييره حسب يومك</p>
                         </div>
                         <span id="meals-count-badge" class="self-start sm:self-auto px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
                             4 وجبات يومياً
@@ -586,7 +573,7 @@
                     </div>
                 </div>
 
-                <!-- Smart Personalized Nutritional Tips -->
+                <p class="nutrition-note" role="note">الحسابات تقديرية للبالغين 18 سنة فما فوق وليست نصيحة طبية شخصية. في حالات الحمل والرضاعة أو المرض المزمن أو النظام الغذائي العلاجي، استشر مختصاً.</p><!-- Smart Personalized Nutritional Tips -->
                 <div class="bg-emerald-50/70 rounded-3xl border border-emerald-200/80 p-6">
                     <h3 class="text-base font-bold text-emerald-950 flex items-center gap-2 mb-3">
                         <i class="fa-solid fa-lightbulb text-amber-500 text-lg"></i>
@@ -599,10 +586,10 @@
 
             </div>
         </div>
-    </main>
+    </div>
 
     <!-- Food Sources Modal (دليل المصادر الغذائية) -->
-    <div id="food-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 no-print">
+    <div id="food-modal" role="dialog" aria-modal="true" aria-labelledby="food-modal-heading" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 no-print">
         <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
             <!-- Modal Header -->
             <div class="p-5 sm:p-6 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
@@ -611,11 +598,11 @@
                         <i class="fa-solid fa-basket-shopping"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-slate-800">دليل المصادر الغذائية الصحية</h3>
-                        <p class="text-xs text-slate-500">أفضل الأطعمة الغنية بالبروتين، الكربوهيدرات المعقدة، والدهون الصحية (لكل 100 جرام)</p>
+                        <h3 class="text-lg font-bold text-slate-800" id="food-modal-heading">دليل المصادر الغذائية الصحية</h3>
+                        <p class="text-xs text-slate-500">قيم تقريبية تختلف بحسب حجم الحصة وطريقة التحضير</p>
                     </div>
                 </div>
-                <button onclick="closeFoodModal()" class="w-9 h-9 rounded-xl bg-slate-200/70 hover:bg-slate-300 text-slate-600 flex items-center justify-center transition">
+                <button type="button" id="food-modal-close" aria-label="إغلاق الدليل" onclick="closeFoodModal()" class="w-9 h-9 rounded-xl bg-slate-200/70 hover:bg-slate-300 text-slate-600 flex items-center justify-center transition">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
@@ -734,15 +721,40 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200/80 py-5 mt-12 no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
-            <div>تعتمد الحسابات على معادلة <strong class="text-slate-700">Mifflin-St Jeor</strong> المعتمدة علمياً لحساب معدل الأيض الأساسي.</div>
-            <div>صُمم ليكون دليلك التفاعلي لحياة صحية متوازنة</div>
+    </div>
+</main>
+<footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><img src="../assets/images/icon.png" alt="Student DZ Logo" width="24" height="24"
+                            style="border-radius:4px;vertical-align:middle"> Student DZ</h3>
+                    <p>المنصة الرقمية الشاملة للطالب الجزائري. رفيقك من التسجيل إلى التخرج.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="../categories/tools.html">الأدوات</a></li>
+                        <li><a href="../universities/index.html">الجامعات</a></li>
+                        <li><a href="../ecoles/index.html">المدارس والمعاهد</a></li>
+                        <li><a href="../platforms/index.html">المنصات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>قانوني</h3>
+                    <ul class="footer-links">
+                        <li><a href="../pages/about.html">عن المنصة</a></li>
+                        <li><a href="../pages/privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="../pages/contact.html">اتصل بنا</a></li>
+                        <li><a href="../pages/guides.html">دليل المستخدم</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; <span id="currentYear"></span> Student DZ. جميع الحقوق محفوظة.</div>
         </div>
     </footer>
-
-    <!-- Application Logic -->
+<script src="../assets/js/theme.js"></script><script src="../assets/js/navigation.js"></script><script>document.getElementById('currentYear').textContent=new Date().getFullYear();</script>
+<!-- Application Logic -->
     <script>
         // --- State Management ---
         const state = {
@@ -788,14 +800,8 @@
         };
 
         // --- Input Synchronization Functions ---
-        function syncInput(field, value) {
-            const numVal = parseFloat(value);
-            if (isNaN(numVal)) return;
-            state[field] = numVal;
-            document.getElementById(`${field}-input`).value = numVal;
-            document.getElementById(`${field}-slider`).value = numVal;
-            calculateAll();
-        }
+        function syncInput(field,value){const input=document.getElementById(field+'-input'),slider=document.getElementById(field+'-slider');const num=Number(value);if(value===''||!Number.isFinite(num))return;const safe=Math.min(Number(input.max),Math.max(Number(input.min),num));state[field]=safe;input.value=safe;slider.value=safe;calculateAll();}
+
 
         function setGender(gender) {
             state.gender = gender;
@@ -910,38 +916,8 @@
             calculateAll();
         }
 
-        function updateCustomMacros(changedKey) {
-            let p = parseInt(document.getElementById('slider-p').value);
-            let c = parseInt(document.getElementById('slider-c').value);
-            let f = parseInt(document.getElementById('slider-f').value);
+        function updateCustomMacros(key){const limits={p:[10,70],c:[5,75],f:[10,75]};const s=Object.fromEntries(['p','c','f'].map(k=>[k,document.getElementById('slider-'+k)]));const v=Object.fromEntries(['p','c','f'].map(k=>[k,Number(s[k].value)]));const [a,b]=['p','c','f'].filter(k=>k!==key),left=100-v[key];v[a]=Math.max(limits[a][0],Math.min(limits[a][1],v[a],left-limits[b][0]));v[a]=Math.max(v[a],left-limits[b][1]);v[b]=left-v[a];for(const k of ['p','c','f'])s[k].value=v[k];state.macrosPct=v;updateCustomLabels();calculateAll();}
 
-            // Auto-balance remaining two sliders so sum = 100%
-            let total = p + c + f;
-            if (total !== 100) {
-                const diff = 100 - total;
-                if (changedKey === 'p') {
-                    c = Math.max(5, Math.min(75, c + diff));
-                } else if (changedKey === 'c') {
-                    f = Math.max(10, Math.min(75, f + diff));
-                } else {
-                    c = Math.max(5, Math.min(75, c + diff));
-                }
-                // Final correction if bounds hit
-                const secondTotal = p + c + f;
-                if (secondTotal !== 100) {
-                    if (changedKey !== 'p') p = 100 - (c + f);
-                    else f = 100 - (p + c);
-                }
-            }
-
-            document.getElementById('slider-p').value = p;
-            document.getElementById('slider-c').value = c;
-            document.getElementById('slider-f').value = f;
-
-            state.macrosPct = { p, c, f };
-            updateCustomLabels();
-            calculateAll();
-        }
 
         function updateCustomLabels() {
             document.getElementById('lbl-custom-p').textContent = `${state.macrosPct.p}%`;
@@ -1043,7 +1019,7 @@
 
             if (goal === 'cut') {
                 goalBadge.innerHTML = `<i class="fa-solid fa-arrow-trend-down"></i> خطة خسارة الوزن وتنشيف الدهون`;
-                diffText.textContent = `تتضمن عجزاً يومياً بمقدار ${calDiff} سعرة حرارية عن معدل ثباتك لحرق الدهون بأمان.`;
+                diffText.textContent = `تتضمن عجزاً يومياً بمقدار ${calDiff} سعرة حرارية عن معدل ثباتك لتحقيق الهدف بشكل تدريجي.`;
             } else if (goal === 'bulk') {
                 goalBadge.innerHTML = `<i class="fa-solid fa-arrow-trend-up"></i> خطة بناء العضلات وزيادة الوزن`;
                 diffText.textContent = `تتضمن فائضاً يومياً بمقدار ${calDiff} سعرة حرارية فوق معدل ثباتك لدعم الضخامة العضلية.`;
@@ -1166,20 +1142,15 @@
                 tips.push('الحفاظ على الوزن يتطلب توازناً مستمراً؛ راقب وزنك أسبوعياً في الصباح الباكر وعدّل سعراتك بـ 100 سعرة إذا لزم الأمر.');
             }
 
-            tips.push(`اشرب ما لا يقل عن ${waterLiters} لتر من الماء موزعة على مدار اليوم لتحسين عملية الأيض والهضم.`);
+            tips.push(`تقدير تقريبي للماء: ${waterLiters} لتر يومياً، ويختلف الاحتياج مع الطقس والنشاط والحالة الصحية.`);
             tips.push('يفضل الاعتماد على وزن الطعام بميزان المطبخ في الأسابيع الأولى لتكوين نظرة تقديرية دقيقة للحصص.');
 
             list.innerHTML = tips.map(t => `<li>${t}</li>`).join('');
         }
 
         // --- Utility & Modal Functions ---
-        function openFoodModal() {
-            document.getElementById('food-modal').classList.remove('hidden');
-        }
+        let modalFocus;function openFoodModal(){modalFocus=document.activeElement;document.getElementById('food-modal').classList.remove('hidden');document.getElementById('food-modal-close').focus();}function closeFoodModal(){document.getElementById('food-modal').classList.add('hidden');modalFocus?.focus();}document.addEventListener('keydown',e=>{const m=document.getElementById('food-modal');if(m.classList.contains('hidden'))return;if(e.key==='Escape'){closeFoodModal();return;}if(e.key==='Tab'){const els=[...m.querySelectorAll('button')];if(e.shiftKey&&document.activeElement===els[0]){e.preventDefault();els[els.length-1].focus();}else if(!e.shiftKey&&document.activeElement===els[els.length-1]){e.preventDefault();els[0].focus();}}});
 
-        function closeFoodModal() {
-            document.getElementById('food-modal').classList.add('hidden');
-        }
 
         function resetDefaults() {
             state.gender = 'male';
@@ -1206,30 +1177,8 @@
             showToast('تمت إعادة ضبط الحاسبة إلى القيم الافتراضية');
         }
 
-        function copySummary() {
-            const targetCals = document.getElementById('res-target-calories').textContent;
-            const pG = document.getElementById('res-p-grams').textContent;
-            const cG = document.getElementById('res-c-grams').textContent;
-            const fG = document.getElementById('res-f-grams').textContent;
-            const water = document.getElementById('res-water').textContent;
+        async function copySummary(){const get=id=>document.getElementById(id).textContent;const text=['خطتي الغذائية - Student DZ','السعرات: '+get('res-target-calories'),'البروتين: '+get('res-p-grams')+' غ','الكربوهيدرات: '+get('res-c-grams')+' غ','الدهون: '+get('res-f-grams')+' غ','تقدير الماء: '+get('res-water')+' لتر','الوجبات: '+state.mealsCount].join('\n');try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);else{const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();if(!ok)throw Error('copy');}showToast('تم نسخ الخطة الغذائية');}catch(e){showToast('تعذر النسخ؛ جرّب طباعة التقرير');}}
 
-            const summaryText = `📊 خطتي الغذائية اليومية:
-• السعرات المستهدفة: ${targetCals} سعرة حرارية
-• البروتين: ${pG} جرام (${state.macrosPct.p}%)
-• الكربوهيدرات: ${cG} جرام (${state.macrosPct.c}%)
-• الدهون الصحية: ${fG} جرام (${state.macrosPct.f}%)
-• احتياج الماء: ${water} لتر يومياً
-• عدد الوجبات: ${state.mealsCount} وجبات`;
-
-            const tempInput = document.createElement('textarea');
-            tempInput.value = summaryText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            showToast('تم نسخ ملخص خطتك الغذائية إلى الحافظة!');
-        }
 
         function showToast(message) {
             const toast = document.getElementById('toast');
@@ -1250,9 +1199,7 @@
         });
 
         // Initial Calculation on Page Load
-        window.onload = function() {
-            calculateAll();
-        };
+        document.addEventListener('DOMContentLoaded', calculateAll);
     </script>
-</body>
-</html>
+
+</body></html>
