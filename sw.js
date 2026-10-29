@@ -1,5 +1,5 @@
 // Student DZ service worker: fresh navigation/data with fast static assets and resilient offline fallback.
-const CACHE_NAME = 'student-dz-runtime-v7-hijri-calendar';
+const CACHE_NAME = 'student-dz-runtime-v8-pwa-icon';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -41,7 +41,8 @@ const ASSETS_TO_CACHE = [
     './assets/js/share-tools.js',
     './assets/images/icon.png',
     './assets/images/icon-192.png',
-    './assets/images/icon-512.png'
+    './assets/images/icon-512.png',
+    './assets/images/pwa-icon.svg'
 ];
 
 const isSameOrigin = request => new URL(request.url).origin === self.location.origin;
