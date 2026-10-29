@@ -1,11 +1,12 @@
 // Student DZ service worker: fresh navigation/data with fast static assets and resilient offline fallback.
-const CACHE_NAME = 'student-dz-runtime-v6-share-tools';
+const CACHE_NAME = 'student-dz-runtime-v7-hijri-calendar';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
     './offline.html',
     './tools/flashcards.html',
     './tools/exam-planner.html',
+    './tools/hijri-calendar.html',
     './tools/arabic-dictionary.html',
     './assets/css/arabic-dictionary.css',
     './assets/js/arabic-dictionary.js',
