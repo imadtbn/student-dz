@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Student DZ">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#008c62"/><stop offset=".52" stop-color="#00a9a4"/><stop offset="1" stop-color="#0867e8"/></linearGradient><linearGradient id="book" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#63f5bd"/><stop offset="1" stop-color="#fff"/></linearGradient></defs>
+<rect width="512" height="512" fill="#f4f7f6"/>
+<circle cx="256" cy="256" r="188" fill="url(#bg)"/>
+<g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+<path d="M158 194 256 155 354 194 256 234Z"/><path d="M190 208v37q66 9 66 61 0-52 66-61v-37"/>
+<path d="M256 306c-35-36-75-48-112-45l-20 86c49-3 91 9 132 39 41-30 83-42 132-39l-20-86c-37-3-77 9-112 45Z"/>
+<path d="M256 306v80"/><path d="M144 366q58-5 112 28 56-33 112-28" stroke-width="6"/>
+<path d="M176 176q80-52 160 0" stroke="#72f4ce" stroke-width="5"/>
+</g>
+<g fill="#fff" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">
+<text x="256" y="112" font-size="34">منصة النجاح</text>
+<text x="230" y="435" font-size="38">STUDENT</text>
+<text x="376" y="435" font-size="38" fill="#75f2c1">DZ</text>
+</g>
+<path d="M350 281 389 235l-2 25 23-5-35 47 1-25Z" fill="#9cff9b"/>
+<g fill="#c9fff1"><circle cx="139" cy="232" r="5"/><circle cx="370" cy="210" r="5"/><circle cx="390" cy="315" r="5"/></g>
+</svg>
