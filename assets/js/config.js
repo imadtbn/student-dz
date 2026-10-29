@@ -171,3 +171,22 @@ if (typeof module !== 'undefined' && module.exports) module.exports = CONFIG;
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true }); else init();
 })();
+
+/* Shared page-sharing controls: available even on pages without the navigation bundle. */
+(function loadStudentShareTools() {
+    const base = window.CONFIG?.BASE_PATH || '/student-dz';
+    if (!document.getElementById('studentDzShareToolsCss')) {
+        const link = document.createElement('link');
+        link.id = 'studentDzShareToolsCss';
+        link.rel = 'stylesheet';
+        link.href = base + '/assets/css/share-tools.css';
+        document.head.appendChild(link);
+    }
+    if (window.__studentDzShareToolsLoader || document.querySelector('script[data-student-share-tools]')) return;
+    window.__studentDzShareToolsLoader = true;
+    const script = document.createElement('script');
+    script.src = base + '/assets/js/share-tools.js';
+    script.dataset.studentShareTools = 'true';
+    script.defer = true;
+    document.head.appendChild(script);
+})();
