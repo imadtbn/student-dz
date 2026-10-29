@@ -1,5 +1,5 @@
 // Student DZ service worker: fresh navigation/data with fast static assets and resilient offline fallback.
-const CACHE_NAME = 'student-dz-runtime-v5-exam-planner';
+const CACHE_NAME = 'student-dz-runtime-v6-share-tools';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -32,10 +32,12 @@ const ASSETS_TO_CACHE = [
     './data/dictionary/raa.json',
     './assets/css/main.css',
     './assets/css/responsive.css',
+    './assets/css/share-tools.css',
     './assets/css/ads.css',
     './assets/js/config.js',
     './assets/js/app.js',
     './assets/js/navigation.js',
+    './assets/js/share-tools.js',
     './assets/images/icon.png',
     './assets/images/icon-192.png',
     './assets/images/icon-512.png'
