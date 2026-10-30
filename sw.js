@@ -42,7 +42,7 @@ const ASSETS_TO_CACHE = [
     './assets/images/icon.png',
     './assets/images/icon-192.png',
     './assets/images/icon-512.png',
-    './assets/images/pwa-icon.svg'
+    './assets/images/pwa-icon.png'
 ];
 
 const isSameOrigin = request => new URL(request.url).origin === self.location.origin;
