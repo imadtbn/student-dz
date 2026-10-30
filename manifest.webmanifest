@@ -10,7 +10,7 @@
   "lang": "ar",
   "icons": [
     {
-      "src": "assets/images/pwa-icon.svg",
+      "src": "assets/images/pwa-icon.png",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
@@ -34,7 +34,7 @@
       "url": "./universities/index.html",
       "icons": [
         {
-          "src": "assets/images/pwa-icon.svg",
+          "src": "assets/images/pwa-icon.png",
           "sizes": "512x512",
           "type": "image/svg+xml"
         }
