@@ -12,7 +12,7 @@
     {
       "src": "assets/images/pwa-icon.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
@@ -36,7 +36,7 @@
         {
           "src": "assets/images/pwa-icon.png",
           "sizes": "512x512",
-          "type": "image/svg+xml"
+          "type": "image/png"
         }
       ]
     },
@@ -45,11 +45,13 @@
       "url": "./categories/tools.html",
       "icons": [
         {
-          "src": "assets/images/pwa-icon.svg",
+          "src": "assets/images/pwa-icon.png",
           "sizes": "512x512",
-          "type": "image/svg+xml"
+          "type": "image/png"
         }
       ]
     }
-  ]
+  ],
+  "id": "./",
+  "scope": "./"
 }
