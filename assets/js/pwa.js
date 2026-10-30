@@ -33,7 +33,7 @@
     const style = document.createElement('style');
     style.id = 'studentDzInstallStyles';
     style.textContent = `
-      .student-dz-install-card{position:fixed;z-index:9998;inset-inline:14px;bottom:calc(14px + env(safe-area-inset-bottom));max-width:460px;margin-inline:auto;padding:14px 16px;display:flex;align-items:center;gap:12px;background:#fff;color:#18352e;border:1px solid rgba(0,122,94,.2);border-radius:18px;box-shadow:0 10px 35px rgba(0,35,27,.2);font-family:inherit;direction:rtl}
+      .student-dz-install-card{position:fixed;z-index:9998;inset-inline:14px;top:calc(14px + env(safe-area-inset-top));bottom:auto;max-width:460px;margin-inline:auto;padding:14px 16px;display:flex;align-items:center;gap:12px;background:#fff;color:#18352e;border:1px solid rgba(0,122,94,.2);border-radius:18px;box-shadow:0 10px 35px rgba(0,35,27,.2);font-family:inherit;direction:rtl}
       .student-dz-install-card[hidden]{display:none}
       .student-dz-install-icon{width:48px;height:48px;flex:0 0 48px;object-fit:contain;border-radius:13px}
       .student-dz-install-copy{min-width:0;flex:1}
