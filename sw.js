@@ -1,5 +1,5 @@
 // Student DZ service worker: fresh navigation/data with fast static assets and resilient offline fallback.
-const CACHE_NAME = 'student-dz-runtime-v8-pwa-icon';
+const CACHE_NAME = 'student-dz-runtime-v9-install-fix';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
