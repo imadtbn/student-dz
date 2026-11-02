@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Foundation -->
     <link rel="canonical" href="https://imadtbn.github.io/student-dz/tools/average-calculator.html">
-    <meta name="description" content="احسب معدل السداسي والجامعة بدقة اعتماداً على المقاييس والمعاملات والعلامات.">
+    <meta name="description" content="احسب معدل السداسي الجامعي في الجزائر حسب علامات المقاييس والمعاملات، مع شرح طريقة الحساب ومثال تطبيقي وروابط لأدوات المعدل ذات الصلة.">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://imadtbn.github.io/student-dz/tools/average-calculator.html">
-    <meta property="og:title" content="حاسبة المعدل الجامعي - Student DZ">
+    <meta property="og:title" content="حساب معدل السداسي الجامعي مع مثال توضيحي - Student DZ">
     <meta property="og:description"
-        content="احسب معدل السداسي والجامعة بدقة اعتماداً على المقاييس والمعاملات والعلامات.">
+        content="احسب معدل السداسي الجامعي في الجزائر حسب علامات المقاييس والمعاملات، مع شرح طريقة الحساب ومثال تطبيقي وروابط لأدوات المعدل ذات الصلة.">
     <meta property="og:image"
         content="https://raw.githubusercontent.com/imadtbn/student-dz/main/assets/images/icon-512.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://imadtbn.github.io/student-dz/tools/average-calculator.html">
-    <meta name="twitter:title" content="حاسبة المعدل الجامعي - Student DZ">
+    <meta name="twitter:title" content="حساب معدل السداسي الجامعي مع مثال توضيحي - Student DZ">
     <meta name="twitter:description"
         content="احسب معدل السداسي والجامعة بدقة اعتماداً على المقاييس والمعاملات والعلامات.">
     <meta name="twitter:image"
@@ -38,7 +38,7 @@
 
 
 
-    <title>حاسبة المعدل الجامعي - Student DZ</title>
+    <title>حساب معدل السداسي الجامعي مع مثال توضيحي - Student DZ</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
@@ -127,6 +127,52 @@
             font-weight: bold;
             display: none;
         }
+
+        .average-guide {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            line-height: 1.85;
+            font-size: 0.98rem;
+        }
+
+        .average-guide h2 { font-size: 1.35rem; margin: 0 0 0.75rem; }
+        .average-guide h3 { font-size: 1.08rem; margin: 1.25rem 0 0.5rem; }
+        .average-guide p { margin: 0.5rem 0; }
+
+        .average-guide-note {
+            padding: 0.75rem 1rem;
+            border-right: 3px solid var(--primary-color);
+            background: var(--bg-main);
+            border-radius: var(--radius-sm);
+        }
+
+        .average-example-wrap {
+            max-width: 100%;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        .average-example { width: 100%; border-collapse: collapse; text-align: center; min-width: 460px; }
+        .average-example th, .average-example td { padding: 0.65rem 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .average-example th { background: var(--bg-main); }
+        .average-example tbody tr:last-child td { border-bottom: 0; }
+
+        .average-related-tools {
+            list-style: none; padding: 0; margin: 0.5rem 0 0;
+            display: grid; gap: 0.65rem;
+        }
+
+        .average-related-tools li {
+            display: flex; flex-direction: column; gap: 0.15rem;
+            padding: 0.75rem 1rem; border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        .average-related-tools a { color: var(--primary-color); font-weight: 700; text-decoration: none; }
+        .average-related-tools a:hover { text-decoration: underline; }
+        .average-related-tools span { font-size: 0.9rem; color: var(--text-muted, var(--text-main)); }
 
         @media (max-width: 700px) {
             .tool-container {
@@ -266,7 +312,7 @@
   "author": {
     "@id": "https://imadtbn.github.io/student-dz/#organization"
   },
-  "description": "احسب معدل السداسي والجامعة بدقة اعتماداً على المقاييس والمعاملات والعلامات."
+  "description": "احسب معدل السداسي الجامعي في الجزائر حسب علامات المقاييس والمعاملات، مع شرح طريقة الحساب ومثال تطبيقي."
 }
 </script>
     <!-- Student DZ: WebApplication JSON-LD END -->
@@ -314,8 +360,8 @@
 
             <section class="page-intro" aria-labelledby="apa-title">
                 <div class="page-intro-icon" aria-hidden="true"><i class="fa-solid fa-calculator"></i></div>
-                <h1 id="apa-title"> حاسبة معدل السداسي</h1>
-                <p>أدخل المقاييس، المعاملات، والعلامات لحساب معدلك بدقة.</p>
+                <h1 id="apa-title">حساب معدل السداسي الجامعي</h1>
+                <p>أدخل علامات المقاييس ومعاملاتها لحساب المعدل الموزون، مع مثال يوضح طريقة الحساب.</p>
             </section>
 
             <div class="module-header">
@@ -333,9 +379,37 @@
                 <button class="btn" id="calculateBtn"><i class="fa-solid fa-calculator"></i> احسب المعدل</button>
             </div>
 
-            <div id="resultBox" class="result-box">
+            <div id="resultBox" class="result-box" aria-live="polite">
                 معدلك هو: <span id="finalAverage">0.00</span>
             </div>
+
+            <section class="average-guide" aria-labelledby="average-guide-title">
+                <h2 id="average-guide-title">كيف تحسب معدل السداسي الجامعي؟</h2>
+                <p>أدخل كل مقياس في سطر مستقل، ثم أضف المعامل وعلامة الامتحان على 20. إذا أدخلت علامة TD/TP، تحسب الأداة معدل المقياس وفق الصيغة المعتمدة داخلها: 60% للامتحان و40% لـ TD/TP. وإذا تركت TD/TP فارغًا، تعتمد علامة الامتحان وحدها.</p>
+
+                <h3>طريقة الحساب</h3>
+                <p>معدل المقياس مع TD/TP = (علامة الامتحان × 0.6) + (علامة TD/TP × 0.4).</p>
+                <p>المعدل العام = مجموع (معدل كل مقياس × معامله) ÷ مجموع معاملات المقاييس التي أُدخلت لها علامة امتحان.</p>
+                <p class="average-guide-note">تنبيه: قد تختلف نسب احتساب TD/TP وطريقة حساب المعدل حسب الجامعة والتخصص ونظام التقييم. تحقّق من دليل مؤسستك، واستخدم الأداة كتقدير وفق الصيغة الموضحة أعلاه.</p>
+
+                <h3>مثال تطبيقي</h3>
+                <div class="average-example-wrap">
+                    <table class="average-example">
+                        <thead><tr><th scope="col">المقياس</th><th scope="col">المعامل</th><th scope="col">TD/TP</th><th scope="col">الامتحان</th><th scope="col">معدل المقياس</th></tr></thead>
+                        <tbody>
+                            <tr><td>رياضيات</td><td>2</td><td>14</td><td>16</td><td>15.20</td></tr>
+                            <tr><td>إعلام آلي</td><td>1</td><td>—</td><td>12</td><td>12.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>في هذا المثال: معدل الرياضيات = (16 × 0.6) + (14 × 0.4) = 15.20. ثم المعدل العام = (15.20 × 2 + 12 × 1) ÷ (2 + 1) = <strong>14.13/20</strong>.</p>
+
+                <h3>أدوات جامعية ذات صلة</h3>
+                <ul class="average-related-tools">
+                    <li><a href="semester-calculator.html">حاسبة المعدل السنوي</a><span>لحساب المعدل السنوي انطلاقًا من معدلات الفصول.</span></li>
+                    <li><a href="percentage-calculator.html">حاسبة النسبة المئوية</a><span>لحساب النسب المئوية في النتائج والدرجات.</span></li>
+                </ul>
+            </section>
         </div>
     </main>
 
