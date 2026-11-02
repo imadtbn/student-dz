@@ -38,7 +38,6 @@
     state.bearing=calculate(lat,lon).bearing;
     render();
     $('qibla-search-status').textContent = 'تم تحديد الموقع وحساب اتجاه القبلة.';
-    try { localStorage.setItem('student-dz-qibla-place', JSON.stringify({lat,lon,name})); } catch (_) {}
   }
   function setStatus(message) { $('qibla-search-status').textContent = message; }
   async function searchCity(query) {
@@ -127,8 +126,4 @@
     $('qibla-sensor-help').textContent='أعيد ضبط عرض البوصلة. يمكن تفعيل المستشعر من جديد.';
     render();
   });
-  try {
-    const saved=JSON.parse(localStorage.getItem('student-dz-qibla-place')||'null');
-    if (saved && Number.isFinite(saved.lat) && Number.isFinite(saved.lon)) setLocation(saved.lat,saved.lon,saved.name||'الموقع المحفوظ');
-  } catch (_) {}
 })();
