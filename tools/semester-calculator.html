@@ -149,6 +149,17 @@
 </script>
     <!-- Student DZ: WebApplication JSON-LD END -->
 
+
+    <style>
+      .related-tools-section{max-width:980px;margin:1.5rem auto;padding:1rem;box-sizing:border-box;width:calc(100% - 2rem);border:1px solid var(--border-color,#ddd);border-radius:14px;background:var(--bg-card,transparent)}
+      .related-tools-section h2{font-size:1.2rem;margin:0 0 .75rem}
+      .related-tools-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:.75rem}
+      .related-tools-list li{min-width:0;border:1px solid var(--border-color,#ddd);border-radius:10px;padding:.8rem}
+      .related-tools-list a{font-weight:700;color:var(--primary-color,#16784b);text-decoration:none}
+      .related-tools-list a:hover,.related-tools-home:hover{text-decoration:underline}
+      .related-tools-list p{margin:.35rem 0 0;font-size:.92rem;line-height:1.6;color:var(--text-muted,var(--text-main,#555))}
+      .related-tools-home{display:inline-block;margin-top:.85rem;font-weight:700;color:var(--primary-color,#16784b)}
+    </style>
 </head>
 
 <!-- Google Tag Manager (noscript) -->
@@ -236,7 +247,17 @@
         });
     </script>
 
-    <footer class="site-footer">
+    
+    <section class="related-tools-section" aria-labelledby="related-tools-title">
+      <h2 id="related-tools-title">أدوات قد تساعدك أيضًا</h2>
+      <ul class="related-tools-list">
+        <li><a href="average-calculator.html">احسب معدل السداسي حسب علامات المقاييس ومعاملاتها</a><p>أدخل علامات الامتحان وTD/TP للحصول على معدل السداسي.</p></li>
+        <li><a href="percentage-calculator.html">احسب النسبة المئوية لعلامة أو نتيجة</a><p>حوّل العلامات والأعداد إلى نسب مئوية بسرعة.</p></li>
+      </ul>
+      <a class="related-tools-home" href="../categories/tools.html">استكشف جميع أدوات الطالب الجزائري</a>
+    </section>
+
+<footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
