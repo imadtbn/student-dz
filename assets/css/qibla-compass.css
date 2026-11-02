@@ -50,3 +50,6 @@
 
 /* Student DZ layout safety */
 .qibla-page{width:100%;min-width:0;overflow-x:clip}.qibla-page *{min-width:0}.qibla-page .ads-container{max-width:100%;overflow:hidden}.qibla-page .adsbygoogle{max-width:100%}@media(max-width:520px){.qibla-search-line{flex-wrap:wrap}.qibla-search-line input{flex:1 1 100%}.qibla-search-line button{width:100%}.qibla-metrics{grid-template-columns:1fr}.qibla-compass{width:min(78vw,320px)}}
+
+/* Ad slots stay inside the viewport and reserve a stable block. */
+.qibla-page .ads-container{display:block;width:100%;max-width:100%;min-width:0;margin:1rem 0 1.25rem;padding:.5rem 0;overflow:hidden;contain:layout paint}.qibla-page .ads-label{display:block;text-align:center;color:var(--text-muted);font-size:.72rem;margin-bottom:.25rem}.qibla-page .ads-box,.qibla-page .adsbygoogle{display:block;width:100%;max-width:100%;min-width:0;overflow:hidden}.qibla-page ins.adsbygoogle{min-height:90px}
