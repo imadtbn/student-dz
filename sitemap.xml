@@ -103,7 +103,9 @@
     <loc>https://imadtbn.github.io/student-dz/tools/image-compressor.html</loc>
     <lastmod>2026-11-12</lastmod>
   </url>
-  <url>\n    <loc>https://imadtbn.github.io/student-dz/tools/maps.html</loc>\n  </url>
+  <url>
+    <loc>https://imadtbn.github.io/student-dz/tools/maps.html</loc>
+  </url>
   <url>
     <loc>https://imadtbn.github.io/student-dz/tools/notes-calendar.html</loc>
     <lastmod>2026-11-12</lastmod>
@@ -112,7 +114,9 @@
     <loc>https://imadtbn.github.io/student-dz/tools/nutrition-calculator.html</loc>
     <lastmod>2026-11-12</lastmod>
   </url>
-  <url>\n    <loc>https://imadtbn.github.io/student-dz/tools/pdf-tools.html</loc>\n  </url>
+  <url>
+    <loc>https://imadtbn.github.io/student-dz/tools/pdf-tools.html</loc>
+  </url>
   <url>
     <loc>https://imadtbn.github.io/student-dz/tools/percentage-calculator.html</loc>
     <lastmod>2026-11-12</lastmod>
@@ -121,7 +125,9 @@
     <loc>https://imadtbn.github.io/student-dz/tools/points-ranking.html</loc>
     <lastmod>2026-11-12</lastmod>
   </url>
-  <url>\n    <loc>https://imadtbn.github.io/student-dz/tools/pomodoro.html</loc>\n  </url>
+  <url>
+    <loc>https://imadtbn.github.io/student-dz/tools/pomodoro.html</loc>
+  </url>
   <url>
     <loc>https://imadtbn.github.io/student-dz/tools/qibla-compass.html</loc>
     <lastmod>2026-11-12</lastmod>
@@ -142,9 +148,12 @@
     <loc>https://imadtbn.github.io/student-dz/tools/study-schedule.html</loc>
     <lastmod>2026-11-12</lastmod>
   </url>
-  <url>\n    <loc>https://imadtbn.github.io/student-dz/tools/text-tools.html</loc>\n  </url>
+  <url>
+    <loc>https://imadtbn.github.io/student-dz/tools/text-tools.html</loc>
+  </url>
   <url>
     <loc>https://imadtbn.github.io/student-dz/tools/unit-converter.html</loc>
     <lastmod>2026-11-12</lastmod>
   </url>
 </urlset>
+
